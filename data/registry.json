@@ -1,0 +1,145 @@
+{
+  "asOfLabel": "9 November 2026",
+  "sets": [
+    {
+      "slug": "research",
+      "name": "Research",
+      "covers": "Interviews, surveys, usability test plans, synthesis, personas and journey maps.",
+      "why": "Left alone, Claude will write you a persona from nothing. This set gives it a method for asking real people first.",
+      "missing": "Nothing I built yet.",
+      "entries": [
+        { "name": "design-research", "type": "Skill pack", "origin": "third", "status": "available", "author": "MC Dean", "summary": "Personas, empathy maps, journey maps, interview scripts, surveys, diary studies, card sort analysis, usability test plans and synthesis.", "source": "https://github.com/Owl-Listener/designer-skills/tree/main/design-research", "marketplace": true, "install": ["/plugin install design-research@designer-skills"] },
+        { "name": "lenny-skills research set", "type": "Skill pack", "origin": "third", "status": "name", "author": "RefoundAI", "summary": "customer-interviews and analyzing-user-feedback, from a much larger skills library.", "source": "https://github.com/RefoundAI/lenny-skills", "installNote": "Copy the skill folders you want into your project's .claude/skills/ directory." },
+        { "name": "customer-research", "type": "Skill", "origin": "third", "status": "name", "author": "Corey Haines", "summary": "Customer research from a marketing point of view.", "source": "https://github.com/coreyhaines31/marketingskills/tree/main/skills/customer-research", "install": ["npx skills add coreyhaines31/marketingskills --skill customer-research"] }
+      ]
+    },
+    {
+      "slug": "design-systems",
+      "name": "Design systems",
+      "covers": "Tokens, components, naming, governance and documentation.",
+      "why": "Claude reaches for whatever value looks right. These hold it to the tokens and components you already chose.",
+      "missing": "Mine enforce a system you already have. Nothing of mine builds one.",
+      "entries": [
+        { "name": "design-systems", "type": "Skill pack", "origin": "third", "status": "available", "author": "MC Dean", "summary": "Tokens, component specs, naming, theming, icons, motion systems, governance, pattern libraries and accessibility audits.", "source": "https://github.com/Owl-Listener/designer-skills/tree/main/design-systems", "marketplace": true, "install": ["/plugin install design-systems@designer-skills"] },
+        { "name": "Design System Enforcer", "type": "MCP server", "origin": "built", "status": "available", "author": "Bill Bulman and Claude", "summary": "Checks UI code against a design system's tokens and components.", "source": "https://github.com/bbulman/design-system-enforcer", "proof": "Ships with its own test suite.", "installNote": "Clone the repo and add it as an MCP server. The README has the steps." },
+        { "name": "design-system agent", "type": "Agent", "origin": "built", "status": "name", "author": "Bill Bulman and Claude", "scope": "workshopr", "summary": "Drives live page violations to zero without changing how a page looks unless a person approves it." }
+      ]
+    },
+    {
+      "slug": "information-architecture",
+      "name": "Information architecture",
+      "covers": "Taxonomies, navigation, sitemaps, URL rules, content models and tree tests.",
+      "why": "Where things go decides whether anyone finds them. It's also the one set with a skill tested end to end.",
+      "missing": "Nothing outstanding. Claude chose my skill over the version inside ux-strategy on 9 of 10 test requests.",
+      "entries": [
+        { "name": "information-architecture", "type": "Skill", "origin": "combined", "status": "available", "author": "Bill Bulman and Claude, rewritten from lyndonkl/claude, RavenClaude and jarango.com", "summary": "Content inventories, card sorts, taxonomies, sitemaps, navigation, URL rules, content models, tree tests, redirect plans and findability metrics.", "source": "https://github.com/bbulman/information-architecture-skill", "proof": "3 test cases, 3 rounds, every grade public. Latest round: 28 of 29 with the skill, 19 of 29 without. Chosen on 9 of 10 requests and none of 10 near-misses.", "install": ["git clone https://github.com/bbulman/information-architecture-skill.git", "cd information-architecture-skill && ./install.sh"] },
+        { "name": "site-architecture", "type": "Skill", "origin": "third", "status": "name", "author": "Corey Haines", "summary": "Site structure planning from a marketing point of view.", "source": "https://github.com/coreyhaines31/marketingskills/tree/main/skills/site-architecture", "install": ["npx skills add coreyhaines31/marketingskills --skill site-architecture"] }
+      ]
+    },
+    {
+      "slug": "interaction-design",
+      "name": "Interaction design",
+      "covers": "States, forms, feedback, errors, navigation patterns, UX laws and motion.",
+      "why": "The happy path is the easy part. This set covers what happens on an error, during a load and when someone changes their mind.",
+      "missing": "Nothing I built yet.",
+      "entries": [
+        { "name": "interaction-design", "type": "Skill pack", "origin": "third", "status": "available", "author": "MC Dean", "summary": "States, forms, feedback, errors, loading, search, navigation patterns, micro-interactions and UX laws such as Fitts and Hick.", "source": "https://github.com/Owl-Listener/designer-skills/tree/main/interaction-design", "marketplace": true, "install": ["/plugin install interaction-design@designer-skills"] },
+        { "name": "Emil Kowalski motion skills", "type": "Skill pack", "origin": "third", "status": "name", "author": "Emil Kowalski", "summary": "animation-vocabulary, improve-animations, review-animations, emil-design-eng and apple-design.", "source": "https://github.com/emilkowalski/skills", "install": ["npx skills@latest add emilkowalski/skills"] }
+      ]
+    },
+    {
+      "slug": "visual-design",
+      "name": "Visual design",
+      "covers": "Hierarchy, colour, type, layout, visual critique and page craft.",
+      "why": "Hierarchy and type are where AI-made pages start to look alike. These give Claude a way to see that and correct it.",
+      "missing": "Nothing of mine beyond landing-page-design.",
+      "entries": [
+        { "name": "ui-design", "type": "Skill pack", "origin": "third", "status": "available", "author": "MC Dean", "summary": "Colour, type scale, spacing, layout grid, responsive design, dark mode, visual hierarchy, platform conventions and the Gestalt laws.", "source": "https://github.com/Owl-Listener/designer-skills/tree/main/ui-design", "marketplace": true, "install": ["/plugin install ui-design@designer-skills"] },
+        { "name": "visual-critique", "type": "Skill pack", "origin": "third", "status": "available", "author": "MC Dean", "summary": "Critiques hierarchy, colour, typography, composition, affordance, information density and brand consistency.", "source": "https://github.com/Owl-Listener/designer-skills/tree/main/visual-critique", "marketplace": true, "install": ["/plugin install visual-critique@designer-skills"] },
+        { "name": "impeccable", "type": "Skill", "origin": "third", "status": "available", "author": "Paul Bakaus", "summary": "Designs, critiques, audits, polishes and animates frontends.", "source": "https://impeccable.style", "install": ["npx skills add pbakaus/impeccable"] },
+        { "name": "landing-page-design", "type": "Skill", "origin": "built", "status": "available", "author": "Bill Bulman and Claude", "summary": "Copy strategy and look before any code, a hero-first build, gates against generic AI pages and a two-reviewer feedback round.", "proof": "One dry run and two critic passes. The UX-OS landing page went through it too." },
+        { "name": "Taste skills", "type": "Skill pack", "origin": "third", "status": "name", "author": "Leonxlnx", "summary": "Frontend taste skills. This repo holds design-taste-frontend, and the high-end, minimalist and brutalist styles now live in taste-skill-classics.", "source": "https://github.com/Leonxlnx/taste-skill", "install": ["/plugin marketplace add Leonxlnx/taste-skill", "/plugin install taste-skill@taste-skill", "/plugin marketplace add Leonxlnx/taste-skill-classics", "/plugin install taste-skill-classics@taste-skill-classics"] }
+      ]
+    },
+    {
+      "slug": "prototyping",
+      "name": "Prototyping",
+      "covers": "Wireframes, user flows, concept selection, prototype strategy, test plans and heuristic evaluation.",
+      "why": "A prototype exists to kill an idea cheaply. This set decides what to build, how rough it can be and what counts as a pass.",
+      "missing": "Nothing I built yet.",
+      "entries": [
+        { "name": "prototyping-testing", "type": "Skill pack", "origin": "third", "status": "available", "author": "MC Dean", "summary": "Wireframe specs, user flows, parallel concepts, concept selection, prototype strategy, test scenarios, click tests, heuristic evaluation, accessibility test plans and A/B tests.", "source": "https://github.com/Owl-Listener/designer-skills/tree/main/prototyping-testing", "marketplace": true, "install": ["/plugin install prototyping-testing@designer-skills"] },
+        { "name": "prototype", "type": "Skill", "origin": "third", "status": "available", "author": "Matt Pocock", "summary": "Builds a quick prototype to test an idea.", "source": "https://github.com/mattpocock/skills/tree/main/skills/engineering/prototype", "install": ["claude plugin install mattpocock-skills@claude-plugins-official"] }
+      ]
+    },
+    {
+      "slug": "ux-strategy",
+      "name": "UX strategy",
+      "covers": "Problem framing, briefs, vision, opportunities and metrics.",
+      "why": "A fast answer to the wrong problem is still wrong. This set makes Claude frame the problem before it touches a screen.",
+      "missing": "Nothing I built yet.",
+      "entries": [
+        { "name": "ux-strategy", "type": "Skill pack", "origin": "third", "status": "available", "author": "MC Dean", "summary": "Problem framing, briefs, north star vision, opportunity frameworks, metrics, service blueprints, content strategy and its own information-architecture skill.", "source": "https://github.com/Owl-Listener/designer-skills/tree/main/ux-strategy", "marketplace": true, "install": ["/plugin install ux-strategy@designer-skills"] },
+        { "name": "design-strategy", "type": "Skill pack", "origin": "third", "status": "available", "author": "MC Dean", "summary": "Design vision, strategy documents, org-level principles, investment cases and portfolio prioritisation.", "source": "https://github.com/Owl-Listener/design-leadership-skills/tree/main/design-strategy", "marketplace": true, "install": ["/plugin install design-strategy@designer-skills"] }
+      ]
+    },
+    {
+      "slug": "ai-xd",
+      "name": "AI-XD",
+      "covers": "AI experience design: conversation, trust, guardrails and agent handoffs.",
+      "why": "Designing for a model is its own discipline. Trust, refusal, handoff and recovery all need designing on purpose.",
+      "missing": "Three more packs are installed and switched off.",
+      "entries": [
+        { "name": "model-interaction-design", "type": "Skill pack", "origin": "third", "status": "available", "author": "MC Dean", "summary": "Conversation patterns, mixed-initiative flow, generative UI, context windows and frustration detection.", "source": "https://github.com/Owl-Listener/ai-design-skills/tree/main/claude-plugin/model-interaction-design", "marketplace": true, "install": ["/plugin install model-interaction-design@designer-skills"] },
+        { "name": "ai-alignment-reasoning", "type": "Skill pack", "origin": "third", "status": "available", "author": "MC Dean", "summary": "Guardrails, harm anticipation, trust calibration, transparency, consent and escalation.", "source": "https://github.com/Owl-Listener/ai-design-skills/tree/main/claude-plugin/ai-alignment-reasoning", "marketplace": true, "install": ["/plugin install ai-alignment-reasoning@designer-skills"] },
+        { "name": "design-agent-orchestration", "type": "Skill pack", "origin": "third", "status": "available", "author": "MC Dean", "summary": "How agents collaborate, hand off, recover from failure and stay legible to people.", "source": "https://github.com/Owl-Listener/ai-design-skills/tree/main/claude-plugin/design-agent-orchestration", "marketplace": true, "install": ["/plugin install design-agent-orchestration@designer-skills"] },
+        { "name": "evaluation", "type": "Skill pack", "origin": "third", "status": "off", "author": "MC Dean", "summary": "Behaviour evals, trust calibration and failure analysis for agentic experiences.", "source": "https://github.com/Owl-Listener/ai-design-skills/tree/main/claude-plugin/evaluation", "marketplace": true, "install": ["/plugin install evaluation@designer-skills"] },
+        { "name": "prompt-architecture", "type": "Skill pack", "origin": "third", "status": "off", "author": "MC Dean", "summary": "Structures prompts and context as a design material.", "source": "https://github.com/Owl-Listener/ai-design-skills/tree/main/claude-plugin/prompt-architecture", "marketplace": true, "install": ["/plugin install prompt-architecture@designer-skills"] },
+        { "name": "system-behavior-shaping", "type": "Skill pack", "origin": "third", "status": "off", "author": "MC Dean", "summary": "Defaults, guardrails, refusals and behavioural contracts.", "source": "https://github.com/Owl-Listener/ai-design-skills/tree/main/claude-plugin/system-behavior-shaping", "marketplace": true, "install": ["/plugin install system-behavior-shaping@designer-skills"] }
+      ]
+    },
+    {
+      "slug": "accessibility-and-inclusion",
+      "name": "Accessibility and inclusion",
+      "proposed": true,
+      "covers": "Inclusive personas, cognitive access, accessible content and adaptive interfaces.",
+      "why": "Access decided at the end gets cut. This set starts with who's being left out.",
+      "missing": "Five of the six packs are switched off.",
+      "entries": [
+        { "name": "inclusive-personas", "type": "Skill pack", "origin": "third", "status": "available", "author": "MC Dean", "summary": "Personas, user stories and scenarios that include disability from the start.", "source": "https://github.com/Owl-Listener/inclusive-design-skills/tree/main/inclusive-personas", "marketplace": true, "install": ["/plugin install inclusive-personas@designer-skills"] },
+        { "name": "accessibility-decisions", "type": "Skill pack", "origin": "third", "status": "off", "author": "MC Dean", "summary": "Documents and maintains accessibility decisions across teams and time.", "source": "https://github.com/Owl-Listener/inclusive-design-skills/tree/main/accessibility-decisions", "marketplace": true, "install": ["/plugin install accessibility-decisions@designer-skills"] },
+        { "name": "accessible-content", "type": "Skill pack", "origin": "third", "status": "off", "author": "MC Dean", "summary": "Content that works for screen readers, cognitive differences and diverse literacy.", "source": "https://github.com/Owl-Listener/inclusive-design-skills/tree/main/accessible-content", "marketplace": true, "install": ["/plugin install accessible-content@designer-skills"] },
+        { "name": "adaptive-interfaces", "type": "Skill pack", "origin": "third", "status": "off", "author": "MC Dean", "summary": "Design systems that respect user preferences and adapt to individual needs.", "source": "https://github.com/Owl-Listener/inclusive-design-skills/tree/main/adaptive-interfaces", "marketplace": true, "install": ["/plugin install adaptive-interfaces@designer-skills"] },
+        { "name": "cognitive-accessibility", "type": "Skill pack", "origin": "third", "status": "off", "author": "MC Dean", "summary": "Cognitive load, plain language, wayfinding and focus.", "source": "https://github.com/Owl-Listener/inclusive-design-skills/tree/main/cognitive-accessibility", "marketplace": true, "install": ["/plugin install cognitive-accessibility@designer-skills"] },
+        { "name": "inclusive-interaction", "type": "Skill pack", "origin": "third", "status": "off", "author": "MC Dean", "summary": "Multi-modal interactions that adapt to how people move, perceive and communicate.", "source": "https://github.com/Owl-Listener/inclusive-design-skills/tree/main/inclusive-interaction", "marketplace": true, "install": ["/plugin install inclusive-interaction@designer-skills"] }
+      ]
+    },
+    {
+      "slug": "design-ops-and-communication",
+      "name": "Design ops and communication",
+      "proposed": true,
+      "covers": "Handoff, critique process, sprints, rationale and case studies.",
+      "why": "Good design still has to survive the handoff and the meeting. This set covers what happens around the file.",
+      "missing": "Eleven program and leadership packs are switched off.",
+      "entries": [
+        { "name": "design-ops", "type": "Skill pack", "origin": "third", "status": "available", "author": "MC Dean", "summary": "Handoff specs, critique and review process, design QA, sprints, design debt and impact reporting.", "source": "https://github.com/Owl-Listener/designer-skills/tree/main/design-ops", "marketplace": true, "install": ["/plugin install design-ops@designer-skills"] },
+        { "name": "designer-toolkit", "type": "Skill pack", "origin": "third", "status": "available", "author": "MC Dean", "summary": "Design rationale, case studies, presentations, UX writing, negotiation and design-system adoption.", "source": "https://github.com/Owl-Listener/designer-skills/tree/main/designer-toolkit", "marketplace": true, "install": ["/plugin install designer-toolkit@designer-skills"] },
+        { "name": "UX program and leadership packs", "type": "Skill pack", "origin": "third", "status": "off", "author": "MC Dean", "summary": "Eleven packs: program-planning, stakeholder-comms, delivery-execution, cross-functional-alignment, measurement-ops, process-design, people-management, team-building, org-influence, operating-cadence and leadership-craft.", "source": "https://github.com/Owl-Listener/designer-skills", "marketplace": true, "installNote": "All eleven are in the same marketplace. Install the ones you want by name from the /plugin menu." }
+      ]
+    },
+    {
+      "slug": "orchestration",
+      "name": "Orchestration",
+      "proposed": true,
+      "covers": "Running the other sets against a real target until it meets a bar.",
+      "why": "The other sets are methods. This one runs them against a real page and keeps going until it holds up.",
+      "missing": "Only /crit works outside Workshopr.",
+      "entries": [
+        { "name": "crit and critique-partner", "type": "Skill", "origin": "built", "status": "available", "author": "Bill Bulman and Claude", "summary": "Interviews you about a page, then critiques it against your own written rules and loops until a verifier passes it.", "source": "https://github.com/bbulman/critique-partner", "proof": "A gate with 55 test cases, and two headless runs.", "installNote": "Needs Node 18 or later and Playwright with Chromium.", "install": ["git clone https://github.com/bbulman/critique-partner.git", "cd critique-partner && ./install.sh"] },
+        { "name": "Design Agent", "type": "Agent", "origin": "built", "status": "available", "author": "Bill Bulman and Claude", "scope": "workshopr", "summary": "A self-looping designer: critique, fix, re-render and re-score until an exit bar is met, then learn from the run.", "proof": "An independent critic scores every pass." },
+        { "name": "feature-plan", "type": "Agent", "origin": "built", "status": "available", "author": "Bill Bulman and Claude", "scope": "workshopr", "summary": "Interviews you into a spec, a design brief and build slices, then runs the feature pipeline." },
+        { "name": "feature-build", "type": "Agent", "origin": "built", "status": "available", "author": "Bill Bulman and Claude", "scope": "workshopr", "summary": "Builds one slice of a planned feature and loops it until lint, tests, the design system and review all pass.", "proof": "An independent reviewer scores every pass." }
+      ]
+    }
+  ]
+}

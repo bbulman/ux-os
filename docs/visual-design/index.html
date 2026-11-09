@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visual design: UX-OS</title>
+<meta name="description" content="Hierarchy, colour, type, layout, visual critique and page craft. The Claude skills UX-OS uses for visual design, with authors and install commands.">
+<meta property="og:title" content="Visual design: UX-OS">
+<meta property="og:description" content="Hierarchy, colour, type, layout, visual critique and page craft. The Claude skills UX-OS uses for visual design, with authors and install commands.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23E54D4D'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="../">UX-OS</a>
+    <nav aria-label="Main">
+      <a href="../#sets">Sets</a>
+      <a class="optional" href="../#why">Why it matters</a>
+      <a href="../method/">Method</a>
+      <a href="https://github.com/bbulman/ux-os">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="crumb"><a href="../">UX-OS</a> / Visual design</p>
+    <div class="page-head">
+      <h1>Visual design</h1>
+      
+      <p class="lede">Hierarchy, colour, type, layout, visual critique and page craft.</p>
+      <p class="why">Hierarchy and type are where AI-made pages start to look alike. These give Claude a way to see that and correct it.</p>
+      <p class="gap"><b>What's missing:</b> Nothing of mine beyond landing-page-design.</p>
+    </div>
+    <div class="entries">
+      <div class="first-step">
+        <p>The <code>@designer-skills</code> commands below need this once.</p>
+        <pre><code>/plugin marketplace add Owl-Listener/designer-skills</code></pre>
+      </div>
+      <article class="entry">
+        <div>
+          <h2><a href="https://github.com/Owl-Listener/designer-skills/tree/main/ui-design">ui-design</a></h2>
+          <p class="byline">Skill pack by MC Dean</p>
+          <p class="summary">Colour, type scale, spacing, layout grid, responsive design, dark mode, visual hierarchy, platform conventions and the Gestalt laws.</p>
+          <pre><code>/plugin install ui-design@designer-skills</code></pre>
+        </div>
+        <span class="state"><i class="dot on"></i>Loads on its own</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2><a href="https://github.com/Owl-Listener/designer-skills/tree/main/visual-critique">visual-critique</a></h2>
+          <p class="byline">Skill pack by MC Dean</p>
+          <p class="summary">Critiques hierarchy, colour, typography, composition, affordance, information density and brand consistency.</p>
+          <pre><code>/plugin install visual-critique@designer-skills</code></pre>
+        </div>
+        <span class="state"><i class="dot on"></i>Loads on its own</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2><a href="https://impeccable.style">impeccable</a></h2>
+          <p class="byline">Skill by Paul Bakaus</p>
+          <p class="summary">Designs, critiques, audits, polishes and animates frontends.</p>
+          <pre><code>npx skills add pbakaus/impeccable</code></pre>
+        </div>
+        <span class="state"><i class="dot on"></i>Loads on its own</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>landing-page-design</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">Copy strategy and look before any code, a hero-first build, gates against generic AI pages and a two-reviewer feedback round.</p>
+          <p class="tested"><b>Testing:</b> One dry run and two critic passes. The UX-OS landing page went through it too.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot on"></i>Loads on its own</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2><a href="https://github.com/Leonxlnx/taste-skill">Taste skills</a></h2>
+          <p class="byline">Skill pack by Leonxlnx</p>
+          <p class="summary">Frontend taste skills. This repo holds design-taste-frontend, and the high-end, minimalist and brutalist styles now live in taste-skill-classics.</p>
+          <pre><code>/plugin marketplace add Leonxlnx/taste-skill
+/plugin install taste-skill@taste-skill
+/plugin marketplace add Leonxlnx/taste-skill-classics
+/plugin install taste-skill-classics@taste-skill-classics</code></pre>
+        </div>
+        <span class="state"><i class="dot name"></i>Run by name</span>
+      </article>
+    </div>
+    <p class="caption">The states are from my setup on 9 November 2026. Yours start from whatever you install.</p>
+    <div class="turn">
+      <a class="prev" href="../interaction-design/">Previous: Interaction design</a>
+      <a class="next" href="../prototyping/"><small>Next set</small>Prototyping&nbsp;&rarr;</a>
+    </div>
+  </main>
+
+  <footer>
+    Made by <a href="https://workshopr.io">Workshopr.io</a>. Every pack keeps its author's licence. <a href="https://github.com/bbulman/ux-os">Source on GitHub</a>.
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How a skill gets built: UX-OS</title>
+<meta name="description" content="The eight-step method for bringing a skill into UX-OS, and what testing showed on the first one.">
+<meta property="og:title" content="How a skill gets built: UX-OS">
+<meta property="og:description" content="The eight-step method for bringing a skill into UX-OS, and what testing showed on the first one.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23E54D4D'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="../">UX-OS</a>
+    <nav aria-label="Main">
+      <a href="../#sets">Sets</a>
+      <a class="optional" href="../#why">Why it matters</a>
+      <a href="../method/">Method</a>
+      <a href="https://github.com/bbulman/ux-os">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="crumb"><a href="../">UX-OS</a> / Method</p>
+    <div class="page-head">
+      <h1>How a skill gets built.</h1>
+      <p class="lede">This is the method so far. It comes from building the information-architecture skill, the first one to go through full testing. Steps 1 to 5 are what I did on that skill. Steps 6 to 8 are what it showed I should add.</p>
+    </div>
+    <ol class="method">
+      <li><div><h2>Check what already exists</h2><p>Search the registry and the installed skills first. The information-architecture skill started because two public skills with the same name could not be installed together.</p></div></li>
+      <li><div><h2>Decide how to get it</h2><p>Adopt a good skill as it is, combine several when each covers part of the job, or write one when nothing fits.</p></div></li>
+      <li><div><h2>Check the licence</h2><p>Without an open licence I rewrite and never copy. Every source is credited at the bottom of <code>SKILL.md</code>.</p></div></li>
+      <li><div><h2>Write the skill and its tests together</h2><p><code>SKILL.md</code> holds the method, <code>references/</code> holds long material such as methodology, templates and a rubric, and <code>evals/</code> holds realistic test cases.</p></div></li>
+      <li><div><h2>Test it against no skill at all</h2><p>Run each case with and without the skill using skill-creator, grade both, fix what failed and run it again. Record the score and the cost.</p></div></li>
+      <li><div><h2>Test the real name</h2><p>Ask a fresh session to quote the skill's entry in its list. With this many skills installed, most appear by name only, so the name has to say what the skill is for and rewriting the description changes nothing. Test with the real name, because the tuning tool in skill-creator uses a copy with a temporary name, which can lose to a competing skill for that reason alone.</p></div></li>
+      <li><div><h2>Check Claude can reach it</h2><p>Confirm no <code>skillOverrides</code> entry hides it and no installed skill with the same name competes with it.</p></div></li>
+      <li><div><h2>Register it</h2><p>Add a row to the registry and write down how it was built.</p></div></li>
+    </ol>
+    <div class="prose">
+      <h2>What testing showed on the first skill.</h2>
+      <p>The first round scored 24 of 25 with the skill and 23 of 25 without, which is almost no benefit. After fixes and sharper checks, the second round scored 29 of 29 with the skill and 22 of 29 without. The third round, on the published version, scored 28 of 29 against 19 of 29. In those last two rounds the skill made runs 49% to 73% longer and used 19% to 26% more tokens, so the cost belongs in the record beside the score.</p>
+      <p><a href="https://github.com/bbulman/information-architecture-skill">The skill, its test cases and every grade are on GitHub.</a></p>
+      <p>Trigger testing then showed how much the name matters. The tuning tool in skill-creator scored 0 of 10, with a rival skill winning 9, but its test copy carries a temporary name. With the real name, Claude chose the skill on 9 of 10 requests and on none of 10 near-misses.</p>
+      <h2>When a skill changes.</h2>
+      <p>Rerun its evals after any edit instead of changing it ad hoc.</p>
+      <p><a href="../#sets">Back to the sets</a></p>
+    </div>
+  </main>
+
+  <footer>
+    Made by <a href="https://workshopr.io">Workshopr.io</a>. Every pack keeps its author's licence. <a href="https://github.com/bbulman/ux-os">Source on GitHub</a>.
+  </footer>
+</div>
+</body>
+</html>

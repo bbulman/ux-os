@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Information architecture: UX-OS</title>
-<meta name="description" content="Taxonomies, navigation, sitemaps, URL rules, content models and tree tests. The Claude skills UX-OS uses for information architecture, with authors and install commands.">
+<meta name="description" content="Content inventories, card sorts, taxonomies, labels, sitemaps, navigation, URL rules, content models, redirects, tree tests and findability. The Claude skills UX-OS uses for information architecture, with authors and install commands.">
 <meta property="og:title" content="Information architecture: UX-OS">
-<meta property="og:description" content="Taxonomies, navigation, sitemaps, URL rules, content models and tree tests. The Claude skills UX-OS uses for information architecture, with authors and install commands.">
+<meta property="og:description" content="Content inventories, card sorts, taxonomies, labels, sitemaps, navigation, URL rules, content models, redirects, tree tests and findability. The Claude skills UX-OS uses for information architecture, with authors and install commands.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23E54D4D'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,9 +30,9 @@
     <div class="page-head">
       <h1>Information architecture</h1>
       
-      <p class="lede">Taxonomies, navigation, sitemaps, URL rules, content models and tree tests.</p>
+      <p class="lede">Content inventories, card sorts, taxonomies, labels, sitemaps, navigation, URL rules, content models, redirects, tree tests and findability.</p>
       <p class="why">Where things go decides whether anyone finds them. It's also the one set with a skill tested end to end.</p>
-      <p class="gap"><b>What's missing:</b> Nothing outstanding. Claude chose my skill over the version inside ux-strategy on 9 of 10 test requests.</p>
+      <p class="gap"><b>What's missing:</b> The eleven focused skills split from the original aren't published yet. In one run of the same three test cases, the split scored 28 of 29 and the single skill 25 of 29.</p>
     </div>
     <div class="entries">
       <article class="entry">
@@ -43,6 +43,114 @@
           <p class="tested"><b>Testing:</b> 3 test cases, 3 rounds, every grade public. Latest round: 28 of 29 with the skill, 19 of 29 without. Chosen on 9 of 10 requests and none of 10 near-misses.</p>
           <pre><code>git clone https://github.com/bbulman/information-architecture-skill.git
 cd information-architecture-skill &amp;&amp; ./install.sh</code></pre>
+        </div>
+        <span class="state"><i class="dot on"></i>Loads on its own</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>content-inventory</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">Lists what a site or corpus holds and audits it: keep, revise, merge or retire. Samples large sets and says so.</p>
+          <p class="tested"><b>Testing:</b> Checking script with its own self-test.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot on"></i>Loads on its own</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>card-sort</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">Plans open, closed and hybrid card sorts and analyses the results: similarity, clusters and cards with no clear home.</p>
+          <p class="tested"><b>Testing:</b> Analysis script with its own self-test.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot on"></i>Loads on its own</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>taxonomies</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">Categories, tags, facets and controlled vocabularies, tested by applying them to the real content, with a governance loop.</p>
+          <p class="tested"><b>Testing:</b> Checking script with its own self-test.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot on"></i>Loads on its own</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>sitemaps</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">Decides the structure of a site, app or docs set: shape, depth, template types and one home for every item.</p>
+          <p class="tested"><b>Testing:</b> Checking script with its own self-test.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot on"></i>Loads on its own</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>navigation</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">Menus, sidebars, footers, breadcrumbs and tab bars, with an entry rule for each surface and a plan for mobile and keyboard.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot on"></i>Loads on its own</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>labeling</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">Names for sections, menus and categories in the users' own words, checked with a predictability test.</p>
+          <p class="tested"><b>Testing:</b> Checking script with its own self-test.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot on"></i>Loads on its own</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>content-models</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">Content types, fields and relations for each template, and how the model constrains authors.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot on"></i>Loads on its own</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>url-structure</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">URL rules and slug conventions a platform can enforce, and an audit of the URLs that exist.</p>
+          <p class="tested"><b>Testing:</b> Checking script with its own self-test.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot on"></i>Loads on its own</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>redirect-maps</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">Old-to-new URL maps for migrations and rebuilds, checked for chains, loops and coverage of every old URL.</p>
+          <p class="tested"><b>Testing:</b> Checking script with its own self-test.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot on"></i>Loads on its own</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>tree-tests</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">Plans tree tests and analyses the results: success with confidence intervals, directness and first clicks.</p>
+          <p class="tested"><b>Testing:</b> Analysis script with its own self-test.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot on"></i>Loads on its own</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>findability</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">Works out why people can't find things, analyses search logs, and sets up synonyms, best bets and measures.</p>
+          <p class="tested"><b>Testing:</b> Search-log script with its own self-test.</p>
+          <p class="note">Not published yet.</p>
         </div>
         <span class="state"><i class="dot on"></i>Loads on its own</span>
       </article>

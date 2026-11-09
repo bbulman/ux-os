@@ -113,12 +113,10 @@ const STEPS = [
 
 const authors = [
   ['MC Dean', 'https://github.com/Owl-Listener/designer-skills', 'Designer Skills'],
-  ['Corey Haines', 'https://github.com/coreyhaines31/marketingskills', 'Marketing skills'],
   ['Emil Kowalski', 'https://github.com/emilkowalski/skills', 'Motion skills'],
   ['Leonxlnx', 'https://github.com/Leonxlnx/taste-skill', 'Taste skills'],
   ['Matt Pocock', 'https://github.com/mattpocock/skills', 'prototype'],
   ['Paul Bakaus', 'https://impeccable.style', 'impeccable'],
-  ['RefoundAI', 'https://github.com/RefoundAI/lenny-skills', 'lenny-skills research set'],
 ];
 
 const JOBS = [

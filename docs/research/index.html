@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Research: UX-OS</title>
-<meta name="description" content="Interviews, surveys, usability test plans, synthesis, personas and journey maps. The Claude skills UX-OS uses for research, with authors and install commands.">
+<meta name="description" content="Interviews, surveys, usability tests, diary studies, card sorts, affinity diagrams, empathy maps, personas, journey maps, jobs to be done and research repositories. The Claude skills UX-OS uses for research, with authors and install commands.">
 <meta property="og:title" content="Research: UX-OS">
-<meta property="og:description" content="Interviews, surveys, usability test plans, synthesis, personas and journey maps. The Claude skills UX-OS uses for research, with authors and install commands.">
+<meta property="og:description" content="Interviews, surveys, usability tests, diary studies, card sorts, affinity diagrams, empathy maps, personas, journey maps, jobs to be done and research repositories. The Claude skills UX-OS uses for research, with authors and install commands.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23E54D4D'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,15 +30,135 @@
     <div class="page-head">
       <h1>Research</h1>
       
-      <p class="lede">Interviews, surveys, usability test plans, synthesis, personas and journey maps.</p>
+      <p class="lede">Interviews, surveys, usability tests, diary studies, card sorts, affinity diagrams, empathy maps, personas, journey maps, jobs to be done and research repositories.</p>
       <p class="why">Left alone, Claude will write you a persona from nothing. This set gives it a method for asking real people first.</p>
-      <p class="gap"><b>What's missing:</b> Nothing I built yet.</p>
+      <p class="gap"><b>What's missing:</b> The twelve skills I built aren't published yet, and so far they have only run on made-up test data.</p>
     </div>
     <div class="entries">
       <div class="first-step">
         <p>The <code>@designer-skills</code> commands below need this once.</p>
         <pre><code>/plugin marketplace add Owl-Listener/designer-skills</code></pre>
       </div>
+      <article class="entry">
+        <div>
+          <h2>affinity-diagram</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">Sorts real research notes into themes from the bottom up, counts people rather than notes, and has a second agent re-sort them blind. Needs data to work from.</p>
+          <p class="tested"><b>Testing:</b> Test run: 4 of 26 notes landed differently in the blind re-sort. Run on made-up test data only.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot name"></i>Run by name</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>analyze-card-sort</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">Works out how people grouped your cards: how often pairs stayed together, the groups that form, and the cards with no clear home. Needs real results.</p>
+          <p class="tested"><b>Testing:</b> Analysis script with its own self-test. Run on made-up test data only.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot name"></i>Run by name</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>create-empathy-map</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">Maps what one person says, does, thinks and feels in one moment, and where saying and doing come apart. Works from your beliefs or from real research.</p>
+          <p class="tested"><b>Testing:</b> Checking script with its own self-test. Run on made-up test data only.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot name"></i>Run by name</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>create-persona</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">Splits people on the behaviour that most changes what they need. Works from your beliefs, each one marked and tested, or from real research.</p>
+          <p class="tested"><b>Testing:</b> Checking script with its own self-test. Run on made-up test data only.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot name"></i>Run by name</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>create-journey-map</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">Maps what happens today, or what should happen in future, from your beliefs or from real research. A future journey is labelled as a proposal.</p>
+          <p class="tested"><b>Testing:</b> Checking script with its own self-test. Run on made-up test data only.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot name"></i>Run by name</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>create-jtbd</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">Works out what people are trying to get done, apart from any product, from your beliefs or from the stories of people who actually switched.</p>
+          <p class="tested"><b>Testing:</b> A false belief planted in the test came back contradicted. Run on made-up test data only.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot name"></i>Run by name</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>create-interview-script</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">A short guide built on real past events, with every question tied to something it tests, read cold by a second agent before anyone runs it.</p>
+          <p class="tested"><b>Testing:</b> Run on made-up test data only.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot name"></i>Run by name</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>create-usability-plan</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">Realistic tasks and pass lines set before anyone is tested, so the result can't be argued into a pass.</p>
+          <p class="tested"><b>Testing:</b> Run on made-up test data only.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot name"></i>Run by name</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>create-diary-study</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">A diary study people will finish: entries under two minutes, a plan for dropouts, and everything participants receive.</p>
+          <p class="tested"><b>Testing:</b> Run on made-up test data only.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot name"></i>Run by name</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>create-survey</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">Writes the analysis first, then only the questions it needs, with sample sizes worked out by a script.</p>
+          <p class="tested"><b>Testing:</b> Sample size script with its own self-test. Run on made-up test data only.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot name"></i>Run by name</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>create-research-repository</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">One place for what you've learned across studies, with each insight's strength and age, that answers questions without guessing.</p>
+          <p class="tested"><b>Testing:</b> Run on made-up test data only.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot name"></i>Run by name</span>
+      </article>
+      <article class="entry">
+        <div>
+          <h2>summarize-research</h2>
+          <p class="byline">Skill by Bill Bulman and Claude</p>
+          <p class="summary">Turns a transcript or a study into findings rated by how many people stand behind them, with what cuts against each. Needs real data.</p>
+          <p class="tested"><b>Testing:</b> Its draft passed the checks, but it hasn't yet written its output file in a test.</p>
+          <p class="note">Not published yet.</p>
+        </div>
+        <span class="state"><i class="dot name"></i>Run by name</span>
+      </article>
       <article class="entry">
         <div>
           <h2><a href="https://github.com/Owl-Listener/designer-skills/tree/main/design-research">design-research</a></h2>

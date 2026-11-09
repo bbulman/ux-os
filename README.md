@@ -12,7 +12,7 @@ Eleven sets, from research to prototyping, and one record of what loads, who wro
 | --- | --- | --- |
 | [Research](https://bbulman.github.io/ux-os/research/) | Interviews, surveys, usability test plans, synthesis, personas and journey maps. | 3 |
 | [Design systems](https://bbulman.github.io/ux-os/design-systems/) | Tokens, components, naming, governance and documentation. | 3 |
-| [Information architecture](https://bbulman.github.io/ux-os/information-architecture/) | Taxonomies, navigation, sitemaps, URL rules, content models and tree tests. | 2 |
+| [Information architecture](https://bbulman.github.io/ux-os/information-architecture/) | Taxonomies, navigation, sitemaps, URL rules, content models and tree tests. | 1 |
 | [Interaction design](https://bbulman.github.io/ux-os/interaction-design/) | States, forms, feedback, errors, navigation patterns, UX laws and motion. | 2 |
 | [Visual design](https://bbulman.github.io/ux-os/visual-design/) | Hierarchy, colour, type, layout, visual critique and page craft. | 5 |
 | [Prototyping](https://bbulman.github.io/ux-os/prototyping/) | Wireframes, user flows, concept selection, prototype strategy, test plans and heuristic evaluation. | 2 |
@@ -37,6 +37,6 @@ One skill, three test cases, and I wrote both the skill and the checks. That's a
 
 ## Credit
 
-30 of the 38 entries are third-party, and MC Dean wrote 23 of them. Every pack keeps its author's licence, and each set page links to its source.
+29 of the 37 entries are third-party, and MC Dean wrote 23 of them. Every pack keeps its author's licence, and each set page links to its source.
 
 The site is generated from `data/registry.json`. To change it, edit that file and run `node build.mjs`.

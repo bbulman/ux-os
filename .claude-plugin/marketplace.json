@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "ux-os",
+  "metadata": {
+    "description": "UX research for Claude Code that keeps what you believe apart from what you found."
+  },
+  "owner": {
+    "name": "Bill Bulman"
+  },
+  "plugins": [
+    {
+      "name": "ux-os",
+      "description": "Personas, journeys, jobs and empathy maps in proto or real mode, study plans, synthesis, and real-mode citations that link to the exact passage.",
+      "version": "0.1.0",
+      "source": "./plugin",
+      "category": "design"
+    }
+  ]
+}

@@ -198,6 +198,15 @@ ol.steps p { margin: 0; color: var(--muted); font-size: var(--text-ui); }
 .tested b { font-weight: 600; }
 .note { margin: 0; color: var(--muted); font-size: var(--text-ui); max-width: var(--measure); }
 .entry pre { margin: var(--space-3) 0 0; }
+.pre-label { margin: var(--space-3) 0 0; font-size: var(--text-ui); font-weight: 600; }
+.entry .pre-label + pre { margin-top: var(--space-1); }
+.run-it { padding: var(--space-8) 0; border-bottom: var(--rule) solid var(--line); }
+.run-it h2 { font: 600 var(--text-entry)/var(--leading-snug) var(--serif); letter-spacing: 0; margin: 0 0 var(--space-3); }
+.run-it h3 { font-size: var(--text-ui); font-weight: 600; margin: var(--space-5) 0 var(--space-1); }
+.run-it p { margin: 0 0 var(--space-3); max-width: var(--measure); }
+.prompts { list-style: none; margin: var(--space-3) 0 0; padding: 0; display: grid; gap: var(--space-4); }
+.prompts p { margin: 0 0 var(--space-1); }
+.prompts pre { margin: 0; }
 .state { display: inline-flex; align-items: center; gap: var(--space-2); font: 500 var(--text-mono)/var(--leading-normal) var(--mono); justify-self: end; align-self: start; padding-top: var(--space-1-5); white-space: nowrap; }
 .turn { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-6); padding: var(--space-10) 0 var(--space-16); }
 .turn .next { font: 600 var(--text-next)/1.2 var(--serif); text-decoration: none; text-align: right; }

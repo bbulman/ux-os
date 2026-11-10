@@ -161,7 +161,7 @@ ${proposed.map(row).join('\n')}
     <section id="why" aria-labelledby="why-h">
       <h2 id="why-h">A pile of skills is not a system.</h2>
       <p class="intro">On 24 October I built an information-architecture skill, because two public ones shared a name and couldn't be installed together. Then I tested it against no skill at all. With the skill: 24 out of 25. Without it: 23.</p>
-      <p class="intro">One point. Installing a skill told me nothing about whether it helped, or whether Claude would ever open it. An operating system answers those questions for programs: what's loaded, who gets priority, what each one costs. UX-OS answers them for skills. There's no package to install. It's four jobs you do on whatever you've got, and the record of how they came out.</p>
+      <p class="intro">One point. Installing a skill told me nothing about whether it helped, or whether Claude would ever open it. An operating system answers those questions for programs: what's loaded, who gets priority, what each one costs. UX-OS answers them for skills. There's no single package to install. It's four jobs you do on whatever you've got, and the record of how they came out.</p>
       <ol class="jobs">
 ${JOBS.map(([stat, label, title, text]) => `        <li class="job">
           <div><p class="stat">${esc(stat)}</p><p class="stat-label">${esc(label)}</p></div>
@@ -203,6 +203,9 @@ ${STEPS.map(([t, short]) => `        <li><h3>${esc(t)}</h3><p>${esc(short)}</p><
 `,
 });
 
+const labelled = (label, lines) => `          <p class="pre-label">${esc(label)}</p>\n          <pre><code>${esc(lines.join('\n'))}</code></pre>\n`;
+const withCode = (text) => esc(text).replace(/`([^`]+)`/g, '<code>$1</code>');
+
 function entry(e) {
   const state = STATES[e.status];
   const title = e.source ? `<a href="${esc(e.source)}">${esc(e.name)}</a>` : esc(e.name);
@@ -210,13 +213,41 @@ function entry(e) {
   if (e.scope === 'workshopr') notes.push('Runs only on Workshopr, so there is nothing to install.');
   else if (!e.source) notes.push('Not published yet.');
   if (e.installNote) notes.push(e.installNote);
+  if (e.credit) notes.push(e.credit);
   return `      <article class="entry">
         <div>
           <h2>${title}</h2>
           <p class="summary">${esc(e.summary)}</p>
-${e.proof ? `          <p class="tested"><b>Testing:</b> ${esc(e.proof)}</p>\n` : ''}${notes.length ? `          <p class="note">${esc(notes.join(' '))}</p>\n` : ''}${e.install ? `          <pre><code>${esc(e.install.join('\n'))}</code></pre>\n` : ''}        </div>
+${e.proof ? `          <p class="tested"><b>Testing:</b> ${esc(e.proof)}</p>\n` : ''}${notes.length ? `          <p class="note">${esc(notes.join(' '))}</p>\n` : ''}${e.prompts ? labelled('Example prompts', e.prompts) : ''}${e.install ? (e.prompts ? labelled('Install', e.install) : `          <pre><code>${esc(e.install.join('\n'))}</code></pre>\n`) : ''}        </div>
         <span class="state"><i class="dot ${state.cls}"></i>${state.label}</span>
       </article>`;
+}
+
+function runIt(r) {
+  return `      <section class="run-it" aria-labelledby="run-it-h">
+        <h2 id="run-it-h">How to run it</h2>
+${r.install ? `        <p>${withCode(r.installIntro)}</p>
+        <pre><code>${esc(r.install.join('\n'))}</code></pre>
+` : ''}${r.intro.map((text) => `        <p>${withCode(text)}</p>`).join('\n')}
+        <h3>Example prompts</h3>
+        <p>${withCode(r.promptsNote)}</p>
+        <ul class="prompts">
+${r.prompts.map(([when, prompt]) => `          <li><p>${esc(when)}</p><pre><code>${esc(prompt)}</code></pre></li>`).join('\n')}
+        </ul>
+      </section>\n`;
+}
+
+// A set with a how-to block lists its commands apart from its skills.
+function entryList(s) {
+  if (!s.runIt) return s.entries.map(entry).join('\n');
+  const commands = s.entries.filter((e) => e.type === 'Command');
+  const skills = s.entries.filter((e) => e.type !== 'Command');
+  return [
+    '      <p class="group">Commands: run a whole stage, or set up a project</p>',
+    ...commands.map(entry),
+    '      <p class="group">Skills: each makes one deliverable</p>',
+    ...skills.map(entry),
+  ].join('\n');
 }
 
 function setPage(s, i) {
@@ -241,7 +272,7 @@ function setPage(s, i) {
 ${needsMarket ? `      <div class="first-step">
         <p>The <code>@designer-skills</code> commands below need this once.</p>
         <pre><code>${esc(MARKETPLACE)}</code></pre>
-      </div>\n` : ''}${s.entries.map(entry).join('\n')}
+      </div>\n` : ''}${s.runIt ? runIt(s.runIt) : ''}${entryList(s)}
     </div>
     <p class="caption">The states are from my setup on ${asOfLabel}. Yours start from whatever you install.</p>
     <div class="turn">
@@ -299,7 +330,7 @@ ${proposed.map((s) => `| [${s.name}](${SITE}${s.slug}/) (proposed) | ${s.covers}
 
 A pile of skills is not a system. On 24 October I built an information-architecture skill and tested it against no skill at all. It scored 24 of 25. Claude with no skill scored 23.
 
-An operating system decides what's loaded, who gets priority and what each program costs. UX-OS does that for skills. There's no package to install. It's four jobs you do on whatever you've got, and the record of how they came out:
+An operating system decides what's loaded, who gets priority and what each program costs. UX-OS does that for skills. There's no single package to install. It's four jobs you do on whatever you've got, and the record of how they came out:
 
 - **Decide what loads.** In one project of mine, about 36 of roughly 505 skills get a description in Claude's list. The rest show up as a bare name.
 - **Settle who wins.** Under a temporary test name, my skill won 0 of 10 requests. Under its real name, 9 of 10.

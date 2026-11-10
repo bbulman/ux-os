@@ -10,7 +10,7 @@ Eleven sets, from research to prototyping, and one record of what loads, who wro
 
 | Set | What it covers | Entries |
 | --- | --- | --- |
-| [Research](https://bbulman.github.io/ux-os/research/) | Interviews, surveys, usability tests, diary studies, card sorts, affinity diagrams, empathy maps, personas, journey maps, jobs to be done and research repositories. | 12 |
+| [Research](https://bbulman.github.io/ux-os/research/) | Interviews, surveys, usability tests, diary studies, card sorts, affinity diagrams, empathy maps, personas, journey maps, jobs to be done and research repositories. | 17 |
 | [Design systems](https://bbulman.github.io/ux-os/design-systems/) | Tokens, components, naming, governance and documentation. | 3 |
 | [Information architecture](https://bbulman.github.io/ux-os/information-architecture/) | Content inventories, card sorts, taxonomies, labels, sitemaps, navigation, URL rules, content models, redirects, tree tests and findability. | 12 |
 | [Interaction design](https://bbulman.github.io/ux-os/interaction-design/) | States, forms, feedback, errors, navigation patterns, UX laws and motion. | 2 |
@@ -26,7 +26,7 @@ Eleven sets, from research to prototyping, and one record of what loads, who wro
 
 A pile of skills is not a system. On 24 October I built an information-architecture skill and tested it against no skill at all. It scored 24 of 25. Claude with no skill scored 23.
 
-An operating system decides what's loaded, who gets priority and what each program costs. UX-OS does that for skills. There's no package to install. It's four jobs you do on whatever you've got, and the record of how they came out:
+An operating system decides what's loaded, who gets priority and what each program costs. UX-OS does that for skills. There's no single package to install. It's four jobs you do on whatever you've got, and the record of how they came out:
 
 - **Decide what loads.** In one project of mine, about 36 of roughly 505 skills get a description in Claude's list. The rest show up as a bare name.
 - **Settle who wins.** Under a temporary test name, my skill won 0 of 10 requests. Under its real name, 9 of 10.
@@ -37,6 +37,6 @@ One skill, three test cases, and I wrote both the skill and the checks. That's a
 
 ## Credit
 
-26 of the 57 entries are third-party, and MC Dean wrote 22 of them. Every pack keeps its author's licence, and each set page links to its source.
+26 of the 62 entries are third-party, and MC Dean wrote 22 of them. Every pack keeps its author's licence, and each set page links to its source.
 
 The site is generated from `data/registry.json`. To change it, edit that file and run `node build.mjs`.

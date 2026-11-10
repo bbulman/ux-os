@@ -213,7 +213,7 @@ function entry(e) {
   return `      <article class="entry">
         <div>
           <h2>${title}</h2>
-${e.origin === 'third' ? `          <p class="byline">${esc(e.type)} by ${esc(e.author)}</p>\n` : ''}          <p class="summary">${esc(e.summary)}</p>
+          <p class="summary">${esc(e.summary)}</p>
 ${e.proof ? `          <p class="tested"><b>Testing:</b> ${esc(e.proof)}</p>\n` : ''}${notes.length ? `          <p class="note">${esc(notes.join(' '))}</p>\n` : ''}${e.install ? `          <pre><code>${esc(e.install.join('\n'))}</code></pre>\n` : ''}        </div>
         <span class="state"><i class="dot ${state.cls}"></i>${state.label}</span>
       </article>`;
@@ -225,7 +225,7 @@ function setPage(s, i) {
   const needsMarket = s.entries.some((e) => e.marketplace);
   return page({
     title: `${s.name}: UX-OS`,
-    description: `${s.covers} The Claude skills UX-OS uses for ${s.name.toLowerCase()}, with authors and install commands.`,
+    description: `${s.covers} The Claude skills UX-OS uses for ${s.name.toLowerCase()}, with install commands.`,
     depth: 1,
     body: `
   <main>

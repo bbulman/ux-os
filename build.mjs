@@ -103,7 +103,7 @@ const legend = `<span class="legend">
 const STEPS = [
   ['Check what already exists', 'Search the registry and the installed skills first.', 'Search the registry and the installed skills first. The information-architecture skill started because two public skills with the same name could not be installed together.'],
   ['Decide how to get it', 'Adopt one, combine several, or write it.', 'Adopt a good skill as it is, combine several when each covers part of the job, or write one when nothing fits.'],
-  ['Check the licence', 'No open licence means rewrite, never copy.', 'Without an open licence I rewrite and never copy. Every source is credited at the bottom of <code>SKILL.md</code>.'],
+  ['Check the licence', 'No open licence means rewrite, never copy.', 'Without an open licence I rewrite and never copy.'],
   ['Write the skill and its tests together', 'Method, reference material and realistic cases.', '<code>SKILL.md</code> holds the method, <code>references/</code> holds long material such as methodology, templates and a rubric, and <code>evals/</code> holds realistic test cases.'],
   ['Test it against no skill at all', 'Run each case both ways. Record score and cost.', 'Run each case with and without the skill using skill-creator, grade both, fix what failed and run it again. Record the score and the cost.'],
   ['Test the real name', 'Most skills reach Claude by name alone.', 'Ask a fresh session to quote the skill\'s entry in its list. With this many skills installed, most appear by name only, so the name has to say what the skill is for and rewriting the description changes nothing. Test with the real name, because the tuning tool in skill-creator uses a copy with a temporary name, which can lose to a competing skill for that reason alone.'],
@@ -213,8 +213,7 @@ function entry(e) {
   return `      <article class="entry">
         <div>
           <h2>${title}</h2>
-          <p class="byline">${esc(e.type)} by ${esc(e.author)}</p>
-          <p class="summary">${esc(e.summary)}</p>
+${e.origin === 'third' ? `          <p class="byline">${esc(e.type)} by ${esc(e.author)}</p>\n` : ''}          <p class="summary">${esc(e.summary)}</p>
 ${e.proof ? `          <p class="tested"><b>Testing:</b> ${esc(e.proof)}</p>\n` : ''}${notes.length ? `          <p class="note">${esc(notes.join(' '))}</p>\n` : ''}${e.install ? `          <pre><code>${esc(e.install.join('\n'))}</code></pre>\n` : ''}        </div>
         <span class="state"><i class="dot ${state.cls}"></i>${state.label}</span>
       </article>`;

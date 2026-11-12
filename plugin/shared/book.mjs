@@ -8,6 +8,7 @@ import { tmpdir } from 'node:os';
 import { basename, dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
+import { ideaSlug } from './layout.mjs';
 import { command } from './names.mjs';
 import { driftNote, readProfile } from './profile.mjs';
 import { claims as claimsOf, firstTable, needsBar, parseFile, parseMarkdown, parseTag, stripTags, tagsIn, VERDICT_RANK } from './parse.mjs';
@@ -127,6 +128,7 @@ function tagState(t) {
   if (t.kind === 'gap') return 'gap';
   if (t.kind === 'inference') return 'inference';
   if (t.kind === 'proposed') return 'proposed';
+  if (t.kind === 'practice') return 'untested';
   if (t.kind === 'belief') {
     switch (t.verdict) {
       case 'supported': return 'backed';
@@ -147,7 +149,7 @@ function stateOf(tags) {
 
 function compactTags(tags) {
   return tags.map((t) => {
-    const o = { k: t.kind === 'gap' ? 'g' : t.kind === 'belief' ? 'b' : t.kind === 'inference' ? 'i' : t.kind === 'proposed' ? 'p' : 's' };
+    const o = { k: t.kind === 'gap' ? 'g' : t.kind === 'belief' ? 'b' : t.kind === 'inference' ? 'i' : t.kind === 'proposed' ? 'p' : t.kind === 'practice' ? 'r' : 's' };
     if (t.kind === 'belief') { o.b = t.beliefs[0]; o.v = t.verdict ?? 'no evidence'; }
     if (t.sources?.length) o.s = t.sources;
     if (t.participants?.length) o.p = t.participants;
@@ -226,7 +228,7 @@ function loadContext(folder) {
   for (const [view, file] of Object.entries(FILE)) {
     if (existsSync(join(folder, file))) ctx.docs[view] = parseFile(join(folder, file));
   }
-  ctx.name = ctx.brief.title || sentence(basename(resolve(folder)).replace(/[-_]+/g, ' '));
+  ctx.name = ctx.brief.title || sentence(ideaSlug(folder).replace(/[-_]+/g, ' '));
   return ctx;
 }
 
@@ -1083,7 +1085,7 @@ async function selfTest() {
   const pass = (msg) => console.log(`ok    ${msg}`);
 
   const dir = mkdtempSync(join(tmpdir(), 'book-self-'));
-  const write = (folder, files) => { mkdirSync(folder, { recursive: true }); for (const [f, c] of Object.entries(files)) writeFileSync(join(folder, f), c); };
+  const write = (folder, files) => { mkdirSync(folder, { recursive: true }); for (const [f, c] of Object.entries(files)) { mkdirSync(dirname(join(folder, f)), { recursive: true }); writeFileSync(join(folder, f), c); } };
   try {
     // 1. the full fixture: every view has data, no raw tag, every claim has a state
     const full = join(dir, 'full');

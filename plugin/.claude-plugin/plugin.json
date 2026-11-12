@@ -1,7 +1,7 @@
 {
   "name": "ux-os",
   "description": "UX research that keeps beliefs and findings apart: personas, journeys, jobs and empathy maps in proto or real mode, study plans, synthesis, and real-mode citations that link to the exact passage.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": { "name": "Bill Bulman" },
   "skills": "./skills/"
 }

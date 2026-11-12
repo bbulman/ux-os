@@ -1,5 +1,6 @@
 // Parses a research output into the structure check.mjs and book.mjs share.
 
+import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 
 export const VERDICTS = ['supported', 'contradicted', 'no evidence', 'confirmed', 'refuted', 'mixed'];
@@ -7,7 +8,7 @@ export const VERDICTS = ['supported', 'contradicted', 'no evidence', 'confirmed'
 export const VERDICT_RANK = ['confirmed', 'refuted', 'mixed', 'contradicted', 'supported', 'no evidence'];
 const BAR_VERDICTS = ['confirmed', 'refuted', 'mixed'];
 // A tag may be written as a Markdown link: [S20 P3](evidence/S20-interview.md#p3-excerpt-4).
-const TAG = /\[(S\d+[^\]]*|B\d+[^\]]*|inference[^\]]*|proposed[^\]]*|gap)\](?:\(([^()\s]+)\))?/g;
+const TAG = /\[(S\d+[^\]]*|B\d+[^\]]*|inference[^\]]*|proposed[^\]]*|practice(?:\s+[SPB]\d[^\]]*)?|gap)\](?:\(([^()\s]+)\))?/g;
 
 function references(text) {
   const sources = [...text.matchAll(/\bS\d+\b/g)].map((m) => m[0]);
@@ -35,6 +36,9 @@ function toLink(target) {
 export function parseTag(body, target = null) {
   const tag = { raw: `[${body}]`, kind: 'source', sources: [], participants: [], beliefs: [], verdict: null, threshold: false, valid: true, link: toLink(target) };
   if (body === 'gap') return { ...tag, kind: 'gap' };
+  // General practice a third-party skill asserts. It cites nothing, so ids after it make it invalid.
+  // The pattern above only takes the bare word or the word followed by ids, so prose such as [practices vary] stays prose.
+  if (body.startsWith('practice')) return { ...tag, kind: 'practice', valid: body === 'practice' };
   if (/^B\d+/.test(body)) {
     const belief = body.match(/^(B\d+):\s*(.*)$/);
     if (!belief) return { ...tag, kind: 'belief', beliefs: [body.match(/^B\d+/)[0]], valid: false };
@@ -162,3 +166,12 @@ export function tableRows(block) {
 export function firstTable(container) {
   return container.blocks.find((b) => b.type === 'table') ?? null;
 }
+
+// A work file's Claims section exactly as check.mjs reads it: from its heading up to ## Output, or to the end when there is none.
+function claimsText(text) {
+  const cut = text.search(/^## Output[ \t]*$/m);
+  const above = cut === -1 ? text : text.slice(0, cut);
+  const start = above.search(/^## Claims[ \t]*$/m);
+  return start === -1 ? '' : above.slice(start);
+}
+export const claimsHash = (text) => createHash('sha256').update(claimsText(text)).digest('hex').slice(0, 12);

@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-// Reads a project's .research-profile.md, which carries the book's look and the design system connection.
+// Reads a project's .research-profile.md, which carries the book's look, the design system connection and the house rules.
 
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, statSync, utimesSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { basename, dirname, join, resolve } from 'node:path';
+import { basename, dirname, isAbsolute, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { command } from './names.mjs';
 import { parseMarkdown } from './parse.mjs';
@@ -33,7 +33,7 @@ const bullets = (section) => (section?.blocks ?? []).filter((b) => b.type === 'b
 
 export function readProfile(folder) {
   const path = findProfile(folder);
-  const profile = { path, look: {}, designSystem: null };
+  const profile = { path, look: {}, designSystem: null, houseRules: [] };
   if (!path) return profile;
   const doc = parseMarkdown(readFileSync(path, 'utf8'));
   for (const b of bullets(doc.sections.find((s) => /^book look$/i.test(s.name)))) {
@@ -48,6 +48,8 @@ export function readProfile(folder) {
       if (m) profile.designSystem[SYSTEM_KEYS[m[1].toLowerCase()]] = m[2].replace(/^`|`$/g, '').trim();
     }
   }
+  // One file per bullet, relative to the project root.
+  profile.houseRules = bullets(doc.sections.find((s) => /^house rules$/i.test(s.name))).map((b) => b.text.replace(/`/g, '').trim()).filter(Boolean);
   return profile;
 }
 
@@ -73,35 +75,55 @@ const LOOK_LABELS = [['display', 'Display font'], ['text', 'Text font'], ['accen
 const SYSTEM_LABELS = [['tokens', 'Tokens'], ['tokensHash', 'Tokens hash'], ['catalogue', 'Catalogue'], ['finder', 'Finder']];
 const sectionBody = (values, labels) => labels.filter(([key]) => values?.[key]).map(([key, label]) => `- ${label}: ${values[key]}`).join('\n');
 
-function putSection(text, heading, body) {
-  if (!body) return text;
-  const block = `## ${heading}\n\n${body}\n`;
+// With no body the section is left as it is, unless remove is set, which takes it out.
+function putSection(text, heading, body, remove = false) {
+  if (!body && !remove) return text;
+  const block = body ? `## ${heading}\n\n${body}\n` : '';
   const found = new RegExp(`^## ${heading}[ \\t]*$`, 'mi').exec(text);
-  if (!found) return `${text.replace(/\n*$/, '\n')}\n${block}`;
+  if (!found) return block ? `${text.replace(/\n*$/, '\n')}\n${block}` : text;
   const rest = text.slice(found.index + found[0].length);
   const next = rest.search(/^## /m);
   return `${text.slice(0, found.index)}${block}${next === -1 ? '' : `\n${rest.slice(next)}`}`;
 }
 
-// Rewrites only the two sections this connection owns, and leaves the file alone when nothing differs.
-export function writeConnection(projectDir, { look, designSystem }) {
+// Rewrites only the three sections this connection owns, and leaves the file alone when nothing differs.
+export function writeConnection(projectDir, { look, designSystem, houseRules }) {
   const path = join(projectDir, '.research-profile.md');
   const exists = existsSync(path);
   const before = exists ? readFileSync(path, 'utf8') : `# Research profile: ${basename(resolve(projectDir))}\n`;
   const tokensPath = designSystem?.tokens ? join(projectDir, designSystem.tokens) : null;
   const system = tokensPath && existsSync(tokensPath) ? { ...designSystem, tokensHash: tokenHash(tokensPath) } : designSystem;
-  const after = putSection(putSection(before, 'Book look', sectionBody(look, LOOK_LABELS)), 'Design system', sectionBody(system, SYSTEM_LABELS));
+  // Absent house rules leave the section alone. An empty list removes it.
+  const rules = (houseRules ?? []).map((file) => `- ${file}`).join('\n');
+  const after = putSection(putSection(putSection(before, 'Book look', sectionBody(look, LOOK_LABELS)), 'Design system', sectionBody(system, SYSTEM_LABELS)), 'House rules', rules, Array.isArray(houseRules));
   const changed = !exists || after !== before;
   if (changed) writeFileSync(path, after);
   return { changed, path };
 }
 
+// A house rule is a file inside the project root. Anything that climbs out of it is refused.
+export function insideRoot(root, file) {
+  const rel = relative(root, resolve(root, file));
+  return !isAbsolute(file) && rel !== '' && rel !== '..' && !rel.startsWith(`..${sep}`);
+}
+
+function houseRuleProblems(profile) {
+  const root = dirname(profile.path);
+  return profile.houseRules.flatMap((file) => {
+    if (!insideRoot(root, file)) return [`House rules: ${file} is outside the project root`];
+    return existsSync(join(root, file)) ? [] : [`House rules: ${file} does not exist`];
+  });
+}
+
 export function checkConnection(project) {
   const profile = readProfile(project);
   if (!profile.path) return { problems: ['no .research-profile.md found'], summary: [] };
+  const problems = houseRuleProblems(profile);
   const system = profile.designSystem;
-  if (!system) return { problems: ['the profile has no ## Design system section'], summary: [] };
-  const problems = [];
+  if (!system) {
+    if (!profile.houseRules.length) problems.push('the profile has no ## Design system or ## House rules section');
+    return { problems, summary: [`House rules: ${profile.houseRules.length} files`] };
+  }
   if (system.tokens && !existsSync(join(dirname(profile.path), system.tokens))) problems.push(`Tokens: ${system.tokens} does not exist`);
   const names = system.catalogue ? catalogueNames(profile) : null;
   if (!system.catalogue) problems.push('no Catalogue line');
@@ -112,7 +134,7 @@ export function checkConnection(project) {
     try { scripts = JSON.parse(readFileSync(join(dirname(profile.path), 'package.json'), 'utf8')).scripts ?? {}; } catch { scripts = {}; }
     if (!script || !scripts[script]) problems.push('Finder: only npm run <a script in package.json> -- "<need>" is allowed');
   }
-  const summary = [`Look: ${Object.keys(profile.look).length} values`, `Tokens: ${system.tokens ?? 'none'}`, `Catalogue: ${names?.size ?? 0} components`, `Finder: ${system.finder ?? 'none'}`];
+  const summary = [`Look: ${Object.keys(profile.look).length} values`, `Tokens: ${system.tokens ?? 'none'}`, `Catalogue: ${names?.size ?? 0} components`, `Finder: ${system.finder ?? 'none'}`, `House rules: ${profile.houseRules.length} files`];
   return { problems, summary };
 }
 
@@ -233,6 +255,48 @@ function selfTest() {
     const run = spawnSync(process.execPath, [self, '--write', root, file], { encoding: 'utf8' });
     assert(run.status === 0, `status ${run.status}: ${run.stderr}`);
     assert(existsSync(join(root, '.research-profile.md')), 'no profile written');
+  });
+  test('house rules are written, read back, and replaced as a section', () => {
+    const root = project('rules', { '.research-profile.md': '# Research profile: Mine\n\n## Output\n\n- Folder: x\n' });
+    writeConnection(root, { ...CONNECTION, houseRules: ['DESIGN.md', 'docs/taste.md'] });
+    assert(readProfile(root).houseRules.join('|') === 'DESIGN.md|docs/taste.md', `read back as ${readProfile(root).houseRules.join('|')}`);
+    writeConnection(root, { ...CONNECTION, houseRules: ['taste.md'] });
+    const text = profileIn(root);
+    assert(text.includes('## House rules\n\n- taste.md\n') && !text.includes('DESIGN.md'), 'house rules not replaced');
+    assert(text.includes('## Output\n\n- Folder: x\n'), 'Output changed');
+  });
+  test('a connection with no house rules leaves the section alone', () => {
+    const root = project('keeprules', { '.research-profile.md': '# Research profile: Mine\n\n## House rules\n\n- `DESIGN.md`\n' });
+    writeConnection(root, CONNECTION);
+    assert(readProfile(root).houseRules.join('|') === 'DESIGN.md', 'house rules lost, or the backticks kept');
+  });
+  test('--check exits 1 on a house rule file that does not exist', () => {
+    const files = { 'tokens.css': ':root{}', 'catalogue.json': '{"components":{"ws_a":{}}}', 'package.json': '{"scripts":{"ds:find":"x"}}', 'DESIGN.md': '# Design\n' };
+    const good = project('rulesok', files);
+    writeConnection(good, { ...CONNECTION, houseRules: ['DESIGN.md'] });
+    assert(spawnSync(process.execPath, [self, '--check', good], { encoding: 'utf8' }).status === 0, 'should exit 0');
+    const bad = project('rulesgone', files);
+    writeConnection(bad, { ...CONNECTION, houseRules: ['taste.md'] });
+    const run = spawnSync(process.execPath, [self, '--check', bad], { encoding: 'utf8' });
+    assert(run.status === 1 && run.stdout.includes('taste.md does not exist'), `status ${run.status}: ${run.stdout}`);
+  });
+  test('an empty list of house rules removes the section, and other sections stay', () => {
+    const root = project('norules', { '.research-profile.md': '# Research profile: Mine\n\n## House rules\n\n- DESIGN.md\n\n## Output\n\n- Folder: x\n' });
+    writeConnection(root, { houseRules: [] });
+    const text = profileIn(root);
+    assert(!text.includes('House rules') && text.includes('## Output\n\n- Folder: x\n'), text);
+  });
+  test('--check reads house rules with no design system, and refuses a path out of the project', () => {
+    const root = project('rulesonly', { 'DESIGN.md': '# Design\n' });
+    writeConnection(root, { houseRules: ['DESIGN.md'] });
+    const ok = spawnSync(process.execPath, [self, '--check', root], { encoding: 'utf8' });
+    assert(ok.status === 0, `status ${ok.status}: ${ok.stdout}`);
+    for (const [name, bad] of [['up', '../outside.md'], ['abs', '/etc/hosts'], ['gone', 'taste.md']]) {
+      const r = project(`rules-${name}`, { 'DESIGN.md': '# Design\n' });
+      writeConnection(r, { houseRules: ['DESIGN.md', bad] });
+      const run = spawnSync(process.execPath, [self, '--check', r], { encoding: 'utf8' });
+      assert(run.status === 1 && run.stdout.includes(bad), `${bad}: status ${run.status}: ${run.stdout}`);
+    }
   });
   rmSync(dir, { recursive: true, force: true });
   console.log(failures ? `\n${failures} self-test failure(s)` : '\nself-test passed');

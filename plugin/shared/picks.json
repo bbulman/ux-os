@@ -1,0 +1,114 @@
+[
+  {
+    "job": "form-design",
+    "set": "Interaction design",
+    "says": [
+      "design a form",
+      "signup form",
+      "checkout form",
+      "form fields and validation",
+      "redo this form"
+    ],
+    "skill": "interaction-design:design-form",
+    "pack": "interaction-design",
+    "rival": {
+      "skill": "interaction-design:form-design",
+      "why_not": "design-form runs form-design as its first step, so picking it includes the rival, then adds passes from hicks-law, millers-law, fitts-law, error-handling-ux, feedback-patterns and loading-states that form-design alone does not run"
+    },
+    "kind": "form",
+    "checked": "Checked 2026-11-12 against the body text of the synced copy, ~/.claude/plugins/synced/<account>/interaction-design~g2, plugin version 1.0.0, which the marketplace copy matches. The cache copy has the same bodies with shorter descriptions, so no sentence here rests on a description line."
+  },
+  {
+    "job": "state-map",
+    "set": "Interaction design",
+    "says": [
+      "map the states",
+      "state machine",
+      "states and transitions",
+      "what states can this component be in"
+    ],
+    "skill": "interaction-design:map-states",
+    "pack": "interaction-design",
+    "rival": {
+      "skill": "interaction-design:state-machine",
+      "why_not": "it models states, events, transitions, guards and actions, loading and error states included, but map-states also runs loading-states, error-handling-ux, feedback-patterns and animation-principles over each state and transition"
+    },
+    "kind": "states",
+    "checked": "Checked 2026-11-12 against the body text of the synced copy, ~/.claude/plugins/synced/<account>/interaction-design~g2, plugin version 1.0.0, which the marketplace copy matches. The cache copy has the same bodies with shorter descriptions, so no sentence here rests on a description line."
+  },
+  {
+    "job": "error-flow",
+    "set": "Interaction design",
+    "says": [
+      "error flow",
+      "what happens when this fails",
+      "error messages and recovery",
+      "retry and timeout"
+    ],
+    "skill": "interaction-design:error-flow",
+    "pack": "interaction-design",
+    "rival": {
+      "skill": "interaction-design:error-handling-ux",
+      "why_not": "it gives general rules for preventing, detecting, explaining and recovering from errors, timeouts and retries included, with no one feature in view, where error-flow takes one named feature and works through its errors step by step"
+    },
+    "kind": "errors",
+    "checked": "Checked 2026-11-12 against the body text of the synced copy, ~/.claude/plugins/synced/<account>/interaction-design~g2, plugin version 1.0.0, which the marketplace copy matches. The cache copy has the same bodies with shorter descriptions, so no sentence here rests on a description line."
+  },
+  {
+    "job": "onboarding",
+    "set": "Interaction design",
+    "says": [
+      "onboarding",
+      "first-run experience",
+      "first session",
+      "time to first value",
+      "welcome flow"
+    ],
+    "skill": "interaction-design:design-onboarding",
+    "pack": "interaction-design",
+    "rival": {
+      "skill": "interaction-design:onboarding-design",
+      "why_not": "it covers onboarding patterns, empty states, setup friction and the aha moment, but not the passes design-onboarding adds from jakobs-law, millers-law, peak-end-rule, zeigarnik-effect and feedback-patterns"
+    },
+    "kind": "onboarding",
+    "checked": "Checked 2026-11-12 against the body text of the synced copy, ~/.claude/plugins/synced/<account>/interaction-design~g2, plugin version 1.0.0, which the marketplace copy matches. The cache copy has the same bodies with shorter descriptions, so no sentence here rests on a description line."
+  },
+  {
+    "job": "loading-states",
+    "set": "Interaction design",
+    "says": [
+      "loading state",
+      "skeleton screen",
+      "spinner",
+      "while it waits",
+      "optimistic update"
+    ],
+    "skill": "interaction-design:loading-states",
+    "pack": "interaction-design",
+    "rival": {
+      "skill": "interaction-design:feedback-patterns",
+      "why_not": "it gives a wait one line among its feedback types, progress and activity indicators, where loading-states sets out skeletons, optimistic updates, progressive loading and what to show for waits of different lengths"
+    },
+    "kind": "loading",
+    "checked": "Checked 2026-11-12 against the body text of the synced copy, ~/.claude/plugins/synced/<account>/interaction-design~g2, plugin version 1.0.0, which the marketplace copy matches. The cache copy has the same bodies with shorter descriptions, so no sentence here rests on a description line."
+  },
+  {
+    "job": "feedback",
+    "set": "Interaction design",
+    "says": [
+      "feedback",
+      "confirmation message",
+      "toast",
+      "did it work",
+      "status after an action"
+    ],
+    "skill": "interaction-design:feedback-patterns",
+    "pack": "interaction-design",
+    "rival": {
+      "skill": "interaction-design:loading-states",
+      "why_not": "it covers only the wait before a result arrives, with skeletons, spinners and optimistic updates, and says nothing about confirming success, undo, notifications or how long a message stays"
+    },
+    "kind": "feedback",
+    "checked": "Checked 2026-11-12 against the body text of the synced copy, ~/.claude/plugins/synced/<account>/interaction-design~g2, plugin version 1.0.0, which the marketplace copy matches. The cache copy has the same bodies with shorter descriptions, so no sentence here rests on a description line."
+  }
+]

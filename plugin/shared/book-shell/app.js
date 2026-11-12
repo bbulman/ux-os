@@ -203,6 +203,8 @@ function noteHTML(c, d) {
          b && b.drop ? 'Would drop it if: ' + esc(b.drop) : '', b && b.origin ? 'Asked by ' + esc(b.origin) : '', b && b.recorded ? 'Recorded ' + esc(fmtDate(b.recorded)) : ''].filter(Boolean).join(' · ') + '</p></div>';
     } else if (t.k === 'i' && t.s && t.s.length) {
       body += '<p class="m inf">Reasoned from ' + t.s.map(esc).join(', ') + '. The sources do not state it.</p>';
+    } else if (t.k === 'r') {
+      body += '<p class="m inf">General practice a third-party skill asserts. Nothing in this folder backs it.</p>';
     } else if (t.k === 'g') {
       body += '<p class="m inf">Marked as a gap in the file: looked for, not found.</p>';
     } else if (t.k === 'p') {

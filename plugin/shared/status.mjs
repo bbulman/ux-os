@@ -8,9 +8,10 @@ import { tmpdir } from 'node:os';
 import { basename, dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { assemble } from './book.mjs';
-import { BAR_PEOPLE, participantIndex } from './check.mjs';
+import { auditOf, BAR_PEOPLE, inPencil, participantIndex, readWork, workFiles } from './check.mjs';
+import { homeDir, ideaSlug, workLabel } from './layout.mjs';
 import { command } from './names.mjs';
-import { firstTable, parseFile, parseMarkdown, tableRows, VERDICT_RANK } from './parse.mjs';
+import { firstTable, parseFile, parseMarkdown, tableRows, tagsIn, VERDICT_RANK } from './parse.mjs';
 
 const MODELS = ['jobs.md', 'personas.md', 'journeys.md', 'empathy.md'];
 const PLANS = ['interview-script.md', 'usability-plan.md', 'diary-study.md', 'survey.md'];
@@ -62,6 +63,16 @@ function outcomesIn(folder) {
   return block ? Object.fromEntries(tableRows(block).filter((row) => row.Outcome).map((row) => [row.ID, row.Outcome])) : {};
 }
 
+// How many decisions are on file, and how many rest on anything still in pencil.
+function decisionsIn(folder) {
+  const path = join(folder, 'decisions.md');
+  if (!existsSync(path)) return null;
+  const section = parseFile(path).sections.find((s) => s.name === 'Decisions');
+  const block = section && firstTable(section);
+  const rows = block ? tableRows(block) : [];
+  return { total: rows.length, pencil: rows.filter((row) => tagsIn(row['Rests on'] ?? '').some(inPencil)).length };
+}
+
 function staleIn(folder) {
   const evidence = join(folder, 'evidence');
   if (!existsSync(evidence)) return [];
@@ -105,7 +116,7 @@ function route(s, folder) {
     if (!has('usability-plan.md')) {
       return { stage: 'built on research', now: run('create-usability-plan'), why: 'the future journey is a proposal until people have tried it', then: [command('create-research-repository')] };
     }
-    if (!existsSync(join(dirname(folder), 'repository.md'))) {
+    if (!existsSync(join(homeDir(folder), 'repository.md'))) {
       return { stage: 'built on research', now: command('create-research-repository'), why: 'what was learned is not yet kept anywhere', then: [] };
     }
     return { stage: 'kept', now: null, why: 'the models rest on research and nothing newer has arrived. If the usability test has not run yet, that comes next', then: [] };
@@ -133,8 +144,8 @@ function route(s, folder) {
 
 export function status(folder) {
   const s = {
-    folder, slug: basename(resolve(folder)), exists: existsSync(folder), decision: null, models: {}, plans: [], studies: 0, respondents: 0, people: 0, orgs: 0, orgsNeeded: BAR_PEOPLE,
-    excerpts: 0, marked: 0, waiting: [], needsTranscript: [], stale: [], beliefs: [], testFirst: null, stage: '', now: null, choose: false, why: '', then: [], note: null, error: null,
+    folder, slug: ideaSlug(folder), exists: existsSync(folder), decision: null, models: {}, plans: [], studies: 0, respondents: 0, people: 0, orgs: 0, orgsNeeded: BAR_PEOPLE,
+    excerpts: 0, marked: 0, waiting: [], needsTranscript: [], stale: [], beliefs: [], testFirst: null, work: [], decisions: null, stage: '', now: null, choose: false, why: '', then: [], note: null, error: null,
   };
 
   if (s.exists) {
@@ -159,6 +170,12 @@ export function status(folder) {
     s.marked = excerpts.filter((row) => /\bB\d+\b/.test(row.Beliefs ?? '')).length;
     Object.assign(s, inboxState(folder, studies.map((row) => row.Hash ?? '')));
     s.stale = staleIn(folder);
+    s.work = workFiles(folder).map((file) => {
+      const { rows } = readWork(join(folder, file));
+      return { file: workLabel(file), total: rows.length, pencil: rows.filter((row) => row.tags.some(inPencil)).length, audit: auditOf(folder, file).state };
+    });
+
+    s.decisions = decisionsIn(folder);
 
     try {
       const { ctx, built } = assemble(folder);
@@ -190,6 +207,8 @@ export function render(s) {
   lines.push(`Real mode: ${s.orgsNeeded ? `needs ${organisations(s.orgsNeeded)}` : 'ready'}`);
   if (Object.keys(s.models).length) lines.push(`Models: ${Object.entries(s.models).map(([file, mode]) => `${file} (${mode})`).join(', ')}`);
   if (s.plans.length) lines.push(`Plans: ${s.plans.join(', ')}`);
+  if (s.work.length) lines.push(`Work: ${s.work.map((w) => `${w.file} (${w.pencil} of ${w.total} claims in pencil, ${w.audit})`).join(', ')}`);
+  if (s.decisions) lines.push(`Decisions: ${s.decisions.total} on file, ${s.decisions.pencil} resting on pencil`);
   if (s.waiting.length) lines.push(`Waiting in inbox: ${s.waiting.join(', ')}`);
   if (s.needsTranscript.length) lines.push(`Needs a transcript: ${s.needsTranscript.join(', ')}`);
   if (s.stale.length) lines.push(`Out of date: ${s.stale.join(', ')}`);
@@ -204,7 +223,7 @@ export function render(s) {
 }
 
 async function selfTest() {
-  const { CLEAN } = await import('./fixtures/fixture.mjs');
+  const { AUDIT_FILE, CLEAN, WORK_FILE } = await import('./fixtures/fixture.mjs');
   let failures = 0;
   const expect = (name, ok, detail) => {
     if (ok) console.log(`ok   ${name}`);
@@ -244,7 +263,7 @@ async function selfTest() {
     roots.push(root);
     const folder = join(root, 'test-idea');
     mkdirSync(folder);
-    for (const [name, text] of Object.entries(files)) writeFileSync(join(folder, name), text);
+    for (const [name, text] of Object.entries(files)) { mkdirSync(dirname(join(folder, name)), { recursive: true }); writeFileSync(join(folder, name), text); }
     if (Object.keys(inbox).length) { mkdirSync(join(folder, 'inbox')); for (const [n, t] of Object.entries(inbox)) writeFileSync(join(folder, 'inbox', n), t); }
     if (Object.keys(evidence).length) { mkdirSync(join(folder, 'evidence')); for (const [n, t] of Object.entries(evidence)) writeFileSync(join(folder, 'evidence', n), t); }
     if (repository) writeFileSync(join(root, 'repository.md'), '# Repository\n');
@@ -431,6 +450,31 @@ async function selfTest() {
   const text = render(status(make(models(3))));
   for (const label of ['Stage:', 'Now:', 'Then:', 'Evidence:', 'Real mode:', 'Test first:', 'Beliefs:']) expect(`the report has ${label}`, text.includes(label), text);
   expect('a belief line shows its progress', /B1 \| sure \| confirmed \| 3 of 5 organisations \|/.test(text), text);
+
+  // Work filed by /ux-os:run. Ink: a direct citation, or a belief confirmed, refuted or mixed. Pencil: everything else
+  expect('a work file shows its pencil count', /^Work: 2026-11-01-form\.md \(4 of 7 claims in pencil, audited\)$/m.test(text), text);
+  const allInk = CLEAN[WORK_FILE].replace('| [B2: supported S2] |', '| [S2] |').replace('| [practice] |', '| [S1] |').replace('| [proposed S4] |', '| [S5] |').replace('| [gap] |', '| [S2] |');
+  s = status(make(models(3, { [WORK_FILE]: allInk, 'work/2026-11-02-states.md': CLEAN[WORK_FILE] })));
+  expect('every work file is listed, and a fully sourced one has nothing in pencil', render(s).includes('Work: 2026-11-01-form.md (0 of 7 claims in pencil, audit out of date), 2026-11-02-states.md (4 of 7 claims in pencil, not audited)'), render(s));
+  const pencilOf = (from, to) => status(make(models(3, { [WORK_FILE]: allInk.replace(from, to) }))).work[0].pencil;
+  expect('an inference is pencil', pencilOf('| [S1] |', '| [inference S1, S2] |') === 1);
+  expect('a belief that met the bar is ink, refuted and mixed included', pencilOf('[B1: confirmed S4 P1-P5]', '[B1: refuted S4 P1-P5]') === 0 && pencilOf('[B1: confirmed S4 P1-P5]', '[B1: mixed S4 P1-P5]') === 0);
+  expect('an unsettled belief is pencil', pencilOf('[B1: confirmed S4 P1-P5]', '[B1: contradicted S5]') === 1 && pencilOf('[B1: confirmed S4 P1-P5]', '[B1: no evidence]') === 1);
+  const auditState = (extra) => status(make(models(3, extra))).work[0].audit;
+  expect('an audit with nothing open reads audited, and is not listed as work', auditState({}) === 'audited' && status(make(models(3))).work.length === 1);
+  expect('an audit with an open row reads audit open', auditState({ [AUDIT_FILE]: CLEAN[AUDIT_FILE].replace('| 3 | sound |', '| 3 | two claims |') }) === 'audit open');
+  expect('an audit of a Claims table since changed reads audit out of date', auditState({ [WORK_FILE]: CLEAN[WORK_FILE].replace('| [gap] |', '| [S2] |') }) === 'audit out of date');
+  const unaudited = models(3);
+  delete unaudited[AUDIT_FILE];
+  expect('a work file with no audit reads not audited', status(make(unaudited)).work[0].audit === 'not audited');
+  const fileNamedWork = models(3, { work: 'not a folder\n' });
+  delete fileNamedWork[WORK_FILE];
+  delete fileNamedWork[AUDIT_FILE];
+  expect('a file named work does not stop the report', status(make(fileNamedWork)).work.length === 0);
+  const unworked = models(3);
+  delete unworked[WORK_FILE];
+  const quietText = render(status(make(unworked)));
+  expect('with no work filed there is no Work line', !/^Work:/m.test(quietText), quietText);
 
   for (const root of roots) rmSync(root, { recursive: true, force: true });
   console.log(failures ? `\n${failures} self-test failure(s)` : '\nself-test passed');

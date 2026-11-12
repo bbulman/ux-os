@@ -7,7 +7,7 @@ argument-hint: "[add | ask <question>]"
 
 Keeps what was learned findable and honest after the study is over. It stores insights with their strength and age, so nobody cites something that was never validated or has gone stale.
 
-Read `${CLAUDE_PLUGIN_ROOT}/shared/contract.md` and keep to it throughout. `$SHARED` means that folder. Your output is `repository.md` in the research root: the folder the profile names, otherwise `docs/research/` when it exists, otherwise `research/`.
+Read `${CLAUDE_PLUGIN_ROOT}/shared/contract.md` and keep to it throughout. `$SHARED` means that folder. Your output is `repository.md` in the research root, the folder that holds every idea: `ux-os/` for a project laid out by discipline, otherwise the folder above the idea folder the profile names, otherwise `docs/research/` when it exists, otherwise `research/`. In `ux-os/`, each idea's files are in `<slug>/research/`.
 
 Take **Ask** if the person asked a question. Otherwise **Build**, which creates the repository or brings it up to date.
 

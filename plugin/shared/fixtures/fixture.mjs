@@ -1,5 +1,7 @@
 // A complete minimal idea folder that keeps the contract, and one break per failure type.
 
+import { claimsHash } from '../parse.mjs';
+
 const NOTES = '## Run notes\n- Searched: fixture only.\n';
 
 const EV = 'evidence/S4-interviews.md';
@@ -7,6 +9,16 @@ export const link = (n, m = 1) => `[S4 P${n}](${EV}#p${n}-excerpt-${m})`;
 const ALL = [1, 2, 3, 4, 5].map((n) => link(n)).join(' ');
 // Kept out of CLEAN because status.mjs reads evidence file times, and its tests build folders from CLEAN.
 export const EVIDENCE = { [EV]: [1, 2, 3, 4, 5].map((n) => `<a id="p${n}-excerpt-1"></a>\nP${n}: a passage.\n`).join('\n') };
+export const WORK_FILE = 'work/2026-11-01-form.md';
+export const AUDIT_FILE = 'work/2026-11-01-form.audit.md';
+const WORK_ROWS = `| 1 | Owners fill it in between patients | [S4 P1](../${EV}#p1-excerpt-1) |
+| 2 | Clinics run bookings on paper today | [B1: confirmed S4 P1-P5] |
+| 3 | Owners would pay monthly | [B2: supported S2] |
+| 4 | One column is quicker to complete | [practice] |
+| 5 | Offer save and continue | [proposed S4] |
+| 6 | How many fields owners will finish | [gap] |
+| 7 | Owners keep the diary at the desk | [S4 P2](../${EV}#p2-excerpt-1) [S4 P3](../${EV}#p3-excerpt-1) |
+`;
 
 export const CLEAN = {
   'sources.md': `# Sources: Test idea
@@ -473,7 +485,55 @@ ${NOTES}`,
 | Five interviews | Internal use | 2027-11 | In date |
 
 ${NOTES}`,
+  [WORK_FILE]: `# Form: Test idea
+
+- **Skill:** interaction-design:design-form
+- **Pack:** interaction-design
+- **Version:** 0123456789ab
+- **Given:** brief.md, personas.md (proto), jobs.md (proto), journeys.md (proto), beliefs.md, primary.md, sources.md
+- **Pick:** picked
+- **Ran:** 2026-11-01
+
+## Claims
+| # | Claim | Basis |
+|---|---|---|
+${WORK_ROWS}
+## Output
+### Structure
+- Name, phone, preferred day.
+`,
 };
+
+// The claims auditor's report on CLEAN's work file, with nothing left open.
+CLEAN[AUDIT_FILE] = `# Audit: 2026-11-01-form.md
+
+- **Work file:** ${WORK_FILE}
+- **Claims hash:** ${claimsHash(CLEAN[WORK_FILE])}
+- **Audited:** 2026-11-02
+
+## Rows
+| # | Verdict | Note |
+|---|---|---|
+| 1 | sound | P1's excerpt is about keeping the diary to hand |
+| 2 | sound | B1 restated, confirmed as beliefs.md and the folder carry it |
+| 3 | sound | B2 restated, supported as the folder carries it |
+| 4 | sound | form-design/SKILL.md:10 says a single column is almost always correct |
+| 5 | could not check | S4 is the interviews, but the motivation is not in an excerpt |
+| 6 | under-cited | The job map's Fill stage bears on this |
+| 7 | sound | Both excerpts are about the diary on the desk |
+
+## Missing
+| Claim | Suggested basis | Pointer |
+|---|---|---|
+| none | none | none |
+
+## Departures and conflicts
+- None found.
+
+## Claims found first
+- Owners fill the form in between patients.
+- Clinics book on paper today.
+`;
 
 const CONNECTED = { '.research-profile.md': '# Research profile: Test\n\n## Design system\n\n- Catalogue: catalogue.json\n', 'catalogue.json': '{"components":{"ws_accordion":{}}}' };
 const COMP = '\n  - **Component:** ws_accordion';
@@ -495,7 +555,36 @@ const outcomes = (b1, b2 = NOT_SETTLED, b3 = NOT_SETTLED) => ({
   also: [['| create-jtbd | 2026-11-01 |', `| create-jtbd | 2026-11-01 | ${b1} |`], ['| create-persona | 2026-11-01 |', `| create-persona | 2026-11-01 | ${b2} |`], ['| create-journey-map | 2026-11-01 |', `| create-journey-map | 2026-11-01 | ${b3} |`]],
 });
 
+CLEAN['decisions.md'] = `# Decisions: Test idea
+
+## Decisions
+| # | Date | Decision | Rests on | Would reverse it |
+|---|---|---|---|---|
+| 1 | 2026-11-02 | Build for clinics on paper first | [B1: confirmed S4 P1-P5] | Most clinics turn out to use software |
+| 2 | 2026-11-03 | Charge monthly | [B2: supported S2] | Nobody pays monthly |
+| 3 | 2026-11-03 | Put the diary view first | ${link(2)} | Owners stop keeping the diary at the desk |
+
+## Still open
+- Whether patients reschedule. [gap]
+`;
+
 export const MUTATIONS = [
+  { name: 'a decisions file with nothing still open', expect: 'CLEAN', file: 'decisions.md', find: '\n## Still open\n- Whether patients reschedule. [gap]\n', replace: '' },
+  { expect: 'NO_TAG', file: 'decisions.md', find: '| [B2: supported S2] | Nobody pays monthly |', replace: '| a hunch | Nobody pays monthly |' },
+  { expect: 'NO_EVIDENCE_LINK', file: 'decisions.md', find: `| ${link(2)} | Owners stop`, replace: '| [S4 P2] | Owners stop' },
+  { expect: 'BAD_VALUE', file: 'decisions.md', find: '| 2 | 2026-11-03 | Charge monthly', replace: '| 2 | last week | Charge monthly' },
+  { expect: 'BAD_VALUE', file: 'decisions.md', find: '| 3 | 2026-11-03 | Put the diary', replace: '| 5 | 2026-11-03 | Put the diary' },
+  { expect: 'CONFLICTING_VERDICT', file: 'decisions.md', find: '[B2: supported S2]', replace: '[B2: contradicted S2]' },
+  { expect: 'BAD_TAG', file: 'decisions.md', find: '| Charge monthly | [B2: supported S2] |', replace: '| Charge monthly [B2: supported S2] |  |' },
+  { expect: 'BAD_TAG', file: 'decisions.md', find: '| [B2: supported S2] | Nobody pays monthly |', replace: '| [B2: supported S2] | Nobody pays monthly [gap] |' },
+  { expect: 'BAD_TAG', file: 'decisions.md', find: '| [B2: supported S2] | Nobody', replace: '| [B2: supported S2] and a hunch | Nobody' },
+  { expect: 'BAD_VALUE', file: 'decisions.md', find: '| # | Date | Decision | Rests on | Would reverse it |', replace: '| # | Date | Decision | Basis | Would reverse it |' },
+  { expect: 'BAD_VALUE', file: 'decisions.md', find: '| 3 | 2026-11-03 | Put the diary', replace: '| 3 | 2026-11-01 | Put the diary' },
+  { expect: 'BAD_VALUE', file: 'decisions.md', find: '| 3 | 2026-11-03 | Put the diary', replace: '| 3 | 2099-01-01 | Put the diary' },
+  { expect: 'BAD_VALUE', file: 'decisions.md', find: '| 2 | 2026-11-03 | Charge monthly', replace: '| 2 | 2026-11-03 | Replaces 2: charge monthly' },
+  { name: 'a decision that replaces an earlier one', expect: 'CLEAN', file: 'decisions.md', find: '| 2 | 2026-11-03 | Charge monthly', replace: '| 2 | 2026-11-03 | Replaces 1: charge monthly' },
+  { name: 'a decision resting on two tags', expect: 'CLEAN', file: 'decisions.md', find: '| [B2: supported S2] | Nobody', replace: '| [B2: supported S2] [S1] | Nobody' },
+  { expect: 'LINK_OUTSIDE_EVIDENCE', file: WORK_FILE, find: '](../evidence/S4-interviews.md#p1-excerpt-1)', replace: '](../../research/evidence/S4-interviews.md#p1-excerpt-1)' },
   { name: 'an outcome that meets the bar', expect: 'CLEAN', ...outcomes('confirmed S4 P1-P5') },
   { name: 'an unsettled outcome needs no bar', expect: 'CLEAN', ...outcomes(NOT_SETTLED) },
   { expect: 'UNDER_BAR', ...outcomes(NOT_SETTLED, 'confirmed S4 P1-P5') },
@@ -607,4 +696,62 @@ export const MUTATIONS = [
   { expect: 'BAD_CATALOGUE', add: { ...CONNECTED, 'catalogue.json': '{"components":["ws_accordion"]}' }, ...NOOP },
   { expect: 'BAD_CATALOGUE', add: { '.research-profile.md': '# x\n\n## Design system\n\n- Tokens: tokens.css\n' }, ...NOOP },
   { expect: 'CLEAN', name: 'a whole-study link to a file that cannot hold anchors', add: { 'evidence/S4-survey.csv': 'a,b\n1,2\n' }, file: 'summary.md', find: `| none found | ${ALL} |`, replace: `| none found | ${ALL} [S4](evidence/S4-survey.csv) |` },
+  { expect: 'WORK_HEADER', file: WORK_FILE, find: '- **Version:** 0123456789ab\n', replace: '' },
+  { expect: 'WORK_HEADER', file: WORK_FILE, find: '- **Version:** 0123456789ab', replace: '- **Version:** latest' },
+  { expect: 'WORK_HEADER', file: WORK_FILE, find: '- **Pick:** picked', replace: '- **Pick:** maybe' },
+  { expect: 'WORK_HEADER', file: WORK_FILE, find: '- **Pack:** interaction-design', replace: '- **Pack:** ux-strategy' },
+  { expect: 'WORK_HEADER', file: WORK_FILE, find: '- **Ran:** 2026-11-01', replace: '- **Ran:** 2026-11-01\n- **Mood:** fine' },
+  { expect: 'WORK_NO_CLAIMS', file: WORK_FILE, find: WORK_ROWS, replace: '' },
+  { expect: 'MISSING_SECTION', file: WORK_FILE, find: '## Claims', replace: '## Assertions' },
+  { expect: 'PRACTICE_OUT_OF_PLACE', file: 'jobs.md', find: '| 5 | 2 | [S5] |', replace: '| 5 | 2 | [practice] |' },
+  { expect: 'BAD_TAG', file: WORK_FILE, find: '| [practice] |', replace: '| [practice S4] |' },
+  { expect: 'BAD_TAG', file: WORK_FILE, find: '| [practice] |', replace: '| [practice] [gap] |' },
+  { expect: 'BAD_TAG', file: WORK_FILE, find: '| [practice] |', replace: '| [practice] mostly |' },
+  { expect: 'NO_TAG', file: WORK_FILE, find: '| [practice] |', replace: '| common sense |' },
+  { expect: 'UNKNOWN_BELIEF', file: WORK_FILE, find: '[B2: supported S2]', replace: '[B9: supported S2]' },
+  { expect: 'UNKNOWN_SOURCE', file: WORK_FILE, find: '[proposed S4]', replace: '[proposed S99]' },
+  { expect: 'NO_EVIDENCE_LINK', file: WORK_FILE, find: `[S4 P1](../${EV}#p1-excerpt-1)`, replace: '[S4 P1]' },
+  { expect: 'LINK_OUTSIDE_EVIDENCE', file: WORK_FILE, find: `[S4 P1](../${EV}#p1-excerpt-1)`, replace: `[S4 P1](${EV}#p1-excerpt-1)` },
+  { expect: 'LINK_NOT_RECORDED', file: WORK_FILE, find: `[S4 P1](../${EV}#p1-excerpt-1)`, replace: `[S4 P1](../${EV}#p2-excerpt-1)` },
+  { expect: 'CONFLICTING_VERDICT', file: WORK_FILE, find: '[B1: confirmed S4 P1-P5]', replace: '[B1: no evidence]' },
+  { expect: 'NAME_LEAK', add: CODES, file: WORK_FILE, find: '- Name, phone, preferred day.', replace: '- Maya Okafor asked for a phone field.' },
+  { expect: 'WORK_NOT_A_TABLE', file: WORK_FILE, find: '\n## Output', replace: '- Long forms lose people. [S1] [practice]\n\n## Output' },
+  { expect: 'WORK_NOT_A_TABLE', file: WORK_FILE, find: '\n## Output', replace: '\n| a | b |\n|---|---|\n| x | [S1] [practice] |\n\n## Output' },
+  { expect: 'WORK_NOT_A_TABLE', file: WORK_FILE, find: '\n## Output', replace: '\n### More\n| # | Claim | Basis |\n|---|---|---|\n| 8 | x | [gap] |\n\n## Output' },
+  { expect: 'WORK_HEADER', file: WORK_FILE, find: '- **Pick:** picked', replace: '- **Pick:** unpicked' },
+  { expect: 'WORK_HEADER', file: WORK_FILE, find: '- **Skill:** interaction-design:design-form', replace: '- **Skill:** interaction-design:fitts-law' },
+  { expect: 'WORK_HEADER', file: WORK_FILE, find: '- **Ran:** 2026-11-01', replace: '- **Ran:** 2026-02-30' },
+  { expect: 'BAD_TAG', file: WORK_FILE, find: '| [practice] |', replace: '| [practice](https://example.com) |' },
+  { expect: 'BAD_TAG', file: WORK_FILE, find: '| [gap] |', replace: `| [gap](../${EV}) |` },
+  { expect: 'BAD_TAG', file: 'jobs.md', find: '- Lead with reminders. [inference S4, S5]', replace: `- Lead with reminders. [inference S4, S5](${EV}#p1-excerpt-1)` },
+  { expect: 'BAD_VALUE', file: WORK_FILE, find: '| One column is quicker to complete | [practice] |', replace: '|  | [practice] |' },
+  { expect: 'BAD_TAG', file: WORK_FILE, find: '| One column is quicker to complete | [practice] |', replace: '| One column is quicker [S1] | [practice] |' },
+  { expect: 'BAD_TAG', file: WORK_FILE, find: `[S4 P2](../${EV}#p2-excerpt-1) [S4 P3](../${EV}#p3-excerpt-1)`, replace: `[S4 P2](../${EV}#p2-excerpt-1) [S1]` },
+  { expect: 'BAD_TAG', file: WORK_FILE, find: `[S4 P2](../${EV}#p2-excerpt-1) [S4 P3](../${EV}#p3-excerpt-1)`, replace: `[S4 P2](../${EV}#p2-excerpt-1) [S4 P2](../${EV}#p2-excerpt-1)` },
+  { expect: 'NO_EVIDENCE_LINK', file: WORK_FILE, find: `[S4 P2](../${EV}#p2-excerpt-1) [S4 P3](../${EV}#p3-excerpt-1)`, replace: '[S4 P2-P3]' },
+  { expect: 'CLEAN', name: 'prose in brackets that starts with practice is not a tag', file: 'jobs.md', find: '| 5 | 2 | [S5] |', replace: '| 5 | 2 | [S5] [practices vary] |' },
+  { expect: 'CLEAN', name: 'a link whose text starts with practice is not a tag', file: 'jobs.md', find: '| 5 | 2 | [S5] |', replace: '| 5 | 2 | [S5] see [practice guide](https://example.com) |' },
+  { expect: 'CLEAN', name: 'a file named work is not read as a folder', add: { work: 'not a folder\n' }, drop: [WORK_FILE, AUDIT_FILE], ...NOOP },
+  { expect: 'CLEAN', name: 'files in work/ not named like a work file are left alone', add: { 'work/notes.md': '# Notes\n- [S99] [B9: banana]\n', 'work/old/2026-01-01-x.md': '# junk\n| 1 | x | [S99] [gap] |\n', 'work/2026-01-01-x.MD': '# junk\n' }, ...NOOP },
+  { expect: 'AUDIT_STALE', file: WORK_FILE, find: '| How many fields owners will finish |', replace: '| How many fields owners will fill in |' },
+  { expect: 'AUDIT_STALE', drop: [WORK_FILE], ...NOOP },
+  { expect: 'AUDIT_STALE', add: { 'work/2026-11-03-states.audit.md': '# Audit\n' }, ...NOOP },
+  { expect: 'AUDIT_OPEN', file: AUDIT_FILE, find: '| 3 | sound |', replace: '| 3 | unsupported |' },
+  { expect: 'AUDIT_OPEN', file: AUDIT_FILE, find: '| none | none | none |', replace: '| Owners book on a phone | [gap] | work file:23 |' },
+  { expect: 'AUDIT_OPEN', file: AUDIT_FILE, find: '| 4 | sound |', replace: '| 4 | wrong tag |' },
+  { expect: 'BAD_VALUE', file: AUDIT_FILE, find: '| Claim | Suggested basis | Pointer |\n|---|---|---|\n| none | none | none |', replace: '| Claim | Suggested basis |\n|---|---|\n| none | none |' },
+  { expect: 'BAD_VALUE', file: AUDIT_FILE, find: '| 3 | sound |', replace: '| 3 | not stated by the vendor |' },
+  { expect: 'CLEAN', name: 'an audit may leave out the claims it found first', file: AUDIT_FILE, find: '## Claims found first\n- Owners fill the form in between patients.\n- Clinics book on paper today.\n', replace: '' },
+  { expect: 'AUDIT_HEADER', file: AUDIT_FILE, find: `- **Work file:** ${WORK_FILE}`, replace: '- **Work file:** work/2026-11-09-form.md' },
+  { expect: 'AUDIT_HEADER', file: AUDIT_FILE, find: '- **Audited:** 2026-11-02', replace: '- **Audited:** 2026-13-02' },
+  { expect: 'AUDIT_HEADER', file: AUDIT_FILE, find: '- **Audited:** 2026-11-02\n', replace: '' },
+  { expect: 'BAD_VALUE', file: AUDIT_FILE, find: '| 3 | sound |', replace: '| 3 | fine |' },
+  { expect: 'BAD_VALUE', file: AUDIT_FILE, find: "| 7 | sound | Both excerpts are about the diary on the desk |\n", replace: '' },
+  { expect: 'BAD_VALUE', file: AUDIT_FILE, find: '| 3 | sound |', replace: '| 9 | sound |' },
+  { expect: 'BAD_VALUE', file: AUDIT_FILE, find: '| none | none | none |\n', replace: '' },
+  { expect: 'BAD_VALUE', file: AUDIT_FILE, find: '- None found.\n', replace: '' },
+  { expect: 'MISSING_SECTION', file: AUDIT_FILE, find: '## Missing', replace: '## Gaps' },
+  { expect: 'CLEAN', name: 'a work file with no audit passes the gate', drop: [AUDIT_FILE], ...NOOP },
+  { expect: 'CLEAN', name: 'an audit is never read as a work file, and a change below Output leaves it current', file: WORK_FILE, find: '- Name, phone, preferred day.', replace: '- Name and phone.' },
+  { expect: 'CLEAN', name: 'the output keeps its own headings, links and brackets', file: WORK_FILE, find: '- Name, phone, preferred day.', replace: '- Name, phone, preferred day. [S99]\n\n## Validation\n- On blur, see [the skill](../skills/form-design).\nA loose paragraph.\n' },
 ];

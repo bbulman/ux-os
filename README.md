@@ -10,7 +10,7 @@ Eleven sets, from research to prototyping, and one record of what loads, who wro
 
 | Set | What it covers | Entries |
 | --- | --- | --- |
-| [Research](https://bbulman.github.io/ux-os/research/) | Interviews, surveys, usability tests, diary studies, card sorts, affinity diagrams, empathy maps, personas, journey maps, jobs to be done and research repositories. | 18 |
+| [Research](https://bbulman.github.io/ux-os/research/) | Interviews, surveys, usability tests, diary studies, card sorts, affinity diagrams, empathy maps, personas, journey maps, jobs to be done and research repositories. | 19 |
 | [Design systems](https://bbulman.github.io/ux-os/design-systems/) | Tokens, components, naming, governance and documentation. | 3 |
 | [Information architecture](https://bbulman.github.io/ux-os/information-architecture/) | Content inventories, card sorts, taxonomies, labels, sitemaps, navigation, URL rules, content models, redirects, tree tests and findability. | 12 |
 | [Interaction design](https://bbulman.github.io/ux-os/interaction-design/) | States, forms, feedback, errors, navigation patterns, UX laws and motion. | 2 |
@@ -37,6 +37,6 @@ One skill, three test cases, and I wrote both the skill and the checks. That's a
 
 ## Credit
 
-26 of the 63 entries are third-party, and MC Dean wrote 22 of them. Every pack keeps its author's licence, and each set page links to its source.
+26 of the 64 entries are third-party, and MC Dean wrote 22 of them. Every pack keeps its author's licence, and each set page links to its source.
 
 The site is generated from `data/registry.json`. To change it, edit that file and run `node build.mjs`.

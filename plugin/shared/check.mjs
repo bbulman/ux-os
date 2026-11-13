@@ -14,7 +14,7 @@ import { claims, claimsHash, firstTable, needsBar, parseFile, parseMarkdown, par
 export { claimsHash };
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const OUTPUTS = ['primary.md', 'affinity.md', 'cardsort.md', 'empathy.md', 'jobs.md', 'personas.md', 'journeys.md', 'interview-script.md', 'usability-plan.md', 'diary-study.md', 'survey.md', 'summary.md', 'decisions.md', 'repository.md'];
+const OUTPUTS = ['primary.md', 'affinity.md', 'cardsort.md', 'empathy.md', 'jobs.md', 'personas.md', 'journeys.md', 'blueprint.md', 'interview-script.md', 'usability-plan.md', 'diary-study.md', 'survey.md', 'summary.md', 'decisions.md', 'repository.md'];
 const PROTO = ['jobs.md', 'personas.md', 'journeys.md', 'empathy.md'];
 const KINDS = ['original', 'secondary', 'vendor', 'opinion', 'forum', 'first-party'];
 const STATUSES = ['verified', 'unverified'];
@@ -435,6 +435,17 @@ function valueChecks(file, doc, add, people) {
       const needed = { strong: BAR_PEOPLE, some: 2 }[row.Strength?.toLowerCase()] ?? 0;
       if (orgs.size < needed) add('BAD_VALUE', line, `Strength "${row.Strength}" needs ${needed} organisations cited, this row cites ${orgs.size}`);
     });
+  }
+  if (file === 'blueprint.md') {
+    const steps = section('Step: <x>');
+    if (steps.length < 3) add('BAD_VALUE', 1, `the blueprint has ${steps.length} steps, it needs at least 3`);
+    const seen = new Set();
+    for (const step of steps) {
+      if (!/^Step: \d+ \S/.test(step.name)) add('BAD_VALUE', step.line, `"${step.name}" needs its number and then its name, such as "Step: 3 Find a slot"`);
+      if (seen.has(step.name)) add('BAD_VALUE', step.line, `"${step.name}" appears twice`);
+      seen.add(step.name);
+      for (const lane of step.subsections) if (!claims(lane).length) add('EMPTY_SECTION', lane.line, `"${lane.name}" in "${step.name}" is empty. A lane with nothing in it holds one line saying so`);
+    }
   }
   if (file === 'decisions.md') {
     let n = 0;

@@ -19,7 +19,7 @@ export const MAP_FILE = 'README.md';
 const MARK = '<!-- Written by map.mjs when a command finishes. Do not edit it: the next run overwrites it. -->';
 
 // `by` is a command name, or a sentence when no single command makes the file. `mode` is added after the idea when the command takes one.
-const GROUPS = [
+export const GROUPS = [
   { title: 'Frame', rows: [
     { path: 'brief.md', holds: 'The idea, who it is for, and the decision this research feeds', by: 'The first command you run on the idea' },
     { path: 'beliefs.md', holds: 'What you believe before any evidence, in your own words', by: 'research-discover' },
@@ -41,11 +41,12 @@ const GROUPS = [
     { path: 'cardsort.md', holds: 'How people grouped your cards', by: 'analyze-card-sort' },
     { path: 'summary.md', holds: 'Findings, rated by how many people stand behind them', by: 'summarize-research' },
   ] },
-  { title: 'Model people', rows: [
+  { title: 'Model people and the service', rows: [
     { path: 'jobs.md', holds: 'What people are trying to get done, apart from any product', by: 'create-jtbd' },
     { path: 'personas.md', holds: 'Who behaves differently enough to design for separately', by: 'create-personas' },
     { path: 'journeys.md', holds: 'What happens today, and what should happen in future', by: 'create-journey-map' },
     { path: 'empathy.md', holds: 'What one person says, does, thinks and feels in one moment', by: 'create-empathy-map' },
+    { path: 'blueprint.md', holds: 'How the service delivers one scenario, step by step, above and below the line', by: 'create-service-blueprint' },
   ] },
   { title: 'Design from it', rows: 'work' },
   { title: 'Decide', rows: [

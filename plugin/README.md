@@ -27,6 +27,7 @@ Everything is typed by name. Not sure where to start? `/ux-os:research-next <ide
 | `/ux-os:create-empathy-map` | What one person says, does, thinks and feels in one moment |
 | `/ux-os:create-jtbd` | What people are trying to get done, apart from any product |
 | `/ux-os:create-journey-map` | What happens today, or what should happen in future |
+| `/ux-os:create-service-blueprint` | How the service delivers one scenario, above and below the line |
 | `/ux-os:create-interview-script` | A short guide that gets real stories |
 | `/ux-os:create-usability-plan` | Realistic tasks, with pass lines set before anyone is tested |
 | `/ux-os:create-diary-study` | A study for behaviour that plays out over days or weeks |
@@ -39,7 +40,7 @@ Everything is typed by name. Not sure where to start? `/ux-os:research-next <ide
 
 ## What a project looks like
 
-A new idea goes in `ux-os/<idea>/`, with its research in `research/` and the design work made from it in a folder per discipline, such as `interaction-design/`. Older idea folders keep working as they are. Every command that finishes rewrites the idea's `README.md`. That file is the map: every file the set can hold, in the order the work happens, from the brief through study plans, evidence and models to the design work made from them and the decisions taken. Each row says what is on file, whether it is proto or real, and the command that makes whatever is not started.
+A new idea goes in `ux-os/<idea>/`, with its research in `research/` and the design work made from it in a folder per discipline, such as `interaction-design/`. Older idea folders keep working as they are. `node shared/guide.mjs ux-os <idea>` writes `ux-os/templates/`: what each file is for, a blank copy of every template, and links to that idea's files as the worked example. Every command that finishes rewrites the idea's `README.md`. That file is the map: every file the set can hold, in the order the work happens, from the brief through study plans, evidence and models to the design work made from them and the decisions taken. Each row says what is on file, whether it is proto or real, and the command that makes whatever is not started.
 
 ## Proto or real
 

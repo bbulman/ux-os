@@ -11,7 +11,7 @@
     {
       "name": "ux-os",
       "description": "Personas, journeys, jobs and empathy maps in proto or real mode, study plans, synthesis, and real-mode citations that link to the exact passage.",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "source": "./plugin",
       "category": "design"
     }

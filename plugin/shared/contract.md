@@ -7,7 +7,7 @@ Every research and proto skill follows this. The skills point here and never res
 ## Start a run
 
 1. Find the project root: the git root, or the working directory outside a repo. Read `.research-profile.md` there if it exists. A profile can set the output folder, name first-party sources, list files whose content counts as beliefs, and set the book's look.
-2. Find the idea folder: the profile's folder if it sets one, otherwise a folder already on file for this idea at `ux-os/<slug>/research/`, `docs/research/<slug>/` or `research/<slug>/`, otherwise a new `ux-os/<slug>/research/`. The slug is the idea in 2 to 4 kebab-case words. See "Where things sit". With no idea given, use the most recently changed folder holding a `brief.md` and say which.
+2. Find the idea folder: the profile's folder if it sets one, otherwise a folder already on file for this idea at `ux-os/<slug>/research/`, `docs/research/<slug>/` or `research/<slug>/`, otherwise a new `ux-os/<slug>/research/`. The slug is the idea in 2 to 4 kebab-case words. See "Where things sit". With no idea given, use the most recently changed folder holding a `brief.md` and say which, never counting `ux-os/templates/`, which holds blank copies.
 3. If `brief.md` is missing, ask up to 4 questions, one at a time: the idea, who it is for, where it will sell, and the decision this research feeds. Write `brief.md` from `$SHARED/templates/brief.md`. The decision is what keeps a run from sprawling: leave out anything that could not change it.
 4. Make sure the idea folder holds a `.gitignore` containing `inbox/` and `evidence/`.
 5. Run `$SHARED/intake.md`.
@@ -29,6 +29,7 @@ ux-os/
 
 - The idea folder is always the one holding `brief.md`. Every script takes that folder, so in this layout commands are given `ux-os/<slug>/research`. The idea is still named by its slug.
 - A discipline folder is made the first time `/ux-os:run` files work into it. Its name is the pick's set in kebab-case, or the pack's name for a skill no job picks. Every folder beside `research/` is read as a discipline folder, so a dated `.md` file in one is checked as a work file. Keep anything else out of the project folder.
+- `ux-os/templates/` is the guide, written by `node $SHARED/guide.mjs ux-os <example idea>`: what each file is for, a blank copy of every template, and a link to a filled example. It is not an idea folder, and its `brief.md` is a blank.
 - The layout is told by both names: `research` inside a project inside `ux-os`. A folder that is only named `research` anywhere else is a plain idea folder.
 - An idea folder that is not named `research` keeps the older layout: work files go in `work/` inside it, the map sits in the folder itself, and `repository.md` sits beside it. Both layouts pass the same check.
 
@@ -48,7 +49,7 @@ Fill the skill's template from `$SHARED/templates/`. Headings are exact, because
 | Column | Meaning |
 |---|---|
 | ID | `S1`, `S2`, never reused |
-| Where | URL, or the file path in `evidence/` |
+| Where | URL, the file path in `evidence/`, or for the product's own code and configuration the file's path from the project root |
 | Title, Publisher | As shown on the source. For a first-party row, a neutral label such as `Interview P1` and `own research`, because this table is published |
 | Published, Fetched | ISO dates. Published is the latest update the page shows, or `unknown` |
 | Kind | One of the six below |
@@ -156,7 +157,7 @@ In real mode the file opens instead with `From research: P people, O organisatio
 
 ## Finish a run
 
-1. **Verify.** If this run added sources or wrote evidence links, start a fresh agent that did not write the file, with this brief: "Read `<file>` and `<folder>/sources.md`. For every source this run added, open the URL or the file in `evidence/` and confirm that each claim citing it is really there, including the currency, region and date. In the ledger, Published means the latest update the page shows. For any belief marked confirmed, refuted or mixed, confirm each person counted really did or volunteered this specific thing. Open each evidence link in the file and confirm the passage it lands on supports the claim. Return the list of claims that fail, with what the source says instead, and the list of sources you could not open. Change nothing, and save anything you download to the scratchpad only." Correct each failing claim or make it a `[gap]`. Have any corrected claim and any source added during correction checked the same way once more. Set each source's status in the ledger. If you cannot start an agent, say so in the run notes and leave those sources `unverified`.
+1. **Verify.** If this run added sources or wrote evidence links, start a fresh agent that did not write the file, with this brief: "Read `<file>` and `<folder>/sources.md`. For every source this run added, open the URL, the file in `evidence/` or the project file it names, and confirm that each claim citing it is really there, including the currency, region and date. In the ledger, Published means the latest update the page shows. For any belief marked confirmed, refuted or mixed, confirm each person counted really did or volunteered this specific thing. Open each evidence link in the file and confirm the passage it lands on supports the claim. Return the list of claims that fail, with what the source says instead, and the list of sources you could not open. Change nothing, and save anything you download to the scratchpad only." Correct each failing claim or make it a `[gap]`. Have any corrected claim and any source added during correction checked the same way once more. Set each source's status in the ledger. If you cannot start an agent, say so in the run notes and leave those sources `unverified`.
 2. **Run notes.** Close the file with `## Run notes`: the questions this run set, what was searched, what came back thin, which sources refused, and the next skill to run.
 3. **Check.** Run `node $SHARED/check.mjs <folder>`. Done when it exits 0. Then run `node $SHARED/map.mjs <folder>`. It rewrites `README.md` at the top of the project, the map: every file the set can hold, in the order the work happens, with what is on file and the command that makes the rest. The map is written by the script alone. It carries no claims and no tags, and nobody edits it. A `README.md` the script did not write is left alone, and the script says so.
 4. **Render.** Follow `$SHARED/book.md`.
@@ -166,6 +167,7 @@ The set, in rough order. Each reads what earlier skills wrote. When an earlier f
 
 - Make sense of real data: `/ux-os:affinity-diagram`, `/ux-os:analyze-card-sort`, `/ux-os:summarize-research`.
 - Model people: `/ux-os:create-empathy-map`, `/ux-os:create-personas`, `/ux-os:create-jtbd`, `/ux-os:create-journey-map`.
+- Model the service: `/ux-os:create-service-blueprint` lays out one scenario as steps and lanes in `blueprint.md`. It has no proto or real mode and no banner: each line is tagged for what it rests on, like any claim. The book does not show `blueprint.md` or `decisions.md` yet.
 - Go and test: `/ux-os:create-interview-script`, `/ux-os:create-usability-plan`, `/ux-os:create-diary-study`, `/ux-os:create-survey`.
 - Decide: `/ux-os:record-decision` adds a row to `decisions.md`, a log of what was decided, what each decision rests on and what would reverse it. A decision's basis is tagged like any claim, so one made on a belief stays in pencil.
 - Keep it: `/ux-os:create-research-repository`. `repository.md` sits in the folder that holds every idea.

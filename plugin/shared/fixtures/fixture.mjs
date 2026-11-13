@@ -555,6 +555,8 @@ const outcomes = (b1, b2 = NOT_SETTLED, b3 = NOT_SETTLED) => ({
   also: [['| create-jtbd | 2026-11-01 |', `| create-jtbd | 2026-11-01 | ${b1} |`], ['| create-persona | 2026-11-01 |', `| create-persona | 2026-11-01 | ${b2} |`], ['| create-journey-map | 2026-11-01 |', `| create-journey-map | 2026-11-01 | ${b3} |`]],
 });
 
+CLEAN['blueprint.md'] = "# Blueprint: Test idea\n\n## Scenario\n- A clinic owner books a patient. [S5]\n- **Starts:** the phone rings. [S5]\n- **Ends:** the patient turns up. [gap]\nConfidence: low\n\n## Step: 1 Answer the phone\n### Physical evidence\n- Physical evidence at step 1. [S5]\n\n### Customer actions\n- Customer actions at step 1. [S5]\n\n### Other actors\n- Other actors at step 1. [S5]\n\n### Frontstage\n- Frontstage at step 1. [S5]\n\n### Backstage\n- Backstage at step 1. [S5]\n\n### Support\n- Support at step 1. [S5]\n\n### Failure points\n- Failure points at step 1. [S5]\n\nConfidence: low\n\n## Step: 2 Find a slot\n### Physical evidence\n- Physical evidence at step 2. [S5]\n\n### Customer actions\n- Customer actions at step 2. [S5]\n\n### Other actors\n- Other actors at step 2. [S5]\n\n### Frontstage\n- Frontstage at step 2. [S5]\n\n### Backstage\n- Backstage at step 2. [S5]\n\n### Support\n- Support at step 2. [S5]\n\n### Failure points\n- Failure points at step 2. [S5]\n\nConfidence: low\n\n## Step: 3 Confirm\n### Physical evidence\n- Physical evidence at step 3. [S5]\n\n### Customer actions\n- Customer actions at step 3. [S5]\n\n### Other actors\n- Other actors at step 3. [S5]\n\n### Frontstage\n- Frontstage at step 3. [S5]\n\n### Backstage\n- Backstage at step 3. [S5]\n\n### Support\n- Support at step 3. [S5]\n\n### Failure points\n- Failure points at step 3. [S5]\n\nConfidence: low\n\n## What the lanes show together\n- The diary is behind every step. [inference S5]\nConfidence: low\n\n## Run notes\n- Searched: fixture only.\n";
+
 CLEAN['decisions.md'] = `# Decisions: Test idea
 
 ## Decisions
@@ -569,6 +571,13 @@ CLEAN['decisions.md'] = `# Decisions: Test idea
 `;
 
 export const MUTATIONS = [
+  { name: 'a blueprint with no cross-lane findings', expect: 'CLEAN', file: 'blueprint.md', find: '## What the lanes show together\n- The diary is behind every step. [inference S5]\nConfidence: low\n\n', replace: '' },
+  { expect: 'MISSING_SUBSECTION', file: 'blueprint.md', find: '### Backstage\n- Backstage at step 2. [S5]\n\n', replace: '' },
+  { expect: 'BAD_VALUE', file: 'blueprint.md', find: '## Step: 3 Confirm', replace: '## Stage: 3 Confirm' },
+  { expect: 'EMPTY_SECTION', file: 'blueprint.md', find: '- Support at step 1. [S5]\n', replace: '' },
+  { expect: 'BAD_VALUE', file: 'blueprint.md', find: '## Step: 2 Find a slot', replace: '## Step: Find a slot' },
+  { expect: 'BAD_VALUE', file: 'blueprint.md', find: '## Step: 2 Find a slot', replace: '## Step: 1 Answer the phone' },
+  { expect: 'NO_TAG', file: 'blueprint.md', find: '- Support at step 1. [S5]', replace: '- Support at step 1.' },
   { name: 'a decisions file with nothing still open', expect: 'CLEAN', file: 'decisions.md', find: '\n## Still open\n- Whether patients reschedule. [gap]\n', replace: '' },
   { expect: 'NO_TAG', file: 'decisions.md', find: '| [B2: supported S2] | Nobody pays monthly |', replace: '| a hunch | Nobody pays monthly |' },
   { expect: 'NO_EVIDENCE_LINK', file: 'decisions.md', find: `| ${link(2)} | Owners stop`, replace: '| [S4 P2] | Owners stop' },

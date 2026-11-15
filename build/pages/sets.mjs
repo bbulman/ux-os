@@ -20,7 +20,7 @@ export function disciplines(ctx) {
   const proposed = ctx.sets.filter((s) => s.proposed);
   const row = (s) => {
     const c = counts(ctx, s);
-    return `<li class="disc-row">
+    return `<li class="disc-card">
   <h3><a class="stretch" href="${L(`${s.slug}/`)}">${esc(s.name)}</a></h3>
   <p class="covers">${esc(s.covers)}</p>
   <p class="dn">${plural(c.n, 'entry', 'entries')} · ${c.on} on · ${c.mine} mine${c.jobs ? ` · ${plural(c.jobs, 'job')}` : ''}</p>
@@ -34,14 +34,14 @@ export function disciplines(ctx) {
 </header>
 <section aria-labelledby="named-h">
   <h2 class="vh" id="named-h">Sets</h2>
-  <ol class="disc-rows">
+  <ol class="disc-cards">
 ${named.map(row).join('\n')}
   </ol>
 </section>
 <section aria-labelledby="proposed-h" class="sec-tight">
   <h2 class="big-2" id="proposed-h">Proposed</h2>
   <p class="lede">Still to be kept, renamed or dropped.</p>
-  <ol class="disc-rows">
+  <ol class="disc-cards">
 ${proposed.map(row).join('\n')}
   </ol>
 </section>
@@ -109,7 +109,7 @@ ${jobs.map((j) => jobItem(j, L, { withId: false })).join('\n')}
   <h2 class="big-2" id="sheet-h">The sheet</h2>
   <p class="lede">Every entry in the set, most used first.${circled ? ` Circled: ${esc(circled.name)}, the most used pick here.` : ''}</p>
   ${needsMarket ? `<div class="first-step"><p>Installing the ${esc([...new Set(c.list.filter((e) => e.marketplace).map((e) => e.author))].join(' and '))} packs here needs this once:</p>${codeBlock(DESIGNER_MARKETPLACE)}</div>` : ''}
-  <ol class="sheet">
+  <ol class="sheet sheet--light sheet--five">
 ${frames}
   </ol>
   <p class="caption">The states are from my setup on ${date(ctx.asOf)}. Yours start from whatever you install.</p>

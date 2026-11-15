@@ -110,7 +110,7 @@ h1 em { font-style: normal; color: var(--grease); }
 .sheet { padding: clamp(10px, 2vw, 18px); grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(10px, 1.6vw, 16px); }
 @media (min-width: 700px) { .sheet { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 @media (min-width: 1100px) { .sheet { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
-/* The registry sheets run five to a row on a wide screen. */
+/* The registry and set-page sheets run five to a row on a wide screen. */
 @media (min-width: 960px) { .sheet--five { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
 
 /* A frame: edge row, exposure, edge row */
@@ -133,7 +133,7 @@ h1 em { font-style: normal; color: var(--grease); }
 .tick { color: var(--grease-film); font-weight: 600; }
 .tick-ink { color: var(--grease-ink) !important; white-space: nowrap; }
 
-/* Light frames: printed cards on the paper instead of film (the registry and its entry pages) */
+/* Light frames: printed cards on the paper instead of film (the registry, the set pages and the entry pages) */
 .sheet--light { background: none; padding: 0; }
 .sheet--light .frame-link { color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 2px; padding: 2px 8px 4px; }
 .sheet--light a.frame-link:hover { color: var(--ink); border-color: var(--grease-ink); }
@@ -149,6 +149,9 @@ h1 em { font-style: normal; color: var(--grease); }
 /* With no film around it, the circle hangs about 28px below a single card and 24px to each side: clear the note under it, and keep it on screen at phone width */
 .print .sheet--light + .note { margin-top: 40px; }
 .print .sheet--light:has(.is-circled) { padding-inline: 24px; max-width: 388px; }
+/* A set page circles one card in a five-across sheet: draw it tight enough to stay in the 16px gutters, and leave room above the first row */
+.sheet--five .grease { left: -5%; top: -6%; width: 110%; height: 112%; }
+.sheet--five:has(.is-circled) { padding-top: 12px; }
 
 /* The one grease-pencil circle per page. It draws once, and stays still under reduced motion. */
 .grease { position: absolute; left: -7%; top: -9%; width: 114%; height: 118%; fill: none; stroke: var(--grease); stroke-width: 4; stroke-linecap: round; pointer-events: none; transform: rotate(-1deg); overflow: visible; }
@@ -327,14 +330,17 @@ table { border-collapse: collapse; font-size: 15px; width: 100%; }
 th, td { padding: 8px 14px 8px 0; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
 th { font: 500 12px/1.5 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--ink-2); }
 
-/* Disciplines */
-.disc-rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
-.disc-row { position: relative; display: grid; gap: 4px 32px; padding: 18px 0; border-bottom: 1px solid var(--line); }
-@media (min-width: 900px) { .disc-row { grid-template-columns: 17rem minmax(0, 1fr) 16rem; align-items: baseline; } }
-.disc-row h3 { font: 700 1.7rem/1 var(--display); text-transform: uppercase; margin: 0; }
-.disc-row:hover h3 a { color: var(--grease); }
-.disc-row .covers { margin: 0; color: var(--ink-2); }
-.disc-row .dn { margin: 0; }
+/* Disciplines: each set a light card, five to a row on a wide screen */
+.disc-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+@media (min-width: 560px) { .disc-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 800px) { .disc-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .disc-cards { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+.disc-card { position: relative; min-width: 0; display: flex; flex-direction: column; gap: 8px; padding: 14px 16px 16px; background: var(--card); border: 1px solid var(--line); border-radius: 2px; }
+.disc-card:hover { border-color: var(--grease-ink); }
+.disc-card h3 { font: 700 1.3rem/1.1 var(--display); text-transform: uppercase; margin: 0; }
+.disc-card:hover h3 a { color: var(--grease); }
+.disc-card .covers { margin: 0; font-size: 15px; line-height: 1.5; color: var(--ink-2); }
+.disc-card .dn { margin: auto 0 0; padding-top: 10px; border-top: 1px solid var(--line); font: 500 12px/1.5 var(--mono); letter-spacing: .04em; color: var(--edge-ink); }
 .sec-tight > .lede { margin-top: 6px; }
 
 /* Set pages */

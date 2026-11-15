@@ -6,7 +6,8 @@
       "Added a quarterly prune report, scripts/prune.mjs, which lists third-party skills I have never used and that no job depends on, with the setting that would switch each one off.",
       "Workflow steps are light cards on the paper instead of film-strip frames, and no longer show how often each skill has run.",
       "The registry runs five cards to a row, with the ten entries I use most in their own Most used section above All.",
-      "Orchestration is now one of the named sets rather than a proposal, which leaves two proposed."
+      "Orchestration is now one of the named sets rather than a proposal, which leaves two proposed.",
+      "Disciplines shows each set as a light card, five to a row, and each set's page lays out its entries the same way instead of as frames on film."
     ]
   },
   {

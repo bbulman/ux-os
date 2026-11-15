@@ -29,6 +29,7 @@ ux-os/
 
 - The idea folder is always the one holding `brief.md`. Every script takes that folder, so in this layout commands are given `ux-os/<slug>/research`. The idea is still named by its slug.
 - A discipline folder is made the first time `/ux-os:run` files work into it. Its name is the pick's set in kebab-case, or the pack's name for a skill no job picks. Every folder beside `research/` is read as a discipline folder, so a dated `.md` file in one is checked as a work file. Keep anything else out of the project folder.
+- `ux-os/audits/` holds design system audits from `/ux-os:audit-ds`, one dated file each. It is not an idea folder, holds no `brief.md`, and no research script reads it.
 - `ux-os/templates/` is the guide, written by `node $SHARED/guide.mjs ux-os <example idea>`: what each file is for, a blank copy of every template, and a link to a filled example. It is not an idea folder, and its `brief.md` is a blank.
 - The layout is told by both names: `research` inside a project inside `ux-os`. A folder that is only named `research` anywhere else is a plain idea folder.
 - An idea folder that is not named `research` keeps the older layout: work files go in `work/` inside it, the map sits in the folder itself, and `repository.md` sits beside it. Both layouts pass the same check.

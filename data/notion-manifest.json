@@ -785,6 +785,23 @@
     "Site": "https://bbulman.github.io/ux-os/registry/ds-kit-validate-ai-readability/"
   },
   {
+    "Name": "audit-ds",
+    "Type": "Skill",
+    "Set": "Design systems",
+    "Origin": "Built by us",
+    "Status": "Slash only",
+    "Scope": "Any project",
+    "Author": "Bill Bulman and Claude",
+    "Summary": "Audits a design system against its own written rules. The project's checks run first, every finding quotes the line it was seen on, and what nobody read is said out loud.",
+    "Testing": "Two trial runs by fresh agents on a made-up design system with planted faults. Both reports passed the gate, every planted fault was found, and all five contrast figures matched a separate recount. One independent review of the gate found nine ways a bad report could pass, seven now closed and two left by design. With no skill, on the same system, Claude quoted a lint result it had not run and gave one line number, which was wrong. Not yet run on a real design system, and the typed command has not been run.",
+    "Source": "https://github.com/bbulman/ux-os/tree/main/plugin/skills/audit-ds",
+    "Usage": "unused",
+    "Reads": [],
+    "Stage": "Trial",
+    "Invoke": "ux-os:audit-ds",
+    "Site": "https://bbulman.github.io/ux-os/registry/ux-os-audit-ds/"
+  },
+  {
     "Name": "design-systems",
     "Type": "Skill pack",
     "Set": "Design systems",

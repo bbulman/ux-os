@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>audit-ds: skill for design systems, UX-OS</title>
+<meta name="description" content="Audits a design system against its own written rules. The project's checks run first, every finding quotes the line it was seen on, and what nobody read is said out loud.">
+<link rel="canonical" href="https://bbulman.github.io/ux-os/registry/ux-os-audit-ds/">
+<meta property="og:title" content="audit-ds: skill for design systems, UX-OS">
+<meta property="og:description" content="Audits a design system against its own written rules. The project's checks run first, every finding quotes the line it was seen on, and what nobody read is said out loud.">
+<meta property="og:url" content="https://bbulman.github.io/ux-os/registry/ux-os-audit-ds/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="top">
+  <a class="mark" href="../../">UX-OS</a>
+  <nav class="nav" aria-label="Main"><a href="../../jobs/">Jobs</a><a href="../../registry/" aria-current="page">Registry</a><a href="../../disciplines/">Disciplines</a><a href="../../workflows/">Workflows</a><a href="../../project-files/">Project files</a><a href="../../get-started/">Get started</a><a href="https://github.com/bbulman/ux-os">GitHub</a></nav>
+</header>
+<main id="main" tabindex="-1">
+
+<nav class="crumb" aria-label="Breadcrumb"><a href="../../registry/">Registry</a><span aria-hidden="true"> / </span><a href="../../design-systems/">Design systems</a></nav>
+<div class="entry-head">
+  <div>
+    <p class="kicker">Skill · Design systems</p>
+    <h1 class="h1-id">audit-ds</h1>
+    <p class="lede">Audits a design system against its own written rules. The project's checks run first, every finding quotes the line it was seen on, and what nobody read is said out loud.</p>
+    <dl class="facts">
+      <div><dt>Loads</dt><dd><span class="chip chip--name" aria-hidden="true">BY NAME</span> Runs when you type it.</dd></div>
+      <div><dt>Made by</dt><dd>Built by Bill Bulman and Claude.</dd></div>
+      <div><dt>Scope</dt><dd>Any project.</dd></div>
+      <div><dt>Stage</dt><dd>On trial.</dd></div>
+      <div><dt>Part of</dt><dd><code>ux-os</code></dd></div>
+    </dl>
+  </div>
+  <div class="print">
+    <ol class="strip strip--one sheet--light" aria-hidden="true">
+<li class="frame is-circled">
+<div class="frame-link">
+<span class="edge" aria-hidden="true"><span>01</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">audit-ds</span><span class="fmeta">Design systems · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span></span>
+</div><svg class="grease" viewBox="0 0 200 120" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M40 4 C 110 -0.1, 180 2.1, 191.6 12 C 204 33.4, 202 93.2, 189.2 114 C 150 121.6, 50 122.2, 10 114 C -0.6 96, 0.1 26, 8 10.6 C 22 2.6, 60 -1.8, 104 4"/></svg>
+</li>
+    </ol>
+    <div class="note"><p><span class="note-k">Circled:</span> the pick for “<a href="../../jobs/#job-audit-an-existing-design-system">Audit an existing design system</a>”.</p></div>
+  </div>
+</div>
+
+<div class="entry-body">
+  <div class="entry-main">
+    <section aria-labelledby="run-h"><h2 id="run-h">How to run it</h2>
+<p>Type it in Claude Code:</p>
+<pre class="cmd"><code>/ux-os:audit-ds</code></pre>
+<h3>Example prompts</h3>
+<pre class="cmd"><code>/ux-os:audit-ds
+/ux-os:audit-ds . the form components</code></pre>
+    </section>
+    <section aria-labelledby="install-h"><h2 id="install-h">Install</h2>
+<p>No install line recorded here. See the source.</p>
+    </section>
+    <section aria-labelledby="test-h"><h2 id="test-h">Testing</h2>
+<div class="note"><p>Two trial runs by fresh agents on a made-up design system with planted faults. Both reports passed the gate, every planted fault was found, and all five contrast figures matched a separate recount. One independent review of the gate found nine ways a bad report could pass, seven now closed and two left by design. With no skill, on the same system, Claude quoted a lint result it had not run and gave one line number, which was wrong. Not yet run on a real design system, and the typed command has not been run.</p></div>
+    </section>
+    <section class="story" aria-labelledby="story-h"><h2 id="story-h">Build story</h2>
+<div class="prose">
+<h3>What it is for</h3>
+<p>A design system audit usually measures a system against a general idea of what one ought to have. This one holds it to its own rules. A finding is a written rule broken, two of the project's files saying different things, or a WCAG 2.2 AA failure. Anything else, such as a missing dark theme or two tokens holding one value, is a question for the owner and is listed apart.</p>
+<p>The report goes in <code>ux-os/audits/</code>. Nothing else in the project changes, and nothing gets fixed in the same run.</p>
+<h3>How it was built</h3>
+<p>Built on 15 November 2026. Bill asked for his own version of the <code>audit-system</code> command in MC Dean's design-systems pack, which hands each part of the audit to another skill in that pack. This one is written from scratch and stands alone. Its skill file and report template share no run of five words with the 1,215 third-party skill files installed here.</p>
+<p>It started from what Claude does with no skill at all. Asked to audit a small made-up design system with planted faults, it found most of them, and its report had four problems:</p>
+<ul><li>It quoted the result of the project's lint, and said elsewhere that nothing had been run.</li><li>It gave one line number, and the number was wrong.</li><li>Its summary counted 3, 4 and 6 issues over lists that held 5, 6 and 6.</li><li>Rule breaches and opinions about what a system should have sat in one list, with nothing to tell them apart.</li></ul>
+<p>Each part of the skill answers one of those:</p>
+<ul><li>The project's own checks run first, and only the ones that read. Their closing line is copied, and a result that was not run is never written down.</li><li>Every finding names one line and quotes a few words from it. A gate opens that line and looks for the words, so a line that is one off fails.</li><li>The gate recounts the findings, so the counts cannot drift from the table.</li><li>A Rules table lists every rule the system was held to and how it came out: broken, held or not checked.</li><li>Severity is set by what happens to a person, in four levels read before looking: stops someone, misleads a builder, costs time, untidy.</li><li>A second agent, given only the report and the project, rereads each claim and reworks each contrast figure.</li></ul>
+<h3>What testing showed</h3>
+<p>Two trial runs, each by a fresh agent following the skill file to the letter.</p>
+<ul><li><strong>First run.</strong> Nine findings, all with a line that held the quoted words, and the lint result copied from a real run. The gate passed first time. The second reader caught a file count the writer had guessed.</li><li><strong>Second run</strong>, on a harder copy with a dark theme and a script that rewrites files. Fifteen findings. The agent read the script, saw that it writes, and did not run it. The second reader caught a finding that named two of the three roles with no dark value. All five contrast figures matched a separate recount.</li></ul>
+<p>Between the runs the skill gained the Rules table, a rule for which way round <code>files disagree</code> applies, and a line telling the second reader what the report is allowed to say. The first run's agent had no place to record a rule that was checked and held.</p>
+<p>An independent review of the gate then built reports meant to slip through it, and nine kinds did. A link could lead a finding to a file outside the project, a section written twice hid its first table, a finding could be marked broken by another rule's row, and a one-letter quote matched almost any line. Seven of the nine now fail, and the gate's self-test holds 47 cases. Two were left as they are: a suspected finding is not opened, because that is what suspected means, and a report can pass before the second reader has run, with a note saying so. The second run's report still passes the stricter gate.</p>
+<h3>Still to do</h3>
+<ul><li>Run it on a real design system. Both trials used the same made-up one.</li><li>Type the command in a live session.</li><li>The wording changes made after the second run have not been tried, and the fixes that followed the review have had no second review.</li><li>A rule can be marked <code>held</code> with nothing to prove a pass looked. Only the second reader stands behind that.</li></ul>
+</div>
+    </section>
+  </div>
+  <aside class="entry-aside" aria-label="Where it fits">
+    <section aria-labelledby="usage-h"><h2 id="usage-h">Usage</h2><p>Not used once since 22 July 2026.</p></section>
+    <section aria-labelledby="jobs-h"><h2 id="jobs-h">Jobs</h2><p class="aside-k">The pick for</p><ul class="plain"><li><a href="../../jobs/#job-audit-an-existing-design-system">Audit an existing design system</a></li></ul>
+</section>
+    <section aria-labelledby="flows-h"><h2 id="flows-h">Workflows</h2><p>Not part of a workflow yet.</p></section>
+    <section aria-labelledby="reads-h"><h2 id="reads-h">Project files it reads</h2><p>No project file lists it as a reader.</p></section>
+    <section aria-labelledby="src-h"><h2 id="src-h">Source</h2><p><a class="ext" href="https://github.com/bbulman/ux-os/tree/main/plugin/skills/audit-ds">github.com/bbulman/ux-os/tree/main/plugin/skills/audit-ds</a></p></section>
+  </aside>
+</div>
+<p class="back"><a href="../../registry/">Back to the registry</a></p>
+
+</main>
+<footer class="foot">
+  <p><a href="../../changelog/">Changelog</a><span aria-hidden="true"> · </span>Made by <a href="https://workshopr.io">Workshopr.io</a><span aria-hidden="true"> · </span>Every pack keeps its author's licence.</p>
+  <p>Registry as of 14 November 2026. Usage counted from Claude Code transcripts since 22 July 2026.</p>
+</footer>
+</div>
+
+</body>
+</html>

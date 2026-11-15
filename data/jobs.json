@@ -288,8 +288,12 @@
   {
     "set": "design-systems",
     "need": "Audit an existing design system",
-    "use": "design-systems:audit-system",
-    "why": "Consistency, completeness and accessibility in one pass."
+    "use": "ux-os:audit-ds",
+    "rival": {
+      "use": "design-systems:audit-system",
+      "why": "hands each step to another skill in its pack, and nothing checks the report it writes"
+    },
+    "why": "Holds the system to its own written rules, quotes the line behind every finding, and a gate opens each one."
   },
   {
     "set": "ux-strategy",

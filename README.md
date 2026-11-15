@@ -2,14 +2,14 @@
 
 Every UX skill I run with Claude Code, and which one wins each job.
 
-144 entries in 12 sets: 90 skills, 26 skill packs, 10 agents, 17 commands and 1 MCP server. 103 are mine and 41 are third-party. 67 load on their own, 68 run by name and 9 are off. 48 jobs name the skill I hand each need to, 13 of them with the rival that lost. 100 entries have never been used since 22 July 2026.
+145 entries in 12 sets: 91 skills, 26 skill packs, 10 agents, 17 commands and 1 MCP server. 104 are mine and 41 are third-party. 67 load on their own, 69 run by name and 9 are off. 48 jobs name the skill I hand each need to, 14 of them with the rival that lost. 101 entries have never been used since 22 July 2026.
 
 **[Open the site](https://bbulman.github.io/ux-os/)**
 
 ## What's on the site
 
 - [Jobs](https://bbulman.github.io/ux-os/jobs/): say what you need, get the skill I hand it to, its rival and why.
-- [Registry](https://bbulman.github.io/ux-os/registry/): all 144 entries, filterable, each with its own page: how to run it, how to install it, how often I use it and what testing showed.
+- [Registry](https://bbulman.github.io/ux-os/registry/): all 145 entries, filterable, each with its own page: how to run it, how to install it, how often I use it and what testing showed.
 - [Workflows](https://bbulman.github.io/ux-os/workflows/): 7 chains of skills that run in order.
 - [Project files](https://bbulman.github.io/ux-os/project-files/): 9 files a project keeps, which skills read each one, a template and Workshopr's own copy as an example.
 - [Method](https://bbulman.github.io/ux-os/method/): how a skill gets built and tested, and how this registry stays true.
@@ -19,7 +19,7 @@ Every UX skill I run with Claude Code, and which one wins each job.
 | Set | What it covers | Entries | Jobs |
 | --- | --- | --- | --- |
 | [Research](https://bbulman.github.io/ux-os/research/) | Interviews, surveys, usability tests, diary studies, card sorts, affinity diagrams, empathy maps, personas, journey maps, jobs to be done and research repositories. | 24 | 8 |
-| [Design systems](https://bbulman.github.io/ux-os/design-systems/) | Tokens, components, naming, governance and documentation. | 23 | 6 |
+| [Design systems](https://bbulman.github.io/ux-os/design-systems/) | Tokens, components, naming, governance and documentation. | 24 | 6 |
 | [Information architecture](https://bbulman.github.io/ux-os/information-architecture/) | Content inventories, card sorts, taxonomies, labels, sitemaps, navigation, URL rules, content models, redirects, tree tests and findability. | 15 | 6 |
 | [Interaction design](https://bbulman.github.io/ux-os/interaction-design/) | States, forms, feedback, errors, navigation patterns, UX laws and motion. | 20 | 7 |
 | [Visual design](https://bbulman.github.io/ux-os/visual-design/) | Hierarchy, colour, type, layout, visual critique and page craft. | 6 | 3 |
@@ -65,6 +65,6 @@ Once a quarter, after step 2, run `node scripts/prune.mjs`. It lists the third-p
 
 ## Credit
 
-41 of the 144 entries are third-party, and MC Dean wrote 33 of them. Every pack keeps its author's licence, and each entry's page links to its source. [The credits](https://bbulman.github.io/ux-os/method/#credit-h) list every author.
+41 of the 145 entries are third-party, and MC Dean wrote 33 of them. Every pack keeps its author's licence, and each entry's page links to its source. [The credits](https://bbulman.github.io/ux-os/method/#credit-h) list every author.
 
 Made by [Workshopr.io](https://workshopr.io). Source: https://github.com/bbulman/ux-os.

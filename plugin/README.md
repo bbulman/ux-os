@@ -32,6 +32,7 @@ Everything is typed by name. Not sure where to start? `/ux-os:research-next <ide
 | `/ux-os:create-jtbd-file` | Fills or revises `JTBD.md` by interview, as labelled beliefs |
 | `/ux-os:create-agents-file` | Fills or revises `AGENTS.md` by interview: a pointer and the guardrails, never a copy |
 | `/ux-os:init` | Connects a project's design system and house rules to the deliverables |
+| `/ux-os:audit-ds` | Audits a design system against its own written rules, with every finding quoting the line it was seen on |
 | `/ux-os:run` | Runs someone else's design skill on an idea, with every claim it rests on tagged |
 | `/ux-os:create-personas` | Who behaves differently enough to design for separately |
 | `/ux-os:create-empathy-map` | What one person says, does, thinks and feels in one moment |
@@ -73,6 +74,15 @@ Then fill each file by interview with its own command, such as `/ux-os:create-pr
 
 Run `/ux-os:init` once per project. Deliverables take your design system's fonts and colours, and design proposals name a real component or say none fits. It shows you everything before it saves.
 
+## Audit a design system
+
+```
+/ux-os:audit-ds
+/ux-os:audit-ds . the form components
+```
+
+`/ux-os:audit-ds` holds a design system to its own rules, not to a general idea of what one should have. A finding is a written rule broken, two of the project's files disagreeing, or a WCAG 2.2 AA failure. Anything else is a question for the owner and is listed apart. It runs the project's own checks first and copies what they print. Every finding names one line and quotes it, and a gate opens each of those lines and looks for the words. A second agent then rereads the claims. The report says what was read, what was sampled and what was left out, and goes in `ux-os/audits/`. Nothing else in the project changes.
+
 ## Run someone else's skill
 
 Most design skills are written by someone else. `/ux-os:run` runs one as if it kept these rules, without changing it.
@@ -90,6 +100,6 @@ On made-up test data, and on one real design system. None of it has been compare
 
 ## Credit
 
-The shape of `research-next`, `research-discover` and `research-synthesize` comes from MC Dean's Designer Skills Pack (MIT). The interview in the `create-<file>-file` commands, rounds of questions each with a recommended answer, follows Matt Pocock's grilling skill.
+The shape of `research-next`, `research-discover` and `research-synthesize` comes from MC Dean's Designer Skills Pack (MIT). `audit-ds` does the job of that pack's `audit-system` command, written from scratch. The interview in the `create-<file>-file` commands, rounds of questions each with a recommended answer, follows Matt Pocock's grilling skill.
 
 MIT licence.

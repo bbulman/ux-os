@@ -12,7 +12,9 @@
       "Method is no longer in the top navigation.",
       "ux-os 0.5.0: nine commands, one per project file, that write or revise PRODUCT, DESIGN, AGENTS, PERSONAS, JOURNEYS, JTBD, taste, motion or VOICE by interview, sharing one interview guide.",
       "Added a Get started page: the two ways to install UX-OS, then the four steps that start a new project.",
-      "The six I use most on Home are light cards on the paper instead of film-strip frames, and no longer show how often each has run."
+      "The six I use most on Home are light cards on the paper instead of film-strip frames, and no longer show how often each has run.",
+      "ux-os 0.6.0: /ux-os:audit-ds audits a design system against its own written rules. Every finding quotes the line it was seen on, a gate opens each of those lines, and a second agent rereads the claims.",
+      "The job Audit an existing design system now goes to ux-os:audit-ds, with MC Dean's audit-system as the rival it replaced."
     ]
   },
   {

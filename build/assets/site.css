@@ -20,7 +20,6 @@
   --on: #9FD39B;
   --grease-film: #EF5A4F;   /* small red text on film */
   --off-film: #9A9387;      /* OFF on film */
-  --hole: #34312c;          /* sprocket holes */
   --display: "Barlow Condensed", "Arial Narrow", sans-serif;
   --text: "Public Sans", system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
@@ -38,7 +37,6 @@
     --line: #3A2A26;
     --grease-ink: #EF5A4F;
     --edge-ink: #E8892B;
-    --hole: #241b18;
     color-scheme: dark;
   }
 }
@@ -329,27 +327,19 @@ th { font: 500 12px/1.5 var(--mono); letter-spacing: .04em; text-transform: uppe
 .turn small { margin-bottom: 4px; font: 500 12px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); }
 .turn .next { margin-left: auto; text-align: right; }
 
-/* Workflows: film strips with sprocket holes */
+/* Workflows: each workflow as a numbered list of steps */
 .flow { margin-top: clamp(48px, 7vw, 80px); scroll-margin-top: 24px; }
 .flow-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; padding-bottom: 8px; margin-bottom: 14px; border-bottom: 2px solid var(--ink); }
 .flow-head .n { margin: 0; font: 400 13px var(--mono); color: var(--ink-2); }
-.film { list-style: none; margin: 0; padding: 30px 14px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 24px; border-radius: 2px;
-  background:
-    repeating-linear-gradient(90deg, var(--hole) 0 12px, transparent 12px 24px) left 6px top 9px / calc(100% - 12px) 9px no-repeat,
-    repeating-linear-gradient(90deg, var(--hole) 0 12px, transparent 12px 24px) left 6px bottom 9px / calc(100% - 12px) 9px no-repeat,
-    var(--film); }
-@media (min-width: 700px) { .film { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-@media (min-width: 1040px) { .film { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-.step { position: relative; min-width: 0; color: var(--on-film); }
-.step .edge > :last-child { text-align: right; }
-.arrow { position: absolute; right: -19px; top: 34%; font: 500 15px var(--mono); color: var(--edge); }
-.film > .step:nth-child(2n) .arrow { display: none; }
-@media (min-width: 700px) { .film > .step:nth-child(2n) .arrow { display: inline; } .film > .step:nth-child(3n) .arrow { display: none; } }
-@media (min-width: 1040px) { .film > .step:nth-child(3n) .arrow { display: inline; } .film > .step:nth-child(4n) .arrow { display: none; } }
-.frame-blank { display: block; color: var(--on-film-2); }
-.shot--blank { background: transparent; border: 2px dashed #6b655b; }
-.shot--blank .fname { color: var(--on-film); }
-.step-note { margin: 8px 2px 0; font: 400 12px/1.5 var(--mono); color: var(--on-film-2); }
+.steps { list-style: none; margin: 0; padding: 0; }
+.step-row { display: grid; grid-template-columns: 2.75rem minmax(0, 1fr); gap: 0 14px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.step-n { font: 500 13px/1.9 var(--mono); letter-spacing: .06em; color: var(--edge-ink); }
+.step-label { margin: 0; font: 700 1.3rem/1.2 var(--display); }
+.step-use { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 6px 0 0; font-size: 15px; }
+.step-use code { font: 400 13px var(--mono); color: var(--ink-2); overflow-wrap: anywhere; }
+.step-note { margin: 6px 0 0; max-width: 68ch; font-size: 14px; color: var(--ink-2); }
+.step-row--person .step-label { color: var(--ink-2); }
+.tag-person { font: 500 11px/1 var(--mono); letter-spacing: .08em; padding: 4px 6px; border: 1px dashed var(--ink-2); border-radius: 2px; color: var(--ink-2); }
 
 /* Project files */
 .pf-group { margin-top: clamp(40px, 6vw, 64px); }

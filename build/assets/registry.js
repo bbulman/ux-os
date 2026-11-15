@@ -1,14 +1,17 @@
 // Registry facets. Values within a facet widen the view (OR); facets narrow it (AND).
 // The filter lives in the URL hash, so a filtered view can be linked: #set=research&loads=on,name
-// Without this script the bar stays hidden and the whole sheet shows.
+// Both sheets (Most used and All) filter together; the count is of All, which holds every entry.
+// Without this script the bar stays hidden and both sheets show in full.
 (function () {
   var root = document.querySelector('[data-filters]');
-  var sheet = document.querySelector('[data-sheet]');
+  var sheet = document.querySelector('[data-sheet="all"]');
   if (!root || !sheet) return;
 
   var KEYS = ['set', 'type', 'origin', 'loads', 'scope'];
   var all = function (sel, el) { return Array.prototype.slice.call((el || document).querySelectorAll(sel)); };
-  var frames = Array.prototype.slice.call(sheet.children);
+  var frames = all('[data-sheet] > .frame');
+  var total = sheet.children.length;
+  var groups = all('[data-group]');
   var buttons = all('[data-facet]', root);
   var toggles = all('[data-toggle]', root);
   var panels = all('[data-panel]', root);
@@ -61,14 +64,20 @@
   }
 
   function apply() {
-    var shown = 0;
     frames.forEach(function (f) {
-      var ok = KEYS.every(function (k) {
+      f.hidden = !KEYS.every(function (k) {
         var vs = values(k);
         return !vs.length || vs.indexOf(f.getAttribute('data-' + k)) >= 0;
       });
-      f.hidden = !ok;
-      if (ok) shown++;
+    });
+    var shown = 0;
+    groups.forEach(function (g) {
+      var list = g.querySelector('[data-sheet]');
+      var n = all('.frame', list).filter(function (f) { return !f.hidden; }).length;
+      var isAll = list === sheet;
+      if (isAll) shown = n;
+      g.querySelector('[data-group-count]').textContent = n + (n === 1 ? ' entry' : ' entries');
+      g.hidden = !isAll && n === 0;
     });
     buttons.forEach(function (b) {
       var on = !!(state[b.getAttribute('data-facet')] || {})[b.getAttribute('data-value')];
@@ -80,7 +89,7 @@
       t.classList.toggle('is-set', values(k).length > 0);
     });
     var any = anyActive();
-    count.textContent = 'Showing ' + shown + ' of ' + frames.length;
+    count.textContent = 'Showing ' + shown + ' of ' + total;
     clears.forEach(function (c) { c.hidden = !any; });
     empty.hidden = shown !== 0;
   }

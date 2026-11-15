@@ -4,6 +4,9 @@ import { TYPES, ORIGINS, STATUSES, SCOPES } from '../load.mjs';
 const LOAD_KEY = { available: 'on', name: 'name', off: 'off' };
 export const loadKey = (e) => LOAD_KEY[e.status];
 
+// Two rows of five at full width.
+const MOST_USED = 10;
+
 // The facet attributes the registry script filters on.
 export const facetAttrs = (e) =>
   ` data-set="${e.set}" data-type="${e.type}" data-origin="${e.origin}" data-loads="${loadKey(e)}" data-scope="${e.scope}"`;
@@ -29,13 +32,22 @@ export function registry(ctx) {
   ${values.filter(([, , c]) => c).map(([v, name, c]) => `<button type="button" class="facet-btn" aria-pressed="false" data-facet="${key}" data-value="${esc(v)}" data-label="${esc(name)}">${esc(name)} <span class="c">${fmt(c)}</span></button>`).join('')}
 </div>`).join('\n');
 
-  const frames = ctx.sorted.map((e, i) => frame(e, { n: i + 1, L, pick: ctx.isPick(e), attrs: facetAttrs(e), setName: ctx.setName, showRuns: false })).join('\n');
+  const frames = (list) => list.map((e, i) => frame(e, { n: i + 1, L, pick: ctx.isPick(e), attrs: facetAttrs(e), setName: ctx.setName, showRuns: false })).join('\n');
+  const most = ctx.sorted.filter((e) => e.usage.total > 0).slice(0, MOST_USED);
+
+  // data-group-count is rewritten by the registry script as the filters change.
+  const group = (id, title, list, key) => `<section class="reg-group" id="${id}" aria-labelledby="h-${id}" data-group>
+  <div class="reg-group-head"><h2 class="big-2" id="h-${id}">${esc(title)}</h2><p class="n" data-group-count>${plural(list.length, 'entry', 'entries')}</p></div>
+  <ol class="sheet sheet--light sheet--five" data-sheet="${key}">
+${frames(list)}
+  </ol>
+</section>`;
 
   const body = `
 <header class="page-head">
   <p class="kicker">${plural(t.entries, 'entry', 'entries')} · ${fmt(t.on)} on · ${fmt(t.byName)} by name · ${fmt(t.off)} off</p>
   <h1>Registry</h1>
-  <p class="lede">Each frame is one skill, pack, agent or tool, sorted by how often I use it. A red tick marks a pick: the skill a job sends you to.</p>
+  <p class="lede">Each frame is one skill, pack, agent or tool. The ${MOST_USED} I use most come first, then every entry, most used first. A red tick marks a pick: the skill a job sends you to.</p>
 </header>
 
 <div class="filters" data-filters hidden>
@@ -49,9 +61,9 @@ export function registry(ctx) {
 
 <p class="legend"><b>ON</b> loads on its own. <b>BY NAME</b> runs when you type it. <b>OFF</b> is installed and switched off. <b class="tick-ink">✓ pick</b> is the skill a job sends you to.</p>
 
-<ol class="sheet sheet--light" data-sheet>
-${frames}
-</ol>
+${most.length ? group('most-used', 'Most used', most, 'most') : ''}
+
+${group('all', 'All', ctx.sorted, 'all')}
 <p class="empty" data-empty hidden>Nothing matches those filters. <button type="button" class="clear" data-clear>Clear filters</button></p>
 `;
 

@@ -2,6 +2,7 @@
 // Every problem is collected first, so one run reports all of them.
 import { existsSync, readFileSync, readdirSync, realpathSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
+import { checkPlugins } from './loadout.mjs';
 
 export const TYPES = ['skill', 'pack', 'agent', 'command', 'mcp'];
 export const ORIGINS = ['built', 'combined', 'third'];
@@ -73,8 +74,10 @@ export function loadData(root) {
   const workflows = listOf(readJson('data/workflows.json', []), 'data/workflows.json');
   const projectFiles = listOf(readJson('data/project-files.json', []), 'data/project-files.json');
   const changes = listOf(readJson('data/changes.json', []), 'data/changes.json');
+  const plugins = readJson('data/plugins.json', null);
   const sets = listOf(registry.sets, 'registry sets');
   const entries = listOf(registry.entries, 'registry entries');
+  checkPlugins(plugins, entries, fail);
   if (!usage.counts || typeof usage.counts !== 'object' || Array.isArray(usage.counts)) { fail('usage: counts must be an object'); usage.counts = {}; }
 
   // dates
@@ -226,5 +229,5 @@ export function loadData(root) {
     e.usage = { ...u, band: band(u.total) };
     e.reads = reads[e.id] || [];
   }
-  return { sets, entries, jobs, workflows, projectFiles, changes, stories, usage, warnings, asOf: registry.asOf, resolve };
+  return { sets, entries, jobs, workflows, projectFiles, changes, plugins, stories, usage, warnings, asOf: registry.asOf, resolve };
 }

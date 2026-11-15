@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-11-15",
+    "items": [
+      "Added the Loadout page: the plugins and settings that decide what Claude loads on my machine, as a block you can copy or download.",
+      "Added a quarterly prune report, scripts/prune.mjs, which lists third-party skills I have never used and that no job depends on, with the setting that would switch each one off."
+    ]
+  },
+  {
     "date": "2026-11-14",
     "items": [
       "Rebuilt the site around one registry of skills, packs, agents, commands and tools, with Jobs, Workflows, Project files and a new Content set.",

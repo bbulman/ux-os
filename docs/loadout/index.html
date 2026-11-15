@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loadout: UX-OS</title>
+<meta name="description" content="The settings that decide what Claude loads on my machine, as a block you can copy into your own.">
+<link rel="canonical" href="https://bbulman.github.io/ux-os/loadout/">
+<meta property="og:title" content="Loadout: UX-OS">
+<meta property="og:description" content="The settings that decide what Claude loads on my machine, as a block you can copy into your own.">
+<meta property="og:url" content="https://bbulman.github.io/ux-os/loadout/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="top">
+  <a class="mark" href="../">UX-OS<small aria-hidden="true">5063 TX</small></a>
+  <nav class="nav" aria-label="Main"><a href="../jobs/">Jobs</a><a href="../registry/">Registry</a><a href="../disciplines/">Disciplines</a><a href="../workflows/">Workflows</a><a href="../project-files/">Project files</a><a href="../method/">Method</a><a href="https://github.com/bbulman/ux-os">GitHub</a></nav>
+</header>
+<main id="main" tabindex="-1">
+
+<header class="page-head">
+  <p class="kicker">17 plugins on · 19 off · 35 skills by name</p>
+  <h1>Loadout</h1>
+  <p class="lede">What Claude loads on my machine, written as settings you can copy. Install the same plugins, merge the block below, and your Claude starts from the same list mine does.</p>
+</header>
+
+<section class="sec sec-tight" aria-labelledby="add-h">
+  <h2 class="big-2" id="add-h">1. Add the marketplaces</h2>
+  <p class="small">Once. Matt Pocock's skills come from Anthropic's own marketplace, which Claude Code already knows.</p>
+  <pre class="cmd" aria-label="Marketplaces to add"><code>/plugin marketplace add Owl-Listener/designer-skills
+/plugin marketplace add bbulman/ux-os
+/plugin marketplace add pbakaus/impeccable</code></pre>
+</section>
+
+<section class="sec sec-tight" aria-labelledby="install-h">
+  <h2 class="big-2" id="install-h">2. Install the 17 plugins I keep on</h2>
+  <pre class="cmd" aria-label="Plugins to install"><code>/plugin install ai-alignment-reasoning@designer-skills
+/plugin install design-agent-orchestration@designer-skills
+/plugin install design-ops@designer-skills
+/plugin install design-research@designer-skills
+/plugin install design-strategy@designer-skills
+/plugin install design-systems@designer-skills
+/plugin install designer-toolkit@designer-skills
+/plugin install impeccable@impeccable
+/plugin install inclusive-personas@designer-skills
+/plugin install interaction-design@designer-skills
+/plugin install mattpocock-skills@claude-plugins-official
+/plugin install model-interaction-design@designer-skills
+/plugin install prototyping-testing@designer-skills
+/plugin install ui-design@designer-skills
+/plugin install ux-os@ux-os
+/plugin install ux-strategy@designer-skills
+/plugin install visual-critique@designer-skills</code></pre>
+</section>
+
+<section class="sec sec-tight" aria-labelledby="merge-h">
+  <h2 class="big-2" id="merge-h">3. Merge the settings</h2>
+  <div class="prose">
+    <p>Open <code>.claude/settings.json</code> in your home folder. Add the keys below to its <code>enabledPlugins</code> and <code>skillOverrides</code> objects, and keep the entries already there. If the file has neither object, paste the block in whole. A new session picks it up.</p>
+    <p><code>false</code> keeps a plugin installed but never loaded. <code>user-invocable-only</code> keeps a skill out of Claude's list until you type its name: those 35 are my own skills, and the setting only matters if you have them installed.</p>
+  </div>
+  <pre class="cmd" id="loadout-json" aria-label="Settings to merge"><code>{
+  &quot;enabledPlugins&quot;: {
+    &quot;accessibility-decisions@designer-skills&quot;: false,
+    &quot;accessible-content@designer-skills&quot;: false,
+    &quot;adaptive-interfaces@designer-skills&quot;: false,
+    &quot;ai-alignment-reasoning@designer-skills&quot;: true,
+    &quot;cognitive-accessibility@designer-skills&quot;: false,
+    &quot;cross-functional-alignment@designer-skills&quot;: false,
+    &quot;delivery-execution@designer-skills&quot;: false,
+    &quot;design-agent-orchestration@designer-skills&quot;: true,
+    &quot;design-ops@designer-skills&quot;: true,
+    &quot;design-research@designer-skills&quot;: true,
+    &quot;design-strategy@designer-skills&quot;: true,
+    &quot;design-systems@designer-skills&quot;: true,
+    &quot;designer-toolkit@designer-skills&quot;: true,
+    &quot;evaluation@designer-skills&quot;: false,
+    &quot;impeccable@impeccable&quot;: true,
+    &quot;inclusive-interaction@designer-skills&quot;: false,
+    &quot;inclusive-personas@designer-skills&quot;: true,
+    &quot;interaction-design@designer-skills&quot;: true,
+    &quot;leadership-craft@designer-skills&quot;: false,
+    &quot;mattpocock-skills@claude-plugins-official&quot;: true,
+    &quot;measurement-ops@designer-skills&quot;: false,
+    &quot;model-interaction-design@designer-skills&quot;: true,
+    &quot;operating-cadence@designer-skills&quot;: false,
+    &quot;org-influence@designer-skills&quot;: false,
+    &quot;people-management@designer-skills&quot;: false,
+    &quot;process-design@designer-skills&quot;: false,
+    &quot;program-planning@designer-skills&quot;: false,
+    &quot;prompt-architecture@designer-skills&quot;: false,
+    &quot;prototyping-testing@designer-skills&quot;: true,
+    &quot;stakeholder-comms@designer-skills&quot;: false,
+    &quot;system-behavior-shaping@designer-skills&quot;: false,
+    &quot;team-building@designer-skills&quot;: false,
+    &quot;ui-design@designer-skills&quot;: true,
+    &quot;ux-os@ux-os&quot;: true,
+    &quot;ux-strategy@designer-skills&quot;: true,
+    &quot;visual-critique@designer-skills&quot;: true
+  },
+  &quot;skillOverrides&quot;: {
+    &quot;align-stakeholders&quot;: &quot;user-invocable-only&quot;,
+    &quot;analyze-competitors&quot;: &quot;user-invocable-only&quot;,
+    &quot;animation&quot;: &quot;user-invocable-only&quot;,
+    &quot;business-design&quot;: &quot;user-invocable-only&quot;,
+    &quot;card-sort&quot;: &quot;user-invocable-only&quot;,
+    &quot;content-inventory&quot;: &quot;user-invocable-only&quot;,
+    &quot;content-models&quot;: &quot;user-invocable-only&quot;,
+    &quot;conversational-interfaces&quot;: &quot;user-invocable-only&quot;,
+    &quot;create-brief&quot;: &quot;user-invocable-only&quot;,
+    &quot;create-content-strategy&quot;: &quot;user-invocable-only&quot;,
+    &quot;create-design-principles&quot;: &quot;user-invocable-only&quot;,
+    &quot;create-experience-map&quot;: &quot;user-invocable-only&quot;,
+    &quot;create-manifesto&quot;: &quot;user-invocable-only&quot;,
+    &quot;create-north-star&quot;: &quot;user-invocable-only&quot;,
+    &quot;create-service-blueprint&quot;: &quot;user-invocable-only&quot;,
+    &quot;error-handling&quot;: &quot;user-invocable-only&quot;,
+    &quot;feedback-states&quot;: &quot;user-invocable-only&quot;,
+    &quot;findability&quot;: &quot;user-invocable-only&quot;,
+    &quot;form-designs&quot;: &quot;user-invocable-only&quot;,
+    &quot;humanizer&quot;: &quot;user-invocable-only&quot;,
+    &quot;information-architecture&quot;: &quot;user-invocable-only&quot;,
+    &quot;ios-interactions&quot;: &quot;user-invocable-only&quot;,
+    &quot;labeling&quot;: &quot;user-invocable-only&quot;,
+    &quot;laws-of-ux&quot;: &quot;user-invocable-only&quot;,
+    &quot;loading-states&quot;: &quot;user-invocable-only&quot;,
+    &quot;micro-interactions&quot;: &quot;user-invocable-only&quot;,
+    &quot;navigation&quot;: &quot;user-invocable-only&quot;,
+    &quot;redirect-maps&quot;: &quot;user-invocable-only&quot;,
+    &quot;search-design&quot;: &quot;user-invocable-only&quot;,
+    &quot;site-architecture&quot;: &quot;user-invocable-only&quot;,
+    &quot;sitemaps&quot;: &quot;user-invocable-only&quot;,
+    &quot;taxonomies&quot;: &quot;user-invocable-only&quot;,
+    &quot;tree-tests&quot;: &quot;user-invocable-only&quot;,
+    &quot;url-structure&quot;: &quot;user-invocable-only&quot;,
+    &quot;user-onboarding&quot;: &quot;user-invocable-only&quot;
+  }
+}
+</code></pre>
+  <p class="copy-row"><button type="button" class="btn" data-copy="loadout-json" hidden>Copy the settings</button><a class="link" href="settings.json" download>Download settings.json</a><span class="copy-status small" role="status" aria-live="polite"></span></p>
+</section>
+
+<section class="sec" aria-labelledby="cant-h">
+  <h2 class="big" id="cant-h">What it can't control</h2>
+  <div class="note note--wide"><p><span class="note-k">Synced copies:</span> a plugin added through claude.ai loads from a synced copy whenever claude.ai says it should, even when these settings say <code>false</code>. Switch those off in claude.ai itself. <a href="../registry/design-ux-copy/">design</a> only ever arrives that way.</p>
+<p><span class="note-k">Private:</span> <a href="../registry/design-os-create-object-map/">design-os</a>, <a href="../registry/ds-kit-adopt-ds/">ds-kit</a>, <a href="../registry/design-agent/">design-agent</a>, <a href="../registry/feature-plan/">feature-plan</a>, <a href="../registry/feature-build/">feature-build</a> and <a href="../registry/landing-page-design/">landing-page-design</a> load from folders on my machine and aren't published, so they're left out.</p>
+<p><span class="note-k">Unnamed:</span> <a href="../registry/lenny-skills-research/">lenny-skills research set</a>, <a href="../registry/emil-kowalski-motion/">Emil Kowalski motion skills</a> and <a href="../registry/taste-skills/">Taste skills</a> are kept by skill name in my own settings, and the registry doesn't list each skill, so they're left out too.</p>
+<p><span class="note-k">Projects:</span> a project's own <code>.claude/settings.json</code> and <code>settings.local.json</code> can override all of this for that project.</p>
+<p><span class="note-k">Plugin skills:</span> <code>skillOverrides</code> doesn't reach a plugin's skills. A plugin skill that runs only by name says so in its own file, which is why none appear in the block.</p></div>
+</section>
+
+<section class="sec" aria-labelledby="plugins-h">
+  <h2 class="big" id="plugins-h">Every plugin in the block</h2>
+  <div class="table"><table class="lo-table">
+    <thead><tr><th scope="col">Plugin</th><th scope="col">Loads</th><th scope="col" class="lo-key">Setting</th></tr></thead>
+    <tbody>
+    <tr>
+      <td><a href="../registry/accessibility-decisions/">accessibility-decisions</a></td>
+      <td><span class="chip chip--off">OFF</span></td>
+      <td class="lo-key"><code>accessibility-decisions@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/accessible-content/">accessible-content</a></td>
+      <td><span class="chip chip--off">OFF</span></td>
+      <td class="lo-key"><code>accessible-content@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/adaptive-interfaces/">adaptive-interfaces</a></td>
+      <td><span class="chip chip--off">OFF</span></td>
+      <td class="lo-key"><code>adaptive-interfaces@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/ai-alignment-reasoning/">ai-alignment-reasoning</a></td>
+      <td><span class="chip chip--available">ON</span></td>
+      <td class="lo-key"><code>ai-alignment-reasoning@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/cognitive-accessibility/">cognitive-accessibility</a></td>
+      <td><span class="chip chip--off">OFF</span></td>
+      <td class="lo-key"><code>cognitive-accessibility@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/ux-program-and-leadership-packs/">cross-functional-alignment</a> <span class="small">(UX program and leadership packs)</span></td>
+      <td><span class="chip chip--off">OFF</span></td>
+      <td class="lo-key"><code>cross-functional-alignment@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/ux-program-and-leadership-packs/">delivery-execution</a> <span class="small">(UX program and leadership packs)</span></td>
+      <td><span class="chip chip--off">OFF</span></td>
+      <td class="lo-key"><code>delivery-execution@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/design-agent-orchestration/">design-agent-orchestration</a></td>
+      <td><span class="chip chip--available">ON</span></td>
+      <td class="lo-key"><code>design-agent-orchestration@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/design-ops/">design-ops</a></td>
+      <td><span class="chip chip--available">ON</span></td>
+      <td class="lo-key"><code>design-ops@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/design-research/">design-research</a></td>
+      <td><span class="chip chip--available">ON</span></td>
+      <td class="lo-key"><code>design-research@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/design-strategy/">design-strategy</a></td>
+      <td><span class="chip chip--available">ON</span></td>
+      <td class="lo-key"><code>design-strategy@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/design-systems/">design-systems</a></td>
+      <td><span class="chip chip--available">ON</span></td>
+      <td class="lo-key"><code>design-systems@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/designer-toolkit/">designer-toolkit</a></td>
+      <td><span class="chip chip--available">ON</span></td>
+      <td class="lo-key"><code>designer-toolkit@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/evaluation/">evaluation</a></td>
+      <td><span class="chip chip--off">OFF</span></td>
+      <td class="lo-key"><code>evaluation@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/impeccable/">impeccable</a></td>
+      <td><span class="chip chip--available">ON</span></td>
+      <td class="lo-key"><code>impeccable@impeccable</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/inclusive-interaction/">inclusive-interaction</a></td>
+      <td><span class="chip chip--off">OFF</span></td>
+      <td class="lo-key"><code>inclusive-interaction@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/inclusive-personas/">inclusive-personas</a></td>
+      <td><span class="chip chip--available">ON</span></td>
+      <td class="lo-key"><code>inclusive-personas@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/interaction-design/">interaction-design</a></td>
+      <td><span class="chip chip--available">ON</span></td>
+      <td class="lo-key"><code>interaction-design@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/ux-program-and-leadership-packs/">leadership-craft</a> <span class="small">(UX program and leadership packs)</span></td>
+      <td><span class="chip chip--off">OFF</span></td>
+      <td class="lo-key"><code>leadership-craft@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/prototype/">mattpocock-skills</a></td>
+      <td><span class="chip chip--available">ON</span></td>
+      <td class="lo-key"><code>mattpocock-skills@claude-plugins-official</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/ux-program-and-leadership-packs/">measurement-ops</a> <span class="small">(UX program and leadership packs)</span></td>
+      <td><span class="chip chip--off">OFF</span></td>
+      <td class="lo-key"><code>measurement-ops@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/model-interaction-design/">model-interaction-design</a></td>
+      <td><span class="chip chip--available">ON</span></td>
+      <td class="lo-key"><code>model-interaction-design@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/ux-program-and-leadership-packs/">operating-cadence</a> <span class="small">(UX program and leadership packs)</span></td>
+      <td><span class="chip chip--off">OFF</span></td>
+      <td class="lo-key"><code>operating-cadence@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/ux-program-and-leadership-packs/">org-influence</a> <span class="small">(UX program and leadership packs)</span></td>
+      <td><span class="chip chip--off">OFF</span></td>
+      <td class="lo-key"><code>org-influence@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/ux-program-and-leadership-packs/">people-management</a> <span class="small">(UX program and leadership packs)</span></td>
+      <td><span class="chip chip--off">OFF</span></td>
+      <td class="lo-key"><code>people-management@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/ux-program-and-leadership-packs/">process-design</a> <span class="small">(UX program and leadership packs)</span></td>
+      <td><span class="chip chip--off">OFF</span></td>
+      <td class="lo-key"><code>process-design@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/ux-program-and-leadership-packs/">program-planning</a> <span class="small">(UX program and leadership packs)</span></td>
+      <td><span class="chip chip--off">OFF</span></td>
+      <td class="lo-key"><code>program-planning@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/prompt-architecture/">prompt-architecture</a></td>
+      <td><span class="chip chip--off">OFF</span></td>
+      <td class="lo-key"><code>prompt-architecture@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/prototyping-testing/">prototyping-testing</a></td>
+      <td><span class="chip chip--available">ON</span></td>
+      <td class="lo-key"><code>prototyping-testing@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/ux-program-and-leadership-packs/">stakeholder-comms</a> <span class="small">(UX program and leadership packs)</span></td>
+      <td><span class="chip chip--off">OFF</span></td>
+      <td class="lo-key"><code>stakeholder-comms@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/system-behavior-shaping/">system-behavior-shaping</a></td>
+      <td><span class="chip chip--off">OFF</span></td>
+      <td class="lo-key"><code>system-behavior-shaping@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/ux-program-and-leadership-packs/">team-building</a> <span class="small">(UX program and leadership packs)</span></td>
+      <td><span class="chip chip--off">OFF</span></td>
+      <td class="lo-key"><code>team-building@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/ui-design/">ui-design</a></td>
+      <td><span class="chip chip--available">ON</span></td>
+      <td class="lo-key"><code>ui-design@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/ux-os-claims-auditor/">ux-os</a></td>
+      <td><span class="chip chip--available">ON</span></td>
+      <td class="lo-key"><code>ux-os@ux-os</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/ux-strategy/">ux-strategy</a></td>
+      <td><span class="chip chip--available">ON</span></td>
+      <td class="lo-key"><code>ux-strategy@designer-skills</code></td>
+    </tr>
+    <tr>
+      <td><a href="../registry/visual-critique/">visual-critique</a></td>
+      <td><span class="chip chip--available">ON</span></td>
+      <td class="lo-key"><code>visual-critique@designer-skills</code></td>
+    </tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="sec" aria-labelledby="by-name-h">
+  <h2 class="big" id="by-name-h">Skills kept out of the list</h2>
+  <p class="lede">Each runs when you type its name. Claude never picks it on its own.</p>
+  <ul class="plain">
+    <li><a href="../registry/align-stakeholders/">align-stakeholders</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/analyze-competitors/">analyze-competitors</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/animation/">animation</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/business-design/">business-design</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/card-sort/">card-sort</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/content-inventory/">content-inventory</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/content-models/">content-models</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/conversational-interfaces/">conversational-interfaces</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/create-brief/">create-brief</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/create-content-strategy/">create-content-strategy</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/create-design-principles/">create-design-principles</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/create-experience-map/">create-experience-map</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/create-manifesto/">create-manifesto</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/create-north-star/">create-north-star</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/create-service-blueprint/">create-service-blueprint</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/error-handling/">error-handling</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/feedback-states/">feedback-states</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/findability/">findability</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/form-designs/">form-designs</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/humanizer/">humanizer</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/information-architecture/">information-architecture</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/ios-interactions/">ios-interactions</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/labeling/">labeling</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/laws-of-ux/">laws-of-ux</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/loading-states/">loading-states</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/micro-interactions/">micro-interactions</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/navigation/">navigation</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/redirect-maps/">redirect-maps</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/search-design/">search-design</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/site-architecture/">site-architecture</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/sitemaps/">sitemaps</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/taxonomies/">taxonomies</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/tree-tests/">tree-tests</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/url-structure/">url-structure</a> <span class="chip chip--name">BY NAME</span></li>
+    <li><a href="../registry/user-onboarding/">user-onboarding</a> <span class="chip chip--name">BY NAME</span></li>
+  </ul>
+</section>
+
+</main>
+<footer class="foot">
+  <p><a href="../changelog/">Changelog</a><span aria-hidden="true"> · </span>Made by <a href="https://workshopr.io">Workshopr.io</a><span aria-hidden="true"> · </span>Every pack keeps its author's licence.</p>
+  <p>Registry as of 14 November 2026. Usage counted from Claude Code transcripts since 22 July 2026.</p>
+</footer>
+</div>
+<script src="../assets/copy.js" defer></script>
+</body>
+</html>

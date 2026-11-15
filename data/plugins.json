@@ -1,0 +1,194 @@
+{
+  "about": "Read by build/loadout.mjs. Each plugin's members are the registry entries whose invoke name starts with '<name>:', the pack entry named after it, or the entry it names under 'entry'. 'private' plugins are installed from local folders and left out of the public loadout; 'synced' ones come only from claude.ai and no setting controls them. A marketplace of null needs no 'marketplace add': it is built into Claude Code.",
+  "marketplaces": {
+    "designer-skills": "Owl-Listener/designer-skills",
+    "ux-os": "bbulman/ux-os",
+    "impeccable": "pbakaus/impeccable",
+    "claude-plugins-official": null
+  },
+  "plugins": [
+    {
+      "name": "ai-alignment-reasoning",
+      "marketplace": "designer-skills"
+    },
+    {
+      "name": "design-agent-orchestration",
+      "marketplace": "designer-skills"
+    },
+    {
+      "name": "design-ops",
+      "marketplace": "designer-skills"
+    },
+    {
+      "name": "design-research",
+      "marketplace": "designer-skills"
+    },
+    {
+      "name": "design-strategy",
+      "marketplace": "designer-skills"
+    },
+    {
+      "name": "design-systems",
+      "marketplace": "designer-skills"
+    },
+    {
+      "name": "designer-toolkit",
+      "marketplace": "designer-skills"
+    },
+    {
+      "name": "inclusive-personas",
+      "marketplace": "designer-skills"
+    },
+    {
+      "name": "interaction-design",
+      "marketplace": "designer-skills"
+    },
+    {
+      "name": "model-interaction-design",
+      "marketplace": "designer-skills"
+    },
+    {
+      "name": "prototyping-testing",
+      "marketplace": "designer-skills"
+    },
+    {
+      "name": "ui-design",
+      "marketplace": "designer-skills"
+    },
+    {
+      "name": "ux-strategy",
+      "marketplace": "designer-skills"
+    },
+    {
+      "name": "visual-critique",
+      "marketplace": "designer-skills"
+    },
+    {
+      "name": "accessibility-decisions",
+      "marketplace": "designer-skills"
+    },
+    {
+      "name": "accessible-content",
+      "marketplace": "designer-skills"
+    },
+    {
+      "name": "adaptive-interfaces",
+      "marketplace": "designer-skills"
+    },
+    {
+      "name": "cognitive-accessibility",
+      "marketplace": "designer-skills"
+    },
+    {
+      "name": "evaluation",
+      "marketplace": "designer-skills"
+    },
+    {
+      "name": "inclusive-interaction",
+      "marketplace": "designer-skills"
+    },
+    {
+      "name": "prompt-architecture",
+      "marketplace": "designer-skills"
+    },
+    {
+      "name": "system-behavior-shaping",
+      "marketplace": "designer-skills"
+    },
+    {
+      "name": "program-planning",
+      "marketplace": "designer-skills",
+      "entry": "ux-program-and-leadership-packs"
+    },
+    {
+      "name": "stakeholder-comms",
+      "marketplace": "designer-skills",
+      "entry": "ux-program-and-leadership-packs"
+    },
+    {
+      "name": "delivery-execution",
+      "marketplace": "designer-skills",
+      "entry": "ux-program-and-leadership-packs"
+    },
+    {
+      "name": "cross-functional-alignment",
+      "marketplace": "designer-skills",
+      "entry": "ux-program-and-leadership-packs"
+    },
+    {
+      "name": "measurement-ops",
+      "marketplace": "designer-skills",
+      "entry": "ux-program-and-leadership-packs"
+    },
+    {
+      "name": "process-design",
+      "marketplace": "designer-skills",
+      "entry": "ux-program-and-leadership-packs"
+    },
+    {
+      "name": "people-management",
+      "marketplace": "designer-skills",
+      "entry": "ux-program-and-leadership-packs"
+    },
+    {
+      "name": "team-building",
+      "marketplace": "designer-skills",
+      "entry": "ux-program-and-leadership-packs"
+    },
+    {
+      "name": "org-influence",
+      "marketplace": "designer-skills",
+      "entry": "ux-program-and-leadership-packs"
+    },
+    {
+      "name": "operating-cadence",
+      "marketplace": "designer-skills",
+      "entry": "ux-program-and-leadership-packs"
+    },
+    {
+      "name": "leadership-craft",
+      "marketplace": "designer-skills",
+      "entry": "ux-program-and-leadership-packs"
+    },
+    {
+      "name": "ux-os",
+      "marketplace": "ux-os"
+    },
+    {
+      "name": "impeccable",
+      "marketplace": "impeccable"
+    },
+    {
+      "name": "mattpocock-skills",
+      "marketplace": "claude-plugins-official"
+    },
+    {
+      "name": "design-os",
+      "private": true
+    },
+    {
+      "name": "ds-kit",
+      "private": true
+    },
+    {
+      "name": "design-agent",
+      "private": true
+    },
+    {
+      "name": "feature-plan",
+      "private": true
+    },
+    {
+      "name": "feature-build",
+      "private": true
+    },
+    {
+      "name": "landing-page-design",
+      "private": true
+    },
+    {
+      "name": "design",
+      "synced": true
+    }
+  ]
+}

@@ -15,9 +15,10 @@ import { workflows } from './pages/workflows.mjs';
 import { projectFiles, projectFile } from './pages/project-files.mjs';
 import { method } from './pages/method.mjs';
 import { changelog } from './pages/changelog.mjs';
+import { loadoutPage, loadoutJson } from './pages/loadout.mjs';
 import { readme, notionManifest } from './outputs.mjs';
 
-const RESERVED = ['assets', 'registry', 'jobs', 'disciplines', 'workflows', 'project-files', 'method', 'changelog'];
+const RESERVED = ['assets', 'registry', 'jobs', 'disciplines', 'workflows', 'project-files', 'method', 'changelog', 'loadout'];
 
 export function buildSite(root) {
   const ctx = derive(loadData(root));
@@ -36,8 +37,10 @@ export function buildSite(root) {
   ctx.projectFiles.forEach((f, i) => pages.set(`project-files/${f.id}/index.html`, projectFile(f, i, ctx, root)));
   pages.set('method/index.html', method(ctx));
   pages.set('changelog/index.html', changelog(ctx));
+  pages.set('loadout/index.html', loadoutPage(ctx));
 
   const out = new Map(pages);
+  out.set('loadout/settings.json', loadoutJson(ctx));
   const assets = join(root, 'build/assets');
   const copied = readdirSync(assets).filter((f) => !f.startsWith('.'));
   for (const f of copied) out.set(`assets/${f}`, readFileSync(join(assets, f)));

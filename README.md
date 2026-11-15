@@ -49,6 +49,7 @@ The site is static HTML in `docs/`, which GitHub Pages serves from `main`. Every
 - `data/registry.json`: the sets and every entry.
 - `data/jobs.json`, `data/workflows.json`, `data/project-files.json`, `data/changes.json`: jobs, workflows, project files and the changelog.
 - `data/usage.json`: how often each entry has run, written by `scripts/usage.mjs`.
+- `data/plugins.json`: which plugin each entry runs through, and where each plugin is installed from. The [loadout](https://bbulman.github.io/ux-os/loadout/) is built from it.
 - `data/stories/`: how each skill was built, in markdown.
 
 `node build.mjs` (Node 22, no dependencies) checks the data with `build/load.mjs` and stops on any problem, including a local path, a private address or an email address in anything it would publish. Then it writes every page in place, removes whatever in `docs/` it did not write, checks every link between pages, and rewrites this README and `data/notion-manifest.json`. A broken link fails the build. The page code lives in `build/`, with its CSS and JavaScript in `build/assets/`.
@@ -59,6 +60,8 @@ The site is static HTML in `docs/`, which GitHub Pages serves from `main`. Every
 2. `node scripts/usage.mjs` recounts usage from Claude Code transcripts.
 3. `node build.mjs` rebuilds the site and checks every link.
 4. Commit and push. The site updates when `main` does.
+
+Once a quarter, after step 2, run `node scripts/prune.mjs`. It lists the third-party entries that are switched on, have never run and that no job depends on, with the setting that would switch each one off. It only reports; deciding, and editing settings, is mine.
 
 ## Credit
 

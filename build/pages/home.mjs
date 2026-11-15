@@ -67,6 +67,7 @@ ${layers.map(([href, h, n, p]) => `  <li><span class="n">${esc(n)}</span><h2><a 
     <h2 class="big" id="setup-h">Set up a project</h2>
     ${setup ? `<p class="lede">${esc(setup.summary)}</p>` : ''}
     <p><a class="link" href="${L('project-files/')}">See the ${plural(t.projectFiles, 'file')} and who reads them</a></p>
+    <p><a class="link" href="${L('loadout/')}">Or copy my whole loadout: the plugins and settings that decide what Claude loads</a></p>
   </div>
   <div class="setup-cmds">
     <p class="pre-label">Once, in Claude Code</p>

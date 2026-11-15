@@ -91,6 +91,8 @@ ${JOBS.map(([stat, label, title, text]) => `    <li>
     <h3>What the build refuses</h3>
     <p><code>build/load.mjs</code> stops the build on an unknown set, type, origin, status, scope or stage, on a job or workflow step that names something not in the registry, on a story or template file that does not exist, and on any published string that holds a local path or an email address. It reports every problem in one run, then refuses to write a page.</p>
     <p>After the build, <code>scripts/check-links.mjs</code> follows every link between pages and fails if one is broken or an entry page is missing from the registry.</p>
+    <h3>Deciding what loads, as settings</h3>
+    <p>The <a href="${L('loadout/')}">loadout</a> turns those ON, BY NAME and OFF marks back into the settings that produce them, so the decision is something you can install, not just read. Every quarter, <code>scripts/prune.mjs</code> lists the third-party skills I have never used and that no job sends anyone to, with the setting that would switch each one off. It only reports. I decide.</p>
   </div>
   ${note(`<p>As of ${date(ctx.asOf)}: ${plural(t.entries, 'entry', 'entries')}, ${fmt(t.on)} ON, ${fmt(t.byName)} BY NAME and ${fmt(t.off)} OFF. ${fmt(t.used)} have been used since ${date(ctx.usage.since)}, and ${fmt(t.withProof)} have a test result written down. <a href="${L('changelog/')}">What changed, and when</a>.</p>`, 'note--wide')}
 </section>

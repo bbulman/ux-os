@@ -20,7 +20,7 @@ export function disciplines(ctx) {
   const proposed = ctx.sets.filter((s) => s.proposed);
   const row = (s) => {
     const c = counts(ctx, s);
-    return `<li class="disc-card">
+    return `<li class="disc-row">
   <h3><a class="stretch" href="${L(`${s.slug}/`)}">${esc(s.name)}</a></h3>
   <p class="covers">${esc(s.covers)}</p>
   <p class="dn">${plural(c.n, 'entry', 'entries')} · ${c.on} on · ${c.mine} mine${c.jobs ? ` · ${plural(c.jobs, 'job')}` : ''}</p>
@@ -34,14 +34,14 @@ export function disciplines(ctx) {
 </header>
 <section aria-labelledby="named-h">
   <h2 class="vh" id="named-h">Sets</h2>
-  <ol class="disc-cards">
+  <ol class="disc-rows">
 ${named.map(row).join('\n')}
   </ol>
 </section>
 <section aria-labelledby="proposed-h" class="sec-tight">
   <h2 class="big-2" id="proposed-h">Proposed</h2>
   <p class="lede">Still to be kept, renamed or dropped.</p>
-  <ol class="disc-cards">
+  <ol class="disc-rows">
 ${proposed.map(row).join('\n')}
   </ol>
 </section>

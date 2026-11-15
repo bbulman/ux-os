@@ -84,7 +84,6 @@ ${layers.map(([href, h, n, p]) => `  <li><span class="n">${esc(n)}</span><h2><a 
 ${named.map(discItem).join('\n')}
 ${proposed.map(discItem).join('\n')}
   </ul>
-  ${note(`<p>${fmt(t.unused)} of the ${fmt(t.entries)} entries have never been used. That count covers every Claude Code transcript on one machine since ${date(ctx.usage.since)}. ${fmt(t.used)} have run at least once, and ${fmt(t.withProof)} have a test result written down.</p>`, 'note--wide')}
 </section>
 `;
 

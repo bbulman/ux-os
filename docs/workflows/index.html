@@ -21,14 +21,14 @@
 <div class="wrap">
 <header class="top">
   <a class="mark" href="../">UX-OS</a>
-  <nav class="nav" aria-label="Main"><a href="../jobs/">Jobs</a><a href="../registry/">Registry</a><a href="../disciplines/">Disciplines</a><a href="../workflows/" aria-current="page">Workflows</a><a href="../project-files/">Project files</a><a href="../method/">Method</a><a href="https://github.com/bbulman/ux-os">GitHub</a></nav>
+  <nav class="nav" aria-label="Main"><a href="../jobs/">Jobs</a><a href="../registry/">Registry</a><a href="../disciplines/">Disciplines</a><a href="../workflows/" aria-current="page">Workflows</a><a href="../project-files/">Project files</a><a href="https://github.com/bbulman/ux-os">GitHub</a></nav>
 </header>
 <main id="main" tabindex="-1">
 
 <header class="page-head">
-  <p class="kicker">7 workflows · 39 steps</p>
+  <p class="kicker">7 workflows · 36 steps</p>
   <h1>Workflows</h1>
-  <p class="lede">Skills that run in order, each step reading what the last one wrote. A step marked PERSON is done by a person, not a skill: 3 steps across these 7 workflows.</p>
+  <p class="lede">Skills that run in order, each step reading what the last one wrote.</p>
 </header>
 <nav class="toc" aria-label="Workflows on this page">
   <a href="#research">From beliefs to evidence</a>
@@ -42,7 +42,7 @@
 <section class="flow" id="research" aria-labelledby="h-research">
   <div class="flow-head">
     <h2 class="big-2" id="h-research">From beliefs to evidence</h2>
-    <p class="n">7 steps · <a href="../research/">Research</a></p>
+    <p class="n">6 steps · <a href="../research/">Research</a></p>
   </div>
   <p class="lede">Start with what you believe, test the riskiest belief, and rebuild the models on what people did.</p>
   <ol class="wcards">
@@ -64,25 +64,20 @@
 <p class="wcard-use"><a class="stretch" href="../registry/ux-os-create-interview-script/">create-interview-script</a></p>
 <p class="wcard-meta"><code>/ux-os:create-interview-script</code> <span class="chip chip--name">BY NAME</span></p><p class="wcard-note">Or a survey, usability test or diary study, picked by what the belief is about.</p><span class="arrow" aria-hidden="true">→</span>
 </li>
-<li class="wcard wcard--person">
-<p class="wcard-edge"><span>04</span><span class="tag-person">PERSON</span></p>
-<p class="wcard-label">Talk to people</p>
-<p class="wcard-use small">A person, no skill</p><p class="wcard-note">At least five, from different organisations.</p><span class="arrow" aria-hidden="true">→</span>
-</li>
 <li class="wcard">
-<p class="wcard-edge"><span>05</span></p>
+<p class="wcard-edge"><span>04</span></p>
 <p class="wcard-label">Take in each study</p>
 <p class="wcard-use"><a class="stretch" href="../registry/ux-os-research-debrief/">research-debrief</a></p>
 <p class="wcard-meta"><code>/ux-os:research-debrief</code> <span class="chip chip--name">BY NAME</span></p><p class="wcard-note">Shows which beliefs it bears on, without rewriting anything.</p><span class="arrow" aria-hidden="true">→</span>
 </li>
 <li class="wcard">
-<p class="wcard-edge"><span>06</span></p>
+<p class="wcard-edge"><span>05</span></p>
 <p class="wcard-label">Sort, summarise and rebuild</p>
 <p class="wcard-use"><a class="stretch" href="../registry/ux-os-research-synthesize/">research-synthesize</a></p>
 <p class="wcard-meta"><code>/ux-os:research-synthesize</code> <span class="chip chip--name">BY NAME</span></p><p class="wcard-note">Affinity diagram, summary, then the models rebuilt in real mode with every line linked to its source.</p><span class="arrow" aria-hidden="true">→</span>
 </li>
 <li class="wcard">
-<p class="wcard-edge"><span>07</span></p>
+<p class="wcard-edge"><span>06</span></p>
 <p class="wcard-label">Record what you decided</p>
 <p class="wcard-use"><a class="stretch" href="../registry/ux-os-record-decision/">record-decision</a></p>
 <p class="wcard-meta"><code>/ux-os:record-decision</code> <span class="chip chip--name">BY NAME</span></p><span class="arrow" aria-hidden="true">→</span>
@@ -261,7 +256,7 @@
 <section class="flow" id="feature" aria-labelledby="h-feature">
   <div class="flow-head">
     <h2 class="big-2" id="h-feature">From an idea to a built feature</h2>
-    <p class="n">4 steps · <a href="../orchestration/">Orchestration</a></p>
+    <p class="n">3 steps · <a href="../orchestration/">Orchestration</a></p>
   </div>
   <p class="lede">Plan with questions, approve the plan, then build slice by slice with a reviewer on every pass.</p>
   <ol class="wcards">
@@ -271,19 +266,14 @@
 <p class="wcard-use"><a class="stretch" href="../registry/feature-plan/">feature-plan</a></p>
 <p class="wcard-meta"><code>agent: feature-plan:feature</code> <span class="chip chip--available">ON</span></p><span class="arrow" aria-hidden="true">→</span>
 </li>
-<li class="wcard wcard--person">
-<p class="wcard-edge"><span>02</span><span class="tag-person">PERSON</span></p>
-<p class="wcard-label">Approve the spec, brief and slices</p>
-<p class="wcard-use small">A person, no skill</p><p class="wcard-note">A person signs off before anything is built.</p><span class="arrow" aria-hidden="true">→</span>
-</li>
 <li class="wcard">
-<p class="wcard-edge"><span>03</span><b class="tick-ink">✓ pick</b></p>
+<p class="wcard-edge"><span>02</span><b class="tick-ink">✓ pick</b></p>
 <p class="wcard-label">Build a slice</p>
 <p class="wcard-use"><a class="stretch" href="../registry/feature-build/">feature-build</a></p>
 <p class="wcard-meta"><code>agent: feature-build:feature-build</code> <span class="chip chip--available">ON</span></p><span class="arrow" aria-hidden="true">→</span>
 </li>
 <li class="wcard">
-<p class="wcard-edge"><span>04</span><b class="tick-ink">✓ pick</b></p>
+<p class="wcard-edge"><span>03</span><b class="tick-ink">✓ pick</b></p>
 <p class="wcard-label">Review every pass</p>
 <p class="wcard-use"><a class="stretch" href="../registry/feature-build/">feature-build</a></p>
 <p class="wcard-meta"><code>agent: feature-build:feature-build</code> <span class="chip chip--available">ON</span></p><p class="wcard-note">A gate holds the build until lint, tests and the design system pass.</p><span class="arrow" aria-hidden="true">→</span>
@@ -316,23 +306,18 @@
 <section class="flow" id="run" aria-labelledby="h-run">
   <div class="flow-head">
     <h2 class="big-2" id="h-run">Running someone else's skill honestly</h2>
-    <p class="n">3 steps · <a href="../orchestration/">Orchestration</a>, <a href="../research/">Research</a></p>
+    <p class="n">2 steps · <a href="../orchestration/">Orchestration</a>, <a href="../research/">Research</a></p>
   </div>
   <p class="lede">Use a third-party skill as it is, but file what it says so a belief never looks like a finding.</p>
   <ol class="wcards">
-<li class="wcard wcard--person">
-<p class="wcard-edge"><span>01</span><span class="tag-person">PERSON</span></p>
-<p class="wcard-label">Pick the skill for the job</p>
-<p class="wcard-use small">A person, no skill</p><p class="wcard-note">From the picks, with the rival and why it lost.</p><span class="arrow" aria-hidden="true">→</span>
-</li>
 <li class="wcard">
-<p class="wcard-edge"><span>02</span><b class="tick-ink">✓ pick</b></p>
+<p class="wcard-edge"><span>01</span><b class="tick-ink">✓ pick</b></p>
 <p class="wcard-label">Run it unedited and file the output</p>
 <p class="wcard-use"><a class="stretch" href="../registry/ux-os-run/">run</a></p>
 <p class="wcard-meta"><code>/ux-os:run</code> <span class="chip chip--name">BY NAME</span></p><p class="wcard-note">Every claim goes in a table, tagged as belief or evidence.</p><span class="arrow" aria-hidden="true">→</span>
 </li>
 <li class="wcard">
-<p class="wcard-edge"><span>03</span></p>
+<p class="wcard-edge"><span>02</span></p>
 <p class="wcard-label">Audit the claims</p>
 <p class="wcard-use"><a class="stretch" href="../registry/ux-os-claims-auditor/">claims-auditor</a></p>
 <p class="wcard-meta"><code>agent: ux-os:claims-auditor</code> <span class="chip chip--available">ON</span></p><p class="wcard-note">Is the table complete, and does each citation support its claim?</p><span class="arrow" aria-hidden="true">→</span>

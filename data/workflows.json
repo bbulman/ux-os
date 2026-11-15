@@ -8,7 +8,6 @@
       { "label": "Where does this idea stand?", "use": "ux-os:research-next" },
       { "label": "Write down beliefs and build proto models", "use": "ux-os:research-discover", "note": "Personas, journeys and jobs, each marked as an assumption, and the belief to test first." },
       { "label": "Plan the study", "use": "ux-os:create-interview-script", "note": "Or a survey, usability test or diary study, picked by what the belief is about." },
-      { "label": "Talk to people", "note": "At least five, from different organisations." },
       { "label": "Take in each study", "use": "ux-os:research-debrief", "note": "Shows which beliefs it bears on, without rewriting anything." },
       { "label": "Sort, summarise and rebuild", "use": "ux-os:research-synthesize", "note": "Affinity diagram, summary, then the models rebuilt in real mode with every line linked to its source." },
       { "label": "Record what you decided", "use": "ux-os:record-decision" }
@@ -68,7 +67,6 @@
     "sets": ["orchestration"],
     "steps": [
       { "label": "Plan: look things up, ask one question at a time", "use": "feature-plan" },
-      { "label": "Approve the spec, brief and slices", "note": "A person signs off before anything is built." },
       { "label": "Build a slice", "use": "feature-build" },
       { "label": "Review every pass", "use": "feature-build:feature-reviewer", "note": "A gate holds the build until lint, tests and the design system pass." }
     ]
@@ -89,7 +87,6 @@
     "summary": "Use a third-party skill as it is, but file what it says so a belief never looks like a finding.",
     "sets": ["orchestration", "research"],
     "steps": [
-      { "label": "Pick the skill for the job", "note": "From the picks, with the rival and why it lost." },
       { "label": "Run it unedited and file the output", "use": "ux-os:run", "note": "Every claim goes in a table, tagged as belief or evidence." },
       { "label": "Audit the claims", "use": "ux-os:claims-auditor", "note": "Is the table complete, and does each citation support its claim?" }
     ]

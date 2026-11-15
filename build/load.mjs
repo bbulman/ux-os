@@ -141,7 +141,10 @@ export function loadData(root) {
     else if (!SLUG.test(w.slug)) fail(`${at}: slug must be lowercase letters, digits and hyphens`);
     wfSlugs.add(w.slug);
     if (!w.name || !w.summary || !Array.isArray(w.steps) || !w.steps.length) fail(`${at}: needs name, summary and steps`);
-    for (const st of w.steps || []) if (st.use && !resolve(st.use)) fail(`${at}: step "${st.label ?? st.use}" uses "${st.use}", not in the registry`);
+    for (const st of w.steps || []) {
+      if (!st.use) fail(`${at}: step "${st.label ?? '(no label)'}" names no skill; every step is done by one`);
+      else if (!resolve(st.use)) fail(`${at}: step "${st.label ?? st.use}" uses "${st.use}", not in the registry`);
+    }
   }
 
   // project files: readBy may name things outside the registry (Workshopr's own agents), so only warn

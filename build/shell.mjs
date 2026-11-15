@@ -124,18 +124,18 @@ const mark = (e) => (e.origin !== 'third' ? 'B.B.' : e.author.length > 9 && /\s/
 
 // A frame on the contact sheet. The whole frame links to the entry.
 // opts: n (frame number), L (linker), pick (bool), circle (bool), attrs (data attributes), setName (slug to name)
-export function frame(e, { n, L, pick = false, circle = false, attrs = '', setName, link = true }) {
+export function frame(e, { n, L, pick = false, circle = false, attrs = '', setName, link = true, showRuns = true }) {
   const label = [
     `${e.name}: ${TYPE[e.type].toLowerCase()}, ${setName[e.set]}`,
     LOADS_WORDS[e.status].toLowerCase(),
-    e.usage.total ? runs(e) : 'never run',
+    showRuns ? runsShort(e) : '',
     pick ? 'a pick for a job' : '',
   ].filter(Boolean).join('. ');
   return `<li class="frame${circle ? ' is-circled' : ''}"${attrs}>
 ${link ? `<a class="frame-link" href="${L(`registry/${e.id}/`)}" aria-label="${esc(label)}">` : '<div class="frame-link">'}
 <span class="edge" aria-hidden="true"><span>${pad(n)}</span>${pick ? '<b class="tick">✓ pick</b>' : `<span>${pad(n)}A</span>`}<span class="who">${esc(mark(e))}</span></span>
 <span class="shot"><span class="fname">${esc(e.name)}</span><span class="fmeta">${esc(setName[e.set])} · ${TYPE[e.type]}</span></span>
-<span class="edge edge--b" aria-hidden="true"><span class="st st--${e.status}">${LOADS[e.status]}</span><span>${esc(runsShort(e))}</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--${e.status}">${LOADS[e.status]}</span>${showRuns ? `<span>${esc(runsShort(e))}</span>` : ''}</span>
 ${link ? '</a>' : '</div>'}${circle ? grease(n + 1) : ''}
 </li>`;
 }

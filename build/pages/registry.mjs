@@ -1,4 +1,4 @@
-import { page, linker, frame, esc, fmt, plural, date, TYPE_PLURAL, LOADS, ORIGIN, SCOPE } from '../shell.mjs';
+import { page, linker, frame, esc, fmt, plural, TYPE_PLURAL, LOADS, ORIGIN, SCOPE } from '../shell.mjs';
 import { TYPES, ORIGINS, STATUSES, SCOPES } from '../load.mjs';
 
 const LOAD_KEY = { available: 'on', name: 'name', off: 'off' };
@@ -29,7 +29,7 @@ export function registry(ctx) {
   ${values.filter(([, , c]) => c).map(([v, name, c]) => `<button type="button" class="facet-btn" aria-pressed="false" data-facet="${key}" data-value="${esc(v)}" data-label="${esc(name)}">${esc(name)} <span class="c">${fmt(c)}</span></button>`).join('')}
 </div>`).join('\n');
 
-  const frames = ctx.sorted.map((e, i) => frame(e, { n: i + 1, L, pick: ctx.isPick(e), attrs: facetAttrs(e), setName: ctx.setName })).join('\n');
+  const frames = ctx.sorted.map((e, i) => frame(e, { n: i + 1, L, pick: ctx.isPick(e), attrs: facetAttrs(e), setName: ctx.setName, showRuns: false })).join('\n');
 
   const body = `
 <header class="page-head">
@@ -47,9 +47,9 @@ export function registry(ctx) {
   <button type="button" class="clear" data-clear hidden>Clear filters</button>
 </div>
 
-<p class="legend"><b>ON</b> loads on its own. <b>BY NAME</b> runs when you type it. <b>OFF</b> is installed and switched off. <b class="tick-ink">✓ pick</b> is the skill a job sends you to. Runs count from ${date(ctx.usage.since)}.</p>
+<p class="legend"><b>ON</b> loads on its own. <b>BY NAME</b> runs when you type it. <b>OFF</b> is installed and switched off. <b class="tick-ink">✓ pick</b> is the skill a job sends you to.</p>
 
-<ol class="sheet" data-sheet>
+<ol class="sheet sheet--light" data-sheet>
 ${frames}
 </ol>
 <p class="empty" data-empty hidden>Nothing matches those filters. <button type="button" class="clear" data-clear>Clear filters</button></p>

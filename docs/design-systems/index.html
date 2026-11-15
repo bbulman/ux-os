@@ -4,77 +4,263 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Design systems: UX-OS</title>
-<meta name="description" content="Tokens, components, naming, governance and documentation. The Claude skills UX-OS uses for design systems, with install commands.">
+<meta name="description" content="Tokens, components, naming, governance and documentation. The skills, packs and agents I use for design systems, which one wins each job, and how to install them.">
+<link rel="canonical" href="https://bbulman.github.io/ux-os/design-systems/">
 <meta property="og:title" content="Design systems: UX-OS">
-<meta property="og:description" content="Tokens, components, naming, governance and documentation. The Claude skills UX-OS uses for design systems, with install commands.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23E54D4D'/%3E%3C/svg%3E">
+<meta property="og:description" content="Tokens, components, naming, governance and documentation. The skills, packs and agents I use for design systems, which one wins each job, and how to install them.">
+<meta property="og:url" content="https://bbulman.github.io/ux-os/design-systems/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <div class="wrap">
-  <header class="top">
-    <a class="mark" href="../">UX-OS</a>
-    <nav aria-label="Main">
-      <a href="../#sets">Sets</a>
-      <a class="optional" href="../#why">Why it matters</a>
-      <a href="../method/">Method</a>
-      <a href="https://github.com/bbulman/ux-os">GitHub</a>
-    </nav>
-  </header>
+<header class="top">
+  <a class="mark" href="../">UX-OS<small aria-hidden="true">5063 TX</small></a>
+  <nav class="nav" aria-label="Main"><a href="../jobs/">Jobs</a><a href="../registry/">Registry</a><a href="../disciplines/" aria-current="page">Disciplines</a><a href="../workflows/">Workflows</a><a href="../project-files/">Project files</a><a href="../method/">Method</a><a href="https://github.com/bbulman/ux-os">GitHub</a></nav>
+</header>
+<main id="main" tabindex="-1">
 
-  <main>
-    <p class="crumb"><a href="../">UX-OS</a> / Design systems</p>
-    <div class="page-head">
-      <h1>Design systems</h1>
-      
-      <p class="lede">Tokens, components, naming, governance and documentation.</p>
-      <p class="why">Claude reaches for whatever value looks right. These hold it to the tokens and components you already chose.</p>
-      <p class="gap"><b>What's missing:</b> Mine enforce a system you already have. Nothing of mine builds one.</p>
-    </div>
-    <div class="entries">
-      <div class="first-step">
-        <p>The <code>@designer-skills</code> commands below need this once.</p>
-        <pre><code>/plugin marketplace add Owl-Listener/designer-skills</code></pre>
-      </div>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/Owl-Listener/designer-skills/tree/main/design-systems">design-systems</a></h2>
-          <p class="summary">Tokens, component specs, naming, theming, icons, motion systems, governance, pattern libraries and accessibility audits.</p>
-          <pre><code>/plugin install design-systems@designer-skills</code></pre>
-        </div>
-        <span class="state"><i class="dot on"></i>Loads on its own</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/design-system-enforcer">Design System Enforcer</a></h2>
-          <p class="summary">Checks UI code against a design system's tokens and components.</p>
-          <p class="tested"><b>Testing:</b> Ships with its own test suite.</p>
-          <p class="note">Clone the repo and add it as an MCP server. The README has the steps.</p>
-        </div>
-        <span class="state"><i class="dot on"></i>Loads on its own</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2>design-system agent</h2>
-          <p class="summary">Drives live page violations to zero without changing how a page looks unless a person approves it.</p>
-          <p class="note">Runs only on Workshopr, so there is nothing to install.</p>
-        </div>
-        <span class="state"><i class="dot name"></i>Run by name</span>
-      </article>
-    </div>
-    <p class="caption">The states are from my setup on 13 November 2026. Yours start from whatever you install.</p>
-    <div class="turn">
-      <a class="prev" href="../research/">Previous: Research</a>
-      <a class="next" href="../information-architecture/"><small>Next set</small>Information architecture&nbsp;&rarr;</a>
-    </div>
-  </main>
+<nav class="crumb" aria-label="Breadcrumb"><a href="../disciplines/">Disciplines</a></nav>
+<header class="page-head set-head">
+  <p class="kicker">23 entries · 23 on · 21 mine · 6 jobs</p>
+  <h1>Design systems</h1>
+  
+  <p class="lede">Tokens, components, naming, governance and documentation.</p>
+  <p class="why">Claude reaches for whatever value looks right. These hold it to the tokens and components you already chose.</p>
+  <div class="note note--wide"><p><span class="note-k">What's missing:</span> ds-kit builds and changes a system now, from foundations to release, but it has never run on a real public website.</p></div>
+</header>
 
-  <footer>
-    Made by <a href="https://workshopr.io">Workshopr.io</a>. Every pack keeps its author's licence. <a href="https://github.com/bbulman/ux-os">Source on GitHub</a>.
-  </footer>
+
+
+<section class="sec-tight" aria-labelledby="jobs-h">
+  <h2 class="big-2" id="jobs-h">Jobs</h2>
+  <p class="lede">What I hand to which skill in design systems. <a href="../jobs/#design-systems">All the jobs</a></p>
+  <ol class="jobs">
+<li class="job" data-search="check ui against the design system while building my most used tool by far. names the component to use and flags hardcoded values. design system enforcer design-system-enforcer">
+<h3 class="need">Check UI against the design system while building</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/design-system-enforcer/">Design System Enforcer</a> <code>MCP: design-system-enforcer</code> <span class="chip chip--available"><span aria-hidden="true">ON</span><span class="vh">Loads on its own</span></span></p>
+<p class="why">My most used tool by far. Names the component to use and flags hardcoded values.</p>
+
+</li>
+<li class="job" data-search="start a design system from a live website measures the site's real styles across pages and records where every value came from. create-design-system ds-kit:create-design-system">
+<h3 class="need">Start a design system from a live website</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/ds-kit-create-design-system/">create-design-system</a> <code>/ds-kit:create-design-system</code> <span class="chip chip--available"><span aria-hidden="true">ON</span><span class="vh">Loads on its own</span></span></p>
+<p class="why">Measures the site's real styles across pages and records where every value came from.</p>
+
+</li>
+<li class="job" data-search="choose a visual direction before tokens exist two or three directions to pick between, written down so the next stage can build from the pick. create-moodboard ds-kit:create-moodboard">
+<h3 class="need">Choose a visual direction before tokens exist</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/ds-kit-create-moodboard/">create-moodboard</a> <code>/ds-kit:create-moodboard</code> <span class="chip chip--available"><span aria-hidden="true">ON</span><span class="vh">Loads on its own</span></span></p>
+<p class="why">Two or three directions to pick between, written down so the next stage can build from the pick.</p>
+
+</li>
+<li class="job" data-search="change a token's value even the one-line changes, so nothing downstream breaks quietly. update-ds-tokens ds-kit:update-ds-tokens">
+<h3 class="need">Change a token's value</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/ds-kit-update-ds-tokens/">update-ds-tokens</a> <code>/ds-kit:update-ds-tokens</code> <span class="chip chip--available"><span aria-hidden="true">ON</span><span class="vh">Loads on its own</span></span></p>
+<p class="why">Even the one-line changes, so nothing downstream breaks quietly.</p>
+
+</li>
+<li class="job" data-search="rename or remove a token or component ships a codemod, not a find and replace. migrate-ds ds-kit:migrate-ds">
+<h3 class="need">Rename or remove a token or component</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/ds-kit-migrate-ds/">migrate-ds</a> <code>/ds-kit:migrate-ds</code> <span class="chip chip--available"><span aria-hidden="true">ON</span><span class="vh">Loads on its own</span></span></p>
+<p class="why">Ships a codemod, not a find and replace.</p>
+
+</li>
+<li class="job" data-search="audit an existing design system consistency, completeness and accessibility in one pass. audit-system design-systems:audit-system">
+<h3 class="need">Audit an existing design system</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/design-systems-audit-system/">audit-system</a> <code>/design-systems:audit-system</code> <span class="chip chip--available"><span aria-hidden="true">ON</span><span class="vh">Loads on its own</span></span></p>
+<p class="why">Consistency, completeness and accessibility in one pass.</p>
+
+</li>
+  </ol>
+</section>
+
+<section class="sec-tight" aria-labelledby="sheet-h">
+  <h2 class="big-2" id="sheet-h">The sheet</h2>
+  <p class="lede">Every entry in the set, most used first. Circled: Design System Enforcer, the most used pick here.</p>
+  <div class="first-step"><p>Installing the MC Dean packs here needs this once:</p><pre class="cmd"><code>/plugin marketplace add Owl-Listener/designer-skills</code></pre></div>
+  <ol class="sheet">
+<li class="frame is-circled" data-set="design-systems" data-type="mcp" data-origin="built" data-loads="on" data-usage="heavy" data-scope="any">
+<a class="frame-link" href="../registry/design-system-enforcer/" aria-label="Design System Enforcer: mcp server, Design systems. loads on its own. 1,230 calls. a pick for a job">
+<span class="edge" aria-hidden="true"><span>01</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">Design System Enforcer</span><span class="fmeta">Design systems · MCP server</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>1,230 calls</span></span>
+</a><svg class="grease" viewBox="0 0 200 120" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M40 4 C 110 -0.1, 180 2.1, 191.6 12 C 204 33.4, 202 93.2, 189.2 114 C 150 121.6, 50 122.2, 10 114 C -0.6 96, 0.1 26, 8 10.6 C 22 2.6, 60 -1.8, 104 4"/></svg>
+</li>
+<li class="frame" data-set="design-systems" data-type="agent" data-origin="built" data-loads="on" data-usage="heavy" data-scope="workshopr">
+<a class="frame-link" href="../registry/workshopr-uxdrift/" aria-label="workshopr-uxdrift: agent, Design systems. loads on its own. 11 runs">
+<span class="edge" aria-hidden="true"><span>02</span><span>02A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">workshopr-uxdrift</span><span class="fmeta">Design systems · Agent</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>11 runs</span></span>
+</a>
+</li>
+<li class="frame" data-set="design-systems" data-type="skill" data-origin="third" data-loads="on" data-usage="regular" data-scope="any">
+<a class="frame-link" href="../registry/design-systems-audit-system/" aria-label="audit-system: skill, Design systems. loads on its own. 5 runs. a pick for a job">
+<span class="edge" aria-hidden="true"><span>03</span><b class="tick">✓ pick</b><span class="who">MC Dean</span></span>
+<span class="shot"><span class="fname">audit-system</span><span class="fmeta">Design systems · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>5 runs</span></span>
+</a>
+</li>
+<li class="frame" data-set="design-systems" data-type="pack" data-origin="third" data-loads="on" data-usage="regular" data-scope="any">
+<a class="frame-link" href="../registry/design-systems/" aria-label="design-systems: skill pack, Design systems. loads on its own. 4 runs">
+<span class="edge" aria-hidden="true"><span>04</span><span>04A</span><span class="who">MC Dean</span></span>
+<span class="shot"><span class="fname">design-systems</span><span class="fmeta">Design systems · Skill pack</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>4 runs</span></span>
+</a>
+</li>
+<li class="frame" data-set="design-systems" data-type="skill" data-origin="built" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ds-kit-adopt-ds/" aria-label="adopt-ds: skill, Design systems. loads on its own. never run">
+<span class="edge" aria-hidden="true"><span>05</span><span>05A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">adopt-ds</span><span class="fmeta">Design systems · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="design-systems" data-type="skill" data-origin="built" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ds-kit-connect-ds/" aria-label="connect-ds: skill, Design systems. loads on its own. never run">
+<span class="edge" aria-hidden="true"><span>06</span><span>06A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">connect-ds</span><span class="fmeta">Design systems · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="design-systems" data-type="skill" data-origin="built" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ds-kit-create-components/" aria-label="create-components: skill, Design systems. loads on its own. never run">
+<span class="edge" aria-hidden="true"><span>07</span><span>07A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">create-components</span><span class="fmeta">Design systems · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="design-systems" data-type="skill" data-origin="built" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ds-kit-create-design-system/" aria-label="create-design-system: skill, Design systems. loads on its own. never run. a pick for a job">
+<span class="edge" aria-hidden="true"><span>08</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">create-design-system</span><span class="fmeta">Design systems · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="design-systems" data-type="skill" data-origin="built" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ds-kit-create-design-tokens/" aria-label="create-design-tokens: skill, Design systems. loads on its own. never run">
+<span class="edge" aria-hidden="true"><span>09</span><span>09A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">create-design-tokens</span><span class="fmeta">Design systems · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="design-systems" data-type="skill" data-origin="built" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ds-kit-create-ds-site/" aria-label="create-ds-site: skill, Design systems. loads on its own. never run">
+<span class="edge" aria-hidden="true"><span>10</span><span>10A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">create-ds-site</span><span class="fmeta">Design systems · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="design-systems" data-type="skill" data-origin="built" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ds-kit-create-foundations/" aria-label="create-foundations: skill, Design systems. loads on its own. never run">
+<span class="edge" aria-hidden="true"><span>11</span><span>11A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">create-foundations</span><span class="fmeta">Design systems · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="design-systems" data-type="skill" data-origin="built" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ds-kit-create-icon-system/" aria-label="create-icon-system: skill, Design systems. loads on its own. never run">
+<span class="edge" aria-hidden="true"><span>12</span><span>12A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">create-icon-system</span><span class="fmeta">Design systems · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="design-systems" data-type="skill" data-origin="built" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ds-kit-create-moodboard/" aria-label="create-moodboard: skill, Design systems. loads on its own. never run. a pick for a job">
+<span class="edge" aria-hidden="true"><span>13</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">create-moodboard</span><span class="fmeta">Design systems · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="design-systems" data-type="skill" data-origin="built" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ds-kit-create-patterns/" aria-label="create-patterns: skill, Design systems. loads on its own. never run">
+<span class="edge" aria-hidden="true"><span>14</span><span>14A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">create-patterns</span><span class="fmeta">Design systems · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="design-systems" data-type="agent" data-origin="built" data-loads="on" data-usage="unused" data-scope="workshopr">
+<a class="frame-link" href="../registry/design-system-agent/" aria-label="design-system agent: agent, Design systems. loads on its own. never run">
+<span class="edge" aria-hidden="true"><span>15</span><span>15A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">design-system agent</span><span class="fmeta">Design systems · Agent</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="design-systems" data-type="skill" data-origin="built" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ds-kit-ds-governance/" aria-label="ds-governance: skill, Design systems. loads on its own. never run">
+<span class="edge" aria-hidden="true"><span>16</span><span>16A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">ds-governance</span><span class="fmeta">Design systems · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="design-systems" data-type="skill" data-origin="built" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ds-kit-migrate-ds/" aria-label="migrate-ds: skill, Design systems. loads on its own. never run. a pick for a job">
+<span class="edge" aria-hidden="true"><span>17</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">migrate-ds</span><span class="fmeta">Design systems · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="design-systems" data-type="skill" data-origin="built" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ds-kit-release-ds/" aria-label="release-ds: skill, Design systems. loads on its own. never run">
+<span class="edge" aria-hidden="true"><span>18</span><span>18A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">release-ds</span><span class="fmeta">Design systems · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="design-systems" data-type="skill" data-origin="built" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ds-kit-sync-ds-figma/" aria-label="sync-ds-figma: skill, Design systems. loads on its own. never run">
+<span class="edge" aria-hidden="true"><span>19</span><span>19A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">sync-ds-figma</span><span class="fmeta">Design systems · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="design-systems" data-type="skill" data-origin="built" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ds-kit-update-design-system/" aria-label="update-design-system: skill, Design systems. loads on its own. never run">
+<span class="edge" aria-hidden="true"><span>20</span><span>20A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">update-design-system</span><span class="fmeta">Design systems · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="design-systems" data-type="skill" data-origin="built" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ds-kit-update-ds-components/" aria-label="update-ds-components: skill, Design systems. loads on its own. never run">
+<span class="edge" aria-hidden="true"><span>21</span><span>21A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">update-ds-components</span><span class="fmeta">Design systems · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="design-systems" data-type="skill" data-origin="built" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ds-kit-update-ds-tokens/" aria-label="update-ds-tokens: skill, Design systems. loads on its own. never run. a pick for a job">
+<span class="edge" aria-hidden="true"><span>22</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">update-ds-tokens</span><span class="fmeta">Design systems · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="design-systems" data-type="skill" data-origin="built" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ds-kit-validate-ai-readability/" aria-label="validate-ai-readability: skill, Design systems. loads on its own. never run">
+<span class="edge" aria-hidden="true"><span>23</span><span>23A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">validate-ai-readability</span><span class="fmeta">Design systems · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+  </ol>
+  <p class="caption">The states are from my setup on 14 November 2026. Yours start from whatever you install.</p>
+</section>
+
+<nav class="turn" aria-label="Other sets">
+  <a class="prev" href="../research/"><small>Previous set</small>Research</a>
+  <a class="next" href="../information-architecture/"><small>Next set</small>Information architecture</a>
+</nav>
+
+</main>
+<footer class="foot">
+  <p><a href="../changelog/">Changelog</a><span aria-hidden="true"> · </span>Made by <a href="https://workshopr.io">Workshopr.io</a><span aria-hidden="true"> · </span>Every pack keeps its author's licence.</p>
+  <p>Registry as of 14 November 2026. Usage counted from Claude Code transcripts since 22 July 2026.</p>
+</footer>
 </div>
+
 </body>
 </html>

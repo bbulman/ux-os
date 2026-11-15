@@ -1,0 +1,97 @@
+[
+  {
+    "slug": "research",
+    "name": "From beliefs to evidence",
+    "summary": "Start with what you believe, test the riskiest belief, and rebuild the models on what people did.",
+    "sets": ["research"],
+    "steps": [
+      { "label": "Where does this idea stand?", "use": "ux-os:research-next" },
+      { "label": "Write down beliefs and build proto models", "use": "ux-os:research-discover", "note": "Personas, journeys and jobs, each marked as an assumption, and the belief to test first." },
+      { "label": "Plan the study", "use": "ux-os:create-interview-script", "note": "Or a survey, usability test or diary study, picked by what the belief is about." },
+      { "label": "Talk to people", "note": "At least five, from different organisations." },
+      { "label": "Take in each study", "use": "ux-os:research-debrief", "note": "Shows which beliefs it bears on, without rewriting anything." },
+      { "label": "Sort, summarise and rebuild", "use": "ux-os:research-synthesize", "note": "Affinity diagram, summary, then the models rebuilt in real mode with every line linked to its source." },
+      { "label": "Record what you decided", "use": "ux-os:record-decision" }
+    ]
+  },
+  {
+    "slug": "design-os",
+    "name": "From objects to a clickable prototype",
+    "summary": "Eight Design OS stages, each a file the next one reads. A script fails when the chain breaks.",
+    "sets": ["information-architecture", "prototyping"],
+    "steps": [
+      { "label": "Objects and how they relate", "use": "design-os:create-object-map" },
+      { "label": "Sitemap", "use": "design-os:create-sitemap" },
+      { "label": "Interaction flows", "use": "design-os:create-interaction-flows", "note": "Including what happens when it goes wrong." },
+      { "label": "Screen inventory", "use": "design-os:create-screen-inventory", "note": "Every screen in the flow, with five states each." },
+      { "label": "Wireframes", "use": "design-os:create-wireframes" },
+      { "label": "Annotations for handoff", "use": "design-os:create-annotated-wireframes" },
+      { "label": "Wireflow", "use": "design-os:create-wireflow" },
+      { "label": "Lo-fi prototype", "use": "design-os:create-lofi-prototype", "note": "Every arrow in the flow has to be clickable." }
+    ]
+  },
+  {
+    "slug": "ds-kit",
+    "name": "Building a design system",
+    "summary": "ds-kit's build chain. Each stage writes a file the next reads, and records whether each value was measured, chosen, derived or assumed.",
+    "sets": ["design-systems"],
+    "steps": [
+      { "label": "Evidence from a live site", "use": "ds-kit:create-design-system" },
+      { "label": "Direction", "use": "ds-kit:create-moodboard", "note": "Or the direction create-design-system writes from the evidence." },
+      { "label": "Foundations", "use": "ds-kit:create-foundations" },
+      { "label": "Tokens", "use": "ds-kit:create-design-tokens" },
+      { "label": "Icons", "use": "ds-kit:create-icon-system" },
+      { "label": "Components", "use": "ds-kit:create-components" },
+      { "label": "Patterns", "use": "ds-kit:create-patterns" },
+      { "label": "Governance", "use": "ds-kit:ds-governance" },
+      { "label": "Documentation site", "use": "ds-kit:create-ds-site" },
+      { "label": "Can an AI agent build with it?", "use": "ds-kit:validate-ai-readability" }
+    ]
+  },
+  {
+    "slug": "design-loop",
+    "name": "Iterating a page to a bar",
+    "summary": "The Design Agent designs, an independent critic scores, and the loop runs until the page meets the bar or a person decides.",
+    "sets": ["orchestration"],
+    "steps": [
+      { "label": "Frame the problem", "use": "design-agent" },
+      { "label": "Design or refine", "use": "design-agent" },
+      { "label": "Score the pass with fresh eyes", "use": "design-agent:design-critic", "note": "Scores only. Never fixes." },
+      { "label": "Fix, re-render, re-score", "use": "design-agent", "note": "Repeats until the exit bar is met." },
+      { "label": "Write down what was learned", "use": "design-agent:design-learn" }
+    ]
+  },
+  {
+    "slug": "feature",
+    "name": "From an idea to a built feature",
+    "summary": "Plan with questions, approve the plan, then build slice by slice with a reviewer on every pass.",
+    "sets": ["orchestration"],
+    "steps": [
+      { "label": "Plan: look things up, ask one question at a time", "use": "feature-plan" },
+      { "label": "Approve the spec, brief and slices", "note": "A person signs off before anything is built." },
+      { "label": "Build a slice", "use": "feature-build" },
+      { "label": "Review every pass", "use": "feature-build:feature-reviewer", "note": "A gate holds the build until lint, tests and the design system pass." }
+    ]
+  },
+  {
+    "slug": "critique",
+    "name": "Critique against your own rules",
+    "summary": "Capture the page, agree what it is for, then critique it only against rules the project wrote down.",
+    "sets": ["visual-design", "orchestration"],
+    "steps": [
+      { "label": "Capture and ask what the page is for", "use": "crit" },
+      { "label": "Critique, verify, revise", "use": "critique-partner", "note": "Every issue quotes a rule from taste.md or DESIGN.md." }
+    ]
+  },
+  {
+    "slug": "run",
+    "name": "Running someone else's skill honestly",
+    "summary": "Use a third-party skill as it is, but file what it says so a belief never looks like a finding.",
+    "sets": ["orchestration", "research"],
+    "steps": [
+      { "label": "Pick the skill for the job", "note": "From the picks, with the rival and why it lost." },
+      { "label": "Run it unedited and file the output", "use": "ux-os:run", "note": "Every claim goes in a table, tagged as belief or evidence." },
+      { "label": "Audit the claims", "use": "ux-os:claims-auditor", "note": "Is the table complete, and does each citation support its claim?" }
+    ]
+  }
+]

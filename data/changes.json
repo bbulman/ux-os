@@ -1,0 +1,47 @@
+[
+  {
+    "date": "2026-11-14",
+    "items": [
+      "Rebuilt the site around one registry of skills, packs, agents, commands and tools, with Jobs, Workflows, Project files and a new Content set.",
+      "Whether each entry loads, runs by name or is off now comes from this machine's settings, not from a hand-typed list.",
+      "Usage comes from Claude Code transcripts, and most entries have never been used. Each entry page says how often.",
+      "Dropped customer-research, which is no longer installed. Corrected site-architecture, which I rewrote as my own on 9 November.",
+      "Added /ux-os:create-project-files and nine annotated project-file templates, with Workshopr's own files as worked examples."
+    ]
+  },
+  {
+    "date": "2026-11-13",
+    "items": [
+      "MC Dean's packs lead every set again. My information architecture, interaction design and strategy skills now run only by name.",
+      "ux-os 0.3.0: a service blueprint skill and a guide to the files a project keeps."
+    ]
+  },
+  {
+    "date": "2026-11-12",
+    "items": [
+      "ux-os 0.2.0: a decisions log, a folder map for each idea, and folders by discipline.",
+      "Added /ux-os:run, which runs a third-party skill and files its claims, and an auditor that checks them."
+    ]
+  },
+  {
+    "date": "2026-11-10",
+    "items": [
+      "The research skills became the ux-os plugin, installable from this repo.",
+      "ds-kit's final evals: 65 of 67 outcome checks with the skills, 50 of 67 without."
+    ]
+  },
+  {
+    "date": "2026-11-09",
+    "items": [
+      "Named UX-OS and published the first version of this site.",
+      "Split the information architecture skill into a front door and eleven focused skills.",
+      "Built eleven interaction design skills, ten strategy skills, twelve research skills and Design OS's eight stages."
+    ]
+  },
+  {
+    "date": "2026-10-24",
+    "items": [
+      "Built the first information architecture skill and tested it against no skill: 24 of 25 checks against 23."
+    ]
+  }
+]

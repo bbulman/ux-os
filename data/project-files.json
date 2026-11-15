@@ -1,0 +1,205 @@
+[
+  {
+    "id": "product",
+    "file": "PRODUCT.md",
+    "group": "core",
+    "purpose": "What the product is, who it is for and how you will know it is working. Every other file defers to it on those three questions.",
+    "sections": [
+      "What it is, and isn't",
+      "Who it's for",
+      "The problem it solves",
+      "How success is measured",
+      "What exists",
+      "Product principles",
+      "Not part of the product",
+      "Open questions"
+    ],
+    "readBy": [
+      "crit",
+      "feature-plan:planner",
+      "design-agent:design-agent",
+      "impeccable:impeccable"
+    ],
+    "template": "plugin/shared/project-files/PRODUCT.md",
+    "example": "examples/workshopr/PRODUCT.md"
+  },
+  {
+    "id": "design",
+    "file": "DESIGN.md",
+    "group": "core",
+    "purpose": "The rules for how the product looks, reads and behaves: visual system, UX principles, components, forms and accessibility. Anything a check could enforce lives here.",
+    "sections": [
+      "The brand in one line",
+      "Visual system",
+      "UX principles",
+      "Components",
+      "Forms",
+      "Accessibility",
+      "Words on screen"
+    ],
+    "readBy": [
+      "crit",
+      "critique-partner",
+      "design-agent:design-agent",
+      "design-agent:design-critic",
+      "landing-page-design",
+      "design-system",
+      "workshopr-uxdrift",
+      "feature-build:builder",
+      "impeccable:impeccable",
+      "ux-os:init",
+      "ux-os:run"
+    ],
+    "template": "plugin/shared/project-files/DESIGN.md",
+    "example": "examples/workshopr/DESIGN.md",
+    "readNote": "/ux-os:init offers it as a house rule, and /ux-os:run then holds third-party skills to it."
+  },
+  {
+    "id": "agents",
+    "file": "AGENTS.md",
+    "group": "core",
+    "purpose": "The first file an AI coding agent reads: a pointer to the guides, plus the few rules that must not be missed. Never a second copy of the guide.",
+    "sections": [
+      "Read these",
+      "Guardrails",
+      "Definition of done"
+    ],
+    "readBy": [
+      "ux-os:init"
+    ],
+    "template": "plugin/shared/project-files/AGENTS.md",
+    "example": "examples/workshopr/AGENTS.md",
+    "readNote": "Most coding agents look for AGENTS.md by convention. Claude Code reads CLAUDE.md, so have one point at the other."
+  },
+  {
+    "id": "personas",
+    "file": "PERSONAS.md",
+    "group": "research",
+    "purpose": "Who the product is for, as people with situations, goals and frustrations. Beliefs until research backs them.",
+    "sections": [
+      "Segmentation",
+      "Persona: <name>"
+    ],
+    "readBy": [
+      "crit",
+      "feature-plan:planner",
+      "design-agent:design-agent",
+      "ux-os:create-personas"
+    ],
+    "template": "plugin/shared/project-files/PERSONAS.md",
+    "example": "examples/workshopr/PERSONAS.md",
+    "readNote": "The ux-os research skills read it as beliefs once .research-profile.md lists it under Belief files."
+  },
+  {
+    "id": "journeys",
+    "file": "JOURNEYS.md",
+    "group": "research",
+    "purpose": "How each primary persona gets the job done today, stage by stage, with where it hurts. Beliefs until research backs them.",
+    "sections": [
+      "Journey: <persona>, <scenario>",
+      "Future journey: <persona>, <scenario>"
+    ],
+    "readBy": [
+      "crit",
+      "feature-plan:planner",
+      "design-agent:design-agent",
+      "ux-os:create-journey-map"
+    ],
+    "template": "plugin/shared/project-files/JOURNEYS.md",
+    "example": "examples/workshopr/JOURNEYS.md",
+    "readNote": "The ux-os research skills read it as beliefs once .research-profile.md lists it under Belief files."
+  },
+  {
+    "id": "jtbd",
+    "file": "JTBD.md",
+    "group": "research",
+    "purpose": "The progress people are trying to make, independent of any product, and what they hire to make it today. Beliefs until research backs them.",
+    "sections": [
+      "The core job",
+      "The three dimensions",
+      "The job map",
+      "What gets hired today",
+      "Top underserved outcomes",
+      "Job statements by segment",
+      "Design implications"
+    ],
+    "readBy": [
+      "crit",
+      "feature-plan:planner",
+      "design-agent:design-agent",
+      "ux-os:create-jtbd"
+    ],
+    "template": "plugin/shared/project-files/JTBD.md",
+    "example": "examples/workshopr/JTBD.md",
+    "readNote": "The ux-os research skills read it as beliefs once .research-profile.md lists it under Belief files."
+  },
+  {
+    "id": "taste",
+    "file": "taste.md",
+    "group": "craft",
+    "purpose": "The judgment no check can enforce: what to reason toward and away from, what reads as machine-made, and the kill list. DESIGN.md says what is allowed; this says what is good.",
+    "sections": [
+      "The root",
+      "Reference anchors",
+      "The cut test",
+      "Soul",
+      "What reads as machine-made",
+      "The kill list",
+      "Open questions"
+    ],
+    "readBy": [
+      "crit",
+      "critique-partner",
+      "design-agent:design-agent",
+      "design-agent:design-critic",
+      "design-system",
+      "ux-os:init",
+      "ux-os:run"
+    ],
+    "template": "plugin/shared/project-files/taste.md",
+    "example": "examples/workshopr/taste.md"
+  },
+  {
+    "id": "motion",
+    "file": "motion.md",
+    "group": "craft",
+    "purpose": "How things move: the feel in three words, the standard values as tokens, the allowed patterns, the banned ones and the reduced-motion rule.",
+    "sections": [
+      "Motion language",
+      "Standard values",
+      "Patterns",
+      "Never",
+      "Reduced motion",
+      "Stack"
+    ],
+    "readBy": [
+      "animation",
+      "loading-states",
+      "design-agent:design-agent"
+    ],
+    "template": "plugin/shared/project-files/motion.md",
+    "example": "examples/workshopr/motion.md"
+  },
+  {
+    "id": "voice",
+    "file": "VOICE.md",
+    "group": "craft",
+    "purpose": "How the product sounds in every word a user reads: the voice in one line, pillars with before and after, words to avoid and the shape of common messages.",
+    "sections": [
+      "The voice in one line",
+      "Pillars",
+      "What the voice is not",
+      "Words",
+      "The messages you write most",
+      "Mechanics",
+      "Inclusive language"
+    ],
+    "readBy": [
+      "ux-os:init",
+      "ux-os:run"
+    ],
+    "template": "plugin/shared/project-files/VOICE.md",
+    "example": "examples/workshopr/VOICE.md",
+    "readNote": "No skill reads VOICE.md by name yet. /ux-os:init offers it as a house rule, so point AGENTS.md at it."
+  }
+]

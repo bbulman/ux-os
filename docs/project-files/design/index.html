@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DESIGN.md: project file, UX-OS</title>
+<meta name="description" content="The rules for how the product looks, reads and behaves: visual system, UX principles, components, forms and accessibility. Anything a check could enforce lives here.">
+<link rel="canonical" href="https://bbulman.github.io/ux-os/project-files/design/">
+<meta property="og:title" content="DESIGN.md: project file, UX-OS">
+<meta property="og:description" content="The rules for how the product looks, reads and behaves: visual system, UX principles, components, forms and accessibility. Anything a check could enforce lives here.">
+<meta property="og:url" content="https://bbulman.github.io/ux-os/project-files/design/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="top">
+  <a class="mark" href="../../">UX-OS<small aria-hidden="true">5063 TX</small></a>
+  <nav class="nav" aria-label="Main"><a href="../../jobs/">Jobs</a><a href="../../registry/">Registry</a><a href="../../disciplines/">Disciplines</a><a href="../../workflows/">Workflows</a><a href="../../project-files/" aria-current="page">Project files</a><a href="../../method/">Method</a><a href="https://github.com/bbulman/ux-os">GitHub</a></nav>
+</header>
+<main id="main" tabindex="-1">
+
+<nav class="crumb" aria-label="Breadcrumb"><a href="../../project-files/">Project files</a><span aria-hidden="true"> / </span><a href="../../project-files/#core">Core</a></nav>
+<header class="page-head">
+  <p class="kicker">Core file</p>
+  <h1 class="h1-id">DESIGN.md</h1>
+  <p class="lede">The rules for how the product looks, reads and behaves: visual system, UX principles, components, forms and accessibility. Anything a check could enforce lives here.</p>
+</header>
+<div class="pf-cols pf-cols--head">
+  <div><p class="aside-k">Sections</p><ol class="sections"><li>The brand in one line</li><li>Visual system</li><li>UX principles</li><li>Components</li><li>Forms</li><li>Accessibility</li><li>Words on screen</li></ol></div>
+  <div><p class="aside-k">Read by</p><ul class="readers"><li><a href="../../registry/crit/">crit</a></li><li><a href="../../registry/critique-partner/">critique-partner</a></li><li><a href="../../registry/design-agent/">Design Agent</a></li><li><a href="../../registry/design-agent-design-critic/">design-critic</a></li><li><a href="../../registry/landing-page-design/">landing-page-design</a></li><li><a href="../../registry/design-system-agent/">design-system agent</a></li><li><a href="../../registry/workshopr-uxdrift/">workshopr-uxdrift</a></li><li><a href="../../registry/feature-build/">feature-build</a></li><li><a href="../../registry/impeccable/">impeccable</a></li><li><a href="../../registry/ux-os-init/">init</a></li><li><a href="../../registry/ux-os-run/">run</a></li></ul><p class="small">/ux-os:init offers it as a house rule, and /ux-os:run then holds third-party skills to it.</p></div>
+</div>
+
+<section class="sec-tight" id="template" aria-labelledby="template-h">
+  <div class="sec-head"><h2 class="big-2" id="template-h">The template</h2><a class="ext" href="https://github.com/bbulman/ux-os/blob/main/plugin/shared/project-files/DESIGN.md">plugin/shared/project-files/DESIGN.md on GitHub</a></div>
+  <p class="lede">What <code>/ux-os:create-project-files</code> writes, word for word. Its comments say what each part is for.</p>
+  <pre class="template"><code># &lt;Product&gt;: Design
+
+&lt;!--
+UX-OS project file. Delete this comment once the file is filled in.
+For: the rules for how the product looks, reads and behaves: the visual system, UX principles, components, forms and accessibility. A rule a check could enforce belongs here. Judgment belongs in taste.md.
+Read by: every designer and agent before UI work. /crit and the critique-partner agent quote it word for word, the Design Agent and its critic score against it, landing-page-design keeps a product's own system over its own taste, and /ux-os:init offers it as a house rule that /ux-os:run holds third-party skills to.
+Good looks like: every rule is checkable, names its token or component, and lives in one place. If DESIGN.md and taste.md both say it, delete one.
+--&gt;
+
+## The brand in one line
+&lt;!-- What someone should feel in the first five seconds, and what they must never feel. --&gt;
+
+## Visual system
+
+### Colour
+&lt;!-- Roles, not just swatches. Name the token the code uses. --&gt;
+| Role | Token | Value | Use |
+|---|---|---|---|
+| Brand | &lt;--token&gt; | &lt;hex&gt; | &lt;fills that carry white text, and where else&gt; |
+| Text | &lt;--token&gt; | &lt;hex&gt; | &lt;body copy&gt; |
+| Background | &lt;--token&gt; | &lt;hex&gt; | &lt;page&gt; |
+| Surface | &lt;--token&gt; | &lt;hex&gt; | &lt;cards and raised areas&gt; |
+| Line | &lt;--token&gt; | &lt;hex&gt; | &lt;borders and dividers&gt; |
+
+### Type
+- **Display:** &lt;font&gt;, for &lt;headlines only, or more&gt;
+- **Text:** &lt;font&gt;
+- **Mono (optional):** &lt;font&gt;, for &lt;code, data&gt;
+- **Scale:** &lt;the sizes in use, as tokens&gt;
+
+### Spacing and layout
+&lt;!-- The spacing scale, the grid, the widest a line of text may run. --&gt;
+
+### Radii and elevation
+&lt;!-- Which radius goes on what, and whether depth comes from shadows, borders or neither. --&gt;
+
+### Icons
+&lt;!-- The set, its weight, and the smallest size allowed. --&gt;
+
+## UX principles
+&lt;!-- The laws you actually apply, written for this product, five to ten. &quot;Glanceable mid-session: one primary action per screen&quot; beats a list of every UX law. --&gt;
+1. &lt;principle, and what it rules out&gt;
+
+## Components
+&lt;!-- Where the component catalogue lives, the rule for reaching for an existing component first, and how a new one gets added. --&gt;
+- **Catalogue:** &lt;path or link&gt;
+- **Tokens:** &lt;path&gt;
+- **Rule:** use an existing component before writing new markup. A new component is added to the catalogue first, then used.
+
+## Forms
+&lt;!-- Label position, required and optional, validation timing, error placement, button order. --&gt;
+
+## Accessibility
+&lt;!-- The floor: contrast ratio, smallest touch target, focus visibility, reduced motion, what a screen reader must hear. --&gt;
+
+## Words on screen
+&lt;!-- Voice lives in VOICE.md. Keep only the interface rules here: button labels, error message shape, sentence case or title case. --&gt;
+</code></pre>
+</section>
+
+<section class="sec-tight" id="example" aria-labelledby="example-h">
+  <div class="sec-head"><h2 class="big-2" id="example-h">Workshopr's example</h2><a class="ext" href="https://github.com/bbulman/ux-os/blob/main/examples/workshopr/DESIGN.md">examples/workshopr/DESIGN.md on GitHub</a></div>
+  <div class="example prose">
+<h3>DESIGN.md (Workshopr example)</h3>
+<p>An excerpt from Workshopr's own DESIGN.md, trimmed to show the shape. Sections left out are marked.</p>
+<hr>
+<p><em>[Section left out: product summary, brand voice, writing style and anti-AI tells. The voice is gathered in VOICE.md.]</em></p>
+<h4>7. Visual system</h4>
+<h5>Palette character</h5>
+<p>Warm, grounded, slightly editorial. <strong>Learn Phase Red</strong> (<code>#E54D4D</code>) is the signature. Human, analog warmth that intentionally contrasts with the cool indigo and teal defaults of most SaaS tools. The palette should feel like morning light in a workshop room, not a dashboard.</p>
+<p>The neutrals are warm-leaning Stone grays. Avoid cool blue-grays. The page background is Stone-50 (<code>#FAFAF9</code>), not white: the lightest step of that same warm ramp, carrying the platform's 24px drafting grid. Cards are a warm paper tone (<code>#F7F1EA</code>); white is kept for what opens over or inside a card: modals, menus and inputs. The page was warm cream (<code>#FEF7F1</code>) until July 2026; the grid is what now gives the page its warmth and texture, so the paper beneath it sits back.</p>
+<h5>Typography pairing</h5>
+<p>A high-contrast pairing reinforces the editorial feel:</p>
+<ul><li><strong>Fraunces</strong> (serif) for display, headlines, and editorial accents. Soft, humanist, signals the content was written by a person, not a committee.</li><li><strong>Inter</strong> (sans-serif) for UI, body, and the data-heavy planner. High legibility where precision matters most.</li></ul>
+<p><strong>Display Text Pattern</strong> is a signature treatment for hero headlines:</p>
+<ul><li>Primary text: bold Fraunces in the dark text colour.</li><li>Emphasized text: italicized, colored in the phase's dark variant (e.g., <code>#C73E3E</code>), with a flush 8px bottom underline in the phase's tint (e.g., <code>#FEE2E2</code>).</li></ul>
+<p>Do not use all-caps for anything longer than a three-word label.</p>
+<p><strong>Headings.</strong> Every heading, tab, button and empty-state title is in sentence case: &quot;Your workshops&quot;, &quot;Show all workshops&quot;, not &quot;Your Workshops&quot;. A page has one <code>h1</code>. Sections under it are <code>h2</code>, and the items in a section are <code>h3</code>. A fragment included into a page never takes the <code>h1</code>: the page that includes it owns that, and the fragment opens at <code>h2</code>. Name a list the way the reader owns it: &quot;Your workshops&quot; in a heading, the same words the page's navigation uses.</p>
+<h5>Spacing and structure</h5>
+<p>The grid is 4px, giving spacing steps from 4px through 64px.</p>
+<p>Layouts use generous whitespace on Learn surfaces (marketing, library, editorial) and high-density structural efficiency on Plan surfaces (the Planner, where time is the primary dimension and every pixel earns its keep).</p>
+<p>Inside the app, every view that is not full-bleed sits on an eight-column page grid with 20px gutters. The main area takes six columns and a shared rail takes two. At 1100px and below the grids halve and the main and rail each take the full row; below 900 the shell shows a desktop-only notice instead.</p>
+<h5>Radii</h5>
+<ul><li>Buttons and inputs: 8px.</li><li>Cards: 12px.</li><li>Modals: 16px.</li><li>Pills and badges: fully round.</li></ul>
+<h5>Elevation</h5>
+<p>At rest, cards use the small shadow. On hover, cards lift by <code>translateY(-2px)</code> and the shadow upgrades to medium. Modals use the extra-large shadow. Use the colored shadows (all red) sparingly for emphasis on hero CTAs.</p>
+<p><em>[Section left out: motion, which has its own file in motion.md.]</em></p>
+<p><em>[Section left out: iconography, illustration, UX principles 10.1 and 10.2, the audit checklist, forms, the component system, voice examples by surface, working with AI, content taxonomy and file index.]</em></p>
+<h5>10.3 Workshopr-specific laws</h5>
+<p><strong>The Law of Immediacy.</strong> Facilitators are often high-stress and time-poor. Critical tools (Interventions, time adjusters) must be exactly one click away. No nesting under &quot;Settings&quot; or &quot;More.&quot;</p>
+<p><strong>The Law of Time-as-Gravity.</strong> Time is the primary dimension in Workshopr. Every piece of content (Exercise, Icebreaker, Break) displays its duration prominently. The total time of a workshop auto-calculates in real time as items are moved.</p>
+<p><strong>The Principle of Warm, Not Cute.</strong> Warm neutrals (<code>#FAFAF9</code> page, <code>#2C2416</code> ink) create a calm environment. But spacing and typography are precise (4px grid). The feel is high-end leather notebook, not coloring book, and since July 2026 the notebook is ruled: every page carries the 24px drafting grid.</p>
+<p><strong>The Law of Progressive Disclosure.</strong> Show what matters now. Reveal complexity on demand. In the Library, show name and duration. Reveal Materials Required and Step-by-Step Instructions only when expanded.</p>
+<p><strong>The One Surface, One Purpose Rule.</strong> The Library browses (infinite, horizontal, exploratory). The Planner constructs (vertical, sequence-driven, finite). The Coach supports live (real-time, reactive, minimalist). Don't bleed Library discovery into the active Planner workspace.</p>
+<p><strong>Templates are starting points, not finished products.</strong> Every exercise, workshop, and agenda is meant to be customized. UI should make &quot;duplicate and edit&quot; feel natural. Never make the user feel like they're fighting the template.</p>
+<p><strong>AI assists, never substitutes.</strong> AI Coach, recommendations, and agenda help always show <em>why</em> they suggest what they do, and make it easy to override. The facilitator is the expert. The AI is a second set of eyes.</p>
+<p><strong>Polish is a feature.</strong> Small details (an agenda timeline that shows tight transitions in a different color, a duration field that auto-sums, a one-click export to PDF/Word/Markdown) are how practitioners know Workshopr was built by one of them.</p>
+<p><strong>Facilitators scan before they read.</strong> Every screen should be scannable in under 3 seconds for &quot;is what I need here?&quot; Hero info (exercise name, duration, participant count, category) appears first. Details wait for a click.</p>
+<p><strong>Inclusive by default.</strong> Instructions, exercises, and prompts accommodate different modes of participation (quiet-writing before discussion, typed input alongside verbal, movement-optional variants). UI is keyboard-navigable, high-contrast-compatible, and respects reduced motion.</p>
+<p><em>[Section left out: the component-first and token-first workflow, which names internal files and tooling.]</em></p>
+  </div>
+</section>
+
+<nav class="turn" aria-label="Other project files">
+  <a class="prev" href="../../project-files/product/"><small>Previous file</small>PRODUCT.md</a>
+  <a class="next" href="../../project-files/agents/"><small>Next file</small>AGENTS.md</a>
+</nav>
+
+</main>
+<footer class="foot">
+  <p><a href="../../changelog/">Changelog</a><span aria-hidden="true"> · </span>Made by <a href="https://workshopr.io">Workshopr.io</a><span aria-hidden="true"> · </span>Every pack keeps its author's licence.</p>
+  <p>Registry as of 14 November 2026. Usage counted from Claude Code transcripts since 22 July 2026.</p>
+</footer>
+</div>
+
+</body>
+</html>

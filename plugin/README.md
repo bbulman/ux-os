@@ -21,6 +21,7 @@ Everything is typed by name. Not sure where to start? `/ux-os:research-next <ide
 | `/ux-os:research-discover` | Builds first models from what you believe, and names the belief to test first |
 | `/ux-os:research-debrief` | Takes in new evidence and shows which beliefs it bears on |
 | `/ux-os:research-synthesize` | Rebuilds your models on what people did, once there is enough evidence |
+| `/ux-os:create-project-files` | Writes the nine files every skill reads first, from annotated templates, without touching ones that exist |
 | `/ux-os:init` | Connects a project's design system and house rules to the deliverables |
 | `/ux-os:run` | Runs someone else's design skill on an idea, with every claim it rests on tagged |
 | `/ux-os:create-personas` | Who behaves differently enough to design for separately |
@@ -52,6 +53,10 @@ Personas, journeys, jobs and empathy maps each take a switch.
 ```
 
 `proto` builds from what you believe and labels it an assumption. `real` builds from your files. Names come out first, and every line links to the exact passage it came from. Real needs at least 5 people from different organisations, and stops if you don't have them.
+
+## Set up a project
+
+`/ux-os:create-project-files` gives a project `PRODUCT.md`, `DESIGN.md`, `AGENTS.md`, `PERSONAS.md`, `JOURNEYS.md`, `JTBD.md`, `taste.md`, `motion.md` and `VOICE.md`. Each starts from a template that says what the file is for, who reads it and what good looks like. It writes only the files that are missing and asks three questions at most. Personas, journeys and jobs start as beliefs, and the research commands can replace them with what people did.
 
 ## Connect a design system
 

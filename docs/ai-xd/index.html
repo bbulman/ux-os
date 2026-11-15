@@ -4,100 +4,103 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI-XD: UX-OS</title>
-<meta name="description" content="AI experience design: conversation, trust, guardrails and agent handoffs. The Claude skills UX-OS uses for ai-xd, with install commands.">
+<meta name="description" content="AI experience design: conversation, trust, guardrails and agent handoffs. The skills, packs and agents I use for ai-xd, which one wins each job, and how to install them.">
+<link rel="canonical" href="https://bbulman.github.io/ux-os/ai-xd/">
 <meta property="og:title" content="AI-XD: UX-OS">
-<meta property="og:description" content="AI experience design: conversation, trust, guardrails and agent handoffs. The Claude skills UX-OS uses for ai-xd, with install commands.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23E54D4D'/%3E%3C/svg%3E">
+<meta property="og:description" content="AI experience design: conversation, trust, guardrails and agent handoffs. The skills, packs and agents I use for ai-xd, which one wins each job, and how to install them.">
+<meta property="og:url" content="https://bbulman.github.io/ux-os/ai-xd/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <div class="wrap">
-  <header class="top">
-    <a class="mark" href="../">UX-OS</a>
-    <nav aria-label="Main">
-      <a href="../#sets">Sets</a>
-      <a class="optional" href="../#why">Why it matters</a>
-      <a href="../method/">Method</a>
-      <a href="https://github.com/bbulman/ux-os">GitHub</a>
-    </nav>
-  </header>
+<header class="top">
+  <a class="mark" href="../">UX-OS<small aria-hidden="true">5063 TX</small></a>
+  <nav class="nav" aria-label="Main"><a href="../jobs/">Jobs</a><a href="../registry/">Registry</a><a href="../disciplines/" aria-current="page">Disciplines</a><a href="../workflows/">Workflows</a><a href="../project-files/">Project files</a><a href="../method/">Method</a><a href="https://github.com/bbulman/ux-os">GitHub</a></nav>
+</header>
+<main id="main" tabindex="-1">
 
-  <main>
-    <p class="crumb"><a href="../">UX-OS</a> / AI-XD</p>
-    <div class="page-head">
-      <h1>AI-XD</h1>
-      
-      <p class="lede">AI experience design: conversation, trust, guardrails and agent handoffs.</p>
-      <p class="why">Designing for a model is its own discipline. Trust, refusal, handoff and recovery all need designing on purpose.</p>
-      <p class="gap"><b>What's missing:</b> Three more packs are installed and switched off.</p>
-    </div>
-    <div class="entries">
-      <div class="first-step">
-        <p>The <code>@designer-skills</code> commands below need this once.</p>
-        <pre><code>/plugin marketplace add Owl-Listener/designer-skills</code></pre>
-      </div>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/Owl-Listener/ai-design-skills/tree/main/claude-plugin/model-interaction-design">model-interaction-design</a></h2>
-          <p class="summary">Conversation patterns, mixed-initiative flow, generative UI, context windows and frustration detection.</p>
-          <pre><code>/plugin install model-interaction-design@designer-skills</code></pre>
-        </div>
-        <span class="state"><i class="dot on"></i>Loads on its own</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/Owl-Listener/ai-design-skills/tree/main/claude-plugin/ai-alignment-reasoning">ai-alignment-reasoning</a></h2>
-          <p class="summary">Guardrails, harm anticipation, trust calibration, transparency, consent and escalation.</p>
-          <pre><code>/plugin install ai-alignment-reasoning@designer-skills</code></pre>
-        </div>
-        <span class="state"><i class="dot on"></i>Loads on its own</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/Owl-Listener/ai-design-skills/tree/main/claude-plugin/design-agent-orchestration">design-agent-orchestration</a></h2>
-          <p class="summary">How agents collaborate, hand off, recover from failure and stay legible to people.</p>
-          <pre><code>/plugin install design-agent-orchestration@designer-skills</code></pre>
-        </div>
-        <span class="state"><i class="dot on"></i>Loads on its own</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/Owl-Listener/ai-design-skills/tree/main/claude-plugin/evaluation">evaluation</a></h2>
-          <p class="summary">Behaviour evals, trust calibration and failure analysis for agentic experiences.</p>
-          <pre><code>/plugin install evaluation@designer-skills</code></pre>
-        </div>
-        <span class="state"><i class="dot off"></i>Off</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/Owl-Listener/ai-design-skills/tree/main/claude-plugin/prompt-architecture">prompt-architecture</a></h2>
-          <p class="summary">Structures prompts and context as a design material.</p>
-          <pre><code>/plugin install prompt-architecture@designer-skills</code></pre>
-        </div>
-        <span class="state"><i class="dot off"></i>Off</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/Owl-Listener/ai-design-skills/tree/main/claude-plugin/system-behavior-shaping">system-behavior-shaping</a></h2>
-          <p class="summary">Defaults, guardrails, refusals and behavioural contracts.</p>
-          <pre><code>/plugin install system-behavior-shaping@designer-skills</code></pre>
-        </div>
-        <span class="state"><i class="dot off"></i>Off</span>
-      </article>
-    </div>
-    <p class="caption">The states are from my setup on 13 November 2026. Yours start from whatever you install.</p>
-    <div class="turn">
-      <a class="prev" href="../ux-strategy/">Previous: UX strategy</a>
-      <a class="next" href="../accessibility-and-inclusion/"><small>Next set</small>Accessibility and inclusion&nbsp;&rarr;</a>
-    </div>
-  </main>
+<nav class="crumb" aria-label="Breadcrumb"><a href="../disciplines/">Disciplines</a></nav>
+<header class="page-head set-head">
+  <p class="kicker">6 entries · 3 on · 0 mine</p>
+  <h1>AI-XD</h1>
+  
+  <p class="lede">AI experience design: conversation, trust, guardrails and agent handoffs.</p>
+  <p class="why">Designing for a model is its own discipline. Trust, refusal, handoff and recovery all need designing on purpose.</p>
+  <div class="note note--wide"><p><span class="note-k">What's missing:</span> Three more packs are installed and switched off.</p></div>
+</header>
 
-  <footer>
-    Made by <a href="https://workshopr.io">Workshopr.io</a>. Every pack keeps its author's licence. <a href="https://github.com/bbulman/ux-os">Source on GitHub</a>.
-  </footer>
+
+
+
+
+<section class="sec-tight" aria-labelledby="sheet-h">
+  <h2 class="big-2" id="sheet-h">The sheet</h2>
+  <p class="lede">Every entry in the set, most used first.</p>
+  <div class="first-step"><p>Installing the MC Dean packs here needs this once:</p><pre class="cmd"><code>/plugin marketplace add Owl-Listener/designer-skills</code></pre></div>
+  <ol class="sheet">
+<li class="frame" data-set="ai-xd" data-type="pack" data-origin="third" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ai-alignment-reasoning/" aria-label="ai-alignment-reasoning: skill pack, AI-XD. loads on its own. never run">
+<span class="edge" aria-hidden="true"><span>01</span><span>01A</span><span class="who">MC Dean</span></span>
+<span class="shot"><span class="fname">ai-alignment-reasoning</span><span class="fmeta">AI-XD · Skill pack</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="ai-xd" data-type="pack" data-origin="third" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/design-agent-orchestration/" aria-label="design-agent-orchestration: skill pack, AI-XD. loads on its own. never run">
+<span class="edge" aria-hidden="true"><span>02</span><span>02A</span><span class="who">MC Dean</span></span>
+<span class="shot"><span class="fname">design-agent-orchestration</span><span class="fmeta">AI-XD · Skill pack</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="ai-xd" data-type="pack" data-origin="third" data-loads="off" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/evaluation/" aria-label="evaluation: skill pack, AI-XD. installed and switched off. never run">
+<span class="edge" aria-hidden="true"><span>03</span><span>03A</span><span class="who">MC Dean</span></span>
+<span class="shot"><span class="fname">evaluation</span><span class="fmeta">AI-XD · Skill pack</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--off">OFF</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="ai-xd" data-type="pack" data-origin="third" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/model-interaction-design/" aria-label="model-interaction-design: skill pack, AI-XD. loads on its own. never run">
+<span class="edge" aria-hidden="true"><span>04</span><span>04A</span><span class="who">MC Dean</span></span>
+<span class="shot"><span class="fname">model-interaction-design</span><span class="fmeta">AI-XD · Skill pack</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="ai-xd" data-type="pack" data-origin="third" data-loads="off" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/prompt-architecture/" aria-label="prompt-architecture: skill pack, AI-XD. installed and switched off. never run">
+<span class="edge" aria-hidden="true"><span>05</span><span>05A</span><span class="who">MC Dean</span></span>
+<span class="shot"><span class="fname">prompt-architecture</span><span class="fmeta">AI-XD · Skill pack</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--off">OFF</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="ai-xd" data-type="pack" data-origin="third" data-loads="off" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/system-behavior-shaping/" aria-label="system-behavior-shaping: skill pack, AI-XD. installed and switched off. never run">
+<span class="edge" aria-hidden="true"><span>06</span><span>06A</span><span class="who">MC Dean</span></span>
+<span class="shot"><span class="fname">system-behavior-shaping</span><span class="fmeta">AI-XD · Skill pack</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--off">OFF</span><span>never run</span></span>
+</a>
+</li>
+  </ol>
+  <p class="caption">The states are from my setup on 14 November 2026. Yours start from whatever you install.</p>
+</section>
+
+<nav class="turn" aria-label="Other sets">
+  <a class="prev" href="../ux-strategy/"><small>Previous set</small>UX strategy</a>
+  <a class="next" href="../accessibility-and-inclusion/"><small>Next set</small>Accessibility and inclusion</a>
+</nav>
+
+</main>
+<footer class="foot">
+  <p><a href="../changelog/">Changelog</a><span aria-hidden="true"> · </span>Made by <a href="https://workshopr.io">Workshopr.io</a><span aria-hidden="true"> · </span>Every pack keeps its author's licence.</p>
+  <p>Registry as of 14 November 2026. Usage counted from Claude Code transcripts since 22 July 2026.</p>
+</footer>
 </div>
+
 </body>
 </html>

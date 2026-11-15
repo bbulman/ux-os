@@ -1,0 +1,271 @@
+{
+  "asOf": "2026-11-15",
+  "since": "2026-07-22",
+  "about": "Times each entry was started: model = Claude chose it, typed = run by name, agent = handed work as a subagent. For an MCP server, model counts its tool calls. Counted from transcripts on one machine.",
+  "counts": {
+    "design-system-enforcer": {
+      "model": 1230,
+      "typed": 0,
+      "agent": 0,
+      "total": 1230
+    },
+    "design-agent-design-critic": {
+      "model": 0,
+      "typed": 0,
+      "agent": 28,
+      "total": 28
+    },
+    "critique-partner": {
+      "model": 0,
+      "typed": 0,
+      "agent": 16,
+      "total": 16
+    },
+    "feature-build": {
+      "model": 10,
+      "typed": 0,
+      "agent": 6,
+      "total": 16
+    },
+    "findability": {
+      "model": 16,
+      "typed": 0,
+      "agent": 0,
+      "total": 16
+    },
+    "sitemaps": {
+      "model": 16,
+      "typed": 0,
+      "agent": 0,
+      "total": 16
+    },
+    "design-agent": {
+      "model": 9,
+      "typed": 4,
+      "agent": 0,
+      "total": 13
+    },
+    "workshopr-uxdrift": {
+      "model": 11,
+      "typed": 0,
+      "agent": 0,
+      "total": 11
+    },
+    "feature-plan": {
+      "model": 6,
+      "typed": 1,
+      "agent": 0,
+      "total": 7
+    },
+    "interaction-design-animation-principles": {
+      "model": 4,
+      "typed": 2,
+      "agent": 0,
+      "total": 6
+    },
+    "design-systems-audit-system": {
+      "model": 1,
+      "typed": 4,
+      "agent": 0,
+      "total": 5
+    },
+    "designer": {
+      "model": 0,
+      "typed": 0,
+      "agent": 5,
+      "total": 5
+    },
+    "landing-page-design": {
+      "model": 4,
+      "typed": 1,
+      "agent": 0,
+      "total": 5
+    },
+    "site-architecture": {
+      "model": 5,
+      "typed": 0,
+      "agent": 0,
+      "total": 5
+    },
+    "visual-critique": {
+      "model": 0,
+      "typed": 5,
+      "agent": 0,
+      "total": 5
+    },
+    "design-research": {
+      "model": 2,
+      "typed": 2,
+      "agent": 0,
+      "total": 4
+    },
+    "design-systems": {
+      "model": 3,
+      "typed": 1,
+      "agent": 0,
+      "total": 4
+    },
+    "information-architecture": {
+      "model": 4,
+      "typed": 0,
+      "agent": 0,
+      "total": 4
+    },
+    "prototyping-testing-user-flow-diagram": {
+      "model": 4,
+      "typed": 0,
+      "agent": 0,
+      "total": 4
+    },
+    "crit": {
+      "model": 0,
+      "typed": 3,
+      "agent": 0,
+      "total": 3
+    },
+    "design-os-create-interaction-flows": {
+      "model": 3,
+      "typed": 0,
+      "agent": 0,
+      "total": 3
+    },
+    "design-os-create-sitemap": {
+      "model": 3,
+      "typed": 0,
+      "agent": 0,
+      "total": 3
+    },
+    "design-os-create-wireframes": {
+      "model": 3,
+      "typed": 0,
+      "agent": 0,
+      "total": 3
+    },
+    "impeccable": {
+      "model": 3,
+      "typed": 0,
+      "agent": 0,
+      "total": 3
+    },
+    "interaction-design-error-flow": {
+      "model": 1,
+      "typed": 1,
+      "agent": 0,
+      "total": 2
+    },
+    "ux-os-create-personas": {
+      "model": 0,
+      "typed": 2,
+      "agent": 0,
+      "total": 2
+    },
+    "card-sort": {
+      "model": 1,
+      "typed": 0,
+      "agent": 0,
+      "total": 1
+    },
+    "content-inventory": {
+      "model": 1,
+      "typed": 0,
+      "agent": 0,
+      "total": 1
+    },
+    "content-models": {
+      "model": 1,
+      "typed": 0,
+      "agent": 0,
+      "total": 1
+    },
+    "design-ops": {
+      "model": 0,
+      "typed": 1,
+      "agent": 0,
+      "total": 1
+    },
+    "design-os-create-annotated-wireframes": {
+      "model": 1,
+      "typed": 0,
+      "agent": 0,
+      "total": 1
+    },
+    "design-os-create-lofi-prototype": {
+      "model": 1,
+      "typed": 0,
+      "agent": 0,
+      "total": 1
+    },
+    "design-os-create-screen-inventory": {
+      "model": 1,
+      "typed": 0,
+      "agent": 0,
+      "total": 1
+    },
+    "design-ux-copy": {
+      "model": 0,
+      "typed": 1,
+      "agent": 0,
+      "total": 1
+    },
+    "interaction-design": {
+      "model": 0,
+      "typed": 1,
+      "agent": 0,
+      "total": 1
+    },
+    "interaction-design-map-states": {
+      "model": 1,
+      "typed": 0,
+      "agent": 0,
+      "total": 1
+    },
+    "labeling": {
+      "model": 1,
+      "typed": 0,
+      "agent": 0,
+      "total": 1
+    },
+    "navigation": {
+      "model": 1,
+      "typed": 0,
+      "agent": 0,
+      "total": 1
+    },
+    "redirect-maps": {
+      "model": 1,
+      "typed": 0,
+      "agent": 0,
+      "total": 1
+    },
+    "taxonomies": {
+      "model": 1,
+      "typed": 0,
+      "agent": 0,
+      "total": 1
+    },
+    "tree-tests": {
+      "model": 1,
+      "typed": 0,
+      "agent": 0,
+      "total": 1
+    },
+    "url-structure": {
+      "model": 1,
+      "typed": 0,
+      "agent": 0,
+      "total": 1
+    },
+    "ux-os-research-next": {
+      "model": 0,
+      "typed": 1,
+      "agent": 0,
+      "total": 1
+    },
+    "ux-strategy": {
+      "model": 0,
+      "typed": 1,
+      "agent": 0,
+      "total": 1
+    }
+  }
+}

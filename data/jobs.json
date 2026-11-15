@@ -1,0 +1,348 @@
+[
+  {
+    "set": "research",
+    "need": "Find out where a research idea stands and what to do next",
+    "use": "ux-os:research-next",
+    "why": "Reads the idea's folder and names the one thing to run now, so nothing gets skipped or done twice."
+  },
+  {
+    "set": "research",
+    "need": "Turn what I believe about a new idea into first models",
+    "use": "ux-os:research-discover",
+    "why": "One short interview about your beliefs, then proto personas, journeys and jobs, each marked as an assumption, and the belief to test first."
+  },
+  {
+    "set": "research",
+    "need": "Plan interviews",
+    "use": "ux-os:create-interview-script",
+    "why": "Asks about what people did, not what they would do, and ties every question to a belief it can confirm or break."
+  },
+  {
+    "set": "research",
+    "need": "Make personas from real interviews",
+    "use": "ux-os:create-personas",
+    "rival": {
+      "use": "design-research:user-persona",
+      "external": true,
+      "why": "writes a fluent persona whether or not anyone was interviewed"
+    },
+    "why": "Real mode needs five people from different organisations and links every line to the passage it came from."
+  },
+  {
+    "set": "research",
+    "need": "Map a journey",
+    "use": "ux-os:create-journey-map",
+    "rival": {
+      "use": "design-research:journey-map",
+      "external": true,
+      "why": "does not separate what you believe from what you saw"
+    },
+    "why": "Current or future journey, with each step marked as belief or evidence."
+  },
+  {
+    "set": "research",
+    "need": "Sort research notes into themes",
+    "use": "ux-os:affinity-diagram",
+    "why": "Sorts from the bottom up, counts people rather than notes, and has a second agent re-sort blind to check the themes hold."
+  },
+  {
+    "set": "research",
+    "need": "Plan a usability test",
+    "use": "ux-os:create-usability-plan",
+    "why": "Tasks, success measures and sample size, tied to the belief the test is meant to settle."
+  },
+  {
+    "set": "research",
+    "need": "Blueprint the service behind the screens",
+    "use": "ux-os:create-service-blueprint",
+    "why": "Seven lanes per step, checked by script, from research rather than from guesswork."
+  },
+  {
+    "set": "information-architecture",
+    "need": "Work out why people can't find things",
+    "use": "findability",
+    "why": "My most used IA skill. It traces each path a person would take and names where it breaks."
+  },
+  {
+    "set": "information-architecture",
+    "need": "Decide the page tree for a site",
+    "use": "sitemaps",
+    "rival": {
+      "use": "design-os:create-sitemap",
+      "why": "writes the sitemap as a file for wireframes to build on, once the structure is decided"
+    },
+    "why": "Places every page, checks the tree agrees with itself and scales to the job."
+  },
+  {
+    "set": "information-architecture",
+    "need": "Plan or restructure a public website",
+    "use": "site-architecture",
+    "why": "Pages, URLs, header, footer and links that lead a visitor to a decision. Beat the skill it replaced 31 to 26 of 32 checks."
+  },
+  {
+    "set": "information-architecture",
+    "need": "Design navigation",
+    "use": "navigation",
+    "why": "Works from the content and the tasks, not from a list of menu patterns."
+  },
+  {
+    "set": "information-architecture",
+    "need": "Set URL rules or plan redirects",
+    "use": "url-structure",
+    "rival": {
+      "use": "redirect-maps",
+      "why": "is the one to use once URLs are moving"
+    },
+    "why": "Rules a whole site can follow, with a script that checks a list of URLs against them."
+  },
+  {
+    "set": "information-architecture",
+    "need": "Test a structure before building it",
+    "use": "tree-tests",
+    "why": "Plans the tasks and reads the results of a tree test, so the labels are tested before the screens."
+  },
+  {
+    "set": "interaction-design",
+    "need": "Design a form",
+    "use": "interaction-design:design-form",
+    "rival": {
+      "use": "interaction-design:form-design",
+      "external": true,
+      "why": "is the first step of design-form, which then adds passes on choice load, memory, targets, errors, feedback and loading"
+    },
+    "why": "Structure, chunking, validation, errors and completion in one run."
+  },
+  {
+    "set": "interaction-design",
+    "need": "Map a component's states",
+    "use": "interaction-design:map-states",
+    "rival": {
+      "use": "interaction-design:state-machine",
+      "external": true,
+      "why": "models the states but skips the loading, error and feedback passes map-states adds"
+    },
+    "why": "States, events, guards and edge cases, then what each state looks like."
+  },
+  {
+    "set": "interaction-design",
+    "need": "Design what happens when something fails",
+    "use": "interaction-design:error-flow",
+    "rival": {
+      "use": "interaction-design:error-handling-ux",
+      "external": true,
+      "why": "covers messages; error-flow also covers prevention and recovery paths"
+    },
+    "why": "Prevention, detection, messaging and recovery."
+  },
+  {
+    "set": "interaction-design",
+    "need": "Design a first-run experience",
+    "use": "interaction-design:design-onboarding",
+    "rival": {
+      "use": "interaction-design:onboarding-design",
+      "external": true,
+      "why": "is one step inside design-onboarding"
+    },
+    "why": "The activation path, what to reveal when, and time to first value."
+  },
+  {
+    "set": "interaction-design",
+    "need": "Design the wait",
+    "use": "interaction-design:loading-states",
+    "rival": {
+      "use": "interaction-design:feedback-patterns",
+      "why": "is for confirming an action, not for waiting on one"
+    },
+    "why": "Spinners, skeletons, optimistic updates and progressive reveal."
+  },
+  {
+    "set": "interaction-design",
+    "need": "Tell people an action registered",
+    "use": "interaction-design:feedback-patterns",
+    "rival": {
+      "use": "interaction-design:loading-states",
+      "why": "is for waiting, not for confirming"
+    },
+    "why": "Confirmations, status changes and notifications."
+  },
+  {
+    "set": "interaction-design",
+    "need": "Tune how one animation feels",
+    "use": "interaction-design:animation-principles",
+    "why": "My most used MC Dean skill: easing, staging and follow-through for one specific motion."
+  },
+  {
+    "set": "prototyping",
+    "need": "Draw a flow before any screens exist",
+    "use": "design-os:create-interaction-flows",
+    "rival": {
+      "use": "prototyping-testing:user-flow-diagram",
+      "why": "draws a standalone diagram; the Design OS flow is a file the screen inventory and wireframes must agree with"
+    },
+    "why": "Includes what happens when the task goes wrong, and a script fails if a later stage drops a step."
+  },
+  {
+    "set": "prototyping",
+    "need": "List every screen a feature needs",
+    "use": "design-os:create-screen-inventory",
+    "why": "Each screen with its loading, empty, error and permission states, checked against the flow."
+  },
+  {
+    "set": "prototyping",
+    "need": "Wireframe a feature",
+    "use": "design-os:create-wireframes",
+    "why": "Greyscale screens as files the next stages read. Plain Claude draws well already; the value is that the chain is checked."
+  },
+  {
+    "set": "prototyping",
+    "need": "A clickable prototype to test a flow",
+    "use": "design-os:create-lofi-prototype",
+    "why": "Built from the wireframes, so every arrow in the flow is clickable or the check fails."
+  },
+  {
+    "set": "prototyping",
+    "need": "A quick throwaway build to feel something out",
+    "use": "mattpocock-skills:prototype",
+    "why": "Built to be thrown away, which keeps it fast."
+  },
+  {
+    "set": "visual-design",
+    "need": "Design or rebuild a landing page",
+    "use": "landing-page-design",
+    "why": "From a brief to a built page, with critic passes before it calls itself done."
+  },
+  {
+    "set": "visual-design",
+    "need": "Polish one section to a high bar",
+    "use": "impeccable",
+    "why": "Section-level craft with its own reviewers."
+  },
+  {
+    "set": "visual-design",
+    "need": "Critique a page against our own rules",
+    "use": "crit",
+    "rival": {
+      "use": "visual-critique",
+      "why": "critiques against general principles rather than the project's written rules"
+    },
+    "why": "Every issue quotes a rule from taste.md or DESIGN.md word for word, so the critique can't drift into taste."
+  },
+  {
+    "set": "content",
+    "need": "Write interface copy",
+    "use": "designer-toolkit:ux-writing",
+    "rival": {
+      "use": "design:ux-copy",
+      "why": "covers the same ground; pick one and keep it"
+    },
+    "why": "Microcopy, error messages, empty states and calls to action."
+  },
+  {
+    "set": "content",
+    "need": "Plan content: what exists, who owns it, what to make",
+    "use": "create-content-strategy",
+    "why": "A content strategy as the finished document, with the working notes kept apart."
+  },
+  {
+    "set": "content",
+    "need": "Make AI-written text sound human",
+    "use": "humanizer",
+    "why": "Checks text against a public catalogue of the signs of AI writing."
+  },
+  {
+    "set": "content",
+    "need": "Tighten and proofread copy",
+    "use": "copy-editing",
+    "why": "Several focused sweeps rather than one rewrite."
+  },
+  {
+    "set": "design-systems",
+    "need": "Check UI against the design system while building",
+    "use": "design-system-enforcer",
+    "why": "My most used tool by far. Names the component to use and flags hardcoded values."
+  },
+  {
+    "set": "design-systems",
+    "need": "Start a design system from a live website",
+    "use": "ds-kit:create-design-system",
+    "why": "Measures the site's real styles across pages and records where every value came from."
+  },
+  {
+    "set": "design-systems",
+    "need": "Choose a visual direction before tokens exist",
+    "use": "ds-kit:create-moodboard",
+    "why": "Two or three directions to pick between, written down so the next stage can build from the pick."
+  },
+  {
+    "set": "design-systems",
+    "need": "Change a token's value",
+    "use": "ds-kit:update-ds-tokens",
+    "why": "Even the one-line changes, so nothing downstream breaks quietly."
+  },
+  {
+    "set": "design-systems",
+    "need": "Rename or remove a token or component",
+    "use": "ds-kit:migrate-ds",
+    "why": "Ships a codemod, not a find and replace."
+  },
+  {
+    "set": "design-systems",
+    "need": "Audit an existing design system",
+    "use": "design-systems:audit-system",
+    "why": "Consistency, completeness and accessibility in one pass."
+  },
+  {
+    "set": "ux-strategy",
+    "need": "Write a design brief",
+    "use": "create-brief",
+    "why": "The brief is the finished document, in plain words, with the scoring kept in a working file."
+  },
+  {
+    "set": "ux-strategy",
+    "need": "Set a north star",
+    "use": "create-north-star",
+    "why": "One direction the team can test decisions against."
+  },
+  {
+    "set": "ux-strategy",
+    "need": "Size up competitors",
+    "use": "analyze-competitors",
+    "why": "What each one does about the job, not a feature grid."
+  },
+  {
+    "set": "accessibility-and-inclusion",
+    "need": "Personas that include disability and situational limits",
+    "use": "inclusive-personas",
+    "why": "Starts with who is being left out, before the design is fixed."
+  },
+  {
+    "set": "orchestration",
+    "need": "Set up a new project's files",
+    "use": "ux-os:create-project-files",
+    "why": "Nine annotated templates, each saying what the file is for and who reads it. Writes only what is missing and asks three questions at most."
+  },
+  {
+    "set": "orchestration",
+    "need": "Iterate a Workshopr page to a quality bar",
+    "use": "design-agent",
+    "why": "Designs, then an independent critic scores each pass, and it loops until the bar is met."
+  },
+  {
+    "set": "orchestration",
+    "need": "Plan a new feature before building it",
+    "use": "feature-plan",
+    "why": "Looks everything up, asks one question at a time and writes a spec, a design brief and build slices."
+  },
+  {
+    "set": "orchestration",
+    "need": "Build a planned feature slice",
+    "use": "feature-build",
+    "why": "An independent reviewer scores every pass, and a gate holds it until tests, lint and the design system pass."
+  },
+  {
+    "set": "orchestration",
+    "need": "Run someone else's skill and keep its claims honest",
+    "use": "ux-os:run",
+    "why": "Runs a third-party skill unedited, files its claims as belief or evidence, and an auditor checks the citations."
+  }
+]

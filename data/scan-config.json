@@ -1,0 +1,6 @@
+{
+  "about": "Read by scripts/scan.mjs. watchPlugins: every skill, command or agent in these plugins must be in the registry or listed under ignore. watchMarketplaces: every pack from these marketplaces must be in the registry. ignore: full names that are installed but deliberately left out.",
+  "watchPlugins": ["ux-os", "design-os", "ds-kit", "design-agent", "feature-plan", "feature-build"],
+  "watchMarketplaces": ["designer-skills"],
+  "ignore": []
+}

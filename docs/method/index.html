@@ -3,58 +3,123 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How a skill gets built: UX-OS</title>
-<meta name="description" content="The eight-step method for bringing a skill into UX-OS, and what testing showed on the first one.">
-<meta property="og:title" content="How a skill gets built: UX-OS">
-<meta property="og:description" content="The eight-step method for bringing a skill into UX-OS, and what testing showed on the first one.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23E54D4D'/%3E%3C/svg%3E">
+<title>Method: how a skill gets built, UX-OS</title>
+<meta name="description" content="The eight-step method for bringing a skill into UX-OS, what testing showed on the first one, and how the registry stays true.">
+<link rel="canonical" href="https://bbulman.github.io/ux-os/method/">
+<meta property="og:title" content="Method: how a skill gets built, UX-OS">
+<meta property="og:description" content="The eight-step method for bringing a skill into UX-OS, what testing showed on the first one, and how the registry stays true.">
+<meta property="og:url" content="https://bbulman.github.io/ux-os/method/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <div class="wrap">
-  <header class="top">
-    <a class="mark" href="../">UX-OS</a>
-    <nav aria-label="Main">
-      <a href="../#sets">Sets</a>
-      <a class="optional" href="../#why">Why it matters</a>
-      <a href="../method/">Method</a>
-      <a href="https://github.com/bbulman/ux-os">GitHub</a>
-    </nav>
-  </header>
+<header class="top">
+  <a class="mark" href="../">UX-OS<small aria-hidden="true">5063 TX</small></a>
+  <nav class="nav" aria-label="Main"><a href="../jobs/">Jobs</a><a href="../registry/">Registry</a><a href="../disciplines/">Disciplines</a><a href="../workflows/">Workflows</a><a href="../project-files/">Project files</a><a href="../method/" aria-current="page">Method</a><a href="https://github.com/bbulman/ux-os">GitHub</a></nav>
+</header>
+<main id="main" tabindex="-1">
 
-  <main>
-    <p class="crumb"><a href="../">UX-OS</a> / Method</p>
-    <div class="page-head">
-      <h1>How a skill gets built.</h1>
-      <p class="lede">This is the method so far. It comes from building the information-architecture skill, the first one to go through full testing. Steps 1 to 5 are what I did on that skill. Steps 6 to 8 are what it showed I should add.</p>
-    </div>
-    <ol class="method">
-      <li><div><h2>Check what already exists</h2><p>Search the registry and the installed skills first. The information-architecture skill started because two public skills with the same name could not be installed together.</p></div></li>
-      <li><div><h2>Decide how to get it</h2><p>Adopt a good skill as it is, combine several when each covers part of the job, or write one when nothing fits.</p></div></li>
-      <li><div><h2>Check the licence</h2><p>Without an open licence I rewrite and never copy.</p></div></li>
-      <li><div><h2>Write the skill and its tests together</h2><p><code>SKILL.md</code> holds the method, <code>references/</code> holds long material such as methodology, templates and a rubric, and <code>evals/</code> holds realistic test cases.</p></div></li>
-      <li><div><h2>Test it against no skill at all</h2><p>Run each case with and without the skill using skill-creator, grade both, fix what failed and run it again. Record the score and the cost.</p></div></li>
-      <li><div><h2>Test the real name</h2><p>Ask a fresh session to quote the skill's entry in its list. With this many skills installed, most appear by name only, so the name has to say what the skill is for and rewriting the description changes nothing. Test with the real name, because the tuning tool in skill-creator uses a copy with a temporary name, which can lose to a competing skill for that reason alone.</p></div></li>
-      <li><div><h2>Check Claude can reach it</h2><p>Confirm no <code>skillOverrides</code> entry hides it and no installed skill with the same name competes with it.</p></div></li>
-      <li><div><h2>Register it</h2><p>Add a row to the registry and write down how it was built.</p></div></li>
-    </ol>
-    <div class="prose">
-      <h2>What testing showed on the first skill.</h2>
-      <p>The first round scored 24 of 25 with the skill and 23 of 25 without, which is almost no benefit. After fixes and sharper checks, the second round scored 29 of 29 with the skill and 22 of 29 without. The third round, on the published version, scored 28 of 29 against 19 of 29. In those last two rounds the skill made runs 49% to 73% longer and used 19% to 26% more tokens, so the cost belongs in the record beside the score.</p>
-      <p><a href="https://github.com/bbulman/information-architecture-skill">The skill, its test cases and every grade are on GitHub.</a></p>
-      <p>Trigger testing then showed how much the name matters. The tuning tool in skill-creator scored 0 of 10, with a rival skill winning 9, but its test copy carries a temporary name. With the real name, Claude chose the skill on 9 of 10 requests and on none of 10 near-misses.</p>
-      <h2>When a skill changes.</h2>
-      <p>Rerun its evals after any edit instead of changing it ad hoc.</p>
-      <p><a href="../#sets">Back to the sets</a></p>
-    </div>
-  </main>
+<header class="page-head">
+  <p class="kicker">Method</p>
+  <h1>How a skill gets built</h1>
+  <p class="lede">This is the method so far. It comes from building the information-architecture skill, the first one to go through full testing. Steps 1 to 5 are what I did on that skill. Steps 6 to 8 are what it showed I should add.</p>
+</header>
 
-  <footer>
-    Made by <a href="https://workshopr.io">Workshopr.io</a>. Every pack keeps its author's licence. <a href="https://github.com/bbulman/ux-os">Source on GitHub</a>.
-  </footer>
+<ol class="method">
+  <li><h2>Check what already exists</h2><p>Search the registry and the installed skills first. The information-architecture skill started because two public skills with the same name could not be installed together.</p></li>
+  <li><h2>Decide how to get it</h2><p>Adopt a good skill as it is, combine several when each covers part of the job, or write one when nothing fits.</p></li>
+  <li><h2>Check the licence</h2><p>Without an open licence I rewrite and never copy.</p></li>
+  <li><h2>Write the skill and its tests together</h2><p><code>SKILL.md</code> holds the method, <code>references/</code> holds long material such as methodology, templates and a rubric, and <code>evals/</code> holds realistic test cases.</p></li>
+  <li><h2>Test it against no skill at all</h2><p>Run each case with and without the skill using skill-creator, grade both, fix what failed and run it again. Record the score and the cost.</p></li>
+  <li><h2>Test the real name</h2><p>Ask a fresh session to quote the skill's entry in its list. With this many skills installed, most appear by name only, so the name has to say what the skill is for and rewriting the description changes nothing. Test with the real name, because the tuning tool in skill-creator uses a copy with a temporary name, which can lose to a competing skill for that reason alone.</p></li>
+  <li><h2>Check Claude can reach it</h2><p>Confirm no <code>skillOverrides</code> entry hides it and no installed skill with the same name competes with it.</p></li>
+  <li><h2>Register it</h2><p>Add a row to the registry and write down how it was built.</p></li>
+</ol>
+
+<section class="sec prose-wide" aria-labelledby="first-h">
+  <h2 class="big" id="first-h">What testing showed on the first skill</h2>
+  <div class="prose">
+    <p>The first round scored 24 of 25 with the skill and 23 of 25 without, which is almost no benefit. After fixes and sharper checks, the second round scored 29 of 29 with the skill and 22 of 29 without. The third round, on the published version, scored 28 of 29 against 19 of 29. In those last two rounds the skill made runs 49% to 73% longer and used 19% to 26% more tokens, so the cost belongs in the record beside the score.</p>
+    <p><a href="https://github.com/bbulman/information-architecture-skill">The skill, its test cases and every grade are on GitHub.</a></p>
+    <p>Trigger testing then showed how much the name matters. The tuning tool in skill-creator scored 0 of 10, with a rival skill winning 9, but its test copy carries a temporary name. With the real name, Claude chose the skill on 9 of 10 requests and on none of 10 near-misses.</p>
+    <h3>When a skill changes</h3>
+    <p>Rerun its evals after any edit instead of changing it ad hoc.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="os-h">
+  <h2 class="big" id="os-h">A pile of skills is not a system</h2>
+  <div class="prose">
+    <p>On 24 October I built an information-architecture skill, because two public ones shared a name and couldn't be installed together. Then I tested it against no skill at all. With the skill: 24 out of 25. Without it: 23.</p>
+    <p>One point. Installing a skill told me nothing about whether it helped, or whether Claude would ever open it. An operating system answers those questions for programs: what's loaded, who gets priority, what each one costs. UX-OS answers them for skills. It's four jobs you do on whatever you've got, and the record of how they came out.</p>
+  </div>
+  <ol class="os-jobs">
+    <li>
+      <div class="os-stat"><p class="stat">36 of 505</p><p class="stat-label">Roughly, in one project of mine: skills that get a description in Claude's list</p></div>
+      <div><h3>Decide what loads.</h3><p>With that many installed, the rest show up as a bare name, so a better description changes nothing. So each entry gets a decision, made in Claude Code's own settings: load it, keep it for when I call it by name, or switch it off. ON, BY NAME and OFF in the registry are those decisions. To see yours, ask a fresh session to quote its skill list.</p></div>
+    </li>
+    <li>
+      <div class="os-stat"><p class="stat">9 of 10</p><p class="stat-label">requests chosen under its real name. Under a temporary test name: 0 of 10</p></div>
+      <div><h3>Settle who wins.</h3><p>Two skills can claim the same job. With a temporary test name, mine won none of ten requests and a rival took nine. Under its real name, Claude chose it nine times out of ten, and on none of ten near-misses. The name is the interface.</p></div>
+    </li>
+    <li>
+      <div class="os-stat"><p class="stat">28 vs 19</p><p class="stat-label">of 29 checks in the latest round, with the skill and without</p></div>
+      <div><h3>Make each skill earn its place.</h3><p>After that first round I fixed what failed and sharpened the checks. The gap has held for two rounds since, and every grade is public.</p></div>
+    </li>
+    <li>
+      <div class="os-stat"><p class="stat">+49%</p><p class="stat-label">longer runs in the latest round, and about 19% more tokens</p></div>
+      <div><h3>Put the cost beside the score.</h3><p>Better answers aren't free. When the number's written down, you get to decide when it's worth paying.</p></div>
+    </li>
+  </ol>
+  <div class="note note--wide"><p>One skill, three test cases, and I wrote both the skill and the checks. That's a field note, not a study.</p><p>The case against all this: skills are cheap, so install everything and let Claude sort it out. Fair. That's how I got to 505. Then I asked Claude to show me what it could actually see.</p></div>
+</section>
+
+<section class="sec" aria-labelledby="true-h">
+  <h2 class="big" id="true-h">How this registry stays true</h2>
+  <div class="prose">
+    <p>One registry file holds every entry. The counts the site prints around it, on every page, are worked out from the data each time the site is built.</p>
+    <h3>Whether it loads</h3>
+    <p>ON, BY NAME and OFF come from <code>scripts/scan.mjs</code>. It reads what is installed on this machine and whether Claude can load it, then checks the registry against that. Run with <code>--write</code>, it sets each entry's status to what the machine says. What it reads stays on the machine.</p>
+    <h3>How often I use it</h3>
+    <p>Usage comes from <code>scripts/usage.mjs</code>. It counts three things in Claude Code transcripts: skills Claude started itself, commands typed by name, and agents handed work. An MCP server counts its tool calls. Only registry ids and numbers are written down: no paths, prompts or project names. The current count starts on 22 July 2026 and covers one machine.</p>
+    <h3>What the build refuses</h3>
+    <p><code>build/load.mjs</code> stops the build on an unknown set, type, origin, status, scope or stage, on a job or workflow step that names something not in the registry, on a story or template file that does not exist, and on any published string that holds a local path or an email address. It reports every problem in one run, then refuses to write a page.</p>
+    <p>After the build, <code>scripts/check-links.mjs</code> follows every link between pages and fails if one is broken or an entry page is missing from the registry.</p>
+  </div>
+  <div class="note note--wide"><p>As of 14 November 2026: 135 entries, 67 ON, 59 BY NAME and 9 OFF. 44 have been used since 22 July 2026, and 77 have a test result written down. <a href="../changelog/">What changed, and when</a>.</p></div>
+</section>
+
+<section class="sec" aria-labelledby="credit-h">
+  <h2 class="big" id="credit-h">Credits</h2>
+  <div class="prose">
+    <p>41 of the 135 entries are third-party, and MC Dean wrote 33 of them. With Claude, I built 80 and rewrote 14 from public sources. What I'm adding is the filing, the testing and the decisions about what stays on. Every pack keeps its author's licence.</p>
+  </div>
+  <ul class="people">
+<li><span class="who"><a href="https://github.com/Owl-Listener/designer-skills">MC Dean</a></span><span class="what">Designer Skills</span><span class="n">33 entries</span></li>
+<li><span class="who">Anthropic</span><span class="what">ux-copy</span><span class="n">1 entry</span></li>
+<li><span class="who"><a href="https://github.com/blader/humanizer">blader</a></span><span class="what">humanizer</span><span class="n">1 entry</span></li>
+<li><span class="who"><a href="https://github.com/coreyhaines31/marketingskills">Corey Haines</a></span><span class="what">copy-editing</span><span class="n">1 entry</span></li>
+<li><span class="who"><a href="https://github.com/emilkowalski/skills">Emil Kowalski</a></span><span class="what">Motion skills</span><span class="n">1 entry</span></li>
+<li><span class="who"><a href="https://github.com/Leonxlnx/taste-skill">Leonxlnx</a></span><span class="what">Taste skills</span><span class="n">1 entry</span></li>
+<li><span class="who"><a href="https://github.com/mattpocock/skills">Matt Pocock</a></span><span class="what">prototype</span><span class="n">1 entry</span></li>
+<li><span class="who"><a href="https://impeccable.style">Paul Bakaus</a></span><span class="what">impeccable</span><span class="n">1 entry</span></li>
+<li><span class="who"><a href="https://github.com/RefoundAI/lenny-skills">RefoundAI</a></span><span class="what">lenny-skills research set</span><span class="n">1 entry</span></li>
+  </ul>
+  <p class="caption">Source for this site: <a href="https://github.com/bbulman/ux-os">github.com/bbulman/ux-os</a>.</p>
+</section>
+
+</main>
+<footer class="foot">
+  <p><a href="../changelog/">Changelog</a><span aria-hidden="true"> · </span>Made by <a href="https://workshopr.io">Workshopr.io</a><span aria-hidden="true"> · </span>Every pack keeps its author's licence.</p>
+  <p>Registry as of 14 November 2026. Usage counted from Claude Code transcripts since 22 July 2026.</p>
+</footer>
 </div>
+
 </body>
 </html>

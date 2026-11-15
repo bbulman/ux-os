@@ -4,278 +4,301 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Research: UX-OS</title>
-<meta name="description" content="Interviews, surveys, usability tests, diary studies, card sorts, affinity diagrams, empathy maps, personas, journey maps, jobs to be done and research repositories. The Claude skills UX-OS uses for research, with install commands.">
+<meta name="description" content="Interviews, surveys, usability tests, diary studies, card sorts, affinity diagrams, empathy maps, personas, journey maps, jobs to be done and research repositories. The skills, packs and agents I use for research, which one wins each job, and how to install them.">
+<link rel="canonical" href="https://bbulman.github.io/ux-os/research/">
 <meta property="og:title" content="Research: UX-OS">
-<meta property="og:description" content="Interviews, surveys, usability tests, diary studies, card sorts, affinity diagrams, empathy maps, personas, journey maps, jobs to be done and research repositories. The Claude skills UX-OS uses for research, with install commands.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23E54D4D'/%3E%3C/svg%3E">
+<meta property="og:description" content="Interviews, surveys, usability tests, diary studies, card sorts, affinity diagrams, empathy maps, personas, journey maps, jobs to be done and research repositories. The skills, packs and agents I use for research, which one wins each job, and how to install them.">
+<meta property="og:url" content="https://bbulman.github.io/ux-os/research/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <div class="wrap">
-  <header class="top">
-    <a class="mark" href="../">UX-OS</a>
-    <nav aria-label="Main">
-      <a href="../#sets">Sets</a>
-      <a class="optional" href="../#why">Why it matters</a>
-      <a href="../method/">Method</a>
-      <a href="https://github.com/bbulman/ux-os">GitHub</a>
-    </nav>
-  </header>
+<header class="top">
+  <a class="mark" href="../">UX-OS<small aria-hidden="true">5063 TX</small></a>
+  <nav class="nav" aria-label="Main"><a href="../jobs/">Jobs</a><a href="../registry/">Registry</a><a href="../disciplines/" aria-current="page">Disciplines</a><a href="../workflows/">Workflows</a><a href="../project-files/">Project files</a><a href="../method/">Method</a><a href="https://github.com/bbulman/ux-os">GitHub</a></nav>
+</header>
+<main id="main" tabindex="-1">
 
-  <main>
-    <p class="crumb"><a href="../">UX-OS</a> / Research</p>
-    <div class="page-head">
-      <h1>Research</h1>
-      
-      <p class="lede">Interviews, surveys, usability tests, diary studies, card sorts, affinity diagrams, empathy maps, personas, journey maps, jobs to be done and research repositories.</p>
-      <p class="why">Left alone, Claude will write you a persona from nothing. This set gives it a method for asking real people first.</p>
-      <p class="gap"><b>What's missing:</b> So far these have only run on made-up test data, and none has been compared with no skill at all.</p>
-    </div>
-    <div class="entries">
-      <section class="run-it" aria-labelledby="run-it-h">
-        <h2 id="run-it-h">How to run it</h2>
-        <p>Install it once. You need Claude Code, and Node for the checking scripts.</p>
-        <pre><code>/plugin marketplace add bbulman/ux-os
+<nav class="crumb" aria-label="Breadcrumb"><a href="../disciplines/">Disciplines</a></nav>
+<header class="page-head set-head">
+  <p class="kicker">24 entries · 3 on · 22 mine · 8 jobs</p>
+  <h1>Research</h1>
+  
+  <p class="lede">Interviews, surveys, usability tests, diary studies, card sorts, affinity diagrams, empathy maps, personas, journey maps, jobs to be done and research repositories.</p>
+  <p class="why">Left alone, Claude will write you a persona from nothing. This set gives it a method for asking real people first.</p>
+  <div class="note note--wide"><p><span class="note-k">What's missing:</span> So far these have only run on made-up test data, and none has been compared with no skill at all.</p></div>
+</header>
+
+<section class="run-it" aria-labelledby="run-it-h">
+  <h2 class="big-2" id="run-it-h">How to run it</h2>
+  <p>Install it once. You need Claude Code, and Node for the checking scripts.</p>
+  <pre class="cmd"><code>/plugin marketplace add bbulman/ux-os
 /plugin install ux-os@ux-os</code></pre>
-        <p>Everything here is typed by name, and every name starts with <code>/ux-os:</code>. Not sure where to start? <code>/ux-os:research-next</code> says where an idea stands and the one thing to do now.</p>
-        <p>Personas, journeys, jobs and empathy maps each take a switch. <code>proto</code> builds from what you believe and labels it an assumption. <code>real</code> builds from your files, and every line links to the exact passage it came from. Real needs at least 5 people from different organisations, and stops if you don't have them.</p>
-        <p>Run <code>/ux-os:init</code> once per project and deliverables take your design system's fonts and colours. Design proposals then name a real component, or say none fits.</p>
-        <h3>Example prompts</h3>
-        <p>Swap volunteer-rota for your own idea, in two to four words.</p>
-        <ul class="prompts">
-          <li><p>I have an idea and no data yet.</p><pre><code>/ux-os:research-discover volunteer-rota</code></pre></li>
-          <li><p>I want a quick persona from what I already believe.</p><pre><code>/ux-os:create-personas volunteer-rota proto</code></pre></li>
-          <li><p>I've finished my interviews and want real personas.</p><pre><code>/ux-os:create-personas volunteer-rota real --evidence ~/interviews/</code></pre></li>
-          <li><p>New notes have come in.</p><pre><code>/ux-os:research-debrief volunteer-rota --evidence ~/interviews/week-2/</code></pre></li>
-          <li><p>I've talked to five organisations and want to stop guessing.</p><pre><code>/ux-os:research-synthesize volunteer-rota</code></pre></li>
-          <li><p>I don't know what to do next.</p><pre><code>/ux-os:research-next volunteer-rota</code></pre></li>
-          <li><p>I want deliverables to look like our design system.</p><pre><code>/ux-os:init</code></pre></li>
-        </ul>
-      </section>
-      <p class="group">Commands: run a whole stage, or set up a project</p>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/ux-os/tree/main/plugin/skills/research-next">research-next</a></h2>
-          <p class="summary">Says where a research idea stands and the one thing to run next. It reads the folder and changes nothing.</p>
-          <p class="tested"><b>Testing:</b> Typed as a real command on a made-up idea, and it named the right next step. The routing has its own self-test.</p>
-          <p class="note">The one-command-now shape comes from MC Dean's start-here command in the Designer Skills Pack.</p>
-          <p class="pre-label">Example prompts</p>
-          <pre><code>/ux-os:research-next volunteer-rota</code></pre>
-        </div>
-        <span class="state"><i class="dot name"></i>Run by name</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/ux-os/tree/main/plugin/skills/research-discover">research-discover</a></h2>
-          <p class="summary">Asks what you believe about a new idea, once, then builds your first jobs, personas and journey from it and names the one belief to test first.</p>
-          <p class="tested"><b>Testing:</b> Run by an agent following the files, on made-up test data only.</p>
-          <p class="note">Chaining models into one command comes from MC Dean's discover command in the Designer Skills Pack.</p>
-          <p class="pre-label">Example prompts</p>
-          <pre><code>/ux-os:research-discover volunteer-rota</code></pre>
-        </div>
-        <span class="state"><i class="dot name"></i>Run by name</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/ux-os/tree/main/plugin/skills/research-debrief">research-debrief</a></h2>
-          <p class="summary">Takes in a new interview or study, removes the names, and shows which beliefs it bears on, without rewriting anything you built.</p>
-          <p class="tested"><b>Testing:</b> Run by an agent following the files, on made-up test data only.</p>
-          <p class="pre-label">Example prompts</p>
-          <pre><code>/ux-os:research-debrief volunteer-rota --evidence ~/interviews/week-2/</code></pre>
-        </div>
-        <span class="state"><i class="dot name"></i>Run by name</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/ux-os/tree/main/plugin/skills/research-synthesize">research-synthesize</a></h2>
-          <p class="summary">Once enough evidence is in, sorts it, summarises it, settles each belief and rebuilds your proto models on what people did.</p>
-          <p class="tested"><b>Testing:</b> Run by an agent following the files, on made-up test data only.</p>
-          <p class="note">Chaining synthesis into one command comes from MC Dean's synthesize command in the Designer Skills Pack.</p>
-          <p class="pre-label">Example prompts</p>
-          <pre><code>/ux-os:research-synthesize volunteer-rota</code></pre>
-        </div>
-        <span class="state"><i class="dot name"></i>Run by name</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/ux-os/tree/main/plugin/skills/record-decision">record-decision</a></h2>
-          <p class="summary">Records what you decided because of the research, what the decision rests on and what would reverse it. A decision made on a belief stays in pencil.</p>
-          <p class="tested"><b>Testing:</b> The rules its file is checked against have their own self-test and one independent review. The typed command has not been run yet.</p>
-          <p class="pre-label">Example prompts</p>
-          <pre><code>/ux-os:record-decision volunteer-rota</code></pre>
-        </div>
-        <span class="state"><i class="dot name"></i>Run by name</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/ux-os/tree/main/plugin/skills/init">init</a></h2>
-          <p class="summary">Connects a project's design system once. Deliverables take its fonts and colours, and each design proposal names a real component or says none fits. It shows you everything before saving.</p>
-          <p class="tested"><b>Testing:</b> Connected to one real design system with 133 components. The step that saves it has its own self-test, and running it twice changes nothing.</p>
-          <p class="pre-label">Example prompts</p>
-          <pre><code>/ux-os:init</code></pre>
-        </div>
-        <span class="state"><i class="dot name"></i>Run by name</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/ux-os/tree/main/plugin/skills/run">run</a></h2>
-          <p class="summary">Runs someone else's design skill on an idea without changing it, then files the output with a table of every claim it rests on, each tagged. A separate auditor reads the table.</p>
-          <p class="tested"><b>Testing:</b> The briefing and the check have their own self-tests. Followed by agents on two walk-throughs. The typed command has not been run yet, and picks cover six interaction design jobs only.</p>
-          <p class="pre-label">Example prompts</p>
-          <pre><code>/ux-os:run design a signup form volunteer-rota</code></pre>
-        </div>
-        <span class="state"><i class="dot name"></i>Run by name</span>
-      </article>
-      <p class="group">Skills: each makes one deliverable</p>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/ux-os/tree/main/plugin/skills/affinity-diagram">affinity-diagram</a></h2>
-          <p class="summary">Sorts real research notes into themes from the bottom up, counts people rather than notes, and has a second agent re-sort them blind. Needs data to work from.</p>
-          <p class="tested"><b>Testing:</b> Test run: 4 of 26 notes landed differently in the blind re-sort. Run on made-up test data only.</p>
-          <p class="pre-label">Example prompts</p>
-          <pre><code>/ux-os:affinity-diagram volunteer-rota --evidence ~/interviews/</code></pre>
-        </div>
-        <span class="state"><i class="dot name"></i>Run by name</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/ux-os/tree/main/plugin/skills/analyze-card-sort">analyze-card-sort</a></h2>
-          <p class="summary">Works out how people grouped your cards: how often pairs stayed together, the groups that form, and the cards with no clear home. Needs real results.</p>
-          <p class="tested"><b>Testing:</b> Analysis script with its own self-test. Run on made-up test data only.</p>
-          <p class="pre-label">Example prompts</p>
-          <pre><code>/ux-os:analyze-card-sort volunteer-rota --evidence ~/exports/card-sort.csv</code></pre>
-        </div>
-        <span class="state"><i class="dot name"></i>Run by name</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/ux-os/tree/main/plugin/skills/create-empathy-map">create-empathy-map</a></h2>
-          <p class="summary">Maps what one person says, does, thinks and feels in one moment, and where saying and doing come apart. Works from your beliefs or from real research.</p>
-          <p class="tested"><b>Testing:</b> Checking script with its own self-test. Run on made-up test data only.</p>
-          <p class="pre-label">Example prompts</p>
-          <pre><code>/ux-os:create-empathy-map volunteer-rota proto
-/ux-os:create-empathy-map volunteer-rota real --evidence ~/interviews/</code></pre>
-        </div>
-        <span class="state"><i class="dot name"></i>Run by name</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/ux-os/tree/main/plugin/skills/create-personas">create-personas</a></h2>
-          <p class="summary">Splits people on the behaviour that most changes what they need. Works from your beliefs, each one marked and tested, or from real research.</p>
-          <p class="tested"><b>Testing:</b> Checking script with its own self-test. Run on made-up test data only.</p>
-          <p class="pre-label">Example prompts</p>
-          <pre><code>/ux-os:create-personas volunteer-rota proto
-/ux-os:create-personas volunteer-rota real --evidence ~/interviews/</code></pre>
-        </div>
-        <span class="state"><i class="dot name"></i>Run by name</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/ux-os/tree/main/plugin/skills/create-journey-map">create-journey-map</a></h2>
-          <p class="summary">Maps what happens today, or what should happen in future, from your beliefs or from real research. A future journey is labelled as a proposal.</p>
-          <p class="tested"><b>Testing:</b> Checking script with its own self-test. Run on made-up test data only.</p>
-          <p class="pre-label">Example prompts</p>
-          <pre><code>/ux-os:create-journey-map volunteer-rota proto current
-/ux-os:create-journey-map volunteer-rota real future</code></pre>
-        </div>
-        <span class="state"><i class="dot name"></i>Run by name</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/ux-os/tree/main/plugin/skills/create-jtbd">create-jtbd</a></h2>
-          <p class="summary">Works out what people are trying to get done, apart from any product, from your beliefs or from the stories of people who actually switched.</p>
-          <p class="tested"><b>Testing:</b> A false belief planted in the test came back contradicted. Run on made-up test data only.</p>
-          <p class="pre-label">Example prompts</p>
-          <pre><code>/ux-os:create-jtbd volunteer-rota proto
-/ux-os:create-jtbd volunteer-rota real --evidence ~/interviews/</code></pre>
-        </div>
-        <span class="state"><i class="dot name"></i>Run by name</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/ux-os/tree/main/plugin/skills/create-interview-script">create-interview-script</a></h2>
-          <p class="summary">A short guide built on real past events, with every question tied to something it tests, read cold by a second agent before anyone runs it.</p>
-          <p class="tested"><b>Testing:</b> Run on made-up test data only.</p>
-          <p class="pre-label">Example prompts</p>
-          <pre><code>/ux-os:create-interview-script why coordinators stop using shared calendars</code></pre>
-        </div>
-        <span class="state"><i class="dot name"></i>Run by name</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/ux-os/tree/main/plugin/skills/create-usability-plan">create-usability-plan</a></h2>
-          <p class="summary">Realistic tasks and pass lines set before anyone is tested, so the result can't be argued into a pass.</p>
-          <p class="tested"><b>Testing:</b> Run on made-up test data only.</p>
-          <p class="pre-label">Example prompts</p>
-          <pre><code>/ux-os:create-usability-plan the shift swap prototype</code></pre>
-        </div>
-        <span class="state"><i class="dot name"></i>Run by name</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/ux-os/tree/main/plugin/skills/create-diary-study">create-diary-study</a></h2>
-          <p class="summary">A diary study people will finish: entries under two minutes, a plan for dropouts, and everything participants receive.</p>
-          <p class="tested"><b>Testing:</b> Run on made-up test data only.</p>
-          <p class="pre-label">Example prompts</p>
-          <pre><code>/ux-os:create-diary-study how often shifts fall through over a month</code></pre>
-        </div>
-        <span class="state"><i class="dot name"></i>Run by name</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/ux-os/tree/main/plugin/skills/create-survey">create-survey</a></h2>
-          <p class="summary">Writes the analysis first, then only the questions it needs, with sample sizes worked out by a script.</p>
-          <p class="tested"><b>Testing:</b> Sample size script with its own self-test. Run on made-up test data only.</p>
-          <p class="pre-label">Example prompts</p>
-          <pre><code>/ux-os:create-survey how many coordinators still run the rota on paper</code></pre>
-        </div>
-        <span class="state"><i class="dot name"></i>Run by name</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/ux-os/tree/main/plugin/skills/create-service-blueprint">create-service-blueprint</a></h2>
-          <p class="summary">Lays out how a service delivers one scenario, step by step, with what the person sees above the line and what makes it work below.</p>
-          <p class="tested"><b>Testing:</b> The rules its file is checked against have their own self-test and one independent review. Filled once from an existing blueprint. The typed command has not been run yet.</p>
-          <p class="pre-label">Example prompts</p>
-          <pre><code>/ux-os:create-service-blueprint volunteer-rota a coordinator fills one open shift</code></pre>
-        </div>
-        <span class="state"><i class="dot name"></i>Run by name</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/ux-os/tree/main/plugin/skills/create-research-repository">create-research-repository</a></h2>
-          <p class="summary">One place for what you've learned across studies, with each insight's strength and age, that answers questions without guessing.</p>
-          <p class="tested"><b>Testing:</b> Run on made-up test data only.</p>
-          <p class="pre-label">Example prompts</p>
-          <pre><code>/ux-os:create-research-repository
-/ux-os:create-research-repository ask what do we know about no-shows</code></pre>
-        </div>
-        <span class="state"><i class="dot name"></i>Run by name</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/ux-os/tree/main/plugin/skills/summarize-research">summarize-research</a></h2>
-          <p class="summary">Turns a transcript or a study into findings rated by how many people stand behind them, with what cuts against each. Needs real data.</p>
-          <p class="tested"><b>Testing:</b> Its draft passed the checks, but it hasn't yet written its output file in a test.</p>
-          <p class="pre-label">Example prompts</p>
-          <pre><code>/ux-os:summarize-research volunteer-rota --for the trustees</code></pre>
-        </div>
-        <span class="state"><i class="dot name"></i>Run by name</span>
-      </article>
-    </div>
-    <p class="caption">The states are from my setup on 13 November 2026. Yours start from whatever you install.</p>
-    <div class="turn">
-      <a class="prev" href="../orchestration/">Previous: Orchestration</a>
-      <a class="next" href="../design-systems/"><small>Next set</small>Design systems&nbsp;&rarr;</a>
-    </div>
-  </main>
+  <p>Everything here is typed by name, and every name starts with <code>/ux-os:</code>. Not sure where to start? <code>/ux-os:research-next</code> says where an idea stands and the one thing to do now.</p>
+  <p>Personas, journeys, jobs and empathy maps each take a switch. <code>proto</code> builds from what you believe and labels it an assumption. <code>real</code> builds from your files, and every line links to the exact passage it came from. Real needs at least 5 people from different organisations, and stops if you don't have them.</p>
+  <p>Run <code>/ux-os:init</code> once per project and deliverables take your design system's fonts and colours. Design proposals then name a real component, or say none fits.</p>
+  <h3>Example prompts</h3>
+  <p>Swap volunteer-rota for your own idea, in two to four words.</p>
+  <ul class="prompts">
+    <li><p>I have an idea and no data yet.</p><pre class="cmd"><code>/ux-os:research-discover volunteer-rota</code></pre></li>
+    <li><p>I want a quick persona from what I already believe.</p><pre class="cmd"><code>/ux-os:create-personas volunteer-rota proto</code></pre></li>
+    <li><p>I've finished my interviews and want real personas.</p><pre class="cmd"><code>/ux-os:create-personas volunteer-rota real --evidence ./interviews/</code></pre></li>
+    <li><p>New notes have come in.</p><pre class="cmd"><code>/ux-os:research-debrief volunteer-rota --evidence ./interviews/week-2/</code></pre></li>
+    <li><p>I've talked to five organisations and want to stop guessing.</p><pre class="cmd"><code>/ux-os:research-synthesize volunteer-rota</code></pre></li>
+    <li><p>I don't know what to do next.</p><pre class="cmd"><code>/ux-os:research-next volunteer-rota</code></pre></li>
+    <li><p>I want deliverables to look like our design system.</p><pre class="cmd"><code>/ux-os:init</code></pre></li>
+  </ul>
+</section>
 
-  <footer>
-    Made by <a href="https://workshopr.io">Workshopr.io</a>. Every pack keeps its author's licence. <a href="https://github.com/bbulman/ux-os">Source on GitHub</a>.
-  </footer>
+<section class="sec-tight" aria-labelledby="jobs-h">
+  <h2 class="big-2" id="jobs-h">Jobs</h2>
+  <p class="lede">What I hand to which skill in research. <a href="../jobs/#research">All the jobs</a></p>
+  <ol class="jobs">
+<li class="job" data-search="find out where a research idea stands and what to do next reads the idea's folder and names the one thing to run now, so nothing gets skipped or done twice. research-next ux-os:research-next">
+<h3 class="need">Find out where a research idea stands and what to do next</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/ux-os-research-next/">research-next</a> <code>/ux-os:research-next</code> <span class="chip chip--name"><span aria-hidden="true">BY NAME</span><span class="vh">Runs when you type it</span></span></p>
+<p class="why">Reads the idea's folder and names the one thing to run now, so nothing gets skipped or done twice.</p>
+
+</li>
+<li class="job" data-search="turn what i believe about a new idea into first models one short interview about your beliefs, then proto personas, journeys and jobs, each marked as an assumption, and the belief to test first. research-discover ux-os:research-discover">
+<h3 class="need">Turn what I believe about a new idea into first models</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/ux-os-research-discover/">research-discover</a> <code>/ux-os:research-discover</code> <span class="chip chip--name"><span aria-hidden="true">BY NAME</span><span class="vh">Runs when you type it</span></span></p>
+<p class="why">One short interview about your beliefs, then proto personas, journeys and jobs, each marked as an assumption, and the belief to test first.</p>
+
+</li>
+<li class="job" data-search="plan interviews asks about what people did, not what they would do, and ties every question to a belief it can confirm or break. create-interview-script ux-os:create-interview-script">
+<h3 class="need">Plan interviews</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/ux-os-create-interview-script/">create-interview-script</a> <code>/ux-os:create-interview-script</code> <span class="chip chip--name"><span aria-hidden="true">BY NAME</span><span class="vh">Runs when you type it</span></span></p>
+<p class="why">Asks about what people did, not what they would do, and ties every question to a belief it can confirm or break.</p>
+
+</li>
+<li class="job" data-search="make personas from real interviews real mode needs five people from different organisations and links every line to the passage it came from. create-personas ux-os:create-personas design-research:user-persona writes a fluent persona whether or not anyone was interviewed">
+<h3 class="need">Make personas from real interviews</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/ux-os-create-personas/">create-personas</a> <code>/ux-os:create-personas</code> <span class="chip chip--name"><span aria-hidden="true">BY NAME</span><span class="vh">Runs when you type it</span></span></p>
+<p class="why">Real mode needs five people from different organisations and links every line to the passage it came from.</p>
+<p class="rival"><span class="label">Rival</span> <s>design-research:user-persona</s> writes a fluent persona whether or not anyone was interviewed. <span class="from">It is in the <a href="../registry/design-research/">design-research</a> pack.</span></p>
+</li>
+<li class="job" data-search="map a journey current or future journey, with each step marked as belief or evidence. create-journey-map ux-os:create-journey-map design-research:journey-map does not separate what you believe from what you saw">
+<h3 class="need">Map a journey</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/ux-os-create-journey-map/">create-journey-map</a> <code>/ux-os:create-journey-map</code> <span class="chip chip--name"><span aria-hidden="true">BY NAME</span><span class="vh">Runs when you type it</span></span></p>
+<p class="why">Current or future journey, with each step marked as belief or evidence.</p>
+<p class="rival"><span class="label">Rival</span> <s>design-research:journey-map</s> does not separate what you believe from what you saw. <span class="from">It is in the <a href="../registry/design-research/">design-research</a> pack.</span></p>
+</li>
+<li class="job" data-search="sort research notes into themes sorts from the bottom up, counts people rather than notes, and has a second agent re-sort blind to check the themes hold. affinity-diagram ux-os:affinity-diagram">
+<h3 class="need">Sort research notes into themes</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/ux-os-affinity-diagram/">affinity-diagram</a> <code>/ux-os:affinity-diagram</code> <span class="chip chip--name"><span aria-hidden="true">BY NAME</span><span class="vh">Runs when you type it</span></span></p>
+<p class="why">Sorts from the bottom up, counts people rather than notes, and has a second agent re-sort blind to check the themes hold.</p>
+
+</li>
+<li class="job" data-search="plan a usability test tasks, success measures and sample size, tied to the belief the test is meant to settle. create-usability-plan ux-os:create-usability-plan">
+<h3 class="need">Plan a usability test</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/ux-os-create-usability-plan/">create-usability-plan</a> <code>/ux-os:create-usability-plan</code> <span class="chip chip--name"><span aria-hidden="true">BY NAME</span><span class="vh">Runs when you type it</span></span></p>
+<p class="why">Tasks, success measures and sample size, tied to the belief the test is meant to settle.</p>
+
+</li>
+<li class="job" data-search="blueprint the service behind the screens seven lanes per step, checked by script, from research rather than from guesswork. create-service-blueprint ux-os:create-service-blueprint">
+<h3 class="need">Blueprint the service behind the screens</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/ux-os-create-service-blueprint/">create-service-blueprint</a> <code>/ux-os:create-service-blueprint</code> <span class="chip chip--name"><span aria-hidden="true">BY NAME</span><span class="vh">Runs when you type it</span></span></p>
+<p class="why">Seven lanes per step, checked by script, from research rather than from guesswork.</p>
+
+</li>
+  </ol>
+</section>
+
+<section class="sec-tight" aria-labelledby="sheet-h">
+  <h2 class="big-2" id="sheet-h">The sheet</h2>
+  <p class="lede">Every entry in the set, most used first. Circled: create-personas, the most used pick here.</p>
+  <div class="first-step"><p>Installing the MC Dean packs here needs this once:</p><pre class="cmd"><code>/plugin marketplace add Owl-Listener/designer-skills</code></pre></div>
+  <ol class="sheet">
+<li class="frame" data-set="research" data-type="pack" data-origin="third" data-loads="on" data-usage="regular" data-scope="any">
+<a class="frame-link" href="../registry/design-research/" aria-label="design-research: skill pack, Research. loads on its own. 4 runs">
+<span class="edge" aria-hidden="true"><span>01</span><span>01A</span><span class="who">MC Dean</span></span>
+<span class="shot"><span class="fname">design-research</span><span class="fmeta">Research · Skill pack</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>4 runs</span></span>
+</a>
+</li>
+<li class="frame is-circled" data-set="research" data-type="skill" data-origin="built" data-loads="name" data-usage="occasional" data-scope="any">
+<a class="frame-link" href="../registry/ux-os-create-personas/" aria-label="create-personas: skill, Research. runs when you type it. 2 runs. a pick for a job">
+<span class="edge" aria-hidden="true"><span>02</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">create-personas</span><span class="fmeta">Research · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>2 runs</span></span>
+</a><svg class="grease" viewBox="0 0 200 120" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M40 2.9 C 110 -5.6, 180 -2.7, 195.7 12 C 204 33.7, 202 98.3, 195 114 C 150 126.9, 50 122.8, 10 114 C 1.5 96, -3.3 26, 8 6 C 22 -3, 60 -3.2, 104 4"/></svg>
+</li>
+<li class="frame" data-set="research" data-type="command" data-origin="built" data-loads="name" data-usage="occasional" data-scope="any">
+<a class="frame-link" href="../registry/ux-os-research-next/" aria-label="research-next: command, Research. runs when you type it. 1 run. a pick for a job">
+<span class="edge" aria-hidden="true"><span>03</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">research-next</span><span class="fmeta">Research · Command</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>1 run</span></span>
+</a>
+</li>
+<li class="frame" data-set="research" data-type="skill" data-origin="built" data-loads="name" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ux-os-affinity-diagram/" aria-label="affinity-diagram: skill, Research. runs when you type it. never run. a pick for a job">
+<span class="edge" aria-hidden="true"><span>04</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">affinity-diagram</span><span class="fmeta">Research · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="research" data-type="skill" data-origin="built" data-loads="name" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ux-os-analyze-card-sort/" aria-label="analyze-card-sort: skill, Research. runs when you type it. never run">
+<span class="edge" aria-hidden="true"><span>05</span><span>05A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">analyze-card-sort</span><span class="fmeta">Research · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="research" data-type="agent" data-origin="built" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ux-os-claims-auditor/" aria-label="claims-auditor: agent, Research. loads on its own. never run">
+<span class="edge" aria-hidden="true"><span>06</span><span>06A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">claims-auditor</span><span class="fmeta">Research · Agent</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="research" data-type="skill" data-origin="built" data-loads="name" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ux-os-create-diary-study/" aria-label="create-diary-study: skill, Research. runs when you type it. never run">
+<span class="edge" aria-hidden="true"><span>07</span><span>07A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">create-diary-study</span><span class="fmeta">Research · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="research" data-type="skill" data-origin="built" data-loads="name" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ux-os-create-empathy-map/" aria-label="create-empathy-map: skill, Research. runs when you type it. never run">
+<span class="edge" aria-hidden="true"><span>08</span><span>08A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">create-empathy-map</span><span class="fmeta">Research · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="research" data-type="skill" data-origin="built" data-loads="name" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ux-os-create-interview-script/" aria-label="create-interview-script: skill, Research. runs when you type it. never run. a pick for a job">
+<span class="edge" aria-hidden="true"><span>09</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">create-interview-script</span><span class="fmeta">Research · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="research" data-type="skill" data-origin="built" data-loads="name" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ux-os-create-journey-map/" aria-label="create-journey-map: skill, Research. runs when you type it. never run. a pick for a job">
+<span class="edge" aria-hidden="true"><span>10</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">create-journey-map</span><span class="fmeta">Research · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="research" data-type="skill" data-origin="built" data-loads="name" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ux-os-create-jtbd/" aria-label="create-jtbd: skill, Research. runs when you type it. never run">
+<span class="edge" aria-hidden="true"><span>11</span><span>11A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">create-jtbd</span><span class="fmeta">Research · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="research" data-type="skill" data-origin="built" data-loads="name" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ux-os-create-research-repository/" aria-label="create-research-repository: skill, Research. runs when you type it. never run">
+<span class="edge" aria-hidden="true"><span>12</span><span>12A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">create-research-repository</span><span class="fmeta">Research · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="research" data-type="skill" data-origin="built" data-loads="name" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ux-os-create-service-blueprint/" aria-label="create-service-blueprint: skill, Research. runs when you type it. never run. a pick for a job">
+<span class="edge" aria-hidden="true"><span>13</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">create-service-blueprint</span><span class="fmeta">Research · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="research" data-type="skill" data-origin="built" data-loads="name" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ux-os-create-survey/" aria-label="create-survey: skill, Research. runs when you type it. never run">
+<span class="edge" aria-hidden="true"><span>14</span><span>14A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">create-survey</span><span class="fmeta">Research · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="research" data-type="skill" data-origin="built" data-loads="name" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ux-os-create-usability-plan/" aria-label="create-usability-plan: skill, Research. runs when you type it. never run. a pick for a job">
+<span class="edge" aria-hidden="true"><span>15</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">create-usability-plan</span><span class="fmeta">Research · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="research" data-type="command" data-origin="built" data-loads="name" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ux-os-init/" aria-label="init: command, Research. runs when you type it. never run">
+<span class="edge" aria-hidden="true"><span>16</span><span>16A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">init</span><span class="fmeta">Research · Command</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="research" data-type="pack" data-origin="third" data-loads="name" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/lenny-skills-research/" aria-label="lenny-skills research set: skill pack, Research. runs when you type it. never run">
+<span class="edge" aria-hidden="true"><span>17</span><span>17A</span><span class="who">RefoundAI</span></span>
+<span class="shot"><span class="fname">lenny-skills research set</span><span class="fmeta">Research · Skill pack</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="research" data-type="command" data-origin="built" data-loads="name" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ux-os-record-decision/" aria-label="record-decision: command, Research. runs when you type it. never run">
+<span class="edge" aria-hidden="true"><span>18</span><span>18A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">record-decision</span><span class="fmeta">Research · Command</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="research" data-type="command" data-origin="built" data-loads="name" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ux-os-research-debrief/" aria-label="research-debrief: command, Research. runs when you type it. never run">
+<span class="edge" aria-hidden="true"><span>19</span><span>19A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">research-debrief</span><span class="fmeta">Research · Command</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="research" data-type="command" data-origin="built" data-loads="name" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ux-os-research-discover/" aria-label="research-discover: command, Research. runs when you type it. never run. a pick for a job">
+<span class="edge" aria-hidden="true"><span>20</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">research-discover</span><span class="fmeta">Research · Command</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="research" data-type="command" data-origin="built" data-loads="name" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ux-os-research-synthesize/" aria-label="research-synthesize: command, Research. runs when you type it. never run">
+<span class="edge" aria-hidden="true"><span>21</span><span>21A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">research-synthesize</span><span class="fmeta">Research · Command</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="research" data-type="agent" data-origin="combined" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/researcher/" aria-label="researcher: agent, Research. loads on its own. never run">
+<span class="edge" aria-hidden="true"><span>22</span><span>22A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">researcher</span><span class="fmeta">Research · Agent</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="research" data-type="command" data-origin="built" data-loads="name" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ux-os-run/" aria-label="run: command, Research. runs when you type it. never run. a pick for a job">
+<span class="edge" aria-hidden="true"><span>23</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">run</span><span class="fmeta">Research · Command</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>never run</span></span>
+</a>
+</li>
+<li class="frame" data-set="research" data-type="skill" data-origin="built" data-loads="name" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ux-os-summarize-research/" aria-label="summarize-research: skill, Research. runs when you type it. never run">
+<span class="edge" aria-hidden="true"><span>24</span><span>24A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">summarize-research</span><span class="fmeta">Research · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>never run</span></span>
+</a>
+</li>
+  </ol>
+  <p class="caption">The states are from my setup on 14 November 2026. Yours start from whatever you install.</p>
+</section>
+
+<nav class="turn" aria-label="Other sets">
+  <a class="prev" href="../orchestration/"><small>Previous set</small>Orchestration</a>
+  <a class="next" href="../design-systems/"><small>Next set</small>Design systems</a>
+</nav>
+
+</main>
+<footer class="foot">
+  <p><a href="../changelog/">Changelog</a><span aria-hidden="true"> · </span>Made by <a href="https://workshopr.io">Workshopr.io</a><span aria-hidden="true"> · </span>Every pack keeps its author's licence.</p>
+  <p>Registry as of 14 November 2026. Usage counted from Claude Code transcripts since 22 July 2026.</p>
+</footer>
 </div>
+
 </body>
 </html>

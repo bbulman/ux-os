@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PRODUCT.md: project file, UX-OS</title>
+<meta name="description" content="What the product is, who it is for and how you will know it is working. Every other file defers to it on those three questions.">
+<link rel="canonical" href="https://bbulman.github.io/ux-os/project-files/product/">
+<meta property="og:title" content="PRODUCT.md: project file, UX-OS">
+<meta property="og:description" content="What the product is, who it is for and how you will know it is working. Every other file defers to it on those three questions.">
+<meta property="og:url" content="https://bbulman.github.io/ux-os/project-files/product/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="top">
+  <a class="mark" href="../../">UX-OS<small aria-hidden="true">5063 TX</small></a>
+  <nav class="nav" aria-label="Main"><a href="../../jobs/">Jobs</a><a href="../../registry/">Registry</a><a href="../../disciplines/">Disciplines</a><a href="../../workflows/">Workflows</a><a href="../../project-files/" aria-current="page">Project files</a><a href="../../method/">Method</a><a href="https://github.com/bbulman/ux-os">GitHub</a></nav>
+</header>
+<main id="main" tabindex="-1">
+
+<nav class="crumb" aria-label="Breadcrumb"><a href="../../project-files/">Project files</a><span aria-hidden="true"> / </span><a href="../../project-files/#core">Core</a></nav>
+<header class="page-head">
+  <p class="kicker">Core file</p>
+  <h1 class="h1-id">PRODUCT.md</h1>
+  <p class="lede">What the product is, who it is for and how you will know it is working. Every other file defers to it on those three questions.</p>
+</header>
+<div class="pf-cols pf-cols--head">
+  <div><p class="aside-k">Sections</p><ol class="sections"><li>What it is, and isn't</li><li>Who it's for</li><li>The problem it solves</li><li>How success is measured</li><li>What exists</li><li>Product principles</li><li>Not part of the product</li><li>Open questions</li></ol></div>
+  <div><p class="aside-k">Read by</p><ul class="readers"><li><a href="../../registry/crit/">crit</a></li><li><a href="../../registry/feature-plan/">feature-plan</a></li><li><a href="../../registry/design-agent/">Design Agent</a></li><li><a href="../../registry/impeccable/">impeccable</a></li></ul></div>
+</div>
+
+<section class="sec-tight" id="template" aria-labelledby="template-h">
+  <div class="sec-head"><h2 class="big-2" id="template-h">The template</h2><a class="ext" href="https://github.com/bbulman/ux-os/blob/main/plugin/shared/project-files/PRODUCT.md">plugin/shared/project-files/PRODUCT.md on GitHub</a></div>
+  <p class="lede">What <code>/ux-os:create-project-files</code> writes, word for word. Its comments say what each part is for.</p>
+  <pre class="template"><code># &lt;Product&gt;: Product
+
+&lt;!--
+UX-OS project file. Delete this comment once the file is filled in.
+For: the one place that says what the product is, who it is for and how you will know it is working. Every other project file defers to it on those three questions.
+Read by: the team first. Then agents before a product decision: /feature plans from it, the Design Agent frames problems with it, and /crit asks what a page is for against it.
+Good looks like: readable in five minutes, and specific enough to say no to a feature. If a competitor could put their name on it, it is too vague.
+--&gt;
+
+Last updated: &lt;date&gt;
+
+## What it is, and isn't
+&lt;!-- Two or three sentences: what it does, for whom, in what situation. Then name the neighbours people confuse it with. --&gt;
+
+&lt;Product&gt; is &lt;what it does&gt; for &lt;who&gt;, when &lt;situation&gt;.
+
+It is not:
+- &lt;a product people confuse it with, and how this differs&gt;
+
+## Who it's for
+&lt;!-- Situations, not demographics. If PERSONAS.md exists, name the primary persona here and keep the detail there. --&gt;
+- **Primary:** &lt;who, in what situation, and what they need most&gt;
+- **Secondary:** &lt;who else uses or buys it&gt;
+- **Not for:** &lt;who you will say no to, and why&gt;
+
+## The problem it solves
+&lt;!-- What they do today without it, and what that costs them. One paragraph. JTBD.md holds the detail. --&gt;
+
+## How success is measured
+&lt;!-- Three to five measures. Behaviour over vanity counts. Say which ones you cannot measure yet. --&gt;
+| Measure | Why it matters | How it's measured | Today |
+|---|---|---|---|
+| &lt;measure&gt; | &lt;the decision it informs&gt; | &lt;source&gt; | &lt;value, or not measured yet&gt; |
+
+## What exists
+&lt;!-- The parts of the product as they ship today, one line each. A feature behind a flag, a redirect or a waitlist says so. --&gt;
+- **&lt;part&gt;:** &lt;what it does&gt;
+
+## Product principles
+&lt;!-- Four to seven decisions already made, written so they settle arguments: &quot;When X and Y conflict, X wins, because...&quot; --&gt;
+1. &lt;principle, and the conflict it settles&gt;
+
+## Not part of the product
+&lt;!-- What people ask for that you will not build, and why. Saves having the same debate twice. --&gt;
+- &lt;request&gt;: &lt;why not&gt;
+
+## Open questions
+&lt;!-- What is undecided. Agents should ask about these, never settle them on their own. --&gt;
+- &lt;question&gt;
+</code></pre>
+</section>
+
+<section class="sec-tight" id="example" aria-labelledby="example-h">
+  <div class="sec-head"><h2 class="big-2" id="example-h">Workshopr's example</h2><a class="ext" href="https://github.com/bbulman/ux-os/blob/main/examples/workshopr/PRODUCT.md">examples/workshopr/PRODUCT.md on GitHub</a></div>
+  <div class="example prose">
+<h3>PRODUCT.md (Workshopr example)</h3>
+<p>An excerpt from Workshopr's own PRODUCT.md, trimmed to show the shape. Sections left out are marked.</p>
+<hr>
+<h4>1. What Workshopr is (and isn't)</h4>
+<p>Workshopr is a facilitation platform for people who run workshops: a library of exercises, icebreakers and ready-made workshops, a drag-and-drop agenda planner, live facilitation tools, post-session synthesis, and a Facilitator DNA assessment. All built around a single idea: <strong>facilitators should spend less time building agendas and more time actually facilitating.</strong></p>
+<p>It is not:</p>
+<ul><li>A virtual whiteboard. That's Miro, Mural, FigJam.</li><li>A slide tool or a meeting platform.</li><li>A generic templates marketplace.</li><li>A LinkedIn-style thought-leadership site.</li><li>A no-code platform, an LMS, or a project tracker.</li></ul>
+<p>When in doubt, Workshopr is a <strong>practitioner's tool built by a practitioner</strong>. Copy, UI, and decisions should feel like they were made by someone who has run the workshop and gotten burned on the details, not by a marketer describing what facilitation looks like from the outside.</p>
+<hr>
+<h4>2. Who it's for</h4>
+<p>The primary user is a <strong>working facilitator</strong>, often wearing another hat (design lead, PM, consultant, coach, educator), who runs workshops as part of their job and cares about getting them right. They are:</p>
+<ul><li><strong>Time-poor.</strong> They are prepping for a session today or tomorrow.</li><li><strong>Experienced enough to smell BS.</strong> Thin content gets bounced.</li><li><strong>Skeptical of AI fluff.</strong> AI features must deliver obvious value, not novelty.</li><li><strong>Inclusive-minded.</strong> Every voice in the room matters. This is practical, not performative.</li></ul>
+<p>They are frequently <strong>mid-facilitation</strong>: attention split between the people in the room and their own plan. Anything used during a live session must be glanceable and high-contrast, and must not compete with the workshop itself.</p>
+<p><strong>Secondary users:</strong> first-time facilitators who need scaffolding, and managers who occasionally need to run a real workshop.</p>
+<p><strong>Secondary buyer: in-house L&amp;D.</strong> The fastest-growing segment, with real budget, but under more scrutiny than a freelancer. They need evidence of impact to defend a program internally, and team features to standardise across facilitators. Design for them as a buyer, not as the primary user.</p>
+<p><strong>Not the audience:</strong> enterprise procurement teams shopping for collaboration software, and academic researchers. Note this exclusion is narrower than it used to be: it rules out <em>procurement</em>, not in-house L&amp;D practitioners.</p>
+<p><em>[Section left out: the four phases (Learn, Plan, Facilitate, Reflect) and what each is for.]</em></p>
+<hr>
+<h4>4. How success is measured</h4>
+<p><strong>North star: full-lifecycle workshops per active facilitator per month</strong>: workshops that go all the way from Designed → Delivered → Synthesized.</p>
+<p>This is deliberately not &quot;agendas built&quot; or &quot;sessions run&quot;. The defensible thing about Workshopr is that it is the only product spanning the whole lifecycle as one connected object; a standalone &quot;build an agenda&quot; or &quot;run your session here&quot; tool competes with free. The metric measures the moat.</p>
+<p>The three states are <strong>derived, never stored</strong>: a workshop is Designed when its plan exists, Delivered once a session has been run for it, and Synthesized once its synthesis holds real content. One plan is one workshop, and it is that workshop's identity across the whole platform.</p>
+<p><em>[Section left out: the app inventory, with each app's path, status and who can access it.]</em></p>
+<p><em>[Section left out: access, monetisation and pricing tiers.]</em></p>
+<hr>
+<h4>7. Product principles</h4>
+<ol><li><strong>Start With the Work.</strong> Users begin by describing what they're trying to accomplish, not by navigating setup screens.</li><li><strong>AI Assists; It Does Not Take Over.</strong> AI drafts, organises, explains, recommends. The user approves meaningful outputs.</li><li><strong>Evidence Builds Trust.</strong> When Workshopr synthesises or recommends, users can trace the output back to its sources.</li><li><strong>Reduce Cognitive Load.</strong> Reveal complexity progressively. Don't ask for information before it's needed.</li><li><strong>One Platform, Many Workflows.</strong> Moving between products feels seamless because they share navigation, components, data, and AI behaviour.</li><li><strong>Artifacts Are Work Products.</strong> Briefs, agendas, recaps, summaries, decisions and action lists are first-class objects, not temporary text blobs.</li></ol>
+<hr>
+<p><em>[Section left out: §8, the parts of the codebase that are not part of the product.]</em></p>
+<p><em>[Section left out: where the product is heading, canonical numbers and open questions.]</em></p>
+  </div>
+</section>
+
+<nav class="turn" aria-label="Other project files">
+  <a class="prev" href="../../project-files/voice/"><small>Previous file</small>VOICE.md</a>
+  <a class="next" href="../../project-files/design/"><small>Next file</small>DESIGN.md</a>
+</nav>
+
+</main>
+<footer class="foot">
+  <p><a href="../../changelog/">Changelog</a><span aria-hidden="true"> · </span>Made by <a href="https://workshopr.io">Workshopr.io</a><span aria-hidden="true"> · </span>Every pack keeps its author's licence.</p>
+  <p>Registry as of 14 November 2026. Usage counted from Claude Code transcripts since 22 July 2026.</p>
+</footer>
+</div>
+
+</body>
+</html>

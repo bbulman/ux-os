@@ -3,192 +3,134 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>UX-OS: UX skills for Claude, run like an operating system</title>
-<meta name="description" content="Eleven sets of Claude skills for UX work, from research to prototyping, with a record of what loads, who wrote it and what testing showed.">
-<meta property="og:title" content="UX-OS: UX skills for Claude, run like an operating system">
-<meta property="og:description" content="Eleven sets of Claude skills for UX work, from research to prototyping, with a record of what loads, who wrote it and what testing showed.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23E54D4D'/%3E%3C/svg%3E">
+<title>UX-OS: every UX skill I run, and which one wins each job</title>
+<meta name="description" content="135 skills, agents and tools for Claude Code, from research to prototyping. 94 are mine, the rest are MC Dean's and others'. Which load, which I use, and the files they read.">
+<link rel="canonical" href="https://bbulman.github.io/ux-os/">
+<meta property="og:title" content="UX-OS: every UX skill I run, and which one wins each job">
+<meta property="og:description" content="135 skills, agents and tools for Claude Code, from research to prototyping. 94 are mine, the rest are MC Dean's and others'. Which load, which I use, and the files they read.">
+<meta property="og:url" content="https://bbulman.github.io/ux-os/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <div class="wrap">
-  <header class="top">
-    <a class="mark" href="./">UX-OS</a>
-    <nav aria-label="Main">
-      <a href="#sets">Sets</a>
-      <a class="optional" href="#why">Why it matters</a>
-      <a href="method/">Method</a>
-      <a href="https://github.com/bbulman/ux-os">GitHub</a>
-    </nav>
-  </header>
+<header class="top">
+  <a class="mark" href="./">UX-OS<small aria-hidden="true">5063 TX</small></a>
+  <nav class="nav" aria-label="Main"><a href="jobs/">Jobs</a><a href="registry/">Registry</a><a href="disciplines/">Disciplines</a><a href="workflows/">Workflows</a><a href="project-files/">Project files</a><a href="method/">Method</a><a href="https://github.com/bbulman/ux-os">GitHub</a></nav>
+</header>
+<main id="main" tabindex="-1">
 
-  <main>
-    <div class="hero">
-      <h1>UX skills for Claude, run like an operating system.</h1>
-      <p class="lede">Free written methods for Claude Code, in eleven sets. One record of what loads, who wrote it and what testing showed.</p>
-      <div class="actions">
-        <a class="button" href="#sets">Pick a discipline</a>
-        <a href="method/">See how a skill gets tested</a>
-      </div>
-    </div>
+<section class="hero" aria-labelledby="hero-h">
+  <div class="hero-text">
+    <h1 id="hero-h">Every UX skill I run, and <em>which one wins</em> each job.</h1>
+    <p class="lede">135 skills, agents and tools for Claude Code, from research to prototyping. 94 are mine, the rest are MC Dean's and others'. Which load, which I use, and the files they read.</p>
+    <div class="cta"><a class="btn" href="jobs/">Find the skill for a job</a><a class="link" href="registry/">See all 135 in the registry</a></div>
+  </div>
+  <div class="hero-sheet">
+    <h2 class="vh">The six I use most</h2>
+    <ol class="strip">
+<li class="frame is-circled">
+<a class="frame-link" href="registry/design-system-enforcer/" aria-label="Design System Enforcer: mcp server, Design systems. loads on its own. 1,230 calls. a pick for a job">
+<span class="edge" aria-hidden="true"><span>01</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">Design System Enforcer</span><span class="fmeta">Design systems · MCP server</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>1,230 calls</span></span>
+</a><svg class="grease" viewBox="0 0 200 120" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M40 4 C 110 -0.1, 180 2.1, 191.6 12 C 204 33.4, 202 93.2, 189.2 114 C 150 121.6, 50 122.2, 10 114 C -0.6 96, 0.1 26, 8 10.6 C 22 2.6, 60 -1.8, 104 4"/></svg>
+</li>
+<li class="frame">
+<a class="frame-link" href="registry/design-agent-design-critic/" aria-label="design-critic: agent, Orchestration. loads on its own. 28 runs">
+<span class="edge" aria-hidden="true"><span>02</span><span>02A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">design-critic</span><span class="fmeta">Orchestration · Agent</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>28 runs</span></span>
+</a>
+</li>
+<li class="frame">
+<a class="frame-link" href="registry/critique-partner/" aria-label="critique-partner: agent, Orchestration. loads on its own. 16 runs">
+<span class="edge" aria-hidden="true"><span>03</span><span>03A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">critique-partner</span><span class="fmeta">Orchestration · Agent</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>16 runs</span></span>
+</a>
+</li>
+<li class="frame">
+<a class="frame-link" href="registry/feature-build/" aria-label="feature-build: agent, Orchestration. loads on its own. 16 runs. a pick for a job">
+<span class="edge" aria-hidden="true"><span>04</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">feature-build</span><span class="fmeta">Orchestration · Agent</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>16 runs</span></span>
+</a>
+</li>
+<li class="frame">
+<a class="frame-link" href="registry/findability/" aria-label="findability: skill, Information architecture. runs when you type it. 16 runs. a pick for a job">
+<span class="edge" aria-hidden="true"><span>05</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">findability</span><span class="fmeta">Information architecture · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>16 runs</span></span>
+</a>
+</li>
+<li class="frame">
+<a class="frame-link" href="registry/sitemaps/" aria-label="sitemaps: skill, Information architecture. runs when you type it. 16 runs. a pick for a job">
+<span class="edge" aria-hidden="true"><span>06</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">sitemaps</span><span class="fmeta">Information architecture · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>16 runs</span></span>
+</a>
+</li>
+    </ol>
+    <div class="note"><p><span class="note-k">Circled:</span> the pick for “Check UI against the design system while building”. <a href="registry/design-system-enforcer/">Design System Enforcer</a> is my most used entry, 1,230 calls since 22 July 2026.</p>
+<p><span class="note-k">Testing:</span> Ships with its own test suite.</p></div>
+  </div>
+</section>
 
-    <div id="sets" class="boot">
-      <div class="status">
-        <span>ux-os: 11 sets, 65 entries, 33 loaded, 23 by name, 9 off</span>
-        <span class="legend">
-        <span><i class="dot on"></i>loads on its own</span>
-        <span><i class="dot name"></i>run by name</span>
-        <span><i class="dot off"></i>off</span>
-      </span>
-      </div>
-      <nav aria-label="Skill sets">
-      <ol class="monitor">
-      <li><a class="row" href="research/">
-        <span class="row-name">Research</span>
-        <span class="row-covers">Interviews, surveys, usability tests, diary studies, card sorts, affinity diagrams, empathy maps, personas, journey maps, jobs to be done and research repositories.</span>
-        <span class="row-dots dots" role="img" aria-label="20 entries: 20 run by name"><i class="dot name" style="--i:0"></i><i class="dot name" style="--i:1"></i><i class="dot name" style="--i:2"></i><i class="dot name" style="--i:3"></i><i class="dot name" style="--i:4"></i><i class="dot name" style="--i:5"></i><i class="dot name" style="--i:6"></i><i class="dot name" style="--i:7"></i><i class="dot name" style="--i:8"></i><i class="dot name" style="--i:9"></i><i class="dot name" style="--i:10"></i><i class="dot name" style="--i:11"></i><i class="dot name" style="--i:12"></i><i class="dot name" style="--i:13"></i><i class="dot name" style="--i:14"></i><i class="dot name" style="--i:15"></i><i class="dot name" style="--i:16"></i><i class="dot name" style="--i:17"></i><i class="dot name" style="--i:18"></i><i class="dot name" style="--i:19"></i></span>
-        <span class="row-go" aria-hidden="true">&rarr;</span>
-      </a></li>
-      <li><a class="row" href="design-systems/">
-        <span class="row-name">Design systems</span>
-        <span class="row-covers">Tokens, components, naming, governance and documentation.</span>
-        <span class="row-dots dots" role="img" aria-label="3 entries: 2 loads on its own, 1 run by name"><i class="dot on" style="--i:20"></i><i class="dot on" style="--i:21"></i><i class="dot name" style="--i:22"></i></span>
-        <span class="row-go" aria-hidden="true">&rarr;</span>
-      </a></li>
-      <li><a class="row" href="information-architecture/">
-        <span class="row-name">Information architecture</span>
-        <span class="row-covers">Content inventories, card sorts, taxonomies, labels, sitemaps, navigation, URL rules, content models, redirects, tree tests and findability.</span>
-        <span class="row-dots dots" role="img" aria-label="12 entries: 12 loads on its own"><i class="dot on" style="--i:23"></i><i class="dot on" style="--i:24"></i><i class="dot on" style="--i:25"></i><i class="dot on" style="--i:26"></i><i class="dot on" style="--i:27"></i><i class="dot on" style="--i:28"></i><i class="dot on" style="--i:29"></i><i class="dot on" style="--i:30"></i><i class="dot on" style="--i:31"></i><i class="dot on" style="--i:32"></i><i class="dot on" style="--i:33"></i><i class="dot on" style="--i:34"></i></span>
-        <span class="row-go" aria-hidden="true">&rarr;</span>
-      </a></li>
-      <li><a class="row" href="interaction-design/">
-        <span class="row-name">Interaction design</span>
-        <span class="row-covers">States, forms, feedback, errors, navigation patterns, UX laws and motion.</span>
-        <span class="row-dots dots" role="img" aria-label="2 entries: 1 loads on its own, 1 run by name"><i class="dot on" style="--i:35"></i><i class="dot name" style="--i:36"></i></span>
-        <span class="row-go" aria-hidden="true">&rarr;</span>
-      </a></li>
-      <li><a class="row" href="visual-design/">
-        <span class="row-name">Visual design</span>
-        <span class="row-covers">Hierarchy, colour, type, layout, visual critique and page craft.</span>
-        <span class="row-dots dots" role="img" aria-label="5 entries: 4 loads on its own, 1 run by name"><i class="dot on" style="--i:37"></i><i class="dot on" style="--i:38"></i><i class="dot on" style="--i:39"></i><i class="dot on" style="--i:40"></i><i class="dot name" style="--i:41"></i></span>
-        <span class="row-go" aria-hidden="true">&rarr;</span>
-      </a></li>
-      <li><a class="row" href="prototyping/">
-        <span class="row-name">Prototyping</span>
-        <span class="row-covers">Wireframes, user flows, concept selection, prototype strategy, test plans and heuristic evaluation.</span>
-        <span class="row-dots dots" role="img" aria-label="2 entries: 2 loads on its own"><i class="dot on" style="--i:42"></i><i class="dot on" style="--i:43"></i></span>
-        <span class="row-go" aria-hidden="true">&rarr;</span>
-      </a></li>
-      <li><a class="row" href="ux-strategy/">
-        <span class="row-name">UX strategy</span>
-        <span class="row-covers">Problem framing, briefs, vision, opportunities and metrics.</span>
-        <span class="row-dots dots" role="img" aria-label="2 entries: 2 loads on its own"><i class="dot on" style="--i:44"></i><i class="dot on" style="--i:45"></i></span>
-        <span class="row-go" aria-hidden="true">&rarr;</span>
-      </a></li>
-      <li><a class="row" href="ai-xd/">
-        <span class="row-name">AI-XD</span>
-        <span class="row-covers">AI experience design: conversation, trust, guardrails and agent handoffs.</span>
-        <span class="row-dots dots" role="img" aria-label="6 entries: 3 loads on its own, 3 off"><i class="dot on" style="--i:46"></i><i class="dot on" style="--i:47"></i><i class="dot on" style="--i:48"></i><i class="dot off" style="--i:49"></i><i class="dot off" style="--i:50"></i><i class="dot off" style="--i:51"></i></span>
-        <span class="row-go" aria-hidden="true">&rarr;</span>
-      </a></li>
-      </ol>
-      <p class="group">Proposed: still to be kept, renamed or dropped</p>
-      <ol class="monitor">
-      <li><a class="row" href="accessibility-and-inclusion/">
-        <span class="row-name">Accessibility and inclusion</span>
-        <span class="row-covers">Inclusive personas, cognitive access, accessible content and adaptive interfaces.</span>
-        <span class="row-dots dots" role="img" aria-label="6 entries: 1 loads on its own, 5 off"><i class="dot on" style="--i:52"></i><i class="dot off" style="--i:53"></i><i class="dot off" style="--i:54"></i><i class="dot off" style="--i:55"></i><i class="dot off" style="--i:56"></i><i class="dot off" style="--i:57"></i></span>
-        <span class="row-go" aria-hidden="true">&rarr;</span>
-      </a></li>
-      <li><a class="row" href="design-ops-and-communication/">
-        <span class="row-name">Design ops and communication</span>
-        <span class="row-covers">Handoff, critique process, sprints, rationale and case studies.</span>
-        <span class="row-dots dots" role="img" aria-label="3 entries: 2 loads on its own, 1 off"><i class="dot on" style="--i:58"></i><i class="dot on" style="--i:59"></i><i class="dot off" style="--i:60"></i></span>
-        <span class="row-go" aria-hidden="true">&rarr;</span>
-      </a></li>
-      <li><a class="row" href="orchestration/">
-        <span class="row-name">Orchestration</span>
-        <span class="row-covers">Running the other sets against a real target until it meets a bar.</span>
-        <span class="row-dots dots" role="img" aria-label="4 entries: 4 loads on its own"><i class="dot on" style="--i:61"></i><i class="dot on" style="--i:62"></i><i class="dot on" style="--i:63"></i><i class="dot on" style="--i:64"></i></span>
-        <span class="row-go" aria-hidden="true">&rarr;</span>
-      </a></li>
-      </ol>
-      </nav>
-      <p class="caption">The states are from my setup on 13 November 2026. Yours start from whatever you install.</p>
-    </div>
+<ul class="layers">
+  <li><span class="n">48 jobs</span><h2><a class="stretch" href="jobs/">Jobs</a></h2><p>Say what you need. Get the skill I hand it to, its rival, and why.</p></li>
+  <li><span class="n">135 entries</span><h2><a class="stretch" href="registry/">Registry</a></h2><p>Every skill, pack, agent and tool: who wrote it, whether it loads, how often I use it.</p></li>
+  <li><span class="n">7 workflows</span><h2><a class="stretch" href="workflows/">Workflows</a></h2><p>Skills that run in order, each step reading what the last one wrote.</p></li>
+  <li><span class="n">9 files</span><h2><a class="stretch" href="project-files/">Project files</a></h2><p>PRODUCT.md, DESIGN.md, AGENTS.md and the rest: the files a project keeps, and which skills read each one.</p></li>
+</ul>
 
-    <section id="why" aria-labelledby="why-h">
-      <h2 id="why-h">A pile of skills is not a system.</h2>
-      <p class="intro">On 24 October I built an information-architecture skill, because two public ones shared a name and couldn't be installed together. Then I tested it against no skill at all. With the skill: 24 out of 25. Without it: 23.</p>
-      <p class="intro">One point. Installing a skill told me nothing about whether it helped, or whether Claude would ever open it. An operating system answers those questions for programs: what's loaded, who gets priority, what each one costs. UX-OS answers them for skills. There's no single package to install. It's four jobs you do on whatever you've got, and the record of how they came out.</p>
-      <ol class="jobs">
-        <li class="job">
-          <div><p class="stat">36 of 505</p><p class="stat-label">Roughly, in one project of mine: skills that get a description in Claude's list</p></div>
-          <div><h3>Decide what loads.</h3><p class="body">With that many installed, the rest show up as a bare name, so a better description changes nothing. So each entry gets a decision, made in Claude Code's own settings: load it, keep it for when I call it by name, or switch it off. The marks above are those decisions. To see yours, ask a fresh session to quote its skill list.</p></div>
-        </li>
-        <li class="job">
-          <div><p class="stat">9 of 10</p><p class="stat-label">requests chosen under its real name. Under a temporary test name: 0 of 10</p></div>
-          <div><h3>Settle who wins.</h3><p class="body">Two skills can claim the same job. With a temporary test name, mine won none of ten requests and a rival took nine. Under its real name, Claude chose it nine times out of ten, and on none of ten near-misses. The name is the interface.</p></div>
-        </li>
-        <li class="job">
-          <div><p class="stat">28 vs 19</p><p class="stat-label">of 29 checks in the latest round, with the skill and without</p></div>
-          <div><h3>Make each skill earn its place.</h3><p class="body">After that first round I fixed what failed and sharpened the checks. The gap has held for two rounds since, and every grade is public.</p></div>
-        </li>
-        <li class="job">
-          <div><p class="stat">+49%</p><p class="stat-label">longer runs in the latest round, and about 19% more tokens</p></div>
-          <div><h3>Put the cost beside the score.</h3><p class="body">Better answers aren't free. When the number's written down, you get to decide when it's worth paying.</p></div>
-        </li>
-      </ol>
-      <div class="proof">
-        <p>One skill, three test cases, and I wrote both the skill and the checks. That's a field note, not a study.</p>
-        <p>The case against all this: skills are cheap, so install everything and let Claude sort it out. Fair. That's how I got to 505. Then I asked Claude to show me what it could actually see.</p>
-      </div>
-    </section>
+<section class="setup" aria-labelledby="setup-h">
+  <div>
+    <p class="kicker">One command</p>
+    <h2 class="big" id="setup-h">Set up a project</h2>
+    <p class="lede">Sets up a project's nine UX-OS files (PRODUCT, DESIGN, AGENTS, PERSONAS, JOURNEYS, JTBD, taste, motion and VOICE) from annotated templates, writing only the ones that are missing.</p>
+    <p><a class="link" href="project-files/">See the 9 files and who reads them</a></p>
+  </div>
+  <div class="setup-cmds">
+    <p class="pre-label">Once, in Claude Code</p>
+    <pre class="cmd"><code>/plugin marketplace add bbulman/ux-os
+/plugin install ux-os@ux-os</code></pre>
+    <p class="pre-label">Then, in each project</p>
+    <pre class="cmd"><code>/ux-os:create-project-files</code></pre>
+  </div>
+</section>
 
-    <section aria-labelledby="credit">
-      <h2 id="credit">Most of this is other people's work.</h2>
-      <p class="intro">26 of the 65 entries are third-party, and MC Dean wrote 22 of them. I built 27 and rewrote twelve from public sources. What I'm adding is the filing, the testing and the decisions about what stays on.</p>
-      <ul class="people">
-        <li><a href="https://github.com/Owl-Listener/designer-skills">MC Dean</a><span>Designer Skills, 22 entries</span></li>
-        <li><a href="https://github.com/emilkowalski/skills">Emil Kowalski</a><span>Motion skills, 1 entry</span></li>
-        <li><a href="https://github.com/Leonxlnx/taste-skill">Leonxlnx</a><span>Taste skills, 1 entry</span></li>
-        <li><a href="https://github.com/mattpocock/skills">Matt Pocock</a><span>prototype, 1 entry</span></li>
-        <li><a href="https://impeccable.style">Paul Bakaus</a><span>impeccable, 1 entry</span></li>
-      </ul>
-      <p class="start">One command adds the marketplace behind 22 of the 65.</p>
-      <pre><code>/plugin marketplace add Owl-Listener/designer-skills</code></pre>
-      <p class="caption">That makes the packs installable. Deciding which ones stay on is the system. Each set page has the install commands.</p>
-    </section>
+<section class="sec" aria-labelledby="disc-h">
+  <h2 class="big" id="disc-h">Disciplines</h2>
+  <p class="lede">Twelve sets, from research to orchestration. Three are proposals, still to be kept, renamed or dropped.</p>
+  <ul class="disc-list">
+<li><a href="research/"><span class="dname">Research</span><span class="dn">24 entries · 8 jobs</span></a></li>
+<li><a href="design-systems/"><span class="dname">Design systems</span><span class="dn">23 entries · 6 jobs</span></a></li>
+<li><a href="information-architecture/"><span class="dname">Information architecture</span><span class="dn">15 entries · 6 jobs</span></a></li>
+<li><a href="interaction-design/"><span class="dname">Interaction design</span><span class="dn">20 entries · 7 jobs</span></a></li>
+<li><a href="visual-design/"><span class="dname">Visual design</span><span class="dn">6 entries · 3 jobs</span></a></li>
+<li><a href="content/"><span class="dname">Content</span><span class="dn">5 entries · 4 jobs</span></a></li>
+<li><a href="prototyping/"><span class="dname">Prototyping</span><span class="dn">9 entries · 5 jobs</span></a></li>
+<li><a href="ux-strategy/"><span class="dname">UX strategy</span><span class="dn">11 entries · 3 jobs</span></a></li>
+<li><a href="ai-xd/"><span class="dname">AI-XD</span><span class="dn">6 entries</span></a></li>
+<li><a href="accessibility-and-inclusion/"><span class="dname">Accessibility and inclusion</span><span class="dn">6 entries · 1 job · proposed</span></a></li>
+<li><a href="design-ops-and-communication/"><span class="dname">Design ops and communication</span><span class="dn">3 entries · proposed</span></a></li>
+<li><a href="orchestration/"><span class="dname">Orchestration</span><span class="dn">7 entries · 5 jobs · proposed</span></a></li>
+  </ul>
+  <div class="note note--wide"><p>91 of the 135 entries have never been used. That count covers every Claude Code transcript on one machine since 22 July 2026. 44 have run at least once, and 77 have a test result written down.</p></div>
+</section>
 
-    <section aria-labelledby="method-h">
-      <h2 id="method-h">Eight steps. So far, one skill has had the full test.</h2>
-      <p class="intro">Six sets have nothing I built. Three are still proposals. Most of the registry has never been tested against anything. This is the method for anything new.</p>
-      <ol class="steps">
-        <li><h3>Check what already exists</h3><p>Search the registry and the installed skills first.</p></li>
-        <li><h3>Decide how to get it</h3><p>Adopt one, combine several, or write it.</p></li>
-        <li><h3>Check the licence</h3><p>No open licence means rewrite, never copy.</p></li>
-        <li><h3>Write the skill and its tests together</h3><p>Method, reference material and realistic cases.</p></li>
-        <li><h3>Test it against no skill at all</h3><p>Run each case both ways. Record score and cost.</p></li>
-        <li><h3>Test the real name</h3><p>Most skills reach Claude by name alone.</p></li>
-        <li><h3>Check Claude can reach it</h3><p>Nothing hides it, and nothing shares its name.</p></li>
-        <li><h3>Register it</h3><p>One row, with how it was built.</p></li>
-      </ol>
-      <a href="method/">Read the whole method</a>
-    </section>
-
-    <section class="close" aria-labelledby="close-h">
-      <h2 id="close-h">Pick one discipline. Test it against nothing.</h2>
-      <p class="intro">Install one set. Run your next real task with it and without it. If you get 24 to 23, you'll want to know.</p>
-      <a class="button" href="#sets">Pick a discipline</a>
-    </section>
-  </main>
-
-  <footer>
-    Made by <a href="https://workshopr.io">Workshopr.io</a>. Every pack keeps its author's licence. <a href="https://github.com/bbulman/ux-os">Source on GitHub</a>.
-  </footer>
+</main>
+<footer class="foot">
+  <p><a href="changelog/">Changelog</a><span aria-hidden="true"> · </span>Made by <a href="https://workshopr.io">Workshopr.io</a><span aria-hidden="true"> · </span>Every pack keeps its author's licence.</p>
+  <p>Registry as of 14 November 2026. Usage counted from Claude Code transcripts since 22 July 2026.</p>
+</footer>
 </div>
+
 </body>
 </html>

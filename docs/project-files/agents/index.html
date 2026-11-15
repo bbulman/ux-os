@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AGENTS.md: project file, UX-OS</title>
+<meta name="description" content="The first file an AI coding agent reads: a pointer to the guides, plus the few rules that must not be missed. Never a second copy of the guide.">
+<link rel="canonical" href="https://bbulman.github.io/ux-os/project-files/agents/">
+<meta property="og:title" content="AGENTS.md: project file, UX-OS">
+<meta property="og:description" content="The first file an AI coding agent reads: a pointer to the guides, plus the few rules that must not be missed. Never a second copy of the guide.">
+<meta property="og:url" content="https://bbulman.github.io/ux-os/project-files/agents/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="top">
+  <a class="mark" href="../../">UX-OS<small aria-hidden="true">5063 TX</small></a>
+  <nav class="nav" aria-label="Main"><a href="../../jobs/">Jobs</a><a href="../../registry/">Registry</a><a href="../../disciplines/">Disciplines</a><a href="../../workflows/">Workflows</a><a href="../../project-files/" aria-current="page">Project files</a><a href="../../method/">Method</a><a href="https://github.com/bbulman/ux-os">GitHub</a></nav>
+</header>
+<main id="main" tabindex="-1">
+
+<nav class="crumb" aria-label="Breadcrumb"><a href="../../project-files/">Project files</a><span aria-hidden="true"> / </span><a href="../../project-files/#core">Core</a></nav>
+<header class="page-head">
+  <p class="kicker">Core file</p>
+  <h1 class="h1-id">AGENTS.md</h1>
+  <p class="lede">The first file an AI coding agent reads: a pointer to the guides, plus the few rules that must not be missed. Never a second copy of the guide.</p>
+</header>
+<div class="pf-cols pf-cols--head">
+  <div><p class="aside-k">Sections</p><ol class="sections"><li>Read these</li><li>Guardrails</li><li>Definition of done</li></ol></div>
+  <div><p class="aside-k">Read by</p><ul class="readers"><li><a href="../../registry/ux-os-init/">init</a></li></ul><p class="small">Most coding agents look for AGENTS.md by convention. Claude Code reads CLAUDE.md, so have one point at the other.</p></div>
+</div>
+
+<section class="sec-tight" id="template" aria-labelledby="template-h">
+  <div class="sec-head"><h2 class="big-2" id="template-h">The template</h2><a class="ext" href="https://github.com/bbulman/ux-os/blob/main/plugin/shared/project-files/AGENTS.md">plugin/shared/project-files/AGENTS.md on GitHub</a></div>
+  <p class="lede">What <code>/ux-os:create-project-files</code> writes, word for word. Its comments say what each part is for.</p>
+  <pre class="template"><code># AGENTS.md
+
+&lt;!--
+UX-OS project file. Delete this comment once the file is filled in.
+For: the first file an AI coding agent reads in this repo. It points at the guides that hold the detail and states the few rules that must not be missed even if nothing else is read.
+Read by: most coding agents look for AGENTS.md by convention. Claude Code reads CLAUDE.md, so have one point at the other. /ux-os:init reads what this file points to when it gathers house rules.
+Good looks like: short. A pointer and a handful of guardrails, never a second copy of the guide: two copies drift, and the stale one answers confidently and wrongly.
+--&gt;
+
+**The guide for any AI agent working here is [`&lt;GUIDE FILE&gt;`](./&lt;GUIDE FILE&gt;). Read it first.** This file is a pointer, plus the rules that must not be missed if you don't.
+
+## Read these
+
+| File | When |
+|---|---|
+| [`PRODUCT.md`](./PRODUCT.md) | Before any product decision: what exists, who it is for, how success is measured |
+| [`DESIGN.md`](./DESIGN.md) | Before any UI, layout or visual work |
+| [`taste.md`](./taste.md) | Before designing or judging a screen |
+| [`motion.md`](./motion.md) | Before any animation or transition |
+| [`VOICE.md`](./VOICE.md) | Before writing words a user will read |
+| [`PERSONAS.md`](./PERSONAS.md), [`JOURNEYS.md`](./JOURNEYS.md), [`JTBD.md`](./JTBD.md) | Before deciding who a feature is for. They are beliefs until research backs them, so never cite them as evidence |
+
+## Guardrails
+&lt;!-- Only the rules where a mistake is expensive or hard to undo: data that is live, things that deploy, frameworks ruled out, secrets. One line each, then why. --&gt;
+- **&lt;rule&gt;.** &lt;why it matters here&gt;
+- **Use the design system.** Reach for an existing component before writing markup, and a token before writing a value. DESIGN.md says where both live.
+
+## Definition of done
+&lt;!-- What &quot;finished&quot; means here. --&gt;
+Run the change, don't just make it compile: load the page or hit the endpoint, run the relevant test, and check any UI change against DESIGN.md.
+</code></pre>
+</section>
+
+<section class="sec-tight" id="example" aria-labelledby="example-h">
+  <div class="sec-head"><h2 class="big-2" id="example-h">Workshopr's example</h2><a class="ext" href="https://github.com/bbulman/ux-os/blob/main/examples/workshopr/AGENTS.md">examples/workshopr/AGENTS.md on GitHub</a></div>
+  <div class="example prose">
+<h3>AGENTS.md (Workshopr example)</h3>
+<p>An excerpt from Workshopr's own AGENTS.md, trimmed to show the shape. Sections left out are marked.</p>
+<hr>
+<p><strong>The guide for any AI coding agent in this repo is <code>CLAUDE.md</code>. Read it. This file is a pointer plus the few things that must not be missed if you do not.</strong></p>
+<p><em>[Section left out: why this file is a pointer and no longer a full copy of the main guide.]</em></p>
+<hr>
+<h4>Read these</h4>
+<div class="table"><table><thead><tr><th>File</th><th>When</th></tr></thead><tbody><tr><td><code>CLAUDE.md</code></td><td><strong>First, and before touching anything.</strong> Architecture, conventions, tests, the changelog rule.</td></tr><tr><td><code>PRODUCT.md</code></td><td>Before any product decision: what exists, who it is for, what is gated.</td></tr><tr><td><code>DESIGN.md</code></td><td>Before any UI, copy or visual work.</td></tr><tr><td><code>motion.md</code></td><td>Before any animation or transition work.</td></tr><tr><td>The design system's machine-readable definition</td><td>Before any UI change: tokens, components, rules.</td></tr><tr><td>The native design guide</td><td>Before changing a native app (Back Pocket, Field Guide, Workshopr Planner for Mac): the token contract, the check, and how to build and run each one.</td></tr><tr><td><code>Conventions.md</code></td><td>Naming and code conventions.</td></tr><tr><td>The writing style guide</td><td>Before writing any content or copy.</td></tr></tbody></table></div>
+<hr>
+<h4>The guardrails</h4>
+<p><em>[Section left out: operational guardrails specific to the codebase.]</em></p>
+<p><strong>Never introduce a frontend framework.</strong> Vanilla JS and CSS only, no React, no Vue, no bundler, unless a human explicitly asks.</p>
+<p><strong>Every UI change uses the design system.</strong> Reach for an existing component before writing HTML. Colours, spacing, type, radii and shadows come from the tokens, never a hex or pixel value where a token exists, and the fonts are Fraunces for headlines and Inter for body. Before calling UI work done, run the design-system check and load the page.</p>
+<hr>
+<h4>Definition of done</h4>
+<p>Exercise the change; do not just make it compile. Load the affected page or hit the endpoint, run the relevant test, and for a bug fix add or update one. For any UI change the design-system check must pass <strong>and</strong> the page must render correctly.</p>
+<p><em>[Section left out: the block of shell commands for the dev server, tests, lint and design-system checks.]</em></p>
+<p>Every code change gets a changelog entry.</p>
+  </div>
+</section>
+
+<nav class="turn" aria-label="Other project files">
+  <a class="prev" href="../../project-files/design/"><small>Previous file</small>DESIGN.md</a>
+  <a class="next" href="../../project-files/personas/"><small>Next file</small>PERSONAS.md</a>
+</nav>
+
+</main>
+<footer class="foot">
+  <p><a href="../../changelog/">Changelog</a><span aria-hidden="true"> · </span>Made by <a href="https://workshopr.io">Workshopr.io</a><span aria-hidden="true"> · </span>Every pack keeps its author's licence.</p>
+  <p>Registry as of 14 November 2026. Usage counted from Claude Code transcripts since 22 July 2026.</p>
+</footer>
+</div>
+
+</body>
+</html>

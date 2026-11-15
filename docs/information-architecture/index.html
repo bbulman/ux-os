@@ -4,178 +4,207 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Information architecture: UX-OS</title>
-<meta name="description" content="Content inventories, card sorts, taxonomies, labels, sitemaps, navigation, URL rules, content models, redirects, tree tests and findability. The Claude skills UX-OS uses for information architecture, with install commands.">
+<meta name="description" content="Content inventories, card sorts, taxonomies, labels, sitemaps, navigation, URL rules, content models, redirects, tree tests and findability. The skills, packs and agents I use for information architecture, which one wins each job, and how to install them.">
+<link rel="canonical" href="https://bbulman.github.io/ux-os/information-architecture/">
 <meta property="og:title" content="Information architecture: UX-OS">
-<meta property="og:description" content="Content inventories, card sorts, taxonomies, labels, sitemaps, navigation, URL rules, content models, redirects, tree tests and findability. The Claude skills UX-OS uses for information architecture, with install commands.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23E54D4D'/%3E%3C/svg%3E">
+<meta property="og:description" content="Content inventories, card sorts, taxonomies, labels, sitemaps, navigation, URL rules, content models, redirects, tree tests and findability. The skills, packs and agents I use for information architecture, which one wins each job, and how to install them.">
+<meta property="og:url" content="https://bbulman.github.io/ux-os/information-architecture/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <div class="wrap">
-  <header class="top">
-    <a class="mark" href="../">UX-OS</a>
-    <nav aria-label="Main">
-      <a href="../#sets">Sets</a>
-      <a class="optional" href="../#why">Why it matters</a>
-      <a href="../method/">Method</a>
-      <a href="https://github.com/bbulman/ux-os">GitHub</a>
-    </nav>
-  </header>
+<header class="top">
+  <a class="mark" href="../">UX-OS<small aria-hidden="true">5063 TX</small></a>
+  <nav class="nav" aria-label="Main"><a href="../jobs/">Jobs</a><a href="../registry/">Registry</a><a href="../disciplines/" aria-current="page">Disciplines</a><a href="../workflows/">Workflows</a><a href="../project-files/">Project files</a><a href="../method/">Method</a><a href="https://github.com/bbulman/ux-os">GitHub</a></nav>
+</header>
+<main id="main" tabindex="-1">
 
-  <main>
-    <p class="crumb"><a href="../">UX-OS</a> / Information architecture</p>
-    <div class="page-head">
-      <h1>Information architecture</h1>
-      
-      <p class="lede">Content inventories, card sorts, taxonomies, labels, sitemaps, navigation, URL rules, content models, redirects, tree tests and findability.</p>
-      <p class="why">Where things go decides whether anyone finds them. It's also the one set with a skill tested end to end.</p>
-      <p class="gap"><b>What's missing:</b> Nothing outstanding. In one run of the same three test cases, the split scored 28 of 29 and the single skill 25 of 29.</p>
-    </div>
-    <div class="entries">
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/information-architecture-skill">information-architecture</a></h2>
-          <p class="summary">The front door for the set: scopes the job, holds the rules across it and routes to the eleven focused skills.</p>
-          <p class="tested"><b>Testing:</b> As one skill: 3 test cases, 3 rounds, every grade public. Latest round 28 of 29 with the skill, 19 of 29 without. Split into twelve: 28 of 29 in one run, against 25 for the single skill the same day.</p>
-          <p class="note">This installs all twelve skills in the set.</p>
-          <pre><code>git clone https://github.com/bbulman/information-architecture-skill.git
-cd information-architecture-skill &amp;&amp; ./install.sh</code></pre>
-        </div>
-        <span class="state"><i class="dot on"></i>Loads on its own</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/information-architecture-skill/tree/main/skills/content-inventory">content-inventory</a></h2>
-          <p class="summary">Lists what a site or corpus holds and audits it: keep, revise, merge or retire. Samples large sets and says so.</p>
-          <p class="tested"><b>Testing:</b> Checking script with its own self-test.</p>
-          <p class="note">This installs all twelve skills in the set.</p>
-          <pre><code>git clone https://github.com/bbulman/information-architecture-skill.git
-cd information-architecture-skill &amp;&amp; ./install.sh</code></pre>
-        </div>
-        <span class="state"><i class="dot on"></i>Loads on its own</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/information-architecture-skill/tree/main/skills/card-sort">card-sort</a></h2>
-          <p class="summary">Plans open, closed and hybrid card sorts and analyses the results: similarity, clusters and cards with no clear home.</p>
-          <p class="tested"><b>Testing:</b> Analysis script with its own self-test.</p>
-          <p class="note">This installs all twelve skills in the set.</p>
-          <pre><code>git clone https://github.com/bbulman/information-architecture-skill.git
-cd information-architecture-skill &amp;&amp; ./install.sh</code></pre>
-        </div>
-        <span class="state"><i class="dot on"></i>Loads on its own</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/information-architecture-skill/tree/main/skills/taxonomies">taxonomies</a></h2>
-          <p class="summary">Categories, tags, facets and controlled vocabularies, tested by applying them to the real content, with a governance loop.</p>
-          <p class="tested"><b>Testing:</b> Checking script with its own self-test.</p>
-          <p class="note">This installs all twelve skills in the set.</p>
-          <pre><code>git clone https://github.com/bbulman/information-architecture-skill.git
-cd information-architecture-skill &amp;&amp; ./install.sh</code></pre>
-        </div>
-        <span class="state"><i class="dot on"></i>Loads on its own</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/information-architecture-skill/tree/main/skills/sitemaps">sitemaps</a></h2>
-          <p class="summary">Decides the structure of a site, app or docs set: shape, depth, template types and one home for every item.</p>
-          <p class="tested"><b>Testing:</b> Checking script with its own self-test.</p>
-          <p class="note">This installs all twelve skills in the set.</p>
-          <pre><code>git clone https://github.com/bbulman/information-architecture-skill.git
-cd information-architecture-skill &amp;&amp; ./install.sh</code></pre>
-        </div>
-        <span class="state"><i class="dot on"></i>Loads on its own</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/information-architecture-skill/tree/main/skills/navigation">navigation</a></h2>
-          <p class="summary">Menus, sidebars, footers, breadcrumbs and tab bars, with an entry rule for each surface and a plan for mobile and keyboard.</p>
-          <p class="note">This installs all twelve skills in the set.</p>
-          <pre><code>git clone https://github.com/bbulman/information-architecture-skill.git
-cd information-architecture-skill &amp;&amp; ./install.sh</code></pre>
-        </div>
-        <span class="state"><i class="dot on"></i>Loads on its own</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/information-architecture-skill/tree/main/skills/labeling">labeling</a></h2>
-          <p class="summary">Names for sections, menus and categories in the users' own words, checked with a predictability test.</p>
-          <p class="tested"><b>Testing:</b> Checking script with its own self-test.</p>
-          <p class="note">This installs all twelve skills in the set.</p>
-          <pre><code>git clone https://github.com/bbulman/information-architecture-skill.git
-cd information-architecture-skill &amp;&amp; ./install.sh</code></pre>
-        </div>
-        <span class="state"><i class="dot on"></i>Loads on its own</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/information-architecture-skill/tree/main/skills/content-models">content-models</a></h2>
-          <p class="summary">Content types, fields and relations for each template, and how the model constrains authors.</p>
-          <p class="note">This installs all twelve skills in the set.</p>
-          <pre><code>git clone https://github.com/bbulman/information-architecture-skill.git
-cd information-architecture-skill &amp;&amp; ./install.sh</code></pre>
-        </div>
-        <span class="state"><i class="dot on"></i>Loads on its own</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/information-architecture-skill/tree/main/skills/url-structure">url-structure</a></h2>
-          <p class="summary">URL rules and slug conventions a platform can enforce, and an audit of the URLs that exist.</p>
-          <p class="tested"><b>Testing:</b> Checking script with its own self-test.</p>
-          <p class="note">This installs all twelve skills in the set.</p>
-          <pre><code>git clone https://github.com/bbulman/information-architecture-skill.git
-cd information-architecture-skill &amp;&amp; ./install.sh</code></pre>
-        </div>
-        <span class="state"><i class="dot on"></i>Loads on its own</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/information-architecture-skill/tree/main/skills/redirect-maps">redirect-maps</a></h2>
-          <p class="summary">Old-to-new URL maps for migrations and rebuilds, checked for chains, loops and coverage of every old URL.</p>
-          <p class="tested"><b>Testing:</b> Checking script with its own self-test.</p>
-          <p class="note">This installs all twelve skills in the set.</p>
-          <pre><code>git clone https://github.com/bbulman/information-architecture-skill.git
-cd information-architecture-skill &amp;&amp; ./install.sh</code></pre>
-        </div>
-        <span class="state"><i class="dot on"></i>Loads on its own</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/information-architecture-skill/tree/main/skills/tree-tests">tree-tests</a></h2>
-          <p class="summary">Plans tree tests and analyses the results: success with confidence intervals, directness and first clicks.</p>
-          <p class="tested"><b>Testing:</b> Analysis script with its own self-test.</p>
-          <p class="note">This installs all twelve skills in the set.</p>
-          <pre><code>git clone https://github.com/bbulman/information-architecture-skill.git
-cd information-architecture-skill &amp;&amp; ./install.sh</code></pre>
-        </div>
-        <span class="state"><i class="dot on"></i>Loads on its own</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/information-architecture-skill/tree/main/skills/findability">findability</a></h2>
-          <p class="summary">Works out why people can't find things, analyses search logs, and sets up synonyms, best bets and measures.</p>
-          <p class="tested"><b>Testing:</b> Search-log script with its own self-test.</p>
-          <p class="note">This installs all twelve skills in the set.</p>
-          <pre><code>git clone https://github.com/bbulman/information-architecture-skill.git
-cd information-architecture-skill &amp;&amp; ./install.sh</code></pre>
-        </div>
-        <span class="state"><i class="dot on"></i>Loads on its own</span>
-      </article>
-    </div>
-    <p class="caption">The states are from my setup on 13 November 2026. Yours start from whatever you install.</p>
-    <div class="turn">
-      <a class="prev" href="../design-systems/">Previous: Design systems</a>
-      <a class="next" href="../interaction-design/"><small>Next set</small>Interaction design&nbsp;&rarr;</a>
-    </div>
-  </main>
+<nav class="crumb" aria-label="Breadcrumb"><a href="../disciplines/">Disciplines</a></nav>
+<header class="page-head set-head">
+  <p class="kicker">15 entries · 2 on · 15 mine · 6 jobs</p>
+  <h1>Information architecture</h1>
+  
+  <p class="lede">Content inventories, card sorts, taxonomies, labels, sitemaps, navigation, URL rules, content models, redirects, tree tests and findability.</p>
+  <p class="why">Where things go decides whether anyone finds them. It's also the one set with a skill tested end to end.</p>
+  <div class="note note--wide"><p><span class="note-k">What's missing:</span> Nothing outstanding. In one run of the same three test cases, the split scored 28 of 29 and the single skill 25 of 29.</p></div>
+</header>
 
-  <footer>
-    Made by <a href="https://workshopr.io">Workshopr.io</a>. Every pack keeps its author's licence. <a href="https://github.com/bbulman/ux-os">Source on GitHub</a>.
-  </footer>
+
+
+<section class="sec-tight" aria-labelledby="jobs-h">
+  <h2 class="big-2" id="jobs-h">Jobs</h2>
+  <p class="lede">What I hand to which skill in information architecture. <a href="../jobs/#information-architecture">All the jobs</a></p>
+  <ol class="jobs">
+<li class="job" data-search="work out why people can't find things my most used ia skill. it traces each path a person would take and names where it breaks. findability findability">
+<h3 class="need">Work out why people can't find things</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/findability/">findability</a> <code>/findability</code> <span class="chip chip--name"><span aria-hidden="true">BY NAME</span><span class="vh">Runs when you type it</span></span></p>
+<p class="why">My most used IA skill. It traces each path a person would take and names where it breaks.</p>
+
+</li>
+<li class="job" data-search="decide the page tree for a site places every page, checks the tree agrees with itself and scales to the job. sitemaps sitemaps create-sitemap writes the sitemap as a file for wireframes to build on, once the structure is decided">
+<h3 class="need">Decide the page tree for a site</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/sitemaps/">sitemaps</a> <code>/sitemaps</code> <span class="chip chip--name"><span aria-hidden="true">BY NAME</span><span class="vh">Runs when you type it</span></span></p>
+<p class="why">Places every page, checks the tree agrees with itself and scales to the job.</p>
+<p class="rival"><span class="label">Rival</span> <a href="../registry/design-os-create-sitemap/"><s>create-sitemap</s></a> writes the sitemap as a file for wireframes to build on, once the structure is decided.</p>
+</li>
+<li class="job" data-search="plan or restructure a public website pages, urls, header, footer and links that lead a visitor to a decision. beat the skill it replaced 31 to 26 of 32 checks. site-architecture site-architecture">
+<h3 class="need">Plan or restructure a public website</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/site-architecture/">site-architecture</a> <code>/site-architecture</code> <span class="chip chip--name"><span aria-hidden="true">BY NAME</span><span class="vh">Runs when you type it</span></span></p>
+<p class="why">Pages, URLs, header, footer and links that lead a visitor to a decision. Beat the skill it replaced 31 to 26 of 32 checks.</p>
+
+</li>
+<li class="job" data-search="design navigation works from the content and the tasks, not from a list of menu patterns. navigation navigation">
+<h3 class="need">Design navigation</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/navigation/">navigation</a> <code>/navigation</code> <span class="chip chip--name"><span aria-hidden="true">BY NAME</span><span class="vh">Runs when you type it</span></span></p>
+<p class="why">Works from the content and the tasks, not from a list of menu patterns.</p>
+
+</li>
+<li class="job" data-search="set url rules or plan redirects rules a whole site can follow, with a script that checks a list of urls against them. url-structure url-structure redirect-maps is the one to use once urls are moving">
+<h3 class="need">Set URL rules or plan redirects</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/url-structure/">url-structure</a> <code>/url-structure</code> <span class="chip chip--name"><span aria-hidden="true">BY NAME</span><span class="vh">Runs when you type it</span></span></p>
+<p class="why">Rules a whole site can follow, with a script that checks a list of URLs against them.</p>
+<p class="rival"><span class="label">Rival</span> <a href="../registry/redirect-maps/"><s>redirect-maps</s></a> is the one to use once URLs are moving.</p>
+</li>
+<li class="job" data-search="test a structure before building it plans the tasks and reads the results of a tree test, so the labels are tested before the screens. tree-tests tree-tests">
+<h3 class="need">Test a structure before building it</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/tree-tests/">tree-tests</a> <code>/tree-tests</code> <span class="chip chip--name"><span aria-hidden="true">BY NAME</span><span class="vh">Runs when you type it</span></span></p>
+<p class="why">Plans the tasks and reads the results of a tree test, so the labels are tested before the screens.</p>
+
+</li>
+  </ol>
+</section>
+
+<section class="sec-tight" aria-labelledby="sheet-h">
+  <h2 class="big-2" id="sheet-h">The sheet</h2>
+  <p class="lede">Every entry in the set, most used first. Circled: findability, the most used pick here.</p>
+  
+  <ol class="sheet">
+<li class="frame is-circled" data-set="information-architecture" data-type="skill" data-origin="combined" data-loads="name" data-usage="heavy" data-scope="any">
+<a class="frame-link" href="../registry/findability/" aria-label="findability: skill, Information architecture. runs when you type it. 16 runs. a pick for a job">
+<span class="edge" aria-hidden="true"><span>01</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">findability</span><span class="fmeta">Information architecture · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>16 runs</span></span>
+</a><svg class="grease" viewBox="0 0 200 120" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M40 4 C 110 -0.1, 180 2.1, 191.6 12 C 204 33.4, 202 93.2, 189.2 114 C 150 121.6, 50 122.2, 10 114 C -0.6 96, 0.1 26, 8 10.6 C 22 2.6, 60 -1.8, 104 4"/></svg>
+</li>
+<li class="frame" data-set="information-architecture" data-type="skill" data-origin="combined" data-loads="name" data-usage="heavy" data-scope="any">
+<a class="frame-link" href="../registry/sitemaps/" aria-label="sitemaps: skill, Information architecture. runs when you type it. 16 runs. a pick for a job">
+<span class="edge" aria-hidden="true"><span>02</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">sitemaps</span><span class="fmeta">Information architecture · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>16 runs</span></span>
+</a>
+</li>
+<li class="frame" data-set="information-architecture" data-type="skill" data-origin="built" data-loads="name" data-usage="regular" data-scope="any">
+<a class="frame-link" href="../registry/site-architecture/" aria-label="site-architecture: skill, Information architecture. runs when you type it. 5 runs. a pick for a job">
+<span class="edge" aria-hidden="true"><span>03</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">site-architecture</span><span class="fmeta">Information architecture · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>5 runs</span></span>
+</a>
+</li>
+<li class="frame" data-set="information-architecture" data-type="skill" data-origin="combined" data-loads="name" data-usage="regular" data-scope="any">
+<a class="frame-link" href="../registry/information-architecture/" aria-label="information-architecture: skill, Information architecture. runs when you type it. 4 runs">
+<span class="edge" aria-hidden="true"><span>04</span><span>04A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">information-architecture</span><span class="fmeta">Information architecture · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>4 runs</span></span>
+</a>
+</li>
+<li class="frame" data-set="information-architecture" data-type="skill" data-origin="built" data-loads="on" data-usage="regular" data-scope="any">
+<a class="frame-link" href="../registry/design-os-create-sitemap/" aria-label="create-sitemap: skill, Information architecture. loads on its own. 3 runs">
+<span class="edge" aria-hidden="true"><span>05</span><span>05A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">create-sitemap</span><span class="fmeta">Information architecture · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>3 runs</span></span>
+</a>
+</li>
+<li class="frame" data-set="information-architecture" data-type="skill" data-origin="combined" data-loads="name" data-usage="occasional" data-scope="any">
+<a class="frame-link" href="../registry/card-sort/" aria-label="card-sort: skill, Information architecture. runs when you type it. 1 run">
+<span class="edge" aria-hidden="true"><span>06</span><span>06A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">card-sort</span><span class="fmeta">Information architecture · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>1 run</span></span>
+</a>
+</li>
+<li class="frame" data-set="information-architecture" data-type="skill" data-origin="combined" data-loads="name" data-usage="occasional" data-scope="any">
+<a class="frame-link" href="../registry/content-inventory/" aria-label="content-inventory: skill, Information architecture. runs when you type it. 1 run">
+<span class="edge" aria-hidden="true"><span>07</span><span>07A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">content-inventory</span><span class="fmeta">Information architecture · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>1 run</span></span>
+</a>
+</li>
+<li class="frame" data-set="information-architecture" data-type="skill" data-origin="combined" data-loads="name" data-usage="occasional" data-scope="any">
+<a class="frame-link" href="../registry/content-models/" aria-label="content-models: skill, Information architecture. runs when you type it. 1 run">
+<span class="edge" aria-hidden="true"><span>08</span><span>08A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">content-models</span><span class="fmeta">Information architecture · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>1 run</span></span>
+</a>
+</li>
+<li class="frame" data-set="information-architecture" data-type="skill" data-origin="combined" data-loads="name" data-usage="occasional" data-scope="any">
+<a class="frame-link" href="../registry/labeling/" aria-label="labeling: skill, Information architecture. runs when you type it. 1 run">
+<span class="edge" aria-hidden="true"><span>09</span><span>09A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">labeling</span><span class="fmeta">Information architecture · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>1 run</span></span>
+</a>
+</li>
+<li class="frame" data-set="information-architecture" data-type="skill" data-origin="combined" data-loads="name" data-usage="occasional" data-scope="any">
+<a class="frame-link" href="../registry/navigation/" aria-label="navigation: skill, Information architecture. runs when you type it. 1 run. a pick for a job">
+<span class="edge" aria-hidden="true"><span>10</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">navigation</span><span class="fmeta">Information architecture · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>1 run</span></span>
+</a>
+</li>
+<li class="frame" data-set="information-architecture" data-type="skill" data-origin="combined" data-loads="name" data-usage="occasional" data-scope="any">
+<a class="frame-link" href="../registry/redirect-maps/" aria-label="redirect-maps: skill, Information architecture. runs when you type it. 1 run">
+<span class="edge" aria-hidden="true"><span>11</span><span>11A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">redirect-maps</span><span class="fmeta">Information architecture · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>1 run</span></span>
+</a>
+</li>
+<li class="frame" data-set="information-architecture" data-type="skill" data-origin="combined" data-loads="name" data-usage="occasional" data-scope="any">
+<a class="frame-link" href="../registry/taxonomies/" aria-label="taxonomies: skill, Information architecture. runs when you type it. 1 run">
+<span class="edge" aria-hidden="true"><span>12</span><span>12A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">taxonomies</span><span class="fmeta">Information architecture · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>1 run</span></span>
+</a>
+</li>
+<li class="frame" data-set="information-architecture" data-type="skill" data-origin="combined" data-loads="name" data-usage="occasional" data-scope="any">
+<a class="frame-link" href="../registry/tree-tests/" aria-label="tree-tests: skill, Information architecture. runs when you type it. 1 run. a pick for a job">
+<span class="edge" aria-hidden="true"><span>13</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">tree-tests</span><span class="fmeta">Information architecture · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>1 run</span></span>
+</a>
+</li>
+<li class="frame" data-set="information-architecture" data-type="skill" data-origin="combined" data-loads="name" data-usage="occasional" data-scope="any">
+<a class="frame-link" href="../registry/url-structure/" aria-label="url-structure: skill, Information architecture. runs when you type it. 1 run. a pick for a job">
+<span class="edge" aria-hidden="true"><span>14</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">url-structure</span><span class="fmeta">Information architecture · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>1 run</span></span>
+</a>
+</li>
+<li class="frame" data-set="information-architecture" data-type="skill" data-origin="built" data-loads="on" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/design-os-create-object-map/" aria-label="create-object-map: skill, Information architecture. loads on its own. never run">
+<span class="edge" aria-hidden="true"><span>15</span><span>15A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">create-object-map</span><span class="fmeta">Information architecture · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>never run</span></span>
+</a>
+</li>
+  </ol>
+  <p class="caption">The states are from my setup on 14 November 2026. Yours start from whatever you install.</p>
+</section>
+
+<nav class="turn" aria-label="Other sets">
+  <a class="prev" href="../design-systems/"><small>Previous set</small>Design systems</a>
+  <a class="next" href="../interaction-design/"><small>Next set</small>Interaction design</a>
+</nav>
+
+</main>
+<footer class="foot">
+  <p><a href="../changelog/">Changelog</a><span aria-hidden="true"> · </span>Made by <a href="https://workshopr.io">Workshopr.io</a><span aria-hidden="true"> · </span>Every pack keeps its author's licence.</p>
+  <p>Registry as of 14 November 2026. Usage counted from Claude Code transcripts since 22 July 2026.</p>
+</footer>
 </div>
+
 </body>
 </html>

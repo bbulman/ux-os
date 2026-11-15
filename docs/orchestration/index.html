@@ -4,85 +4,145 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Orchestration: UX-OS</title>
-<meta name="description" content="Running the other sets against a real target until it meets a bar. The Claude skills UX-OS uses for orchestration, with install commands.">
+<meta name="description" content="Running the other sets against a real target until it meets a bar. The skills, packs and agents I use for orchestration, which one wins each job, and how to install them.">
+<link rel="canonical" href="https://bbulman.github.io/ux-os/orchestration/">
 <meta property="og:title" content="Orchestration: UX-OS">
-<meta property="og:description" content="Running the other sets against a real target until it meets a bar. The Claude skills UX-OS uses for orchestration, with install commands.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23E54D4D'/%3E%3C/svg%3E">
+<meta property="og:description" content="Running the other sets against a real target until it meets a bar. The skills, packs and agents I use for orchestration, which one wins each job, and how to install them.">
+<meta property="og:url" content="https://bbulman.github.io/ux-os/orchestration/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <div class="wrap">
-  <header class="top">
-    <a class="mark" href="../">UX-OS</a>
-    <nav aria-label="Main">
-      <a href="../#sets">Sets</a>
-      <a class="optional" href="../#why">Why it matters</a>
-      <a href="../method/">Method</a>
-      <a href="https://github.com/bbulman/ux-os">GitHub</a>
-    </nav>
-  </header>
+<header class="top">
+  <a class="mark" href="../">UX-OS<small aria-hidden="true">5063 TX</small></a>
+  <nav class="nav" aria-label="Main"><a href="../jobs/">Jobs</a><a href="../registry/">Registry</a><a href="../disciplines/" aria-current="page">Disciplines</a><a href="../workflows/">Workflows</a><a href="../project-files/">Project files</a><a href="../method/">Method</a><a href="https://github.com/bbulman/ux-os">GitHub</a></nav>
+</header>
+<main id="main" tabindex="-1">
 
-  <main>
-    <p class="crumb"><a href="../">UX-OS</a> / Orchestration</p>
-    <div class="page-head">
-      <h1>Orchestration</h1>
-      <p class="tag">Proposed set: may be kept, renamed or dropped</p>
-      <p class="lede">Running the other sets against a real target until it meets a bar.</p>
-      <p class="why">The other sets are methods. This one runs them against a real page and keeps going until it holds up.</p>
-      <p class="gap"><b>What's missing:</b> Only /crit works outside Workshopr.</p>
-    </div>
-    <div class="entries">
-      <article class="entry">
-        <div>
-          <h2><a href="https://github.com/bbulman/critique-partner">crit and critique-partner</a></h2>
-          <p class="summary">Interviews you about a page, then critiques it against your own written rules and loops until a verifier passes it.</p>
-          <p class="tested"><b>Testing:</b> A gate with 55 test cases, and two headless runs.</p>
-          <p class="note">Needs Node 18 or later and Playwright with Chromium.</p>
-          <pre><code>git clone https://github.com/bbulman/critique-partner.git
-cd critique-partner &amp;&amp; ./install.sh</code></pre>
-        </div>
-        <span class="state"><i class="dot on"></i>Loads on its own</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2>Design Agent</h2>
-          <p class="summary">A self-looping designer: critique, fix, re-render and re-score until an exit bar is met, then learn from the run.</p>
-          <p class="tested"><b>Testing:</b> An independent critic scores every pass.</p>
-          <p class="note">Runs only on Workshopr, so there is nothing to install.</p>
-        </div>
-        <span class="state"><i class="dot on"></i>Loads on its own</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2>feature-plan</h2>
-          <p class="summary">Interviews you into a spec, a design brief and build slices, then runs the feature pipeline.</p>
-          <p class="note">Runs only on Workshopr, so there is nothing to install.</p>
-        </div>
-        <span class="state"><i class="dot on"></i>Loads on its own</span>
-      </article>
-      <article class="entry">
-        <div>
-          <h2>feature-build</h2>
-          <p class="summary">Builds one slice of a planned feature and loops it until lint, tests, the design system and review all pass.</p>
-          <p class="tested"><b>Testing:</b> An independent reviewer scores every pass.</p>
-          <p class="note">Runs only on Workshopr, so there is nothing to install.</p>
-        </div>
-        <span class="state"><i class="dot on"></i>Loads on its own</span>
-      </article>
-    </div>
-    <p class="caption">The states are from my setup on 13 November 2026. Yours start from whatever you install.</p>
-    <div class="turn">
-      <a class="prev" href="../design-ops-and-communication/">Previous: Design ops and communication</a>
-      <a class="next" href="../research/"><small>Next set</small>Research&nbsp;&rarr;</a>
-    </div>
-  </main>
+<nav class="crumb" aria-label="Breadcrumb"><a href="../disciplines/">Disciplines</a></nav>
+<header class="page-head set-head">
+  <p class="kicker">7 entries · 6 on · 7 mine · 5 jobs</p>
+  <h1>Orchestration</h1>
+  <p class="tag">Proposed set: may be kept, renamed or dropped</p>
+  <p class="lede">Running the other sets against a real target until it meets a bar.</p>
+  <p class="why">The other sets are methods. This one runs them against a real page and keeps going until it holds up.</p>
+  <div class="note note--wide"><p><span class="note-k">What's missing:</span> Only /crit works outside Workshopr.</p></div>
+</header>
 
-  <footer>
-    Made by <a href="https://workshopr.io">Workshopr.io</a>. Every pack keeps its author's licence. <a href="https://github.com/bbulman/ux-os">Source on GitHub</a>.
-  </footer>
+
+
+<section class="sec-tight" aria-labelledby="jobs-h">
+  <h2 class="big-2" id="jobs-h">Jobs</h2>
+  <p class="lede">What I hand to which skill in orchestration. <a href="../jobs/#orchestration">All the jobs</a></p>
+  <ol class="jobs">
+<li class="job" data-search="set up a new project's files nine annotated templates, each saying what the file is for and who reads it. writes only what is missing and asks three questions at most. create-project-files ux-os:create-project-files">
+<h3 class="need">Set up a new project's files</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/ux-os-create-project-files/">create-project-files</a> <code>/ux-os:create-project-files</code> <span class="chip chip--name"><span aria-hidden="true">BY NAME</span><span class="vh">Runs when you type it</span></span></p>
+<p class="why">Nine annotated templates, each saying what the file is for and who reads it. Writes only what is missing and asks three questions at most.</p>
+
+</li>
+<li class="job" data-search="iterate a workshopr page to a quality bar designs, then an independent critic scores each pass, and it loops until the bar is met. design agent design-agent:design-agent">
+<h3 class="need">Iterate a Workshopr page to a quality bar</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/design-agent/">Design Agent</a> <code>agent: design-agent:design-agent</code> <span class="chip chip--available"><span aria-hidden="true">ON</span><span class="vh">Loads on its own</span></span></p>
+<p class="why">Designs, then an independent critic scores each pass, and it loops until the bar is met.</p>
+
+</li>
+<li class="job" data-search="plan a new feature before building it looks everything up, asks one question at a time and writes a spec, a design brief and build slices. feature-plan feature-plan:feature">
+<h3 class="need">Plan a new feature before building it</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/feature-plan/">feature-plan</a> <code>agent: feature-plan:feature</code> <span class="chip chip--available"><span aria-hidden="true">ON</span><span class="vh">Loads on its own</span></span></p>
+<p class="why">Looks everything up, asks one question at a time and writes a spec, a design brief and build slices.</p>
+
+</li>
+<li class="job" data-search="build a planned feature slice an independent reviewer scores every pass, and a gate holds it until tests, lint and the design system pass. feature-build feature-build:feature-build">
+<h3 class="need">Build a planned feature slice</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/feature-build/">feature-build</a> <code>agent: feature-build:feature-build</code> <span class="chip chip--available"><span aria-hidden="true">ON</span><span class="vh">Loads on its own</span></span></p>
+<p class="why">An independent reviewer scores every pass, and a gate holds it until tests, lint and the design system pass.</p>
+
+</li>
+<li class="job" data-search="run someone else's skill and keep its claims honest runs a third-party skill unedited, files its claims as belief or evidence, and an auditor checks the citations. run ux-os:run">
+<h3 class="need">Run someone else's skill and keep its claims honest</h3>
+<p class="pick"><span class="label">Pick</span> <a href="../registry/ux-os-run/">run</a> <code>/ux-os:run</code> <span class="chip chip--name"><span aria-hidden="true">BY NAME</span><span class="vh">Runs when you type it</span></span></p>
+<p class="why">Runs a third-party skill unedited, files its claims as belief or evidence, and an auditor checks the citations.</p>
+
+</li>
+  </ol>
+</section>
+
+<section class="sec-tight" aria-labelledby="sheet-h">
+  <h2 class="big-2" id="sheet-h">The sheet</h2>
+  <p class="lede">Every entry in the set, most used first. Circled: feature-build, the most used pick here.</p>
+  
+  <ol class="sheet">
+<li class="frame" data-set="orchestration" data-type="agent" data-origin="built" data-loads="on" data-usage="heavy" data-scope="workshopr">
+<a class="frame-link" href="../registry/design-agent-design-critic/" aria-label="design-critic: agent, Orchestration. loads on its own. 28 runs">
+<span class="edge" aria-hidden="true"><span>01</span><span>01A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">design-critic</span><span class="fmeta">Orchestration · Agent</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>28 runs</span></span>
+</a>
+</li>
+<li class="frame" data-set="orchestration" data-type="agent" data-origin="built" data-loads="on" data-usage="heavy" data-scope="any">
+<a class="frame-link" href="../registry/critique-partner/" aria-label="critique-partner: agent, Orchestration. loads on its own. 16 runs">
+<span class="edge" aria-hidden="true"><span>02</span><span>02A</span><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">critique-partner</span><span class="fmeta">Orchestration · Agent</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>16 runs</span></span>
+</a>
+</li>
+<li class="frame is-circled" data-set="orchestration" data-type="agent" data-origin="built" data-loads="on" data-usage="heavy" data-scope="workshopr">
+<a class="frame-link" href="../registry/feature-build/" aria-label="feature-build: agent, Orchestration. loads on its own. 16 runs. a pick for a job">
+<span class="edge" aria-hidden="true"><span>03</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">feature-build</span><span class="fmeta">Orchestration · Agent</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>16 runs</span></span>
+</a><svg class="grease" viewBox="0 0 200 120" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M40 2.1 C 110 -1.1, 180 3, 193.2 12 C 204 35.3, 202 94.4, 189.1 114 C 150 121, 50 120.4, 10 114 C -2.3 96, -1.6 26, 8 9.2 C 22 3, 60 0, 104 4"/></svg>
+</li>
+<li class="frame" data-set="orchestration" data-type="agent" data-origin="built" data-loads="on" data-usage="heavy" data-scope="workshopr">
+<a class="frame-link" href="../registry/design-agent/" aria-label="Design Agent: agent, Orchestration. loads on its own. 13 runs. a pick for a job">
+<span class="edge" aria-hidden="true"><span>04</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">Design Agent</span><span class="fmeta">Orchestration · Agent</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>13 runs</span></span>
+</a>
+</li>
+<li class="frame" data-set="orchestration" data-type="agent" data-origin="built" data-loads="on" data-usage="regular" data-scope="workshopr">
+<a class="frame-link" href="../registry/feature-plan/" aria-label="feature-plan: agent, Orchestration. loads on its own. 7 runs. a pick for a job">
+<span class="edge" aria-hidden="true"><span>05</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">feature-plan</span><span class="fmeta">Orchestration · Agent</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>7 runs</span></span>
+</a>
+</li>
+<li class="frame" data-set="orchestration" data-type="skill" data-origin="built" data-loads="on" data-usage="regular" data-scope="any">
+<a class="frame-link" href="../registry/crit/" aria-label="crit: skill, Orchestration. loads on its own. 3 runs. a pick for a job">
+<span class="edge" aria-hidden="true"><span>06</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">crit</span><span class="fmeta">Orchestration · Skill</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--available">ON</span><span>3 runs</span></span>
+</a>
+</li>
+<li class="frame" data-set="orchestration" data-type="command" data-origin="built" data-loads="name" data-usage="unused" data-scope="any">
+<a class="frame-link" href="../registry/ux-os-create-project-files/" aria-label="create-project-files: command, Orchestration. runs when you type it. never run. a pick for a job">
+<span class="edge" aria-hidden="true"><span>07</span><b class="tick">✓ pick</b><span class="who">B.B.</span></span>
+<span class="shot"><span class="fname">create-project-files</span><span class="fmeta">Orchestration · Command</span></span>
+<span class="edge edge--b" aria-hidden="true"><span class="st st--name">BY NAME</span><span>never run</span></span>
+</a>
+</li>
+  </ol>
+  <p class="caption">The states are from my setup on 14 November 2026. Yours start from whatever you install.</p>
+</section>
+
+<nav class="turn" aria-label="Other sets">
+  <a class="prev" href="../design-ops-and-communication/"><small>Previous set</small>Design ops and communication</a>
+  <a class="next" href="../research/"><small>Next set</small>Research</a>
+</nav>
+
+</main>
+<footer class="foot">
+  <p><a href="../changelog/">Changelog</a><span aria-hidden="true"> · </span>Made by <a href="https://workshopr.io">Workshopr.io</a><span aria-hidden="true"> · </span>Every pack keeps its author's licence.</p>
+  <p>Registry as of 14 November 2026. Usage counted from Claude Code transcripts since 22 July 2026.</p>
+</footer>
 </div>
+
 </body>
 </html>

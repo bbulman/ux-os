@@ -93,7 +93,7 @@ export function page({ path, title, description, body, current = '', scripts = [
 <a class="skip" href="#main">Skip to content</a>
 <div class="wrap">
 <header class="top">
-  <a class="mark" href="${L('')}">UX-OS<small aria-hidden="true">5063 TX</small></a>
+  <a class="mark" href="${L('')}">UX-OS</a>
   <nav class="nav" aria-label="Main">${nav}<a href="${REPO}">GitHub</a></nav>
 </header>
 <main id="main" tabindex="-1">

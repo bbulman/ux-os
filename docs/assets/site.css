@@ -13,8 +13,8 @@
   --ink: #1B1A17;
   --ink-2: #5F5A50;
   --line: #CFC9BB;
-  --grease: #D8322A;
-  --grease-ink: #B3241C;
+  --grease: #C73E3E;        /* Workshopr's dark red, --brand-ink */
+  --grease-ink: #B3241C;    /* small red text: #C73E3E is 4.4:1 on this paper, under AA */
   --edge: #E8892B;
   --edge-ink: #8F4B0C;
   --on: #9FD39B;
@@ -26,6 +26,10 @@
   --text: "Public Sans", system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
   --gutter: clamp(16px, 4vw, 40px);
+  /* Workshopr's 24px drafting grid: --grid-line-color, --paper-grid-image, --paper-grid-size */
+  --grid-line: rgba(44, 36, 22, 0.06);
+  --paper-grid: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  --paper-grid-size: 24px 24px;
   color-scheme: light;
 }
 
@@ -41,6 +45,7 @@
     --edge-ink: #E8892B;
     --on-ink: #9FD39B;
     --card: #1D1412;
+    --grid-line: rgba(241, 230, 218, 0.05);
     color-scheme: dark;
   }
 }
@@ -48,7 +53,7 @@
 /* Base */
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--paper); color: var(--ink); font: 400 16px/1.6 var(--text); overflow-wrap: break-word; }
+body { margin: 0; background-color: var(--paper); background-image: var(--paper-grid); background-size: var(--paper-grid-size); color: var(--ink); font: 400 16px/1.6 var(--text); overflow-wrap: break-word; }
 [hidden] { display: none !important; }
 a { color: inherit; text-underline-offset: .18em; text-decoration-thickness: 1px; }
 a:hover { color: var(--grease-ink); }
@@ -224,7 +229,7 @@ pre.cmd { max-width: 100%; white-space: pre-wrap; overflow-wrap: anywhere; }
    about 130px tall when it stacks under 720px, 71px in one row. In rem, so it grows with the text. */
 html:has(.finder:not([hidden])) { scroll-padding-top: 9.5rem; }
 @media (min-width: 720px) { html:has(.finder:not([hidden])) { scroll-padding-top: 5.75rem; } }
-.finder { position: sticky; top: 0; z-index: 2; display: grid; gap: 8px 16px; padding: 14px 0; background: var(--paper); border-bottom: 1px solid var(--line); }
+.finder { position: sticky; top: 0; z-index: 2; display: grid; gap: 8px 16px; padding: 14px 0; background-color: var(--paper); background-image: var(--paper-grid); background-size: var(--paper-grid-size); background-attachment: fixed; border-bottom: 1px solid var(--line); }
 @media (min-width: 720px) { .finder { grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; } }
 .finder label { font: 700 1.6rem/1 var(--display); text-transform: uppercase; }
 .finder input { width: 100%; min-width: 0; font: 400 17px var(--text); color: var(--ink); background: var(--sheet); border: 1px solid var(--ink-2); border-radius: 2px; padding: 10px 12px; }

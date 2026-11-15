@@ -6,7 +6,7 @@
   var sheet = document.querySelector('[data-sheet]');
   if (!root || !sheet) return;
 
-  var KEYS = ['set', 'type', 'origin', 'loads', 'usage', 'scope'];
+  var KEYS = ['set', 'type', 'origin', 'loads', 'scope'];
   var all = function (sel, el) { return Array.prototype.slice.call((el || document).querySelectorAll(sel)); };
   var frames = Array.prototype.slice.call(sheet.children);
   var buttons = all('[data-facet]', root);

@@ -6,21 +6,19 @@ export const loadKey = (e) => LOAD_KEY[e.status];
 
 // The facet attributes the registry script filters on.
 export const facetAttrs = (e) =>
-  ` data-set="${e.set}" data-type="${e.type}" data-origin="${e.origin}" data-loads="${loadKey(e)}" data-usage="${e.usage.band}" data-scope="${e.scope}"`;
+  ` data-set="${e.set}" data-type="${e.type}" data-origin="${e.origin}" data-loads="${loadKey(e)}" data-scope="${e.scope}"`;
 
 export function registry(ctx) {
   const path = 'registry/';
   const L = linker(path);
   const t = ctx.totals;
   const n = (k, v) => ctx.count((e) => e[k] === v);
-  const bandN = (b) => ctx.count((e) => e.usage.band === b);
 
   const facets = [
     ['set', 'Discipline', ctx.sets.map((s) => [s.slug, s.name, n('set', s.slug)])],
     ['type', 'Type', TYPES.map((v) => [v, TYPE_PLURAL[v], n('type', v)])],
     ['origin', 'Who made it', ORIGINS.map((v) => [v, ORIGIN[v], n('origin', v)])],
     ['loads', 'Loads', STATUSES.map((v) => [LOAD_KEY[v], LOADS[v], n('status', v)])],
-    ['usage', 'How often I use it', ['heavy', 'regular', 'occasional', 'unused'].map((b) => [b, ctx.BANDS[b], bandN(b)])],
     ['scope', 'Scope', SCOPES.map((v) => [v, SCOPE[v], n('scope', v)])],
   ];
 

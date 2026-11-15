@@ -48,7 +48,7 @@ Gives a project the files every UX-OS skill and agent reads first: what the prod
    - If the section already exists, leave it.
    Done when the section is added, already there, or the person has said no.
 
-7. **Report.** List the files written, those of the nine that already existed and were left alone, and whether step 6 changed `.research-profile.md`. Say which to fill first: `PRODUCT.md`, then `DESIGN.md`, because the others defer to them. Then name the next commands:
+7. **Report.** List the files written, those of the nine that already existed and were left alone, and whether step 6 changed `.research-profile.md`. Say which to fill first: `PRODUCT.md`, then `DESIGN.md`, because the others defer to them. Each file has its own command that fills it by interview, named for it, such as `/ux-os:create-product-file`. Then name the next commands:
    - `/ux-os:init` connects the design system and holds third-party skills to `DESIGN.md`, `taste.md` and `VOICE.md` as house rules.
    - `/ux-os:research-discover` turns what `PERSONAS.md`, `JOURNEYS.md` and `JTBD.md` believe into first models and names the belief to test first.
-   - `/ux-os:create-personas real`, once there are interviews with at least five people from different organisations, replaces the beliefs with what people did.
+   - `/ux-os:create-personas real`, once there are interviews with at least five people from different organisations, builds personas from what people did in an idea folder, and `/ux-os:create-personas-file` then carries them into `PERSONAS.md`.

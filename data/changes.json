@@ -9,7 +9,8 @@
       "Orchestration is now one of the named sets rather than a proposal, which leaves two proposed.",
       "Each set's page lays out its entries as light cards, five to a row, instead of as frames on film.",
       "Every workflow step is now done by a skill: the three steps a person did (talking to people, approving a feature plan, picking the skill for a job) are gone.",
-      "Method is no longer in the top navigation."
+      "Method is no longer in the top navigation.",
+      "ux-os 0.5.0: nine commands, one per project file, that write or revise PRODUCT, DESIGN, AGENTS, PERSONAS, JOURNEYS, JTBD, taste, motion or VOICE by interview, sharing one interview guide."
     ]
   },
   {

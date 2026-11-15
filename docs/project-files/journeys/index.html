@@ -36,6 +36,23 @@
   <div><p class="aside-k">Read by</p><ul class="readers"><li><a href="../../registry/crit/">crit</a></li><li><a href="../../registry/feature-plan/">feature-plan</a></li><li><a href="../../registry/design-agent/">Design Agent</a></li><li><a href="../../registry/ux-os-create-journey-map/">create-journey-map</a></li></ul><p class="small">The ux-os research skills read it as beliefs once .research-profile.md lists it under Belief files.</p></div>
 </div>
 
+<section class="sec-tight" id="build" aria-labelledby="build-h">
+  <div class="sec-head"><h2 class="big-2" id="build-h">Build one by interview</h2></div>
+  <p class="lede">One command interviews you and writes JOURNEYS.md. The interview works the way <code>/grill-me</code> does: it settles every decision the file rests on, one round of questions at a time, until nothing is left assumed. Run it after PERSONAS.md, whose personas it maps.</p>
+  <pre class="cmd"><code>/ux-os:create-journeys-file</code></pre>
+  <div class="pf-cols">
+    <div><p class="aside-k">It reads first</p><p>PERSONAS.md, PRODUCT.md, the research folder and any journeys a research run wrote.</p></div>
+    <div><p class="aside-k">Then it asks about</p><ol class="sections"><li>Which journeys: one per primary persona</li><li>For each: the scenario, where it starts and ends, five to seven stages, and how each stage feels</li><li>Two or three moments that matter</li><li>Whether to add a future journey</li></ol></div>
+  </div>
+  <p class="aside-k">How it runs</p>
+  <ol class="sections">
+    <li>It looks up every fact it can before asking anything, and in a file that already exists it tests each claim against the code.</li>
+    <li>It asks in rounds, and each question comes open: it offers its own draft only after you answer or say you have no view, because this file has to hold what you believe, not what it guessed.</li>
+    <li>It shows a summary of the new file, section by section, and writes nothing until you say yes.</li>
+    <li>A missing file, or one still the unfilled template, is written at the project root. A file that already exists is never changed: the new copy goes to <code>.scratch/project-files/JOURNEYS.md</code>, with the facts it corrected and any citations into the old file that would break, for you to compare.</li>
+  </ol>
+</section>
+
 <section class="sec-tight" id="template" aria-labelledby="template-h">
   <div class="sec-head"><h2 class="big-2" id="template-h">The template</h2><a class="ext" href="https://github.com/bbulman/ux-os/blob/main/plugin/shared/project-files/JOURNEYS.md">plugin/shared/project-files/JOURNEYS.md on GitHub</a></div>
   <p class="lede">What <code>/ux-os:create-project-files</code> writes, word for word. Its comments say what each part is for.</p>
@@ -46,7 +63,7 @@ Beliefs, not findings. Nothing here is validated by research yet. Treat every li
 &lt;!--
 UX-OS project file. Delete this comment once the file is filled in.
 For: how each primary persona gets the job done today, step by step, with where it hurts and what that costs.
-Read by: /feature and the Design Agent when placing a feature in someone's day, and /crit when judging a page's moment. The ux-os research skills read it as beliefs once .research-profile.md lists it under &quot;Belief files&quot;, and /ux-os:create-journey-map rebuilds it from what people did.
+Read by: /feature and the Design Agent when placing a feature in someone's day, and /crit when judging a page's moment. The ux-os research skills read it as beliefs once .research-profile.md lists it under &quot;Belief files&quot;, and /ux-os:create-journey-map builds real journeys in an idea folder, which /ux-os:create-journeys-file then carries into this file.
 Good looks like: one journey per primary persona, five to seven stages, a real start and end, and the two or three moments that decide whether it works.
 Evidence: write &quot;belief&quot; until a study backs the row, then cite it, such as S3 P2.
 This file uses the same sections as /ux-os:create-journey-map.

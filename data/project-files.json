@@ -21,7 +21,23 @@
       "impeccable:impeccable"
     ],
     "template": "plugin/shared/project-files/PRODUCT.md",
-    "example": "examples/workshopr/PRODUCT.md"
+    "example": "examples/workshopr/PRODUCT.md",
+    "build": {
+      "order": 1,
+      "command": "ux-os:create-product-file",
+      "when": "Run it first: every other file defers to it.",
+      "reads": "The README, the package manifest, the routes, any plan, pricing or feature-flag configuration, the specs, the commit history, and any analytics the project names.",
+      "asks": [
+        "What it is, in two or three sentences, and what people confuse it with",
+        "Who it is for, who else uses or buys it, and who it says no to",
+        "The problem it solves",
+        "Three to five success measures, and which cannot be measured yet",
+        "What exists, built from the code: it asks only what the code cannot show",
+        "Four to seven product principles, each ruling between two things",
+        "What people ask for that will not be built",
+        "What is still undecided"
+      ]
+    }
   },
   {
     "id": "design",
@@ -52,7 +68,23 @@
     ],
     "template": "plugin/shared/project-files/DESIGN.md",
     "example": "examples/workshopr/DESIGN.md",
-    "readNote": "/ux-os:init offers it as a house rule, and /ux-os:run then holds third-party skills to it."
+    "readNote": "/ux-os:init offers it as a house rule, and /ux-os:run then holds third-party skills to it.",
+    "build": {
+      "order": 2,
+      "command": "ux-os:create-design-file",
+      "when": "Run it second, after PRODUCT.md.",
+      "reads": "The token files, the component catalog and its demos, the design-system docs, any design linter and its configuration, the shared form components and the accessibility tests.",
+      "asks": [
+        "The brand in one line: what someone should feel, and must never feel",
+        "Colour roles, only where two tokens claim one or a role has none",
+        "The rules for type, spacing, radii, elevation and icons",
+        "Five to ten UX principles, each with what it rules out",
+        "How a new component gets added",
+        "Forms: labels, required fields, validation, errors, button order",
+        "The accessibility floor",
+        "Words on screen, which become a pointer to VOICE.md"
+      ]
+    }
   },
   {
     "id": "agents",
@@ -69,7 +101,19 @@
     ],
     "template": "plugin/shared/project-files/AGENTS.md",
     "example": "examples/workshopr/AGENTS.md",
-    "readNote": "Most coding agents look for AGENTS.md by convention. Claude Code reads CLAUDE.md, so have one point at the other."
+    "readNote": "Most coding agents look for AGENTS.md by convention. Claude Code reads CLAUDE.md, so have one point at the other.",
+    "build": {
+      "order": 9,
+      "command": "ux-os:create-agents-file",
+      "when": "Run it last: it points at all the others.",
+      "reads": "The agent guide (CLAUDE.md or its equivalent), any other agent instruction files, the CI configuration, the deploy scripts, the environment example, any agent hooks and the test commands.",
+      "asks": [
+        "Which file is the guide",
+        "Which other files an agent must read, and when",
+        "The guardrails, where a mistake is expensive or hard to undo",
+        "What finished means here"
+      ]
+    }
   },
   {
     "id": "personas",
@@ -88,7 +132,20 @@
     ],
     "template": "plugin/shared/project-files/PERSONAS.md",
     "example": "examples/workshopr/PERSONAS.md",
-    "readNote": "The ux-os research skills read it as beliefs once .research-profile.md lists it under Belief files."
+    "readNote": "The ux-os research skills read it as beliefs once .research-profile.md lists it under Belief files.",
+    "build": {
+      "order": 6,
+      "command": "ux-os:create-personas-file",
+      "open": true,
+      "when": "Run it after PRODUCT.md.",
+      "reads": "PRODUCT.md, the research profile and its research folder, any personas a research run wrote, and any analytics the profile names.",
+      "asks": [
+        "The one behaviour that most changes what someone needs",
+        "At most four personas, placed on it",
+        "The primary persona, and why",
+        "For each: what would make them refuse, the least evidenced claim, and what would show the persona is wrong"
+      ]
+    }
   },
   {
     "id": "journeys",
@@ -107,7 +164,20 @@
     ],
     "template": "plugin/shared/project-files/JOURNEYS.md",
     "example": "examples/workshopr/JOURNEYS.md",
-    "readNote": "The ux-os research skills read it as beliefs once .research-profile.md lists it under Belief files."
+    "readNote": "The ux-os research skills read it as beliefs once .research-profile.md lists it under Belief files.",
+    "build": {
+      "order": 7,
+      "command": "ux-os:create-journeys-file",
+      "open": true,
+      "when": "Run it after PERSONAS.md, whose personas it maps.",
+      "reads": "PERSONAS.md, PRODUCT.md, the research folder and any journeys a research run wrote.",
+      "asks": [
+        "Which journeys: one per primary persona",
+        "For each: the scenario, where it starts and ends, five to seven stages, and how each stage feels",
+        "Two or three moments that matter",
+        "Whether to add a future journey"
+      ]
+    }
   },
   {
     "id": "jtbd",
@@ -131,7 +201,23 @@
     ],
     "template": "plugin/shared/project-files/JTBD.md",
     "example": "examples/workshopr/JTBD.md",
-    "readNote": "The ux-os research skills read it as beliefs once .research-profile.md lists it under Belief files."
+    "readNote": "The ux-os research skills read it as beliefs once .research-profile.md lists it under Belief files.",
+    "build": {
+      "order": 8,
+      "command": "ux-os:create-jtbd-file",
+      "open": true,
+      "when": "Run it after PERSONAS.md and JOURNEYS.md.",
+      "reads": "PRODUCT.md, PERSONAS.md, JOURNEYS.md, the research folder and any jobs model a research run wrote.",
+      "asks": [
+        "The core job, naming no product, and what sets it off",
+        "What has to get done, how customers want to feel, and how they want to be seen",
+        "The job map, four to eight stages",
+        "What gets hired today, including doing nothing, doing it by hand and hiring someone",
+        "Underserved outcomes, naming no solution",
+        "A job statement per persona",
+        "What each outcome asks of the product"
+      ]
+    }
   },
   {
     "id": "taste",
@@ -157,7 +243,23 @@
       "ux-os:run"
     ],
     "template": "plugin/shared/project-files/taste.md",
-    "example": "examples/workshopr/taste.md"
+    "example": "examples/workshopr/taste.md",
+    "build": {
+      "order": 3,
+      "command": "ux-os:create-taste-file",
+      "open": true,
+      "when": "Run it after DESIGN.md, which holds the rules it must not repeat. The owner answers.",
+      "reads": "DESIGN.md, any critiques, review notes or design-loop learnings the project keeps, and the file’s own dated notes.",
+      "asks": [
+        "The root: what good means here, in two to five words",
+        "Reference anchors to reason toward and away from, each with its specific quality",
+        "The cut test: how a feature, section or element earns its place",
+        "Soul: the kind of delight allowed, and how much",
+        "What reads as machine-made",
+        "The kill list",
+        "Taste that is not settled yet"
+      ]
+    }
   },
   {
     "id": "motion",
@@ -178,7 +280,21 @@
       "design-agent:design-agent"
     ],
     "template": "plugin/shared/project-files/motion.md",
-    "example": "examples/workshopr/motion.md"
+    "example": "examples/workshopr/motion.md",
+    "build": {
+      "order": 5,
+      "command": "ux-os:create-motion-file",
+      "when": "Run it after DESIGN.md.",
+      "reads": "The motion tokens, the animation code, any motion docs in the design system, and every place the code handles reduced motion.",
+      "asks": [
+        "Three words for how motion should feel, each with what it rules out",
+        "The standard values, only where the code and the file disagree",
+        "Five patterns or fewer, each with its values",
+        "What motion must never do",
+        "What changes when someone asks for less motion",
+        "The stack, and what is ruled out"
+      ]
+    }
   },
   {
     "id": "voice",
@@ -200,6 +316,21 @@
     ],
     "template": "plugin/shared/project-files/VOICE.md",
     "example": "examples/workshopr/VOICE.md",
-    "readNote": "No skill reads VOICE.md by name yet. /ux-os:init offers it as a house rule, so point AGENTS.md at it."
+    "readNote": "No skill reads VOICE.md by name yet. /ux-os:init offers it as a house rule, so point AGENTS.md at it.",
+    "build": {
+      "order": 4,
+      "command": "ux-os:create-voice-file",
+      "when": "Run it after DESIGN.md and taste.md.",
+      "reads": "The product’s own copy (buttons, errors, empty states, confirmations, emails), any writing style guide, the banned-word list and any copy linter.",
+      "asks": [
+        "Scope: the words in the product only, or long-form too",
+        "The voice in one line",
+        "Three or four pillars, each with a real line that misses and its rewrite",
+        "What the voice is not",
+        "The words you never use",
+        "The shape of the messages written most: button, error, empty state, confirmation, waiting",
+        "Mechanics and inclusive language"
+      ]
+    }
   }
 ]

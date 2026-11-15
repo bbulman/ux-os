@@ -2,14 +2,14 @@
 
 Every UX skill I run with Claude Code, and which one wins each job.
 
-135 entries in 12 sets: 90 skills, 26 skill packs, 10 agents, 8 commands and 1 MCP server. 94 are mine and 41 are third-party. 67 load on their own, 59 run by name and 9 are off. 48 jobs name the skill I hand each need to, 13 of them with the rival that lost. 91 entries have never been used since 22 July 2026.
+144 entries in 12 sets: 90 skills, 26 skill packs, 10 agents, 17 commands and 1 MCP server. 103 are mine and 41 are third-party. 67 load on their own, 68 run by name and 9 are off. 48 jobs name the skill I hand each need to, 13 of them with the rival that lost. 100 entries have never been used since 22 July 2026.
 
 **[Open the site](https://bbulman.github.io/ux-os/)**
 
 ## What's on the site
 
 - [Jobs](https://bbulman.github.io/ux-os/jobs/): say what you need, get the skill I hand it to, its rival and why.
-- [Registry](https://bbulman.github.io/ux-os/registry/): all 135 entries, filterable, each with its own page: how to run it, how to install it, how often I use it and what testing showed.
+- [Registry](https://bbulman.github.io/ux-os/registry/): all 144 entries, filterable, each with its own page: how to run it, how to install it, how often I use it and what testing showed.
 - [Workflows](https://bbulman.github.io/ux-os/workflows/): 7 chains of skills that run in order.
 - [Project files](https://bbulman.github.io/ux-os/project-files/): 9 files a project keeps, which skills read each one, a template and Workshopr's own copy as an example.
 - [Method](https://bbulman.github.io/ux-os/method/): how a skill gets built and tested, and how this registry stays true.
@@ -27,7 +27,7 @@ Every UX skill I run with Claude Code, and which one wins each job.
 | [Prototyping](https://bbulman.github.io/ux-os/prototyping/) | Wireframes, user flows, concept selection, prototype strategy, test plans and heuristic evaluation. | 9 | 5 |
 | [UX strategy](https://bbulman.github.io/ux-os/ux-strategy/) | Problem framing, briefs, vision, opportunities and metrics. | 11 | 3 |
 | [AI-XD](https://bbulman.github.io/ux-os/ai-xd/) | AI experience design: conversation, trust, guardrails and agent handoffs. | 6 | 0 |
-| [Orchestration](https://bbulman.github.io/ux-os/orchestration/) | Running the other sets against a real target until it meets a bar. | 7 | 5 |
+| [Orchestration](https://bbulman.github.io/ux-os/orchestration/) | Running the other sets against a real target until it meets a bar. | 16 | 5 |
 | [Accessibility and inclusion](https://bbulman.github.io/ux-os/accessibility-and-inclusion/) (proposed) | Inclusive personas, cognitive access, accessible content and adaptive interfaces. | 6 | 1 |
 | [Design ops and communication](https://bbulman.github.io/ux-os/design-ops-and-communication/) (proposed) | Handoff, critique process, sprints, rationale and case studies. | 3 | 0 |
 
@@ -65,6 +65,6 @@ Once a quarter, after step 2, run `node scripts/prune.mjs`. It lists the third-p
 
 ## Credit
 
-41 of the 135 entries are third-party, and MC Dean wrote 33 of them. Every pack keeps its author's licence, and each entry's page links to its source. [The credits](https://bbulman.github.io/ux-os/method/#credit-h) list every author.
+41 of the 144 entries are third-party, and MC Dean wrote 33 of them. Every pack keeps its author's licence, and each entry's page links to its source. [The credits](https://bbulman.github.io/ux-os/method/#credit-h) list every author.
 
 Made by [Workshopr.io](https://workshopr.io). Source: https://github.com/bbulman/ux-os.

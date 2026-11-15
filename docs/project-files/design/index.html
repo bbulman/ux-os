@@ -36,6 +36,23 @@
   <div><p class="aside-k">Read by</p><ul class="readers"><li><a href="../../registry/crit/">crit</a></li><li><a href="../../registry/critique-partner/">critique-partner</a></li><li><a href="../../registry/design-agent/">Design Agent</a></li><li><a href="../../registry/design-agent-design-critic/">design-critic</a></li><li><a href="../../registry/landing-page-design/">landing-page-design</a></li><li><a href="../../registry/design-system-agent/">design-system agent</a></li><li><a href="../../registry/workshopr-uxdrift/">workshopr-uxdrift</a></li><li><a href="../../registry/feature-build/">feature-build</a></li><li><a href="../../registry/impeccable/">impeccable</a></li><li><a href="../../registry/ux-os-init/">init</a></li><li><a href="../../registry/ux-os-run/">run</a></li></ul><p class="small">/ux-os:init offers it as a house rule, and /ux-os:run then holds third-party skills to it.</p></div>
 </div>
 
+<section class="sec-tight" id="build" aria-labelledby="build-h">
+  <div class="sec-head"><h2 class="big-2" id="build-h">Build one by interview</h2></div>
+  <p class="lede">One command interviews you and writes DESIGN.md. The interview works the way <code>/grill-me</code> does: it settles every decision the file rests on, one round of questions at a time, until nothing is left assumed. Run it second, after PRODUCT.md.</p>
+  <pre class="cmd"><code>/ux-os:create-design-file</code></pre>
+  <div class="pf-cols">
+    <div><p class="aside-k">It reads first</p><p>The token files, the component catalog and its demos, the design-system docs, any design linter and its configuration, the shared form components and the accessibility tests.</p></div>
+    <div><p class="aside-k">Then it asks about</p><ol class="sections"><li>The brand in one line: what someone should feel, and must never feel</li><li>Colour roles, only where two tokens claim one or a role has none</li><li>The rules for type, spacing, radii, elevation and icons</li><li>Five to ten UX principles, each with what it rules out</li><li>How a new component gets added</li><li>Forms: labels, required fields, validation, errors, button order</li><li>The accessibility floor</li><li>Words on screen, which become a pointer to VOICE.md</li></ol></div>
+  </div>
+  <p class="aside-k">How it runs</p>
+  <ol class="sections">
+    <li>It looks up every fact it can before asking anything, and in a file that already exists it tests each claim against the code.</li>
+    <li>It asks in rounds: every question it can ask yet, numbered, each with its recommended answer and the reason, worded so that &quot;yes&quot; accepts it.</li>
+    <li>It shows a summary of the new file, section by section, and writes nothing until you say yes.</li>
+    <li>A missing file, or one still the unfilled template, is written at the project root. A file that already exists is never changed: the new copy goes to <code>.scratch/project-files/DESIGN.md</code>, with the facts it corrected and any citations into the old file that would break, for you to compare.</li>
+  </ol>
+</section>
+
 <section class="sec-tight" id="template" aria-labelledby="template-h">
   <div class="sec-head"><h2 class="big-2" id="template-h">The template</h2><a class="ext" href="https://github.com/bbulman/ux-os/blob/main/plugin/shared/project-files/DESIGN.md">plugin/shared/project-files/DESIGN.md on GitHub</a></div>
   <p class="lede">What <code>/ux-os:create-project-files</code> writes, word for word. Its comments say what each part is for.</p>
@@ -95,7 +112,7 @@ Good looks like: every rule is checkable, names its token or component, and live
 &lt;!-- The floor: contrast ratio, smallest touch target, focus visibility, reduced motion, what a screen reader must hear. --&gt;
 
 ## Words on screen
-&lt;!-- Voice lives in VOICE.md. Keep only the interface rules here: button labels, error message shape, sentence case or title case. --&gt;
+&lt;!-- One line pointing at VOICE.md, which owns every word on screen: button labels, message shapes, case. --&gt;
 </code></pre>
 </section>
 

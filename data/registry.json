@@ -2508,6 +2508,168 @@
         "/ux-os:create-project-files"
       ],
       "source": "https://github.com/bbulman/ux-os/tree/main/plugin/skills/create-project-files"
+    },
+    {
+      "id": "ux-os-create-product-file",
+      "name": "create-product-file",
+      "type": "command",
+      "set": "orchestration",
+      "origin": "built",
+      "author": "Bill Bulman and Claude",
+      "status": "name",
+      "scope": "any",
+      "stage": "trial",
+      "pack": "ux-os",
+      "invoke": "ux-os:create-product-file",
+      "summary": "Write or revise a project's PRODUCT.md by interview, settling what the product is, who it is for and how you will know it is working.",
+      "prompts": [
+        "/ux-os:create-product-file"
+      ],
+      "source": "https://github.com/bbulman/ux-os/tree/main/plugin/skills/create-product-file"
+    },
+    {
+      "id": "ux-os-create-design-file",
+      "name": "create-design-file",
+      "type": "command",
+      "set": "orchestration",
+      "origin": "built",
+      "author": "Bill Bulman and Claude",
+      "status": "name",
+      "scope": "any",
+      "stage": "trial",
+      "pack": "ux-os",
+      "invoke": "ux-os:create-design-file",
+      "summary": "Write or revise a project's DESIGN.md by interview, settling the rules a check could enforce for how the product looks, reads and behaves.",
+      "prompts": [
+        "/ux-os:create-design-file"
+      ],
+      "source": "https://github.com/bbulman/ux-os/tree/main/plugin/skills/create-design-file"
+    },
+    {
+      "id": "ux-os-create-agents-file",
+      "name": "create-agents-file",
+      "type": "command",
+      "set": "orchestration",
+      "origin": "built",
+      "author": "Bill Bulman and Claude",
+      "status": "name",
+      "scope": "any",
+      "stage": "trial",
+      "pack": "ux-os",
+      "invoke": "ux-os:create-agents-file",
+      "summary": "Write or revise a project's AGENTS.md by interview, settling the pointer to the guide, the guardrails an agent must not miss and what \"done\" means.",
+      "prompts": [
+        "/ux-os:create-agents-file"
+      ],
+      "source": "https://github.com/bbulman/ux-os/tree/main/plugin/skills/create-agents-file"
+    },
+    {
+      "id": "ux-os-create-personas-file",
+      "name": "create-personas-file",
+      "type": "command",
+      "set": "orchestration",
+      "origin": "built",
+      "author": "Bill Bulman and Claude",
+      "status": "name",
+      "scope": "any",
+      "stage": "trial",
+      "pack": "ux-os",
+      "invoke": "ux-os:create-personas-file",
+      "summary": "Write or revise a project's PERSONAS.md by interview, as labelled beliefs about who the product is for.",
+      "prompts": [
+        "/ux-os:create-personas-file"
+      ],
+      "source": "https://github.com/bbulman/ux-os/tree/main/plugin/skills/create-personas-file"
+    },
+    {
+      "id": "ux-os-create-journeys-file",
+      "name": "create-journeys-file",
+      "type": "command",
+      "set": "orchestration",
+      "origin": "built",
+      "author": "Bill Bulman and Claude",
+      "status": "name",
+      "scope": "any",
+      "stage": "trial",
+      "pack": "ux-os",
+      "invoke": "ux-os:create-journeys-file",
+      "summary": "Write or revise a project's JOURNEYS.md by interview, as labelled beliefs about how each primary persona gets the job done today.",
+      "prompts": [
+        "/ux-os:create-journeys-file"
+      ],
+      "source": "https://github.com/bbulman/ux-os/tree/main/plugin/skills/create-journeys-file"
+    },
+    {
+      "id": "ux-os-create-jtbd-file",
+      "name": "create-jtbd-file",
+      "type": "command",
+      "set": "orchestration",
+      "origin": "built",
+      "author": "Bill Bulman and Claude",
+      "status": "name",
+      "scope": "any",
+      "stage": "trial",
+      "pack": "ux-os",
+      "invoke": "ux-os:create-jtbd-file",
+      "summary": "Write or revise a project's JTBD.md by interview, as labelled beliefs about the progress people are trying to make and what they hire for it today.",
+      "prompts": [
+        "/ux-os:create-jtbd-file"
+      ],
+      "source": "https://github.com/bbulman/ux-os/tree/main/plugin/skills/create-jtbd-file"
+    },
+    {
+      "id": "ux-os-create-taste-file",
+      "name": "create-taste-file",
+      "type": "command",
+      "set": "orchestration",
+      "origin": "built",
+      "author": "Bill Bulman and Claude",
+      "status": "name",
+      "scope": "any",
+      "stage": "trial",
+      "pack": "ux-os",
+      "invoke": "ux-os:create-taste-file",
+      "summary": "Write or revise a project's taste.md by interview, in the owner's own words, settling the judgment no check can enforce.",
+      "prompts": [
+        "/ux-os:create-taste-file"
+      ],
+      "source": "https://github.com/bbulman/ux-os/tree/main/plugin/skills/create-taste-file"
+    },
+    {
+      "id": "ux-os-create-motion-file",
+      "name": "create-motion-file",
+      "type": "command",
+      "set": "orchestration",
+      "origin": "built",
+      "author": "Bill Bulman and Claude",
+      "status": "name",
+      "scope": "any",
+      "stage": "trial",
+      "pack": "ux-os",
+      "invoke": "ux-os:create-motion-file",
+      "summary": "Write or revise a project's motion.md by interview, settling how motion feels, its values as tokens, the patterns allowed and what reduced motion does.",
+      "prompts": [
+        "/ux-os:create-motion-file"
+      ],
+      "source": "https://github.com/bbulman/ux-os/tree/main/plugin/skills/create-motion-file"
+    },
+    {
+      "id": "ux-os-create-voice-file",
+      "name": "create-voice-file",
+      "type": "command",
+      "set": "orchestration",
+      "origin": "built",
+      "author": "Bill Bulman and Claude",
+      "status": "name",
+      "scope": "any",
+      "stage": "trial",
+      "pack": "ux-os",
+      "invoke": "ux-os:create-voice-file",
+      "summary": "Write or revise a project's VOICE.md by interview, settling how every word a user reads should sound, with examples from the product's own copy.",
+      "prompts": [
+        "/ux-os:create-voice-file"
+      ],
+      "source": "https://github.com/bbulman/ux-os/tree/main/plugin/skills/create-voice-file"
     }
   ]
 }

@@ -3,7 +3,7 @@
 <!--
 UX-OS project file. Delete this comment once the file is filled in.
 For: how the product sounds, in every word a user reads: buttons, errors, empty states, emails, help.
-Read by: anyone writing copy. /ux-os:init offers it as a house rule, and /ux-os:run then holds third-party writing skills to it. No skill reads VOICE.md by name yet, so point AGENTS.md at it.
+Read by: anyone writing copy. /ux-os:init offers it as a house rule, and /ux-os:run then holds third-party writing skills to it. /ux-os:create-voice-file fills it from the product's own copy. Point AGENTS.md at it.
 Good looks like: the voice in one line, three or four pillars each with a before and after from your own product, the words you never use, and the shape of the messages you write most.
 -->
 

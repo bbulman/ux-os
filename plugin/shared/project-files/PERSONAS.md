@@ -5,7 +5,7 @@ Beliefs, not findings. Nothing here is validated by research yet. Treat every li
 <!--
 UX-OS project file. Delete this comment once the file is filled in.
 For: who the product is for, as people with situations, goals and frustrations, so every decision can be tested against someone specific.
-Read by: /feature and the Design Agent when deciding who a feature serves, and /crit when asking who a page is for. The ux-os research skills read it as beliefs once .research-profile.md lists it under "Belief files", and /ux-os:create-personas in real mode rebuilds it from what people did.
+Read by: /feature and the Design Agent when deciding who a feature serves, and /crit when asking who a page is for. The ux-os research skills read it as beliefs once .research-profile.md lists it under "Belief files", and /ux-os:create-personas builds real personas in an idea folder, which /ux-os:create-personas-file then carries into this file.
 Good looks like: at most four personas, separated by behaviour not demographics, each with a line on how you would know it is wrong.
 Evidence: write "belief" in an Evidence cell until a study backs the line. When one does, cite it, such as S3 P2, and update the line at the top.
 This file uses the same sections as /ux-os:create-personas, so a research run can replace it section by section.

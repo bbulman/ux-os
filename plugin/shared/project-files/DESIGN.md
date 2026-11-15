@@ -54,4 +54,4 @@ Good looks like: every rule is checkable, names its token or component, and live
 <!-- The floor: contrast ratio, smallest touch target, focus visibility, reduced motion, what a screen reader must hear. -->
 
 ## Words on screen
-<!-- Voice lives in VOICE.md. Keep only the interface rules here: button labels, error message shape, sentence case or title case. -->
+<!-- One line pointing at VOICE.md, which owns every word on screen: button labels, message shapes, case. -->

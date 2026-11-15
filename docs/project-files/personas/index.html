@@ -36,6 +36,23 @@
   <div><p class="aside-k">Read by</p><ul class="readers"><li><a href="../../registry/crit/">crit</a></li><li><a href="../../registry/feature-plan/">feature-plan</a></li><li><a href="../../registry/design-agent/">Design Agent</a></li><li><a href="../../registry/ux-os-create-personas/">create-personas</a></li></ul><p class="small">The ux-os research skills read it as beliefs once .research-profile.md lists it under Belief files.</p></div>
 </div>
 
+<section class="sec-tight" id="build" aria-labelledby="build-h">
+  <div class="sec-head"><h2 class="big-2" id="build-h">Build one by interview</h2></div>
+  <p class="lede">One command interviews you and writes PERSONAS.md. The interview works the way <code>/grill-me</code> does: it settles every decision the file rests on, one round of questions at a time, until nothing is left assumed. Run it after PRODUCT.md.</p>
+  <pre class="cmd"><code>/ux-os:create-personas-file</code></pre>
+  <div class="pf-cols">
+    <div><p class="aside-k">It reads first</p><p>PRODUCT.md, the research profile and its research folder, any personas a research run wrote, and any analytics the profile names.</p></div>
+    <div><p class="aside-k">Then it asks about</p><ol class="sections"><li>The one behaviour that most changes what someone needs</li><li>At most four personas, placed on it</li><li>The primary persona, and why</li><li>For each: what would make them refuse, the least evidenced claim, and what would show the persona is wrong</li></ol></div>
+  </div>
+  <p class="aside-k">How it runs</p>
+  <ol class="sections">
+    <li>It looks up every fact it can before asking anything, and in a file that already exists it tests each claim against the code.</li>
+    <li>It asks in rounds, and each question comes open: it offers its own draft only after you answer or say you have no view, because this file has to hold what you believe, not what it guessed.</li>
+    <li>It shows a summary of the new file, section by section, and writes nothing until you say yes.</li>
+    <li>A missing file, or one still the unfilled template, is written at the project root. A file that already exists is never changed: the new copy goes to <code>.scratch/project-files/PERSONAS.md</code>, with the facts it corrected and any citations into the old file that would break, for you to compare.</li>
+  </ol>
+</section>
+
 <section class="sec-tight" id="template" aria-labelledby="template-h">
   <div class="sec-head"><h2 class="big-2" id="template-h">The template</h2><a class="ext" href="https://github.com/bbulman/ux-os/blob/main/plugin/shared/project-files/PERSONAS.md">plugin/shared/project-files/PERSONAS.md on GitHub</a></div>
   <p class="lede">What <code>/ux-os:create-project-files</code> writes, word for word. Its comments say what each part is for.</p>
@@ -46,7 +63,7 @@ Beliefs, not findings. Nothing here is validated by research yet. Treat every li
 &lt;!--
 UX-OS project file. Delete this comment once the file is filled in.
 For: who the product is for, as people with situations, goals and frustrations, so every decision can be tested against someone specific.
-Read by: /feature and the Design Agent when deciding who a feature serves, and /crit when asking who a page is for. The ux-os research skills read it as beliefs once .research-profile.md lists it under &quot;Belief files&quot;, and /ux-os:create-personas in real mode rebuilds it from what people did.
+Read by: /feature and the Design Agent when deciding who a feature serves, and /crit when asking who a page is for. The ux-os research skills read it as beliefs once .research-profile.md lists it under &quot;Belief files&quot;, and /ux-os:create-personas builds real personas in an idea folder, which /ux-os:create-personas-file then carries into this file.
 Good looks like: at most four personas, separated by behaviour not demographics, each with a line on how you would know it is wrong.
 Evidence: write &quot;belief&quot; in an Evidence cell until a study backs the line. When one does, cite it, such as S3 P2, and update the line at the top.
 This file uses the same sections as /ux-os:create-personas, so a research run can replace it section by section.

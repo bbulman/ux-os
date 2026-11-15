@@ -22,8 +22,36 @@ const setupBlock = (setup) => `<div class="setup setup--compact">
     ${codeBlock(UXOS_INSTALL)}
     <p class="pre-label">Then, in each project</p>
     ${codeBlock('/ux-os:create-project-files')}
+    <p class="pre-label">Then fill each file by interview, PRODUCT.md first</p>
+    ${codeBlock('/ux-os:create-product-file')}
   </div>
 </div>`;
+
+// How the create-<file>-file command for one file runs. The interview is the same for all nine;
+// the belief and taste files ask open first, so the file holds the person's words.
+function buildBlock(f) {
+  const b = f.build;
+  if (!b) return '';
+  const ask = b.open
+    ? 'It asks in rounds, and each question comes open: it offers its own draft only after you answer or say you have no view, because this file has to hold what you believe, not what it guessed.'
+    : 'It asks in rounds: every question it can ask yet, numbered, each with its recommended answer and the reason, worded so that "yes" accepts it.';
+  return `<section class="sec-tight" id="build" aria-labelledby="build-h">
+  <div class="sec-head"><h2 class="big-2" id="build-h">Build one by interview</h2></div>
+  <p class="lede">One command interviews you and writes ${esc(f.file)}. The interview works the way <code>/grill-me</code> does: it settles every decision the file rests on, one round of questions at a time, until nothing is left assumed. ${esc(b.when)}</p>
+  ${codeBlock(`/${b.command}`)}
+  <div class="pf-cols">
+    <div><p class="aside-k">It reads first</p><p>${esc(b.reads)}</p></div>
+    <div><p class="aside-k">Then it asks about</p><ol class="sections">${b.asks.map((a) => `<li>${esc(a)}</li>`).join('')}</ol></div>
+  </div>
+  <p class="aside-k">How it runs</p>
+  <ol class="sections">
+    <li>It looks up every fact it can before asking anything, and in a file that already exists it tests each claim against the code.</li>
+    <li>${esc(ask)}</li>
+    <li>It shows a summary of the new file, section by section, and writes nothing until you say yes.</li>
+    <li>A missing file, or one still the unfilled template, is written at the project root. A file that already exists is never changed: the new copy goes to <code>.scratch/project-files/${esc(f.file)}</code>, with the facts it corrected and any citations into the old file that would break, for you to compare.</li>
+  </ol>
+</section>`;
+}
 
 export function projectFiles(ctx) {
   const path = 'project-files/';
@@ -42,7 +70,7 @@ ${files.map((f) => `    <li class="pf" id="${f.id}">
         <div><p class="aside-k">Sections</p><ol class="sections">${(f.sections || []).map((s) => `<li>${esc(s)}</li>`).join('')}</ol></div>
         <div><p class="aside-k">Read by</p>${readers(f, L)}${f.readNote ? `<p class="small">${esc(f.readNote)}</p>` : ''}</div>
       </div>
-      <p class="pf-links"><a href="${L(`project-files/${f.id}/#template`)}">The template</a><span aria-hidden="true"> · </span><a href="${L(`project-files/${f.id}/#example`)}">Workshopr's example</a><span aria-hidden="true"> · </span><a class="ext" href="${blob(f.template)}">Template on GitHub</a></p>
+      <p class="pf-links">${f.build ? `<a href="${L(`project-files/${f.id}/#build`)}">Build one by interview</a><span aria-hidden="true"> · </span>` : ''}<a href="${L(`project-files/${f.id}/#template`)}">The template</a><span aria-hidden="true"> · </span><a href="${L(`project-files/${f.id}/#example`)}">Workshopr's example</a><span aria-hidden="true"> · </span><a class="ext" href="${blob(f.template)}">Template on GitHub</a></p>
     </li>`).join('\n')}
   </ol>
 </section>`;
@@ -88,6 +116,8 @@ export function projectFile(f, i, ctx, root) {
   <div><p class="aside-k">Sections</p><ol class="sections">${(f.sections || []).map((s) => `<li>${esc(s)}</li>`).join('')}</ol></div>
   <div><p class="aside-k">Read by</p>${readers(f, L)}${f.readNote ? `<p class="small">${esc(f.readNote)}</p>` : ''}</div>
 </div>
+
+${buildBlock(f)}
 
 <section class="sec-tight" id="template" aria-labelledby="template-h">
   <div class="sec-head"><h2 class="big-2" id="template-h">The template</h2><a class="ext" href="${blob(f.template)}">${esc(f.template)} on GitHub</a></div>

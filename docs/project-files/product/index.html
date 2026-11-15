@@ -36,6 +36,23 @@
   <div><p class="aside-k">Read by</p><ul class="readers"><li><a href="../../registry/crit/">crit</a></li><li><a href="../../registry/feature-plan/">feature-plan</a></li><li><a href="../../registry/design-agent/">Design Agent</a></li><li><a href="../../registry/impeccable/">impeccable</a></li></ul></div>
 </div>
 
+<section class="sec-tight" id="build" aria-labelledby="build-h">
+  <div class="sec-head"><h2 class="big-2" id="build-h">Build one by interview</h2></div>
+  <p class="lede">One command interviews you and writes PRODUCT.md. The interview works the way <code>/grill-me</code> does: it settles every decision the file rests on, one round of questions at a time, until nothing is left assumed. Run it first: every other file defers to it.</p>
+  <pre class="cmd"><code>/ux-os:create-product-file</code></pre>
+  <div class="pf-cols">
+    <div><p class="aside-k">It reads first</p><p>The README, the package manifest, the routes, any plan, pricing or feature-flag configuration, the specs, the commit history, and any analytics the project names.</p></div>
+    <div><p class="aside-k">Then it asks about</p><ol class="sections"><li>What it is, in two or three sentences, and what people confuse it with</li><li>Who it is for, who else uses or buys it, and who it says no to</li><li>The problem it solves</li><li>Three to five success measures, and which cannot be measured yet</li><li>What exists, built from the code: it asks only what the code cannot show</li><li>Four to seven product principles, each ruling between two things</li><li>What people ask for that will not be built</li><li>What is still undecided</li></ol></div>
+  </div>
+  <p class="aside-k">How it runs</p>
+  <ol class="sections">
+    <li>It looks up every fact it can before asking anything, and in a file that already exists it tests each claim against the code.</li>
+    <li>It asks in rounds: every question it can ask yet, numbered, each with its recommended answer and the reason, worded so that &quot;yes&quot; accepts it.</li>
+    <li>It shows a summary of the new file, section by section, and writes nothing until you say yes.</li>
+    <li>A missing file, or one still the unfilled template, is written at the project root. A file that already exists is never changed: the new copy goes to <code>.scratch/project-files/PRODUCT.md</code>, with the facts it corrected and any citations into the old file that would break, for you to compare.</li>
+  </ol>
+</section>
+
 <section class="sec-tight" id="template" aria-labelledby="template-h">
   <div class="sec-head"><h2 class="big-2" id="template-h">The template</h2><a class="ext" href="https://github.com/bbulman/ux-os/blob/main/plugin/shared/project-files/PRODUCT.md">plugin/shared/project-files/PRODUCT.md on GitHub</a></div>
   <p class="lede">What <code>/ux-os:create-project-files</code> writes, word for word. Its comments say what each part is for.</p>

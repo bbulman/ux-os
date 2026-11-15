@@ -5,7 +5,7 @@ Beliefs, not findings. Nothing here is validated by research yet. Treat every li
 <!--
 UX-OS project file. Delete this comment once the file is filled in.
 For: the progress people are trying to make, independent of any product, and what they hire to make it today. It explains why someone would switch.
-Read by: /feature and the Design Agent when judging whether a feature does a job anyone has, and /crit. The ux-os research skills read it as beliefs once .research-profile.md lists it under "Belief files", and /ux-os:create-jtbd rebuilds it from what people did.
+Read by: /feature and the Design Agent when judging whether a feature does a job anyone has, and /crit. The ux-os research skills read it as beliefs once .research-profile.md lists it under "Belief files", and /ux-os:create-jtbd builds a real jobs model in an idea folder, which /ux-os:create-jtbd-file then carries into this file.
 Good looks like: one core job in the person's words, the outcomes that are important and badly served today, and an honest list of what they hire instead, including doing nothing.
 Evidence: write "belief" until a study backs the row, then cite it, such as S3 P2.
 This file uses the same sections as /ux-os:create-jtbd.

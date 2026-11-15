@@ -22,6 +22,15 @@ Everything is typed by name. Not sure where to start? `/ux-os:research-next <ide
 | `/ux-os:research-debrief` | Takes in new evidence and shows which beliefs it bears on |
 | `/ux-os:research-synthesize` | Rebuilds your models on what people did, once there is enough evidence |
 | `/ux-os:create-project-files` | Writes the nine files every skill reads first, from annotated templates, without touching ones that exist |
+| `/ux-os:create-product-file` | Fills or revises `PRODUCT.md` by interview: what it is, who it's for, how you'll know it works |
+| `/ux-os:create-design-file` | Fills or revises `DESIGN.md` by interview: the rules a check could enforce |
+| `/ux-os:create-taste-file` | Fills or revises `taste.md` by interview, in the owner's words |
+| `/ux-os:create-voice-file` | Fills or revises `VOICE.md` by interview, with examples from the product's own copy |
+| `/ux-os:create-motion-file` | Fills or revises `motion.md` by interview: the feel, the values, the patterns |
+| `/ux-os:create-personas-file` | Fills or revises `PERSONAS.md` by interview, as labelled beliefs |
+| `/ux-os:create-journeys-file` | Fills or revises `JOURNEYS.md` by interview, as labelled beliefs |
+| `/ux-os:create-jtbd-file` | Fills or revises `JTBD.md` by interview, as labelled beliefs |
+| `/ux-os:create-agents-file` | Fills or revises `AGENTS.md` by interview: a pointer and the guardrails, never a copy |
 | `/ux-os:init` | Connects a project's design system and house rules to the deliverables |
 | `/ux-os:run` | Runs someone else's design skill on an idea, with every claim it rests on tagged |
 | `/ux-os:create-personas` | Who behaves differently enough to design for separately |
@@ -58,6 +67,8 @@ Personas, journeys, jobs and empathy maps each take a switch.
 
 `/ux-os:create-project-files` gives a project `PRODUCT.md`, `DESIGN.md`, `AGENTS.md`, `PERSONAS.md`, `JOURNEYS.md`, `JTBD.md`, `taste.md`, `motion.md` and `VOICE.md`. Each starts from a template that says what the file is for, who reads it and what good looks like. It writes only the files that are missing and asks three questions at most. Personas, journeys and jobs start as beliefs, and the research commands can replace them with what people did.
 
+Then fill each file by interview with its own command, such as `/ux-os:create-product-file`. It reads the code and the other project files first and looks up the facts first, then asks in rounds, every question it can ask yet, each with a recommended answer, and writes nothing until you agree a summary of the new file. A file that already exists is never changed: the new copy goes to `.scratch/project-files/` for you to compare, with a note of the facts it corrected and any citations into the old file it would break.
+
 ## Connect a design system
 
 Run `/ux-os:init` once per project. Deliverables take your design system's fonts and colours, and design proposals name a real component or say none fits. It shows you everything before it saves.
@@ -79,6 +90,6 @@ On made-up test data, and on one real design system. None of it has been compare
 
 ## Credit
 
-The shape of `research-next`, `research-discover` and `research-synthesize` comes from MC Dean's Designer Skills Pack (MIT).
+The shape of `research-next`, `research-discover` and `research-synthesize` comes from MC Dean's Designer Skills Pack (MIT). The interview in the `create-<file>-file` commands, rounds of questions each with a recommended answer, follows Matt Pocock's grilling skill.
 
 MIT licence.

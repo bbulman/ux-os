@@ -5,7 +5,7 @@ Beliefs, not findings. Nothing here is validated by research yet. Treat every li
 <!--
 UX-OS project file. Delete this comment once the file is filled in.
 For: how each primary persona gets the job done today, step by step, with where it hurts and what that costs.
-Read by: /feature and the Design Agent when placing a feature in someone's day, and /crit when judging a page's moment. The ux-os research skills read it as beliefs once .research-profile.md lists it under "Belief files", and /ux-os:create-journey-map rebuilds it from what people did.
+Read by: /feature and the Design Agent when placing a feature in someone's day, and /crit when judging a page's moment. The ux-os research skills read it as beliefs once .research-profile.md lists it under "Belief files", and /ux-os:create-journey-map builds real journeys in an idea folder, which /ux-os:create-journeys-file then carries into this file.
 Good looks like: one journey per primary persona, five to seven stages, a real start and end, and the two or three moments that decide whether it works.
 Evidence: write "belief" until a study backs the row, then cite it, such as S3 P2.
 This file uses the same sections as /ux-os:create-journey-map.

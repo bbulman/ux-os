@@ -36,6 +36,23 @@
   <div><p class="aside-k">Read by</p><ul class="readers"><li><a href="../../registry/crit/">crit</a></li><li><a href="../../registry/critique-partner/">critique-partner</a></li><li><a href="../../registry/design-agent/">Design Agent</a></li><li><a href="../../registry/design-agent-design-critic/">design-critic</a></li><li><a href="../../registry/design-system-agent/">design-system agent</a></li><li><a href="../../registry/ux-os-init/">init</a></li><li><a href="../../registry/ux-os-run/">run</a></li></ul></div>
 </div>
 
+<section class="sec-tight" id="build" aria-labelledby="build-h">
+  <div class="sec-head"><h2 class="big-2" id="build-h">Build one by interview</h2></div>
+  <p class="lede">One command interviews you and writes taste.md. The interview works the way <code>/grill-me</code> does: it settles every decision the file rests on, one round of questions at a time, until nothing is left assumed. Run it after DESIGN.md, which holds the rules it must not repeat. The owner answers.</p>
+  <pre class="cmd"><code>/ux-os:create-taste-file</code></pre>
+  <div class="pf-cols">
+    <div><p class="aside-k">It reads first</p><p>DESIGN.md, any critiques, review notes or design-loop learnings the project keeps, and the file’s own dated notes.</p></div>
+    <div><p class="aside-k">Then it asks about</p><ol class="sections"><li>The root: what good means here, in two to five words</li><li>Reference anchors to reason toward and away from, each with its specific quality</li><li>The cut test: how a feature, section or element earns its place</li><li>Soul: the kind of delight allowed, and how much</li><li>What reads as machine-made</li><li>The kill list</li><li>Taste that is not settled yet</li></ol></div>
+  </div>
+  <p class="aside-k">How it runs</p>
+  <ol class="sections">
+    <li>It looks up every fact it can before asking anything, and in a file that already exists it tests each claim against the code.</li>
+    <li>It asks in rounds, and each question comes open: it offers its own draft only after you answer or say you have no view, because this file has to hold what you believe, not what it guessed.</li>
+    <li>It shows a summary of the new file, section by section, and writes nothing until you say yes.</li>
+    <li>A missing file, or one still the unfilled template, is written at the project root. A file that already exists is never changed: the new copy goes to <code>.scratch/project-files/taste.md</code>, with the facts it corrected and any citations into the old file that would break, for you to compare.</li>
+  </ol>
+</section>
+
 <section class="sec-tight" id="template" aria-labelledby="template-h">
   <div class="sec-head"><h2 class="big-2" id="template-h">The template</h2><a class="ext" href="https://github.com/bbulman/ux-os/blob/main/plugin/shared/project-files/taste.md">plugin/shared/project-files/taste.md on GitHub</a></div>
   <p class="lede">What <code>/ux-os:create-project-files</code> writes, word for word. Its comments say what each part is for.</p>

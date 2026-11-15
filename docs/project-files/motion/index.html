@@ -36,6 +36,23 @@
   <div><p class="aside-k">Read by</p><ul class="readers"><li><a href="../../registry/animation/">animation</a></li><li><a href="../../registry/loading-states/">loading-states</a></li><li><a href="../../registry/design-agent/">Design Agent</a></li></ul></div>
 </div>
 
+<section class="sec-tight" id="build" aria-labelledby="build-h">
+  <div class="sec-head"><h2 class="big-2" id="build-h">Build one by interview</h2></div>
+  <p class="lede">One command interviews you and writes motion.md. The interview works the way <code>/grill-me</code> does: it settles every decision the file rests on, one round of questions at a time, until nothing is left assumed. Run it after DESIGN.md.</p>
+  <pre class="cmd"><code>/ux-os:create-motion-file</code></pre>
+  <div class="pf-cols">
+    <div><p class="aside-k">It reads first</p><p>The motion tokens, the animation code, any motion docs in the design system, and every place the code handles reduced motion.</p></div>
+    <div><p class="aside-k">Then it asks about</p><ol class="sections"><li>Three words for how motion should feel, each with what it rules out</li><li>The standard values, only where the code and the file disagree</li><li>Five patterns or fewer, each with its values</li><li>What motion must never do</li><li>What changes when someone asks for less motion</li><li>The stack, and what is ruled out</li></ol></div>
+  </div>
+  <p class="aside-k">How it runs</p>
+  <ol class="sections">
+    <li>It looks up every fact it can before asking anything, and in a file that already exists it tests each claim against the code.</li>
+    <li>It asks in rounds: every question it can ask yet, numbered, each with its recommended answer and the reason, worded so that &quot;yes&quot; accepts it.</li>
+    <li>It shows a summary of the new file, section by section, and writes nothing until you say yes.</li>
+    <li>A missing file, or one still the unfilled template, is written at the project root. A file that already exists is never changed: the new copy goes to <code>.scratch/project-files/motion.md</code>, with the facts it corrected and any citations into the old file that would break, for you to compare.</li>
+  </ol>
+</section>
+
 <section class="sec-tight" id="template" aria-labelledby="template-h">
   <div class="sec-head"><h2 class="big-2" id="template-h">The template</h2><a class="ext" href="https://github.com/bbulman/ux-os/blob/main/plugin/shared/project-files/motion.md">plugin/shared/project-files/motion.md on GitHub</a></div>
   <p class="lede">What <code>/ux-os:create-project-files</code> writes, word for word. Its comments say what each part is for.</p>

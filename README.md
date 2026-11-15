@@ -27,9 +27,9 @@ Every UX skill I run with Claude Code, and which one wins each job.
 | [Prototyping](https://bbulman.github.io/ux-os/prototyping/) | Wireframes, user flows, concept selection, prototype strategy, test plans and heuristic evaluation. | 9 | 5 |
 | [UX strategy](https://bbulman.github.io/ux-os/ux-strategy/) | Problem framing, briefs, vision, opportunities and metrics. | 11 | 3 |
 | [AI-XD](https://bbulman.github.io/ux-os/ai-xd/) | AI experience design: conversation, trust, guardrails and agent handoffs. | 6 | 0 |
+| [Orchestration](https://bbulman.github.io/ux-os/orchestration/) | Running the other sets against a real target until it meets a bar. | 7 | 5 |
 | [Accessibility and inclusion](https://bbulman.github.io/ux-os/accessibility-and-inclusion/) (proposed) | Inclusive personas, cognitive access, accessible content and adaptive interfaces. | 6 | 1 |
 | [Design ops and communication](https://bbulman.github.io/ux-os/design-ops-and-communication/) (proposed) | Handoff, critique process, sprints, rationale and case studies. | 3 | 0 |
-| [Orchestration](https://bbulman.github.io/ux-os/orchestration/) (proposed) | Running the other sets against a real target until it meets a bar. | 7 | 5 |
 
 ## The ux-os plugin
 

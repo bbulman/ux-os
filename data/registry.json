@@ -108,6 +108,13 @@
       "missing": "Three more packs are installed and switched off."
     },
     {
+      "slug": "orchestration",
+      "name": "Orchestration",
+      "covers": "Running the other sets against a real target until it meets a bar.",
+      "why": "The other sets are methods. This one runs them against a real page and keeps going until it holds up.",
+      "missing": "Only /crit works outside Workshopr."
+    },
+    {
       "slug": "accessibility-and-inclusion",
       "name": "Accessibility and inclusion",
       "proposed": true,
@@ -122,14 +129,6 @@
       "covers": "Handoff, critique process, sprints, rationale and case studies.",
       "why": "Good design still has to survive the handoff and the meeting. This set covers what happens around the file.",
       "missing": "Eleven program and leadership packs are switched off."
-    },
-    {
-      "slug": "orchestration",
-      "name": "Orchestration",
-      "proposed": true,
-      "covers": "Running the other sets against a real target until it meets a bar.",
-      "why": "The other sets are methods. This one runs them against a real page and keeps going until it holds up.",
-      "missing": "Only /crit works outside Workshopr."
     }
   ],
   "entries": [

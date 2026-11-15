@@ -117,7 +117,7 @@ ${facts.map(([k, v]) => `      <div><dt>${k}</dt><dd>${v}</dd></div>`).join('\n'
     </dl>
   </div>
   <div class="print">
-    <ol class="strip strip--one" aria-hidden="true">
+    <ol class="strip strip--one sheet--light" aria-hidden="true">
 ${frame(e, { n: 1, L, pick: picks.length > 0, circle: picks.length > 0, setName: ctx.setName, link: false })}
     </ol>
     ${circleNote}

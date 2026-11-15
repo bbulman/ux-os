@@ -126,10 +126,10 @@ h1 em { font-style: normal; color: var(--grease); }
 .tick { color: var(--grease-film); font-weight: 600; }
 .tick-ink { color: var(--grease-ink) !important; white-space: nowrap; }
 
-/* Light frames: printed cards on the paper instead of film (the registry) */
+/* Light frames: printed cards on the paper instead of film (the registry and its entry pages) */
 .sheet--light { background: none; padding: 0; }
 .sheet--light .frame-link { color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 2px; padding: 2px 8px 4px; }
-.sheet--light .frame-link:hover { color: var(--ink); border-color: var(--grease-ink); }
+.sheet--light a.frame-link:hover { color: var(--ink); border-color: var(--grease-ink); }
 .sheet--light .frame-link:hover .shot { outline: none; }
 .sheet--light .frame-link:focus-visible { outline-color: var(--grease-ink); }
 .sheet--light .shot { background: none; padding: 8px 0; }
@@ -139,6 +139,9 @@ h1 em { font-style: normal; color: var(--grease); }
 .sheet--light .st--available { color: var(--on-ink); }
 .sheet--light .st--name { color: var(--edge-ink); }
 .sheet--light .st--off { color: var(--ink-2); }
+/* With no film around it, the circle hangs about 28px below a single card and 24px to each side: clear the note under it, and keep it on screen at phone width */
+.print .sheet--light + .note { margin-top: 40px; }
+.print .sheet--light:has(.is-circled) { padding-inline: 24px; max-width: 388px; }
 
 /* The one grease-pencil circle per page. It draws once, and stays still under reduced motion. */
 .grease { position: absolute; left: -7%; top: -9%; width: 114%; height: 118%; fill: none; stroke: var(--grease); stroke-width: 4; stroke-linecap: round; pointer-events: none; transform: rotate(-1deg); overflow: visible; }

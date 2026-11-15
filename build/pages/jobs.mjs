@@ -1,4 +1,4 @@
-import { page, linker, esc, plural, runLine, LOADS, LOADS_WORDS } from '../shell.mjs';
+import { page, linker, esc, fmt, plural, runLine, LOADS, LOADS_WORDS } from '../shell.mjs';
 
 export const chip = (e) => `<span class="chip chip--${e.status}"><span aria-hidden="true">${LOADS[e.status]}</span><span class="vh">${LOADS_WORDS[e.status]}</span></span>`;
 
@@ -42,7 +42,7 @@ ${list.map((j) => jobItem(j, L)).join('\n')}
 
   const body = `
 <header class="page-head">
-  <p class="kicker">${plural(t.jobs, 'job')} · ${plural(t.rivals, 'rival')}</p>
+  <p class="kicker">${plural(t.jobs, 'job')}, ${fmt(t.rivals)} with a rival</p>
   <h1>Jobs</h1>
   <p class="lede">Say what you need. Each job names the skill I hand it to, and why. Where two could do it, the one that lost is struck through, with the reason.</p>
 </header>

@@ -152,6 +152,11 @@ h1 em { font-style: normal; color: var(--grease); }
 /* A set page circles one card in a five-across sheet: draw it tight enough to stay in the 16px gutters, and leave room above the first row */
 .sheet--five .grease { left: -5%; top: -6%; width: 110%; height: 112%; }
 .sheet--five:has(.is-circled) { padding-top: 12px; }
+/* Home: the six most used are light cards, one height per row, with room between rows for the circle */
+.hero-sheet .sheet--light { gap: 16px; }
+.hero-sheet .sheet--light .frame { display: flex; }
+.hero-sheet .sheet--light .frame-link { flex: 1; display: flex; flex-direction: column; }
+.hero-sheet .sheet--light .shot { flex: 1; }
 
 /* The one grease-pencil circle per page. It draws once, and stays still under reduced motion. */
 .grease { position: absolute; left: -7%; top: -9%; width: 114%; height: 118%; fill: none; stroke: var(--grease); stroke-width: 4; stroke-linecap: round; pointer-events: none; transform: rotate(-1deg); overflow: visible; }

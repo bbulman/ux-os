@@ -1,4 +1,4 @@
-import { page, linker, frame, note, esc, fmt, date, plural, Word, runs, codeBlock, UXOS_INSTALL } from '../shell.mjs';
+import { page, linker, frame, note, esc, fmt, plural, Word, codeBlock, UXOS_INSTALL } from '../shell.mjs';
 
 export function home(ctx) {
   const path = '';
@@ -9,7 +9,7 @@ export function home(ctx) {
   const six = ctx.sorted.slice(0, 6);
   const circled = ctx.topPick;
   if (circled && !six.includes(circled)) six[5] = circled;
-  const strip = six.map((e, i) => frame(e, { n: i + 1, L, pick: ctx.isPick(e), circle: e === circled, setName: ctx.setName })).join('\n');
+  const strip = six.map((e, i) => frame(e, { n: i + 1, L, pick: ctx.isPick(e), circle: e === circled, setName: ctx.setName, showRuns: false })).join('\n');
 
   const others = ctx.thirdAuthors;
   const restBy = others.length > 1 ? `the rest are ${others[0].name}'s and others'` : others.length ? `the rest are ${others[0].name}'s` : '';
@@ -20,7 +20,7 @@ export function home(ctx) {
     const jobs = ctx.picks.get(circled.id);
     const forWhat = jobs.length === 1 ? `the pick for “${esc(jobs[0].need)}”` : `the pick for ${plural(jobs.length, 'job')}`;
     const most = circled === ctx.sorted[0] ? 'my most used entry' : 'my most used pick';
-    labNote = note(`<p><span class="note-k">Circled:</span> ${forWhat}. <a href="${L(`registry/${circled.id}/`)}">${esc(circled.name)}</a> is ${most}, ${esc(runs(circled))} since ${date(ctx.usage.since)}.</p>
+    labNote = note(`<p><span class="note-k">Circled:</span> ${forWhat}. <a href="${L(`registry/${circled.id}/`)}">${esc(circled.name)}</a> is ${most}.</p>
 <p><span class="note-k">Testing:</span> ${circled.proof ? esc(circled.proof) : 'No test result recorded yet.'}</p>`);
   }
 
@@ -50,7 +50,7 @@ export function home(ctx) {
   </div>
   <div class="hero-sheet">
     <h2 class="vh">The six I use most</h2>
-    <ol class="strip">
+    <ol class="strip sheet--light">
 ${strip}
     </ol>
     ${labNote}

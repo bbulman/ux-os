@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get started: UX-OS</title>
+<meta name="description" content="Install UX-OS in Claude Code, then set up a new project: the project files, your design system and your first idea.">
+<link rel="canonical" href="https://bbulman.github.io/ux-os/get-started/">
+<meta property="og:title" content="Get started: UX-OS">
+<meta property="og:description" content="Install UX-OS in Claude Code, then set up a new project: the project files, your design system and your first idea.">
+<meta property="og:url" content="https://bbulman.github.io/ux-os/get-started/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="top">
+  <a class="mark" href="../">UX-OS</a>
+  <nav class="nav" aria-label="Main"><a href="../jobs/">Jobs</a><a href="../registry/">Registry</a><a href="../disciplines/">Disciplines</a><a href="../workflows/">Workflows</a><a href="../project-files/">Project files</a><a href="../get-started/" aria-current="page">Get started</a><a href="https://github.com/bbulman/ux-os">GitHub</a></nav>
+</header>
+<main id="main" tabindex="-1">
+
+<header class="page-head">
+  <p class="kicker">Install once · then each project</p>
+  <h1>Get started</h1>
+  <p class="lede">Install UX-OS once in Claude Code, then set up each project so every skill starts from the same facts. You need Claude Code, and Node for the checking scripts.</p>
+</header>
+
+<section class="gs-part" aria-labelledby="install-h">
+  <div class="sec-head"><h2 class="big-2" id="install-h">Install</h2><p class="n">Two ways, pick one</p></div>
+  <ul class="gs-steps">
+<li class="gs-step">
+  <div class="gs-text">
+    <h3 class="gs-h">Just UX-OS</h3>
+    <p>The ux-os plugin: my research commands and the commands that set up a project. Enough for everything below.</p>
+  </div>
+  <div class="setup-cmds">
+    <p class="pre-label">Once, in Claude Code</p>
+    <pre class="cmd"><code>/plugin marketplace add bbulman/ux-os
+/plugin install ux-os@ux-os</code></pre>
+  </div>
+</li>
+<li class="gs-step">
+  <div class="gs-text">
+    <h3 class="gs-h">Everything I run</h3>
+    <p>My whole loadout: the 17 plugins I keep on, ux-os among them, from three marketplaces, and the settings that keep the rest to run by name.</p>
+  </div>
+  <div class="setup-cmds">
+    <p class="pre-label">Once, from the Loadout page</p>
+    <p><a class="btn" href="../loadout/">Copy my loadout</a></p>
+  </div>
+</li>
+  </ul>
+</section>
+
+<section class="gs-part" aria-labelledby="project-h">
+  <div class="sec-head"><h2 class="big-2" id="project-h">Start a new project</h2><p class="n">Four steps, in order</p></div>
+  <ol class="gs-steps">
+<li class="gs-step">
+  <div class="gs-text">
+    <h3 class="gs-h">1. Write the project files</h3>
+    <p>Sets up a project's nine UX-OS files (PRODUCT, DESIGN, AGENTS, PERSONAS, JOURNEYS, JTBD, taste, motion and VOICE) from annotated templates, writing only the ones that are missing.</p>
+    <p><a class="link" href="../project-files/">What each file is for, and which skills read it</a></p>
+  </div>
+  <div class="setup-cmds">
+    <p class="pre-label">In the project</p>
+    <pre class="cmd"><code>/ux-os:create-project-files</code></pre>
+  </div>
+</li>
+<li class="gs-step">
+  <div class="gs-text">
+    <h3 class="gs-h">2. Fill each one by interview</h3>
+    <p>Each file has its own command. It reads the code and the other files first, asks in rounds with a recommended answer to each question, and writes nothing until you agree a summary. A file that already exists is never changed: the new copy goes to <code>.scratch/project-files/</code> for you to compare.</p>
+    <p class="small">Start with PRODUCT.md: every other file defers to it.</p>
+  </div>
+  <div class="setup-cmds">
+    <p class="pre-label">In this order</p>
+    <ol class="gs-order">
+      <li><a href="../project-files/product/#build">PRODUCT.md</a> <code>/ux-os:create-product-file</code></li>
+      <li><a href="../project-files/design/#build">DESIGN.md</a> <code>/ux-os:create-design-file</code></li>
+      <li><a href="../project-files/taste/#build">taste.md</a> <code>/ux-os:create-taste-file</code></li>
+      <li><a href="../project-files/voice/#build">VOICE.md</a> <code>/ux-os:create-voice-file</code></li>
+      <li><a href="../project-files/motion/#build">motion.md</a> <code>/ux-os:create-motion-file</code></li>
+      <li><a href="../project-files/personas/#build">PERSONAS.md</a> <code>/ux-os:create-personas-file</code></li>
+      <li><a href="../project-files/journeys/#build">JOURNEYS.md</a> <code>/ux-os:create-journeys-file</code></li>
+      <li><a href="../project-files/jtbd/#build">JTBD.md</a> <code>/ux-os:create-jtbd-file</code></li>
+      <li><a href="../project-files/agents/#build">AGENTS.md</a> <code>/ux-os:create-agents-file</code></li>
+    </ol>
+  </div>
+</li>
+<li class="gs-step">
+  <div class="gs-text">
+    <h3 class="gs-h">3. Connect your design system</h3>
+    <p>Connects a project's design system once. Deliverables take its fonts and colours, and each design proposal names a real component or says none fits. It shows you everything before saving.</p>
+  </div>
+  <div class="setup-cmds">
+    <p class="pre-label">Once per project</p>
+    <pre class="cmd"><code>/ux-os:init</code></pre>
+  </div>
+</li>
+<li class="gs-step">
+  <div class="gs-text">
+    <h3 class="gs-h">4. Start on an idea</h3>
+    <p>Says where a research idea stands and the one thing to run next. It reads the folder and changes nothing. Give the idea a short name, and its work collects in <code>ux-os/&lt;idea&gt;/</code>.</p>
+    <p><a class="link" href="../jobs/">Or find the skill for a job</a></p>
+  </div>
+  <div class="setup-cmds">
+    <p class="pre-label">Whenever you are not sure what to do next</p>
+    <pre class="cmd"><code>/ux-os:research-next &lt;idea&gt;</code></pre>
+  </div>
+</li>
+  </ol>
+</section>
+
+</main>
+<footer class="foot">
+  <p><a href="../changelog/">Changelog</a><span aria-hidden="true"> · </span>Made by <a href="https://workshopr.io">Workshopr.io</a><span aria-hidden="true"> · </span>Every pack keeps its author's licence.</p>
+  <p>Registry as of 14 November 2026. Usage counted from Claude Code transcripts since 22 July 2026.</p>
+</footer>
+</div>
+
+</body>
+</html>

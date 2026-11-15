@@ -16,9 +16,10 @@ import { projectFiles, projectFile } from './pages/project-files.mjs';
 import { method } from './pages/method.mjs';
 import { changelog } from './pages/changelog.mjs';
 import { loadoutPage, loadoutJson } from './pages/loadout.mjs';
+import { getStarted } from './pages/get-started.mjs';
 import { readme, notionManifest } from './outputs.mjs';
 
-const RESERVED = ['assets', 'registry', 'jobs', 'disciplines', 'workflows', 'project-files', 'method', 'changelog', 'loadout'];
+const RESERVED = ['assets', 'registry', 'jobs', 'disciplines', 'workflows', 'project-files', 'method', 'changelog', 'loadout', 'get-started'];
 
 export function buildSite(root) {
   const ctx = derive(loadData(root));
@@ -38,6 +39,7 @@ export function buildSite(root) {
   pages.set('method/index.html', method(ctx));
   pages.set('changelog/index.html', changelog(ctx));
   pages.set('loadout/index.html', loadoutPage(ctx));
+  pages.set('get-started/index.html', getStarted(ctx));
 
   const out = new Map(pages);
   out.set('loadout/settings.json', loadoutJson(ctx));

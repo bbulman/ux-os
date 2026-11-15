@@ -924,7 +924,7 @@
         "/ux-os:audit-ds . the form components"
       ],
       "source": "https://github.com/bbulman/ux-os/tree/main/plugin/skills/audit-ds",
-      "proof": "Two trial runs by fresh agents on a made-up design system with planted faults. Both reports passed the gate, every planted fault was found, and all five contrast figures matched a separate recount. One independent review of the gate found nine ways a bad report could pass, seven now closed and two left by design. With no skill, on the same system, Claude quoted a lint result it had not run and gave one line number, which was wrong. Not yet run on a real design system, and the typed command has not been run.",
+      "proof": "Run once on a real design system with 97 components: 23 findings, each quoting its line, and seven contrast figures matched a separate recount. The gate caught no wrong fact there; a second reader caught them all, and the skill was revised because of it. Before that, two trial runs on a made-up system found every planted fault, and with no skill Claude quoted a lint result it had not run. The typed command has not been run.",
       "story": "stories/ux-os-audit-ds.md"
     },
     {

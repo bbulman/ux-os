@@ -26,7 +26,7 @@ Each part of the skill answers one of those:
 
 ## What testing showed
 
-Two trial runs, each by a fresh agent following the skill file to the letter.
+Two trial runs on a made-up system, then one on a real one, each by a fresh agent following the skill file to the letter.
 
 - **First run.** Nine findings, all with a line that held the quoted words, and the lint result copied from a real run. The gate passed first time. The second reader caught a file count the writer had guessed.
 - **Second run**, on a harder copy with a dark theme and a script that rewrites files. Fifteen findings. The agent read the script, saw that it writes, and did not run it. The second reader caught a finding that named two of the three roles with no dark value. All five contrast figures matched a separate recount.
@@ -35,9 +35,25 @@ Between the runs the skill gained the Rules table, a rule for which way round `f
 
 An independent review of the gate then built reports meant to slip through it, and nine kinds did. A link could lead a finding to a file outside the project, a section written twice hid its first table, a finding could be marked broken by another rule's row, and a one-letter quote matched almost any line. Seven of the nine now fail, and the gate's self-test holds 47 cases. Two were left as they are: a suspected finding is not opened, because that is what suspected means, and a report can pass before the second reader has run, with a note saying so. The second run's report still passes the stricter gate.
 
+## The first real run
+
+On 15 November 2026 it ran on Workshopr's web design system: 97 components, a 754-line rule file and six checks of its own. It took 26 minutes and produced 23 findings, all with a line that held the quoted words. Seven contrast figures, two of them suggested fixes, matched a separate recount. Only the six checks that read files were run. The browser suites start a server, so they were listed and left alone.
+
+What it showed about the skill:
+
+- **The gate caught no wrong fact.** It passed first time on every run. Every correction came from the second reader: a wrong colour pair, a miscount, three rules marked held that were not, and about 23 rules the list had left out.
+- **A long rulebook does not fit one row per rule.** A row may now stand for a numbered section, and the gate names each numbered section of a rule file that has no row.
+- **A check can print the wrong line.** One pointed three lines off. Where is now the line that was opened.
+- **Checks found and not run had no place.** They now get a row that says why.
+- **Five calls were left to judgement:** a warning that a baseline tolerates, a `var()` with a fallback, a failure in a variant nothing uses, how many components a sample takes, and a rule written only for new components. Each now has a line.
+- **The second reader did not know what was unsafe to run.** Its brief now carries the project's own rules on that, and nothing else.
+
+Those changes are version 0.6.1. The gate's self-test holds 52 cases.
+
 ## Still to do
 
-- Run it on a real design system. Both trials used the same made-up one.
+- Run it on a second real design system, one it was not built beside.
+- The changes in 0.6.1 have not been tried on a fresh run.
 - Type the command in a live session.
-- The wording changes made after the second run have not been tried, and the fixes that followed the review have had no second review.
+- The fixes that followed the gate's review have had no second review.
 - A rule can be marked `held` with nothing to prove a pass looked. Only the second reader stands behind that.

@@ -83,6 +83,25 @@ const squash = (text) => text.replace(/\s+/g, ' ').trim();
 const WCAG = /^WCAG(?: 2\.\d)?(?: SC)? [1-4]\.\d\.\d{1,2}\b/i;
 const isWritten = (rule) => !/^files disagree\b/i.test(plain(rule)) && !WCAG.test(plain(rule));
 
+// The numbers a file's headings carry. A heading numbered 1-3 stands for 1, 2 and 3.
+function headingNumbers(text) {
+  const out = new Set();
+  for (const m of text.matchAll(/^#{1,6}\s+§?\s*(\d+(?:\.\d+)*)(?:\s*[-–]\s*(\d+))?/gm)) {
+    out.add(m[1]);
+    if (m[2] && !m[1].includes('.')) for (let n = Number(m[1]); n <= Number(m[2]); n++) out.add(String(n));
+  }
+  return out;
+}
+
+// A file's top-level numbered sections, each with the numbers it stands for.
+function topSections(text) {
+  return [...text.matchAll(/^##\s+(\d+)(?:\s*[-–]\s*(\d+))?[.\s]/gm)].map((m) => {
+    const numbers = [];
+    for (let n = Number(m[1]); n <= Number(m[2] ?? m[1]); n++) numbers.push(String(n));
+    return { label: m[2] ? `${m[1]}-${m[2]}` : m[1], numbers };
+  });
+}
+
 // The file a written rule names: what comes before the section mark, or the longest run of leading words that is a file, so a path may hold a space.
 function ruleFile(text, root) {
   const cut = text.search(/[§#]/);
@@ -103,7 +122,7 @@ function ruleProblem(rule, root, writtenOnly = false) {
   const part = text.slice(file.length).trim();
   if (!part) return `Rule names ${file} and no section of it`;
   const numbered = part.match(/^§\s*(\d+(?:\.\d+)*)/);
-  if (numbered && !new RegExp(`^#{1,6}\\s+§?\\s*${numbered[1].replace(/\./g, '\\.')}(?![\\d])`, 'm').test(readFileSync(join(root, file), 'utf8'))) return `Rule cites §${numbered[1]}, and ${file} has no heading numbered ${numbered[1]}`;
+  if (numbered && !headingNumbers(readFileSync(join(root, file), 'utf8')).has(numbered[1])) return `Rule cites §${numbered[1]}, and ${file} has no heading numbered ${numbered[1]}`;
   return null;
 }
 
@@ -140,6 +159,7 @@ export function checkReport(reportPath, root) {
   }
 
   const checks = new Set();
+  const notRun = new Set();
   const ran = table(section('Checks run'));
   if (!ran) fail('Checks run has no table');
   else if (!(ran.rows.length === 1 && ran.rows[0].every((cell) => cell.toLowerCase() === 'none'))) {
@@ -148,7 +168,10 @@ export function checkReport(reportPath, root) {
       const row = [plain(cellsOf[0]), cellsOf[1], cellsOf[2]];
       if (row[0] !== `C${i + 1}`) fail(`Checks run: row ${i + 1} is numbered ${row[0] || 'nothing'}, not C${i + 1}`);
       if (!row[1] || !row[2]) fail(`Checks run: ${row[0] || `row ${i + 1}`} has no command or no result`);
-      checks.add(row[0]);
+      if (/^not run\b/i.test(plain(row[2]))) {
+        if (!/^not run: \S/i.test(plain(row[2]))) fail(`Checks run: ${row[0]} was not run and does not say why: write "not run: " and the reason`);
+        notRun.add(row[0]);
+      } else checks.add(row[0]);
     });
   }
 
@@ -182,7 +205,8 @@ export function checkReport(reportPath, root) {
         if (!where) fail(`${at}: Where is empty: a suspected finding still says where to look`);
         if (level === 1) fail(`${at}: a suspected finding cannot be severity 1: open it, or lower it`);
       } else if (basis === 'seen' || counted) {
-        if (counted && !checks.has(counted[1])) fail(`${at}: ${counted[1]} is not a row in Checks run`);
+        if (counted && notRun.has(counted[1])) fail(`${at}: ${counted[1]} was not run, so nothing can be counted from it`);
+        else if (counted && !checks.has(counted[1])) fail(`${at}: ${counted[1]} is not a row in Checks run`);
         const { problem, lines } = wherePlace(where ?? '', root);
         const quoted = squash((says ?? '').replace(/^`+|`+$/g, '').replace(/\\\|/g, '|'));
         if (problem) fail(`${at}: Where ${problem}`);
@@ -199,6 +223,7 @@ export function checkReport(reportPath, root) {
 
   // Every written rule the audit held the system to, and how it came out.
   const broken = new Map();
+  const ruleRows = [];
   const rules = table(section('Rules'));
   if (!rules) fail('Rules has no table');
   else if (!(rules.rows.length === 1 && rules.rows[0].every((cell) => cell.toLowerCase() === 'none'))) {
@@ -207,6 +232,7 @@ export function checkReport(reportPath, root) {
       const [rule, says] = row;
       const outcome = plain(row[2]);
       const at = `Rules: row ${i + 1}`;
+      ruleRows.push(plain(rule));
       const badRule = ruleProblem(rule ?? '', root, true);
       if (badRule) fail(`${at}: ${badRule}`);
       if (!says) fail(`${at}: Says is empty`);
@@ -244,6 +270,18 @@ export function checkReport(reportPath, root) {
   const summary = `${total} finding${total === 1 ? '' : 's'}: ${tally.map((t, i) => `${t.seen + t.suspected} severity ${i + 1}`).join(', ')}. ${total - suspected} seen, ${suspected} suspected.`;
   const reader = text.match(/^- \*\*Second reader:\*\*[ \t]*(.*)$/m)?.[1].trim() ?? '';
   const notes = /^not yet/i.test(reader) ? ['the second reader has not run yet'] : [];
+  // A long rulebook is easy to list in part. Each numbered section of a rule file that no row covers is named, as a prompt and not a failure.
+  const heldTo = (text.match(/^- \*\*Held to:\*\*[ \t]*(.*)$/m)?.[1] ?? '').replace(/`/g, '');
+  const looked = new Set();
+  for (const [, file, only] of heldTo.matchAll(/([\w./-]+\.\w+)(?:\s*§\s*(\d+))?/g)) {
+    if (looked.has(file) || !isFileIn(file, root)) continue;
+    looked.add(file);
+    const name = file.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const missing = topSections(readFileSync(join(root, file), 'utf8'))
+      .filter((part) => !only || part.numbers.includes(only))
+      .filter((part) => !ruleRows.some((row) => part.numbers.some((n) => new RegExp(`^${name}\\s*§\\s*${n}(?!\\d)`).test(row))));
+    if (missing.length) notes.push(`Rules has no row for ${file} ${missing.map((part) => `§${part.label}`).join(', ')}: add one, unless the section holds no rule a check could enforce`);
+  }
   return { problems, summary, notes };
 }
 
@@ -383,6 +421,24 @@ function selfTest() {
     const { problems } = checkReport(report('loose', `\uFEFF${text.replace(/\n/g, '\r\n')}`), root);
     assert(!problems.length, problems.join(' / '));
   });
+  fails('a finding counted from a check that was not run', (t) => t.replace('| C1 | npm run lint:tokens | 1 colour literal, exit 1 |', '| C1 | npm run lint:tokens | not run: it starts a server |'), 'C1 was not run');
+  fails('a check not run with no reason', (t) => t.replace('| C1 | npm run lint:tokens | 1 colour literal, exit 1 |', '| C1 | npm run lint:tokens | 1 colour literal, exit 1 |\n| C2 | npm run test:a11y | not run |'), 'does not say why');
+  test('a check found and not run passes with its reason', () => {
+    const { problems } = checkReport(report('skipped', good.replace('| C1 | npm run lint:tokens | 1 colour literal, exit 1 |', '| C1 | npm run lint:tokens | 1 colour literal, exit 1 |\n| C2 | npm run test:a11y | not run: it starts a server |')), root);
+    assert(!problems.length, problems.join(' / '));
+  });
+  test('a numbered section of the rules with no row is a note, and a row for it clears the note', () => {
+    const { problems, notes } = checkReport(report('good', good), root);
+    assert(!problems.length && notes.length === 1 && notes[0].includes('DESIGN.md §2'), `${problems.join(' / ')} ${notes.join(' / ')}`);
+    const full = checkReport(report('full', good.replace('| broken: F2, F3 |', '| broken: F2, F3 |\n| DESIGN.md §2 | One family | not checked: no stylesheet sets a family |')), root);
+    assert(!full.problems.length && !full.notes.length, `${full.problems.join(' / ')} ${full.notes.join(' / ')}`);
+  });
+  test('a heading numbered as a range stands for each number in it', () => {
+    writeFileSync(join(root, 'RANGE.md'), '# Rules\n\n## 1-3. Product\n\nText.\n\n## 4. Colour\n\nText.\n');
+    const text = good.replace('**Held to:** DESIGN.md', '**Held to:** RANGE.md').replaceAll('DESIGN.md §1', 'RANGE.md §2');
+    const { problems, notes } = checkReport(report('range-heading', text), root);
+    assert(!problems.length && notes.length === 1 && notes[0].includes('RANGE.md §4') && !notes[0].includes('1-3'), `${problems.join(' / ')} ${notes.join(' / ')}`);
+  });
   test('a report path that is a folder is a usage error, not a crash', () => {
     const run = spawnSync(process.execPath, [self, root, root], { encoding: 'utf8' });
     assert(run.status === 2 && run.stderr.includes('usage'), `status ${run.status}: ${run.stderr}`);
@@ -398,7 +454,7 @@ function selfTest() {
   });
   test('a second reader still to run is a note, not a failure', () => {
     const { problems, notes } = checkReport(report('unread', good.replace('checked every Where', 'not yet')), root);
-    assert(!problems.length && notes.length === 1, `${problems.join(' / ')} ${notes.join(' / ')}`);
+    assert(!problems.length && notes.some((n) => n.includes('second reader')), `${problems.join(' / ')} ${notes.join(' / ')}`);
   });
   fails('a suspected severity 1', (t) => t.replace('components/button.css:5 | `outline: none;` | seen', 'components/button.css | - | suspected'), 'cannot be severity 1');
   fails('a count that disagrees with the findings', (t) => t.replace('| 3 Costs time | 1 | 1 |', '| 3 Costs time | 2 | 0 |'), 'Findings holds 1 and 1');

@@ -20,7 +20,7 @@
 | 4 Untidy | | |
 
 ## Rules
-<!-- One row per rule the system was held to, from the files under Held to, in the order those files give them. Rule is the file and section, such as DESIGN.md §5, where §5 is a heading that file numbers 5; cite an unnumbered heading by its words, and a section holding three rules gets three rows, as does a rule checked only in part: one row for the part that was checked, one for the part that was not. Says is the rule in a few of its own words. Outcome is `broken: F1, F4` naming every finding against it, `held` when a pass looked and found no break, or `not checked: ` and why. With no written rules, the single row | none | none | none |. -->
+<!-- One row per rule the system was held to, from the files under Held to, in the order those files give them. Rule is the file and section, such as DESIGN.md §5, where §5 is a heading that file numbers 5; cite an unnumbered heading by its words, and a section holding three rules gets three rows, as does a rule checked only in part: one row for the part that was checked, one for the part that was not. Says is the rule in a few of its own words. Outcome is `broken: F1, F4` naming every finding against it, `held` when a pass looked and found no break, or `not checked: ` and why. In a long rulebook one row may stand for a whole numbered section. The gate names each numbered section of a Held to file that has no row. With no written rules, the single row | none | none | none |. -->
 | Rule | Says | Outcome |
 |---|---|---|
 
@@ -36,7 +36,7 @@
 | Themes | | | |
 
 ## Checks run
-<!-- One row per command the project already had and this audit ran, numbered C1, C2. Result is the command's own closing line or count, copied, with its exit code. With none, the single row | none | none | none |. -->
+<!-- One row per command the project already had and this audit ran, numbered C1, C2. Result is the command's own closing line or count, copied, with its exit code. A check you found and did not run gets a row too, with Result `not run: ` and why, and nothing is counted from it. With none, the single row | none | none | none |. -->
 | # | Command | Result |
 |---|---|---|
 

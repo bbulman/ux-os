@@ -1,20 +1,25 @@
-import { page, linker, esc, plural, runsShort, runLine, statusChip } from '../shell.mjs';
+import { page, linker, esc, plural, runLine, statusChip } from '../shell.mjs';
 
 const pad = (n) => String(n).padStart(2, '0');
 
-// One row per step: its number, what happens, the skill that does it (or a person), and the note.
+// One light card per step: its number, what happens, the skill that does it (or a person), and the note.
+// The whole card links to the skill's entry page.
 function step(st, k, L, ctx) {
-  const noteHtml = st.note ? `<p class="step-note">${esc(st.note)}</p>` : '';
+  const noteHtml = st.note ? `<p class="wcard-note">${esc(st.note)}</p>` : '';
+  const arrow = '<span class="arrow" aria-hidden="true">→</span>';
   const e = st.entry;
-  const use = e
-    ? `<a href="${L(`registry/${e.id}/`)}">${esc(e.name)}</a>${runLine(e) ? ` <code>${esc(runLine(e))}</code>` : ''} ${statusChip(e)} <span class="small">${esc(runsShort(e))}</span>${ctx.isPick(e) ? ' <b class="tick-ink">✓ pick</b>' : ''}`
-    : '<span class="tag-person">PERSON</span> <span class="small">A person, no skill</span>';
-  return `<li class="step-row${e ? '' : ' step-row--person'}">
-<span class="step-n">${pad(k + 1)}</span>
-<div>
-<p class="step-label">${esc(st.label)}</p>
-<p class="step-use">${use}</p>${noteHtml}
-</div>
+  if (!e) {
+    return `<li class="wcard wcard--person">
+<p class="wcard-edge"><span>${pad(k + 1)}</span><span class="tag-person">PERSON</span></p>
+<p class="wcard-label">${esc(st.label)}</p>
+<p class="wcard-use small">A person, no skill</p>${noteHtml}${arrow}
+</li>`;
+  }
+  return `<li class="wcard">
+<p class="wcard-edge"><span>${pad(k + 1)}</span>${ctx.isPick(e) ? '<b class="tick-ink">✓ pick</b>' : ''}</p>
+<p class="wcard-label">${esc(st.label)}</p>
+<p class="wcard-use"><a class="stretch" href="${L(`registry/${e.id}/`)}">${esc(e.name)}</a></p>
+<p class="wcard-meta">${runLine(e) ? `<code>${esc(runLine(e))}</code> ` : ''}${statusChip(e)}</p>${noteHtml}${arrow}
 </li>`;
 }
 
@@ -27,7 +32,7 @@ export function workflows(ctx) {
     <p class="n">${plural(w.steps.length, 'step')} · ${w.sets.map((s) => `<a href="${L(`${s}/`)}">${esc(ctx.setName[s])}</a>`).join(', ')}</p>
   </div>
   <p class="lede">${esc(w.summary)}</p>
-  <ol class="steps">
+  <ol class="wcards">
 ${w.steps.map((st, k) => step(st, k, L, ctx)).join('\n')}
   </ol>
 </section>`);

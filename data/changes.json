@@ -4,7 +4,7 @@
     "items": [
       "Added the Loadout page: the plugins and settings that decide what Claude loads on my machine, as a block you can copy or download.",
       "Added a quarterly prune report, scripts/prune.mjs, which lists third-party skills I have never used and that no job depends on, with the setting that would switch each one off.",
-      "Workflows now show each chain as a numbered list of steps instead of film-strip frames."
+      "Workflow steps are light cards on the paper instead of film-strip frames, and no longer show how often each skill has run."
     ]
   },
   {
